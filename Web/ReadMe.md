@@ -1,4 +1,4 @@
-#Información del Proyecto
+# Información del Proyecto
 
 Este repositorio contiene el código de mantenimiento de la página web del equipo.
 Inicialmente, el desarrollo está a cargo de Martín Ibazete.
