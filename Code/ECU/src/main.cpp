@@ -86,6 +86,7 @@ void loop() {
   switch (ESTADO)
     {
     case BOOT:
+        // Chequeo del bus CAN
         // Chequeo del driver (junto con el estado del mismo)
         // Chequeo de los sensores de la bateria (junto con el estado de la misma)
         // Chequeo de los sensores de RPM de las ruedas
@@ -114,7 +115,7 @@ void loop() {
     case CAR_ON:
         
         // Seteo de los leds indicados por reglamento del estado del vehiculo y
-        // avilitacion del driver para comenzar a funcionar
+        // habilitacion del driver para comenzar a funcionar
 
         break;
     case FAULT:
