@@ -22,16 +22,22 @@
 #include <ArduinoOTA.h>
 #include <Adafruit_NeoPixel.h>
 
+#include <mcp_can.h>
+#include <SPI.h>
+
 /************************************************************
  *                     DEFINES
  ************************************************************/
 #define SSID            "RPM_F_SENSOR"
 #define PASSWORD        "12345678"
 
+#define INT_PIN         2
 #define SCK_PIN         4
 #define MISO_PIN        5
 #define MOSI_PIN        6
 #define CS_PIN          7
+
+#define LED_PIN         8
 
 /************************************************************
  *             PROTOTIPOS DE FUNCIONES

@@ -1,13 +1,13 @@
 /************************************************************
  *  Proyecto : RPM_Sensor
- *  Archivo  : ota.cpp
+ *  Archivo  : funtions.cpp
  *  Equipo   : UTN BA Motorsport Formula student team 
  *  Fecha    : 8/1/2026
  *
  *  Descripción:
  *  --------------------------------------------------------
- *  Funciones de seteo de la comunicacion y programacion
- *  por wifi del modulo
+ *  Funciones de adquisicion de datos, configuracion de
+ *  sensores, etc.
  *
  *  Hardware:
  *  --------------------------------------------------------
@@ -27,43 +27,16 @@
 /************************************************************
  *                VARIABLES GLOBALES EXTERNAS
  ************************************************************/
-extern bool otaRunning;
+
+//FUNCIONES QUE DEJE DEL PROGRAMA DE PRUEBA PARA PROBAR LOS ESTADOS CON EL LED RGB QUE TIENE LA PLACA (LA ESP32 S3, NO LA ESP8266)
 
 /**
- * @brief Realiza el setup de la configuracion OTA
+ * @brief Inicializa el led RGB de la placa.
+ *
+ * @param[in]  void
  *
  * @return void           
  */
-void otaSetup() {
-
-  //Serial.println("Iniciando WiFi...");
-  WiFi.mode(WIFI_AP);  //WIFI_STA
-  WiFi.softAP(SSID, PASSWORD);
-
-  //Serial.println("\nWiFi conectado");
-  //Serial.print("IP: ");
-  //Serial.println(WiFi.localIP());
-
-  ArduinoOTA.setHostname("esp32-ota");
-  // ArduinoOTA.setPassword("1234");
-
-  ArduinoOTA.onStart([]() {
-    otaRunning = true;
-  });
-
-  ArduinoOTA.onEnd([]() {
-    otaRunning = false;
-  });
-
-  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
-    //Serial.printf("Progreso: %u%%\r", (progress * 100) / total);
-  });
-
-  ArduinoOTA.onError([](ota_error_t error) {
-    //Serial.printf("Error OTA [%u]\n", error);
-  });
-
-  ArduinoOTA.begin();
-
-  //Serial.println("OTA listo");
+void rgb_init() {
+  
 }
