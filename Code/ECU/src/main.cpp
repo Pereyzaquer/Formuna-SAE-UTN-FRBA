@@ -11,7 +11,7 @@
  *
  *  Hardware:
  *  --------------------------------------------------------
- *  - MCU: ESP32 S3 / ESP32 mini.
+ *  - MCU: ESP32 S3.
  *  - Sensores: 
  *
  *  Notas:
@@ -27,8 +27,7 @@
 /************************************************************
  *               CONSTANTES DEL SISTEMA
  ************************************************************/
-const char* ssid     = "ESP32";
-const char* password = "12345678";
+
 
 /************************************************************
  *                VARIABLES GLOBALES
@@ -43,36 +42,7 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
 
-  Serial.println("Iniciando WiFi...");
-  WiFi.mode(WIFI_STA);
-  WiFi.softAP(ssid, password);
-
-  Serial.println("\nWiFi conectado");
-  Serial.print("IP: ");
-  Serial.println(WiFi.localIP());
-
-  ArduinoOTA.setHostname("esp32-ota");
-  // ArduinoOTA.setPassword("1234");
-
-  ArduinoOTA.onStart([]() {
-    Serial.println("Iniciando OTA");
-  });
-
-  ArduinoOTA.onEnd([]() {
-    Serial.println("\nOTA finalizado");
-  });
-
-  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
-    Serial.printf("Progreso: %u%%\r", (progress * 100) / total);
-  });
-
-  ArduinoOTA.onError([](ota_error_t error) {
-    Serial.printf("Error OTA [%u]\n", error);
-  });
-
-  ArduinoOTA.begin();
-
-  Serial.println("OTA listo");
+  otaSetup();
 
   rgb_init();
 }
@@ -86,7 +56,7 @@ void loop() {
   switch (ESTADO)
     {
     case BOOT:
-        // Chequeo del bus CAN
+        // Chequeo del bus CAN e inicio del bus CAN
         // Chequeo del driver (junto con el estado del mismo)
         // Chequeo de los sensores de la bateria (junto con el estado de la misma)
         // Chequeo de los sensores de RPM de las ruedas

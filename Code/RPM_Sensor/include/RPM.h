@@ -1,8 +1,8 @@
 /************************************************************
- *  Proyecto : ECU
- *  Archivo  : ECU.h
+ *  Proyecto : RPM_Sensor
+ *  Archivo  : RPM.h
  *  Equipo   : UTN BA Motorsport Formula student team
- *  Fecha    : 23/12/2025
+ *  Fecha    : 8/1/2026
  *
  *  Descripción:
  *  --------------------------------------------------------
@@ -25,17 +25,13 @@
 /************************************************************
  *                     DEFINES
  ************************************************************/
-#define SSID        "ESP32 S3 ECU"
-#define PASSWORD    "12345678"
+#define SSID            "RPM_F_SENSOR"
+#define PASSWORD        "12345678"
 
-#define RGB_PIN    48
-#define NUM_PIXELS 1
-
-#define FAULT       0
-#define BOOT        1
-#define CONFIG      2
-#define CAR_READY   3
-#define CAR_ON      4
+#define SCK_PIN         4
+#define MISO_PIN        5
+#define MOSI_PIN        6
+#define CS_PIN          7
 
 /************************************************************
  *             PROTOTIPOS DE FUNCIONES
@@ -47,32 +43,3 @@
  * @return void           
  */
 void otaSetup(void);
-
-/**
- * @brief Inicializa el led RGB de la placa.
- *
- * @param[in]  void
- *
- * @return void           
- */
-void rgb_init(void);
-
-/**
- * @brief Setea el valor del led para configurar su color.
- *
- * @param[in]  r    valor de rojo
- * @param[in]  g    valor de verde
- * @param[in]  b    valor de azul
- *
- * @return void           
- */
-void rgb_set(uint8_t r, uint8_t g, uint8_t b);
-
-/**
- * @brief Apagado del led RGB de la placa.
- *
- * @param[in]  void
- *
- * @return void           
- */
-void rgb_off(void);

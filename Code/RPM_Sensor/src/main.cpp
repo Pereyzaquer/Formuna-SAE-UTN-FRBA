@@ -1,14 +1,60 @@
-#include <Arduino.h>
 
+/************************************************************
+ *  Proyecto : RPM_Sensor
+ *  Archivo  : main.cpp
+ *  Equipo   : UTN BA Motorsport Formula student team 
+ *  Fecha    : 8/1/2026
+ *
+ *  Descripción:
+ *  --------------------------------------------------------
+ *  Modulo encargado de la lectura y transmision de los
+ *  datos de los sensores de RPM de las ruedas
+ *
+ *  Hardware:
+ *  --------------------------------------------------------
+ *  - MCU: ESP32 mini.
+ *  - Sensores: Sensor de proximidad inductivo
+ *
+ *  Notas:
+ *  --------------------------------------------------------
+ *
+ ************************************************************/
+
+/************************************************************
+ *                     INCLUDES
+ ************************************************************/
+#include "../include/RPM.h"
+
+/************************************************************
+ *               CONSTANTES DEL SISTEMA
+ ************************************************************/
+
+/************************************************************
+ *                VARIABLES GLOBALES
+ ************************************************************/
+
+/************************************************************
+ *                       SETUP
+ ************************************************************/
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(8, OUTPUT);
+
+  Serial.begin(115200);
+  delay(1000);
+
+  otaSetup();
+
+  pinMode(8,OUTPUT);
 }
 
+/************************************************************
+ *                        LOOP
+ ************************************************************/
 void loop() {
-  // put your main code here, to run repeatedly:
-  delay(1000);
+  ArduinoOTA.handle();
+  
   digitalWrite(8,HIGH);
-  delay(1000);
+  delay(500);
+
   digitalWrite(8,LOW);
+  delay(500);
 }
