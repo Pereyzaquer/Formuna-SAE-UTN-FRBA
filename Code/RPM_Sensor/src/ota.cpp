@@ -36,13 +36,8 @@ extern bool otaRunning;
  */
 void otaSetup() {
 
-  //Serial.println("Iniciando WiFi...");
   WiFi.mode(WIFI_AP);  //WIFI_STA
   WiFi.softAP(SSID, PASSWORD);
-
-  //Serial.println("\nWiFi conectado");
-  //Serial.print("IP: ");
-  //Serial.println(WiFi.localIP());
 
   ArduinoOTA.setHostname("esp32-ota");
   // ArduinoOTA.setPassword("1234");
@@ -64,6 +59,4 @@ void otaSetup() {
   });
 
   ArduinoOTA.begin();
-
-  //Serial.println("OTA listo");
 }
