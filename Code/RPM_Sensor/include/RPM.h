@@ -40,6 +40,13 @@
 #define LED_PIN         8
 
 /************************************************************
+ *             VARIABLES GLOBALES
+ ************************************************************/
+extern volatile unsigned long last_pulse_time;
+extern volatile unsigned long pulse_interval;
+
+
+/************************************************************
  *             PROTOTIPOS DE FUNCIONES
  ************************************************************/
 
@@ -49,3 +56,6 @@
  * @return void           
  */
 void otaSetup(void);
+void initSensor(void);
+float getRPM(void);
+void IRAM_ATTR handle_rpm(void);

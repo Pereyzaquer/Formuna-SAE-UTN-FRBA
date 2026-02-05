@@ -61,10 +61,12 @@ void setup() {
   // Since we do not set NORMAL mode, we are in loopback mode by default.
   CAN0.setMode(MCP_NORMAL);                           // Change to normal mode to allow messages to be transmitted
 
-  pinMode(INT_PIN, INPUT);                            // Configuring pin for /INT input
-
+  initSensor();
+  //pinMode(INT_PIN, INPUT);                            // Configuring pin for /INT input
   pinMode(LED_PIN,OUTPUT);
   digitalWrite(LED_PIN,LOW);
+
+  
 }
 
 /************************************************************
@@ -72,6 +74,16 @@ void setup() {
  ************************************************************/
 void loop() {
   ArduinoOTA.handle();
+
+  // probamos el sensor
+  float currentRPM=getRPM();
+
+  unsigned int rpmInt = (unsigned int)currentRPM;
+
+  // Sobrescribe los dos primeros lugares de byte data porque el protocolo CAB Bus
+  // solo acepta paquetes de 8 bytes
+  data[0] = (byte)((rpmInt >> 8) & 0xFF);
+  data[1] = (byte)(rpmInt & 0xFF);
 
   // send data:  ID = 0x100, Standard CAN Frame, Data length = 8 bytes, 'data' = array of data bytes to send
   byte sndStat = CAN0.sendMsgBuf(0x100, 0, 8, data);
@@ -99,6 +111,8 @@ void loop() {
       
       //telnetClient.println(msgString1);
       //telnetClient.println(msgString2);
+      //telnetClient.println("Lectura RPM: ");
+      //telnetClient.println(currentRPM);
       telnetClient.println(sndStat);
       telnetClient.println(flag ? "TX OK" : "TX FAIL");       //Hay que conectarse por telnet (preferentemente usando el programa Putty en windows)
       //telnetClient.println("--------------------");         //con la ip 192.168.4.1 y el puerto 23
@@ -111,10 +125,10 @@ void loop() {
   }
   
   digitalWrite(LED_PIN,HIGH);
-  delay(100);
+  delay(500);
 
   digitalWrite(LED_PIN,LOW);
-  delay(100);
+  delay(500);
 
   yield();
 
