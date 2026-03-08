@@ -6,6 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Placa de Desarrollo")
+		(rev "v2")
 	)
 	(lib_symbols
 		(symbol "FSAE_Kicad_Symbols.pretty:ESP32 S3"
@@ -1235,237 +1236,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Interface_CAN_LIN:SN65HVD230"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -2.54 10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Value" "SN65HVD230"
-				(at -2.54 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn65hvd230.pdf"
-				(at -2.54 10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "CAN Bus Transceivers, 3.3V, 1Mbps, Low-Power capabilities, SOIC-8"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "can transeiver ti low-power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SN65HVD230_0_1"
-				(rectangle
-					(start -7.62 5.08)
-					(end 7.62 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "SN65HVD230_1_1"
-				(pin input line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "R"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "Vref"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 -5.08 0)
-					(length 2.54)
-					(name "Rs"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 7.62 270)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -10.16 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 10.16 0 180)
-					(length 2.54)
-					(name "CANH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 10.16 -2.54 180)
-					(length 2.54)
-					(name "CANL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Regulator_Switching:LM2596S-ADJ"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1974,298 +1744,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "TJA1050:TJA1050"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -10.16 10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "TJA1050"
-				(at -10.16 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "TJA1050:SOT96-1"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "NXP Semiconductors"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "CAN 1MBd Silent 5V Automotive 8-Pin SO T/R"
-				(at -3.302 -19.558 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Package" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/TJA1050/NXP+Semiconductors/view-part/?ref=snap"
-				(at -2.286 -13.716 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "TJA1050"
-				(at -14.732 -9.906 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/TJA1050/NXP+Semiconductors/view-part/?ref=eda"
-				(at -0.762 -15.748 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(symbol "TJA1050_0_0"
-				(rectangle
-					(start -10.16 -7.62)
-					(end 10.16 7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin output line
-					(at -12.7 5.08 0)
-					(length 2.54)
-					(name "TXD"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 0 0)
-					(length 2.54)
-					(name "RXD"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -12.7 -2.54 0)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -5.08 0)
-					(length 2.54)
-					(name "VREF"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 0 10.16 270)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 0 -10.16 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 5.08 180)
-					(length 2.54)
-					(name "CANH"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -5.08 180)
-					(length 2.54)
-					(name "CANL"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(text_box "* MPU6050\n* LoRa SX1278\n* Resolver\n* Sensor de proximidad inductivo\n* Encoder"
 		(exclude_from_sim yes)
@@ -2289,25 +1767,13 @@
 		)
 		(uuid "cd804c68-9b06-4e9d-893b-648428ab2b75")
 	)
-	(junction
-		(at 60.96 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "436062e3-6184-4c9a-915c-934805c6b783")
-	)
-	(junction
-		(at 63.5 132.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ba85fde9-2608-4167-8450-1f8822919189")
-	)
 	(no_connect
 		(at 68.58 36.83)
 		(uuid "46487477-78bb-4d69-a3a7-816fd4713da9")
 	)
 	(wire
 		(pts
-			(xy 95.25 104.14) (xy 95.25 162.56)
+			(xy 96.52 104.14) (xy 96.52 157.48)
 		)
 		(stroke
 			(width 0)
@@ -2317,43 +1783,33 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 128.27) (xy 63.5 104.14)
+			(xy 48.26 104.14) (xy 48.26 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0c789ba2-acaf-4181-a80c-ab3131ac3d94")
+		(uuid "242c0c64-6da2-401c-9b75-c43bfc301f80")
 	)
 	(wire
 		(pts
-			(xy 63.5 132.08) (xy 67.31 132.08)
+			(xy 91.44 167.64) (xy 91.44 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1d7153fb-aefa-431b-a6b9-4b3e7b795266")
+		(uuid "2829f8ff-2279-4a17-9178-547b5cc88d3b")
 	)
 	(wire
 		(pts
-			(xy 55.88 158.75) (xy 60.96 158.75)
+			(xy 104.14 152.4) (xy 104.14 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1dd423da-c0ac-4e8f-9152-4112369e8f28")
-	)
-	(wire
-		(pts
-			(xy 81.28 181.61) (xy 111.76 181.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31c75e8b-8a1a-4874-8ce7-e8444a59f4ff")
+		(uuid "2ad49fdb-276a-47cc-9f52-e02599e2e926")
 	)
 	(wire
 		(pts
@@ -2377,56 +1833,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 179.07) (xy 83.82 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3670e072-bbe1-4b4c-af36-66785df9fb4b")
-	)
-	(wire
-		(pts
-			(xy 102.87 154.94) (xy 111.76 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d27a7dc-7061-4986-850d-c91a3c125f3e")
-	)
-	(wire
-		(pts
-			(xy 55.88 162.56) (xy 63.5 162.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d96a428-5dbd-422d-a9c9-92690f62a62f")
-	)
-	(wire
-		(pts
-			(xy 110.49 147.32) (xy 110.49 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3da2ea12-4623-4768-b4a0-1a0b1f951837")
-	)
-	(wire
-		(pts
-			(xy 63.5 162.56) (xy 63.5 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3fe96b3f-3189-4d5a-a2bc-58a09186c045")
-	)
-	(wire
-		(pts
 			(xy 184.15 176.53) (xy 184.15 99.06)
 		)
 		(stroke
@@ -2434,16 +1840,6 @@
 			(type default)
 		)
 		(uuid "4516c744-96bf-4826-9344-1d074ad7d044")
-	)
-	(wire
-		(pts
-			(xy 111.76 147.32) (xy 110.49 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f7e48d5-3a1a-4642-8f38-a47aed482dbc")
 	)
 	(wire
 		(pts
@@ -2457,7 +1853,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 173.99) (xy 88.9 104.14)
+			(xy 88.9 170.18) (xy 88.9 104.14)
 		)
 		(stroke
 			(width 0)
@@ -2477,23 +1873,13 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 186.69) (xy 111.76 186.69)
+			(xy 86.36 172.72) (xy 111.76 172.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "61a60d36-22a4-4436-bdf1-de420a3aa14b")
-	)
-	(wire
-		(pts
-			(xy 78.74 184.15) (xy 111.76 184.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64581381-aa00-43f1-9575-6aa55b4471a4")
 	)
 	(wire
 		(pts
@@ -2507,7 +1893,17 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 104.14) (xy 76.2 186.69)
+			(xy 154.94 104.14) (xy 154.94 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e473fa9-854a-4512-90e3-a3bcedb49fcc")
+	)
+	(wire
+		(pts
+			(xy 86.36 104.14) (xy 86.36 172.72)
 		)
 		(stroke
 			(width 0)
@@ -2517,13 +1913,33 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 104.14) (xy 100.33 157.48)
+			(xy 44.45 104.14) (xy 44.45 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78f0a79d-e9a4-4312-92d7-04fcf5292379")
+	)
+	(wire
+		(pts
+			(xy 100.33 104.14) (xy 100.33 154.94)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "7a609261-c235-465d-9fdb-36bf7ddc4e3e")
+	)
+	(wire
+		(pts
+			(xy 151.13 104.14) (xy 151.13 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e7e41fb-ebc1-4843-aa16-9024ca6607a0")
 	)
 	(wire
 		(pts
@@ -2537,17 +1953,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 132.08) (xy 67.31 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8910929c-4552-460a-91b1-30b2d4bfc542")
-	)
-	(wire
-		(pts
-			(xy 88.9 173.99) (xy 111.76 173.99)
+			(xy 88.9 170.18) (xy 111.76 170.18)
 		)
 		(stroke
 			(width 0)
@@ -2557,7 +1963,17 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 157.48) (xy 100.33 157.48)
+			(xy 148.59 104.14) (xy 148.59 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9224cb96-a6e4-42e2-8f9d-ba7dd73b8bef")
+	)
+	(wire
+		(pts
+			(xy 111.76 154.94) (xy 100.33 154.94)
 		)
 		(stroke
 			(width 0)
@@ -2577,36 +1993,6 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 132.08) (xy 63.5 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9dfba5f2-8f80-4a9f-8a4a-18ec7cde7584")
-	)
-	(wire
-		(pts
-			(xy 83.82 179.07) (xy 111.76 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a03375c9-7201-48ec-b850-4cf073d4fa16")
-	)
-	(wire
-		(pts
-			(xy 105.41 152.4) (xy 111.76 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a85c5157-e803-4e12-b959-d2473cd086bc")
-	)
-	(wire
-		(pts
 			(xy 186.69 96.52) (xy 179.07 96.52)
 		)
 		(stroke
@@ -2614,6 +2000,16 @@
 			(type default)
 		)
 		(uuid "a8923455-c8ec-43a7-8e9b-1539489f1662")
+	)
+	(wire
+		(pts
+			(xy 111.76 152.4) (xy 104.14 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9b8cc9f-fe97-4209-8195-7f1e58ba377d")
 	)
 	(wire
 		(pts
@@ -2627,36 +2023,6 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 184.15) (xy 78.74 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc12515b-95fb-4fad-bcd1-7c1a197f9839")
-	)
-	(wire
-		(pts
-			(xy 81.28 181.61) (xy 81.28 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bcb14b46-0e45-444d-9393-a5ba95f11d24")
-	)
-	(wire
-		(pts
-			(xy 86.36 176.53) (xy 111.76 176.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bdd8e01d-3d3e-4849-aa6c-ea0efa752cf7")
-	)
-	(wire
-		(pts
 			(xy 189.23 181.61) (xy 189.23 93.98)
 		)
 		(stroke
@@ -2664,16 +2030,6 @@
 			(type default)
 		)
 		(uuid "bec5e154-f475-4f13-ab86-70d3f474a767")
-	)
-	(wire
-		(pts
-			(xy 60.96 158.75) (xy 60.96 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3666252-e9c5-42b8-bdc9-d840c0d99f63")
 	)
 	(wire
 		(pts
@@ -2687,13 +2043,13 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 128.27) (xy 63.5 128.27)
+			(xy 111.76 167.64) (xy 91.44 167.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cdbf0d10-5dee-4e81-9c9d-5579e1501294")
+		(uuid "ccee5a25-1c6b-4e42-8a46-d2a135011fd9")
 	)
 	(wire
 		(pts
@@ -2707,16 +2063,6 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 128.27) (xy 60.96 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cf9ba020-b81d-4e12-80c6-7c01f65c8db8")
-	)
-	(wire
-		(pts
 			(xy 135.89 104.14) (xy 135.89 135.89)
 		)
 		(stroke
@@ -2724,16 +2070,6 @@
 			(type default)
 		)
 		(uuid "d06e9447-a4ad-4ff2-89a3-c851c2323228")
-	)
-	(wire
-		(pts
-			(xy 102.87 104.14) (xy 102.87 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d10c9661-af89-48e9-8e68-2915a1d22d26")
 	)
 	(wire
 		(pts
@@ -2747,43 +2083,13 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 160.02) (xy 97.79 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0f23ab3-be59-4522-97a9-1fc6214f454b")
-	)
-	(wire
-		(pts
-			(xy 105.41 104.14) (xy 105.41 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e5297f0b-e109-4623-862d-c088f332c7e2")
-	)
-	(wire
-		(pts
-			(xy 95.25 162.56) (xy 111.76 162.56)
+			(xy 96.52 157.48) (xy 111.76 157.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e647945d-3ef5-4b67-8b23-15b8496cb8fe")
-	)
-	(wire
-		(pts
-			(xy 97.79 160.02) (xy 97.79 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7750dce-0a1d-4ca9-8e33-786282709313")
 	)
 	(wire
 		(pts
@@ -2794,16 +2100,6 @@
 			(type default)
 		)
 		(uuid "eaf7c24d-8829-4ea9-8ba4-7794fefcc978")
-	)
-	(wire
-		(pts
-			(xy 86.36 176.53) (xy 86.36 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7c3483a-6ab1-4273-92f5-4f8d35615f80")
 	)
 	(wire
 		(pts
@@ -3089,175 +2385,6 @@
 		)
 	)
 	(symbol
-		(lib_id "TJA1050:TJA1050")
-		(at 38.1 129.54 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "45c36906-8db5-4824-8244-f5be4e076662")
-		(property "Reference" "U4"
-			(at 40.0686 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TJA1050"
-			(at 40.0686 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TJA1050:SOT96-1"
-			(at 38.1 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 38.1 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MF" "NXP Semiconductors"
-			(at 38.1 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "CAN 1MBd Silent 5V Automotive 8-Pin SO T/R"
-			(at 34.798 149.098 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Package" "None"
-			(at 38.1 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Price" "None"
-			(at 38.1 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/TJA1050/NXP+Semiconductors/view-part/?ref=snap"
-			(at 35.814 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "TJA1050"
-			(at 23.368 139.446 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 38.1 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/TJA1050/NXP+Semiconductors/view-part/?ref=eda"
-			(at 37.338 145.288 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "e14219fb-f3c3-4ed7-9605-9ddd5dc668fd")
-		)
-		(pin "7"
-			(uuid "310fa552-9ef4-4746-86d1-2cb198fa5072")
-		)
-		(pin "6"
-			(uuid "4ced5b99-1c20-4b15-8e1d-76dd5691c4a9")
-		)
-		(pin "3"
-			(uuid "c6fab90e-fc71-4eed-9782-60ed21cf1861")
-		)
-		(pin "1"
-			(uuid "eff47082-4402-4037-b3dc-4f2a23096033")
-		)
-		(pin "5"
-			(uuid "e3516186-a2e7-4a59-846a-5c8aba577e75")
-		)
-		(pin "2"
-			(uuid "fbfff765-197b-4d5c-8c88-d2f04f3f0be0")
-		)
-		(pin "8"
-			(uuid "461f0b90-55c8-4fc7-a564-22994f894a83")
-		)
-		(instances
-			(project ""
-				(path "/b93e2547-308e-44b8-b993-67c2742cde0a"
-					(reference "U4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "FSAE_Kicad_Symbols.pretty:ESP32_C3_SM")
 		(at 49.53 40.64 0)
 		(unit 1)
@@ -3362,94 +2489,6 @@
 			(project ""
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a"
 					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Interface_CAN_LIN:SN65HVD230")
-		(at 36.83 170.18 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cef743f5-b32f-4a8c-a6be-880a557d36db")
-		(property "Reference" "U5"
-			(at 38.9733 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SN65HVD230"
-			(at 38.9733 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 36.83 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn65hvd230.pdf"
-			(at 34.29 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "CAN Bus Transceivers, 3.3V, 1Mbps, Low-Power capabilities, SOIC-8"
-			(at 36.83 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a402f346-26d7-42c5-953b-e8e1663a9d9f")
-		)
-		(pin "4"
-			(uuid "077c238d-5d75-400e-82f1-8f6fffbb3b1d")
-		)
-		(pin "6"
-			(uuid "6c651772-7724-4715-89ee-04c1293ac9b2")
-		)
-		(pin "7"
-			(uuid "8871c9ac-7749-40a3-941f-72ec48b48da6")
-		)
-		(pin "2"
-			(uuid "039092fb-1564-4aaa-9e3b-57b0967078ab")
-		)
-		(pin "8"
-			(uuid "8a022c03-de39-47bd-9298-5e86819ebdcd")
-		)
-		(pin "3"
-			(uuid "c651f782-a831-476d-b74e-35d1941b99f7")
-		)
-		(pin "5"
-			(uuid "485e8627-7572-431d-9785-bc3e567206e9")
-		)
-		(instances
-			(project ""
-				(path "/b93e2547-308e-44b8-b993-67c2742cde0a"
-					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -3583,7 +2622,7 @@
 		(instances
 			(project "FSAE-BaseBoard"
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a"
-					(page "6")
+					(page "5")
 				)
 			)
 		)
@@ -3624,7 +2663,7 @@
 			)
 		)
 		(pin "TX" output
-			(at 63.5 104.14 270)
+			(at 44.45 104.14 270)
 			(uuid "1212fedc-eb35-491e-82e4-540c7d30249b")
 			(effects
 				(font
@@ -3644,7 +2683,7 @@
 			)
 		)
 		(pin "RX" input
-			(at 67.31 104.14 270)
+			(at 48.26 104.14 270)
 			(uuid "fa16660f-6e89-4b1e-a735-f461e1543290")
 			(effects
 				(font
@@ -3693,39 +2732,9 @@
 				(justify right)
 			)
 		)
-		(pin "MISO_LORA" input
-			(at 81.28 104.14 270)
-			(uuid "85a4724c-3d95-445f-84ba-057e366fc677")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "RST_LORA" output
-			(at 76.2 104.14 270)
-			(uuid "b3e72256-25b2-4382-9235-88ec3bbe196f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "MOSI_LORA" output
 			(at 86.36 104.14 270)
-			(uuid "e6907ae7-2dc3-42ae-ae30-cafce3ed02aa")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "SCK_LORA" output
-			(at 78.74 104.14 270)
-			(uuid "874c54b2-b9e8-4a5f-8dd8-35dafbdcdf3d")
+			(uuid "b3e72256-25b2-4382-9235-88ec3bbe196f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3743,59 +2752,9 @@
 				(justify left)
 			)
 		)
-		(pin "CS_LORA" output
-			(at 83.82 104.14 270)
-			(uuid "ec3c57f0-0c2b-434e-b500-56a5a8bcb332")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "CS_RES" output
-			(at 110.49 104.14 270)
-			(uuid "99a61df2-47cb-4f52-8c80-8d2969bb0f58")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "MOSI_RES" output
-			(at 102.87 104.14 270)
-			(uuid "543c3c7c-3fde-4d09-aed9-4187d8210a3c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "SCK_RES" output
-			(at 97.79 104.14 270)
-			(uuid "25cf59c1-e434-44a2-bbb9-1cd924d7ebac")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "SAMPLE" output
 			(at 100.33 104.14 270)
 			(uuid "a3775135-19d1-4b05-b1ae-6d183a5caf21")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "MISO_RES" input
-			(at 105.41 104.14 270)
-			(uuid "12189b7c-c1f8-4dcf-95e5-8886b251811b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3834,7 +2793,7 @@
 			)
 		)
 		(pin "A1_MODE" output
-			(at 95.25 104.14 270)
+			(at 96.52 104.14 270)
 			(uuid "f94fc0ae-a297-4c9e-96b8-bb91bf8e2a6a")
 			(effects
 				(font
@@ -3856,6 +2815,56 @@
 		(pin "ENC_A" input
 			(at 135.89 104.14 270)
 			(uuid "b7a46530-b3ce-4bdb-b7ad-f741c4f8f2c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MISO" input
+			(at 154.94 104.14 270)
+			(uuid "ef08250e-7066-4b10-ace7-0feb3ab09475")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCK" output
+			(at 151.13 104.14 270)
+			(uuid "f7fce6a9-af4d-4837-a3ec-2630911e80c3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CS_RES" output
+			(at 104.14 104.14 270)
+			(uuid "d3e5ee96-6418-4c3c-8e77-e76ace957690")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CS_LORA" output
+			(at 91.44 104.14 270)
+			(uuid "22b49318-c6c3-4a9b-8742-642027d5d333")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOSI" output
+			(at 148.59 104.14 270)
+			(uuid "4d5c2da1-7550-49c0-8597-3d541d1671b3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3916,46 +2925,6 @@
 				(justify right)
 			)
 		)
-		(pin "MOSI_LORA" input
-			(at 111.76 176.53 180)
-			(uuid "6d41574a-65e9-4804-b23f-fa77dc9128f4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "CS_LORA" input
-			(at 111.76 179.07 180)
-			(uuid "bf58367b-0708-4b04-8e0e-f23339bcbc18")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "MISO_LORA" output
-			(at 111.76 181.61 180)
-			(uuid "7b37a854-7b81-47f1-ae7b-f4ea907b76ac")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "SCK_LORA" input
-			(at 111.76 184.15 180)
-			(uuid "d9c543e8-02b1-49c9-85bf-e4bfa393c2ee")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "SDA_MPU" bidirectional
 			(at 168.91 179.07 0)
 			(uuid "347d8efb-6f56-4d2f-ad59-100ce5896623")
@@ -3967,7 +2936,7 @@
 			)
 		)
 		(pin "INT_LORA" output
-			(at 111.76 173.99 180)
+			(at 111.76 170.18 180)
 			(uuid "ea032d08-0d13-40eb-b692-58b7da8e25f6")
 			(effects
 				(font
@@ -3987,7 +2956,7 @@
 			)
 		)
 		(pin "RST_LORA" input
-			(at 111.76 186.69 180)
+			(at 111.76 172.72 180)
 			(uuid "09aafada-18d6-4ece-81a0-c83dda996f68")
 			(effects
 				(font
@@ -3996,49 +2965,9 @@
 				(justify left)
 			)
 		)
-		(pin "CS_RES" output
-			(at 111.76 147.32 180)
-			(uuid "46fa92aa-e839-4547-a3b3-c51ed1005e75")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "MISO_RES" input
-			(at 111.76 152.4 180)
-			(uuid "d89bb940-0b62-4c20-b090-b241bae9f1ec")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "MOSI_RES" output
-			(at 111.76 154.94 180)
-			(uuid "1c142513-e77e-4ecf-9f55-02ad2c8fb824")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "SAMPLE" output
-			(at 111.76 157.48 180)
+			(at 111.76 154.94 180)
 			(uuid "011808d4-93b7-48bb-9581-4f6172d38e6c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "SCK_RES" output
-			(at 111.76 160.02 180)
-			(uuid "f5a994aa-8386-40d6-93c4-41fd8177b80a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4067,7 +2996,7 @@
 			)
 		)
 		(pin "A1_MODE" output
-			(at 111.76 162.56 180)
+			(at 111.76 157.48 180)
 			(uuid "70121bcb-b25d-4453-9c46-c9555fe57a6b")
 			(effects
 				(font
@@ -4096,10 +3025,60 @@
 				(justify right)
 			)
 		)
+		(pin "MOSI" output
+			(at 148.59 135.89 90)
+			(uuid "3b59635e-041e-4279-af4d-60e18fc5d87f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SCK" output
+			(at 151.13 135.89 90)
+			(uuid "cc85414e-2840-4b75-9c8e-b13e45774ba1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MISO" input
+			(at 154.94 135.89 90)
+			(uuid "e01c9dd9-a3a0-44fc-a2b7-f7c109f563f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CS_LORA" input
+			(at 111.76 167.64 180)
+			(uuid "f0147010-0ca6-44e3-8717-01970e26a466")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CS_RES" input
+			(at 111.76 152.4 180)
+			(uuid "cd432d62-68ea-407c-88bb-9e8a1de79640")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "FSAE-BaseBoard"
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a"
-					(page "7")
+					(page "6")
 				)
 			)
 		)
@@ -4162,13 +3141,13 @@
 		(instances
 			(project "FSAE-BaseBoard"
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a"
-					(page "5")
+					(page "4")
 				)
 			)
 		)
 	)
 	(sheet
-		(at 19.05 154.94)
+		(at 21.59 139.7)
 		(size 36.83 39.37)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4183,8 +3162,8 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "a2edbc61-c59b-4183-849e-8593979ff663")
-		(property "Sheetname" "Comunicacion CAN #"
-			(at 19.05 154.2284 0)
+		(property "Sheetname" "Comunicacion CAN"
+			(at 21.59 138.9884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4193,7 +3172,7 @@
 			)
 		)
 		(property "Sheetfile" "FSAE-BaseBoard-6.kicad_sch"
-			(at 19.05 194.8946 0)
+			(at 21.59 179.6546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4203,7 +3182,7 @@
 			)
 		)
 		(pin "RX" output
-			(at 55.88 162.56 0)
+			(at 48.26 139.7 90)
 			(uuid "4babb10d-c8c6-4217-8137-813b85ee9ef0")
 			(effects
 				(font
@@ -4213,71 +3192,8 @@
 			)
 		)
 		(pin "TX" input
-			(at 55.88 158.75 0)
+			(at 44.45 139.7 90)
 			(uuid "765044c1-5fbd-4301-ab82-a6a8dd6faaf6")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "FSAE-BaseBoard"
-				(path "/b93e2547-308e-44b8-b993-67c2742cde0a"
-					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 19.05 110.49)
-		(size 36.83 38.1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "fda0b7e3-3fbe-47c5-bc9a-f5d4ca08cf80")
-		(property "Sheetname" "Comunicacion CAN"
-			(at 19.05 109.7784 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "FSAE-BaseBoard-2.kicad_sch"
-			(at 19.05 149.1746 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "RX" output
-			(at 55.88 132.08 0)
-			(uuid "bf866f16-7fa1-4ab0-a187-91131ace040f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "TX" input
-			(at 55.88 128.27 0)
-			(uuid "440b56ea-b6d5-49c6-9473-8ddc4ce14307")
 			(effects
 				(font
 					(size 1.27 1.27)

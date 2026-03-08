@@ -6,115 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Bloque rele")
+		(rev "v2")
 	)
 	(lib_symbols
-		(symbol "Connector:TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Generic:Conn_01x03"
 			(pin_names
 				(offset 1.016)
@@ -1366,12 +1260,6 @@
 		(uuid "290f91d9-ff9c-4dcf-be90-8d7175a3473f")
 	)
 	(junction
-		(at 118.11 105.41)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5631350b-3277-4a42-9c9a-abb3c8faa24a")
-	)
-	(junction
 		(at 148.59 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1396,16 +1284,6 @@
 			(type default)
 		)
 		(uuid "072d2b92-d169-44ae-97c8-d4dd6caf49a8")
-	)
-	(wire
-		(pts
-			(xy 116.84 105.41) (xy 118.11 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a7865c1-f3ae-4fdf-b765-36b4d91b6dad")
 	)
 	(wire
 		(pts
@@ -1446,16 +1324,6 @@
 			(type default)
 		)
 		(uuid "501c5265-11ae-478a-bab1-19c089bcb2d2")
-	)
-	(wire
-		(pts
-			(xy 118.11 102.87) (xy 118.11 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d6bb06f-9573-440f-802d-4e8cc0339687")
 	)
 	(wire
 		(pts
@@ -1579,7 +1447,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 105.41) (xy 121.92 105.41)
+			(xy 116.84 105.41) (xy 121.92 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1608,7 +1476,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ac85b02-00b9-4f62-9128-dd74a74adf1a")
-		(property "Reference" "J10"
+		(property "Reference" "J9"
 			(at 163.83 72.3899 90)
 			(effects
 				(font
@@ -1665,139 +1533,7 @@
 		(instances
 			(project ""
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a/0b38690d-bb9d-4f36-8216-43ed7abbfd42"
-					(reference "J10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 118.11 102.87 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "16470b89-0d3b-41e6-8388-64835fcdd91e")
-		(property "Reference" "TP_RELE1"
-			(at 117.094 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 117.856 97.028 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 123.19 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 118.11 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5a4beac9-261f-4727-af2b-64e056cd71bc")
-		)
-		(instances
-			(project "FSAE-BaseBoard"
-				(path "/b93e2547-308e-44b8-b993-67c2742cde0a/0b38690d-bb9d-4f36-8216-43ed7abbfd42"
-					(reference "TP_RELE1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 102.87 102.87 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2a0c622f-7286-44f3-a3e1-a84031e13faa")
-		(property "Reference" "TP_RELE_GND1"
-			(at 101.854 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 102.616 97.028 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 107.95 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 102.87 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "42e2ac75-f634-44d7-b86c-d7016137c39a")
-		)
-		(instances
-			(project "FSAE-BaseBoard"
-				(path "/b93e2547-308e-44b8-b993-67c2742cde0a/0b38690d-bb9d-4f36-8216-43ed7abbfd42"
-					(reference "TP_RELE_GND1")
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -1899,72 +1635,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 102.87 102.87 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5ac2638a-7768-44ef-85ec-f153f107b3a6")
-		(property "Reference" "#PWR032"
-			(at 102.87 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 102.87 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 102.87 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 102.87 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 102.87 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dd230895-70f1-4df9-b436-59b2ec178985")
-		)
-		(instances
-			(project "FSAE-BaseBoard"
-				(path "/b93e2547-308e-44b8-b993-67c2742cde0a/0b38690d-bb9d-4f36-8216-43ed7abbfd42"
-					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 148.59 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1973,7 +1643,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6e4cfa2c-d534-41b4-8513-1bb3f8453878")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR028"
 			(at 148.59 119.38 0)
 			(effects
 				(font
@@ -2023,7 +1693,7 @@
 		(instances
 			(project ""
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a/0b38690d-bb9d-4f36-8216-43ed7abbfd42"
-					(reference "#PWR033")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -2207,7 +1877,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "da429c07-81a2-43ca-8672-fdbdf8266df8")
-		(property "Reference" "R6"
+		(property "Reference" "R10"
 			(at 125.73 99.06 90)
 			(effects
 				(font
@@ -2259,7 +1929,7 @@
 		(instances
 			(project ""
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a/0b38690d-bb9d-4f36-8216-43ed7abbfd42"
-					(reference "R6")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -2275,7 +1945,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef2daf3e-b176-4936-98f8-d617a4b56865")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR027"
 			(at 148.59 81.28 0)
 			(effects
 				(font
@@ -2325,7 +1995,7 @@
 		(instances
 			(project ""
 				(path "/b93e2547-308e-44b8-b993-67c2742cde0a/0b38690d-bb9d-4f36-8216-43ed7abbfd42"
-					(reference "#PWR031")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
