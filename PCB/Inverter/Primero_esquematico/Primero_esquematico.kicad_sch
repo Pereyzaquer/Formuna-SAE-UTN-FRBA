@@ -1,24 +1,314 @@
 (kicad_sch
-	(version 20231120)
+	(version 20260306)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "10.0")
 	(uuid "d930f486-f6ac-489c-907e-47f2cb34cf04")
 	(paper "A4")
-	(lib_symbols)
+	(lib_symbols
+		(symbol "power:+12V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+12V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+12V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+12V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(wire
+		(pts
+			(xy 212.09 97.79) (xy 215.9 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e6133df-dedd-49a5-b371-2c8c4be7f22e")
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 212.09 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e98b1edf-5856-49ee-94ab-f80e1044fad9")
+		(property "Reference" "#PWR02"
+			(at 212.09 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+12V"
+			(at 212.09 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.09 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 212.09 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3596ccb7-6022-45cb-b08c-f8d542f67a5e")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
-		(at 213.36 60.96)
-		(size 15.24 16.51)
+		(at 215.9 92.71)
+		(size 15.24 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
+		)
+		(uuid "1260b68e-47a4-4e29-96a5-6af89555f7d0")
+		(property "Sheetname" "LogicSupply"
+			(at 215.9 91.9984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LogicSupply.kicad_sch"
+			(at 215.9 107.2646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Vin_FB" input
+			(at 215.9 97.79 180)
+			(uuid "fe345ffa-0dcf-4e8c-9732-06b60d13b25f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 213.36 60.96)
+		(size 15.24 16.51)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
 		)
 		(uuid "4b7a5665-e10a-4b94-9255-a8280a2a74a9")
 		(property "Sheetname" "currentS"
 			(at 213.36 60.2484 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28,6 +318,8 @@
 		)
 		(property "Sheetfile" "currentS.kicad_sch"
 			(at 213.36 78.0546 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37,43 +329,43 @@
 		)
 		(pin "15V" input
 			(at 213.36 64.77 180)
+			(uuid "072b7d42-0256-4d16-986f-b386773a98de")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "072b7d42-0256-4d16-986f-b386773a98de")
 		)
 		(pin "Uot1" input
 			(at 213.36 68.58 180)
+			(uuid "fc8e0d13-251b-4b8c-befd-2dc29d2067c5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "fc8e0d13-251b-4b8c-befd-2dc29d2067c5")
 		)
 		(pin "Uot2" input
 			(at 213.36 71.12 180)
+			(uuid "b24af174-f4d7-46de-9290-7a45864d9fb6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "b24af174-f4d7-46de-9290-7a45864d9fb6")
 		)
 		(pin "Uot3" input
 			(at 213.36 73.66 180)
+			(uuid "d38a1e36-6506-4cc5-a9a8-e414293e9c02")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "d38a1e36-6506-4cc5-a9a8-e414293e9c02")
 		)
 		(instances
 			(project "Primero_esquematico"
@@ -86,17 +378,23 @@
 	(sheet
 		(at 58.42 43.18)
 		(size 36.83 48.26)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "df8a8cc2-16cb-4dd1-8808-9b9b11a395a5")
 		(property "Sheetname" "Gate_Driver"
 			(at 58.42 42.4684 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -106,6 +404,8 @@
 		)
 		(property "Sheetfile" "g_driver.kicad_sch"
 			(at 58.42 92.0246 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -113,155 +413,145 @@
 				(justify left top)
 			)
 		)
-		(pin "15V" input
-			(at 95.25 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "141f6f63-b7e4-4c9a-b967-9abb0a924783")
-		)
 		(pin "C1_In_neg" input
 			(at 58.42 46.99 180)
+			(uuid "233fc361-546f-4d2f-a1a5-b1d403ae18c6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "233fc361-546f-4d2f-a1a5-b1d403ae18c6")
 		)
 		(pin "Temp1" input
 			(at 58.42 53.34 180)
+			(uuid "e2ff3f03-6381-43ae-b756-ed5c54d49451")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e2ff3f03-6381-43ae-b756-ed5c54d49451")
 		)
 		(pin "C1_In_pos" input
 			(at 58.42 49.53 180)
+			(uuid "83ab8c32-b0fc-405a-86c5-60410e776505")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "83ab8c32-b0fc-405a-86c5-60410e776505")
 		)
 		(pin "V_MP1" input
 			(at 58.42 55.88 180)
+			(uuid "b9b4656f-2202-4934-a302-c19a8acd043d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "b9b4656f-2202-4934-a302-c19a8acd043d")
 		)
 		(pin "C2_In_pos" input
 			(at 58.42 62.23 180)
+			(uuid "b8af2eed-d7c1-4a64-9a60-18c3480bea3e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "b8af2eed-d7c1-4a64-9a60-18c3480bea3e")
 		)
 		(pin "C2_In_neg" input
 			(at 58.42 64.77 180)
+			(uuid "dc272f37-2f0d-419d-b9ae-7046184a5175")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "dc272f37-2f0d-419d-b9ae-7046184a5175")
 		)
 		(pin "V_MP2" input
 			(at 58.42 71.12 180)
+			(uuid "ec147b82-9df9-4d0e-8332-912b1ac002c6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ec147b82-9df9-4d0e-8332-912b1ac002c6")
 		)
 		(pin "C3_In_neg" input
 			(at 58.42 76.2 180)
+			(uuid "6781b1d2-6200-4e4d-a976-3559e23ef480")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6781b1d2-6200-4e4d-a976-3559e23ef480")
 		)
 		(pin "C3_In_pos" input
 			(at 58.42 78.74 180)
+			(uuid "abebab04-029f-4b07-9f1e-04597e124839")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "abebab04-029f-4b07-9f1e-04597e124839")
 		)
 		(pin "V_MP3" input
 			(at 58.42 85.09 180)
+			(uuid "18b815dd-9c79-4c97-b3ed-fd22fd1050e4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "18b815dd-9c79-4c97-b3ed-fd22fd1050e4")
 		)
 		(pin "Temp2" input
 			(at 58.42 68.58 180)
+			(uuid "e8688e13-80c3-4c79-9b64-24c3a2bc1c66")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e8688e13-80c3-4c79-9b64-24c3a2bc1c66")
 		)
 		(pin "Temp3" input
 			(at 58.42 82.55 180)
+			(uuid "92ac049d-ced1-4fcf-a71b-ce0834e61f26")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "92ac049d-ced1-4fcf-a71b-ce0834e61f26")
 		)
 		(pin "~FLT" input
 			(at 95.25 50.8 0)
+			(uuid "03641fd3-e10d-44a6-93fd-d7ecf99dce20")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "03641fd3-e10d-44a6-93fd-d7ecf99dce20")
 		)
 		(pin "RDY" input
 			(at 95.25 54.61 0)
+			(uuid "d6ba602e-40ff-45df-860c-0c87a9452c8b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "d6ba602e-40ff-45df-860c-0c87a9452c8b")
 		)
 		(instances
 			(project "Primero_esquematico"
@@ -274,17 +564,23 @@
 	(sheet
 		(at 134.62 54.61)
 		(size 27.94 34.29)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "f0ff413d-26b0-42cf-a9bd-9bb6e2a05cb0")
 		(property "Sheetname" "Core"
 			(at 134.62 53.8984 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -294,6 +590,8 @@
 		)
 		(property "Sheetfile" "core.kicad_sch"
 			(at 134.62 89.4846 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -314,4 +612,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
