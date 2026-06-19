@@ -11,8 +11,8 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 8.382 0)
+			(property "Reference" "U9"
+				(at 2.54 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -21,8 +21,8 @@
 					)
 				)
 			)
-			(property "Value" ""
-				(at 1.27 0 0)
+			(property "Value" "HAH3DR 800-S07/SP4"
+				(at 2.54 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -31,18 +31,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 1.27 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
+			(property "Footprint" "FSAE_footprints:HAH3DR 800-S07SP4"
 				(at 1.27 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -53,7 +42,18 @@
 					)
 				)
 			)
-			(property "Description" ""
+			(property "Datasheet" "https://www.lem.com/sites/default/files/products_datasheets/hah3dr_s0e_series_public_v4.pdf"
+				(at 1.27 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "CURRENT SENSOR HE/OL 600A"
 				(at 1.27 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -306,7 +306,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at -7.62 0 0)
 					(length 2.54)
 					(name "Uc"
@@ -358,7 +358,7 @@
 					(justify left bottom)
 				)
 			)
-			(property "Footprint" "Snapeda:HRS_GT8E-5P-2H_55_"
+			(property "Footprint" "GT8E-5P-2H_55_:HRS_GT8E-5P-2H_55_"
 				(at 0 0 0)
 				(show_name yes)
 				(do_not_autoplace no)
@@ -3043,7 +3043,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "FSAE_footprints:HAH3DR 800-S07SP4"
 			(at 167.64 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -3134,7 +3134,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Snapeda:HRS_GT8E-5P-2H_55_"
+		(property "Footprint" "GT8E-5P-2H_55_:HRS_GT8E-5P-2H_55_"
 			(at 158.75 77.4699 0)
 			(hide yes)
 			(show_name no)

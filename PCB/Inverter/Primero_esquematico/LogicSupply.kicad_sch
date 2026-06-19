@@ -1426,6 +1426,17 @@
 					)
 				)
 			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "ki_keywords" "LED diode"
 				(at 0 0 0)
 				(show_name no)
@@ -2058,7 +2069,163 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Fsae:LM25180QNGURQ1"
+		(symbol "Regulator_Linear:TLV1117-33"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -3.81 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TLV1117-33"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tlv1117.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "800mA Low-Dropout Linear Regulator, 3.3V fixed output, TO-220/TO-252/TO-263/SOT-223"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "linear regulator ldo fixed positive"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT?223* TO?263* TO?252* TO?220*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TLV1117-33_0_1"
+				(rectangle
+					(start -5.08 -5.08)
+					(end 5.08 1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "TLV1117-33_1_1"
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "VO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "VI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Snapeda:LM25180QNGURQ1"
 			(pin_names
 				(offset 0.254)
 			)
@@ -2069,7 +2236,7 @@
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
 				(at 0 2.54 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
 				(effects
 					(font
@@ -2079,7 +2246,7 @@
 			)
 			(property "Value" "LM25180QNGURQ1"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
 				(effects
 					(font
@@ -2089,33 +2256,28 @@
 			)
 			(property "Footprint" "NGU0008C"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
 				)
 			)
 			(property "Datasheet" "https://www.ti.com/lit/gpn/lm25180-q1"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
-						(italic yes)
 					)
 				)
 			)
 			(property "Description" ""
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2368,162 +2530,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Linear:TLV1117-33"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at -3.81 3.175 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TLV1117-33"
-				(at 0 3.175 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tlv1117.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "800mA Low-Dropout Linear Regulator, 3.3V fixed output, TO-220/TO-252/TO-263/SOT-223"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "linear regulator ldo fixed positive"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SOT?223* TO?263* TO?252* TO?220*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TLV1117-33_0_1"
-				(rectangle
-					(start -5.08 -5.08)
-					(end 5.08 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "TLV1117-33_1_1"
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "VO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "VI"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Snapeda:REF2033QDDCRQ1"
 			(pin_names
 				(offset 1.016)
@@ -2555,7 +2561,7 @@
 					(justify left bottom)
 				)
 			)
-			(property "Footprint" "Snapeda:SOT95P0280X110-5N"
+			(property "Footprint" "REF2033QDDCRQ1:SOT95P0280X110-5N"
 				(at 0 0 0)
 				(show_name yes)
 				(do_not_autoplace no)
@@ -2759,7 +2765,7 @@
 		)
 		(symbol "Snapeda:TPS7A2050PDBVR"
 			(pin_names
-				(offset 0.254)
+				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2767,26 +2773,28 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
-				(at 0 2.54 0)
+				(at -12.7 8.382 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
 			(property "Value" "TPS7A2050PDBVR"
-				(at 0 0 0)
+				(at -12.7 -10.16 0)
 				(show_name yes)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" "Snapeda:DBV0005A-IPC_A"
+			(property "Footprint" "TPS7A2050PDBVR:SOT95P280X145-5N"
 				(at 0 0 0)
 				(show_name yes)
 				(do_not_autoplace no)
@@ -2794,9 +2802,10 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(property "Datasheet" "https://www.ti.com/lit/gpn/tps7a20"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(show_name yes)
 				(do_not_autoplace no)
@@ -2816,91 +2825,299 @@
 					)
 				)
 			)
-			(property "ki_locked" ""
+			(property "MAXIMUM_PACKAGE_HEIGHT" "1.45mm"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(property "ki_keywords" "TPS7A2050PDBVR"
+			(property "CREATOR" "ANA"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(property "ki_fp_filters" "DBV0005A-IPC_A DBV0005A-IPC_B DBV0005A-IPC_C DBV0005A-MFG"
+			(property "STANDARD" "IPC-7351B"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(symbol "TPS7A2050PDBVR_0_1"
-				(polyline
-					(pts
-						(xy 5.08 5.08) (xy 5.08 -12.7)
+			(property "PARTREV" "H"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
 					)
+					(justify bottom)
+				)
+			)
+			(property "VERIFIER" "RODRIGO"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MANUFACTURER" "Texas Instruments"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(symbol "TPS7A2050PDBVR_0_0"
+				(rectangle
+					(start -12.7 -7.62)
+					(end 12.7 7.62)
 					(stroke
-						(width 0.2032)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
-				(polyline
-					(pts
-						(xy 5.08 -12.7) (xy 25.4 -12.7)
+				(pin input line
+					(at -17.78 5.08 0)
+					(length 5.08)
+					(name "IN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
 					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 25.4 5.08) (xy 5.08 5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 25.4 -12.7) (xy 25.4 5.08)
-					)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
 					)
 				)
 				(pin power_in line
-					(at 0 0 0)
+					(at 17.78 -5.08 180)
 					(length 5.08)
-					(name "IN"
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 0 0)
+					(length 5.08)
+					(name "EN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -17.78 -5.08 0)
+					(length 5.08)
+					(name "N/C"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 5.08 180)
+					(length 5.08)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+12V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+12V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+12V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+12V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2908,78 +3125,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 30.48 -10.16 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 -5.08 0)
-					(length 5.08)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 0 -10.16 0)
-					(length 5.08)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 30.48 0 180)
-					(length 5.08)
-					(name "OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4121,12 +4266,6 @@
 		(uuid "dfc7c2bd-1be7-447e-80f3-498918062f12")
 	)
 	(junction
-		(at 226.06 92.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e6a137f3-b87b-4114-a68f-42d9fc5cfaa4")
-	)
-	(junction
 		(at 91.44 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4698,6 +4837,16 @@
 	)
 	(wire
 		(pts
+			(xy 31.75 72.39) (xy 40.64 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5917586-fb3c-4409-ae53-848b76f65f5e")
+	)
+	(wire
+		(pts
 			(xy 153.67 95.25) (xy 152.4 95.25)
 		)
 		(stroke
@@ -4765,6 +4914,16 @@
 			(type default)
 		)
 		(uuid "d1edcb1f-92a9-41be-a997-eb1ac9f8a29d")
+	)
+	(wire
+		(pts
+			(xy 31.75 71.12) (xy 31.75 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d64ea99c-c6a4-4a9a-b7ea-69cd375c4e1e")
 	)
 	(wire
 		(pts
@@ -4885,16 +5044,6 @@
 			(type default)
 		)
 		(uuid "f846593d-a869-4666-911c-6d9de81e3d14")
-	)
-	(wire
-		(pts
-			(xy 36.83 72.39) (xy 40.64 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa3225f2-5ee8-4e97-bd42-8bb168b4383f")
 	)
 	(wire
 		(pts
@@ -5225,17 +5374,6 @@
 		)
 		(uuid "e9c4c377-d2db-46cf-ac49-bdd8798a5f34")
 	)
-	(hierarchical_label "Vin_FB"
-		(shape input)
-		(at 36.83 72.39 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a2827ff8-1d45-45e5-8db0-7d97c101abce")
-	)
 	(symbol
 		(lib_id "Device:D_TVS")
 		(at 78.74 77.47 270)
@@ -5292,7 +5430,7 @@
 				)
 			)
 		)
-		(property "Description" "21.5V Clamp 139.53A Ipp Tvs Diode Surface Mount DO-214AB (SMCJ)"
+		(property "Description" "Bidirectional transient-voltage-suppression diode"
 			(at 78.74 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -5462,7 +5600,7 @@
 				)
 			)
 		)
-		(property "Description" "CAP ALUMHYB 270UF 20% 50V SMD"
+		(property "Description" "Polarized capacitor, small US symbol"
 			(at 57.15 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -5649,7 +5787,7 @@
 				)
 			)
 		)
-		(property "Description" "LED RED CLEAR CHIP SMD"
+		(property "Description" "Light emitting diode"
 			(at 255.27 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -5662,6 +5800,17 @@
 		)
 		(property "Compra" "https://www.digikey.com/en/products/detail/kingbright/APT2012EC/1747527"
 			(at 255.27 67.31 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 255.27 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5873,7 +6022,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Snapeda:SOT95P0280X110-5N"
+		(property "Footprint" "REF2033QDDCRQ1:SOT95P0280X110-5N"
 			(at 242.57 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -5997,6 +6146,118 @@
 		)
 	)
 	(symbol
+		(lib_id "Snapeda:LM25180QNGURQ1")
+		(at 134.62 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1d2b51ad-d096-4981-b803-997b523f0ca3")
+		(property "Reference" "U31"
+			(at 134.62 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "LM25180QNGURQ1"
+			(at 134.62 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "NGU0008C"
+			(at 134.62 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/gpn/lm25180-q1"
+			(at 134.62 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" ""
+			(at 134.62 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "16c70e7b-b471-48ee-a43f-6b5755c4dead")
+		)
+		(pin "2"
+			(uuid "244cfb83-3c07-47b2-a3b7-73750d0c5362")
+		)
+		(pin "1"
+			(uuid "c6f58bfb-96f8-46ee-8312-7d0a17169a7b")
+		)
+		(pin "4"
+			(uuid "d076216c-94f5-423b-b765-1b03d81c6015")
+		)
+		(pin "7"
+			(uuid "b64e8a68-b480-4a85-bb5d-ec5da22cfd1c")
+		)
+		(pin "8"
+			(uuid "28e0f818-4083-48de-b7ea-05fdaf89a643")
+		)
+		(pin "9"
+			(uuid "eea2543d-8790-4eec-b5a5-9dd49cedcf93")
+		)
+		(pin "6"
+			(uuid "15e75ea9-e296-404a-8ba7-3e5466bfcb7b")
+		)
+		(pin "3"
+			(uuid "45058c88-01e5-4ca3-9c1e-4281ae55a74d")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "U31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 255.27 59.69 0)
 		(mirror y)
@@ -6085,120 +6346,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
 					(reference "R77")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Fsae:LM25180QNGURQ1")
-		(at 134.62 82.55 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "227ef452-a9e3-411b-8885-19ae0e741b1e")
-		(property "Reference" "U10"
-			(at 134.62 62.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "LM25180QNGURQ1"
-			(at 134.62 64.77 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "NGU0008C"
-			(at 134.62 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/gpn/lm25180-q1"
-			(at 134.62 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 134.62 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 134.62 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "9"
-			(uuid "c5ce4640-106d-43f2-9ab0-45e6b321f04c")
-		)
-		(pin "8"
-			(uuid "be20b8b7-ad19-4fb7-960c-24aec69c71b9")
-		)
-		(pin "5"
-			(uuid "ac60257b-0236-45fc-ac1f-15d3eff7694c")
-		)
-		(pin "7"
-			(uuid "a93b7862-473e-4fef-8bdc-d1eb07516de3")
-		)
-		(pin "4"
-			(uuid "69607803-8be5-4a37-96da-222bdd16c25c")
-		)
-		(pin "6"
-			(uuid "e248d3ed-a21f-4d92-8a19-5a395fe857fd")
-		)
-		(pin "1"
-			(uuid "7286fbfa-1538-4fc3-a1dc-23538be01101")
-		)
-		(pin "3"
-			(uuid "407be062-8b2d-417e-bd28-bedf65905bb5")
-		)
-		(pin "2"
-			(uuid "6b7b4fbd-18a6-4ae8-bea4-6bfa83c16c78")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
-					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -6844,6 +6991,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+12V")
+		(at 31.75 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4ed5dcf5-2a77-4836-a9e3-ca3b95169fbb")
+		(property "Reference" "#PWR02"
+			(at 31.75 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+12V"
+			(at 31.75 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 31.75 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b6939fda-0a6b-4003-8bc2-549815a050cc")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D_Zener")
 		(at 231.14 62.23 270)
 		(unit 1)
@@ -6899,7 +7124,7 @@
 				)
 			)
 		)
-		(property "Description" "DIODE ZENER 5.6V 500MW SOD523"
+		(property "Description" "Zener diode"
 			(at 231.14 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -7123,7 +7348,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Snapeda:DBV0005A-IPC_A"
+		(property "Footprint" "TPS7A2050PDBVR:SOT95P280X145-5N"
 			(at 241.3 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -7165,6 +7390,72 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "1.45mm"
+			(at 226.06 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "CREATOR" "ANA"
+			(at 226.06 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "IPC-7351B"
+			(at 226.06 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "PARTREV" "H"
+			(at 226.06 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "VERIFIER" "RODRIGO"
+			(at 226.06 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Texas Instruments"
+			(at 226.06 92.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
 			)
 		)
 		(pin "3"
@@ -7307,7 +7598,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_PowerDI-123"
 			(at 162.56 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -7329,7 +7620,7 @@
 				)
 			)
 		)
-		(property "Description" "DIODE ZENER 24V 1W POWERDI 123"
+		(property "Description" "Zener diode"
 			(at 162.56 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -7565,7 +7856,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv1117lv.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1778432058514&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Ftlv1117lv"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tlv1117.pdf"
 			(at 190.5 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -7576,7 +7867,7 @@
 				)
 			)
 		)
-		(property "Description" "IC REG LINEAR 3.3V 1A SOT-223-4"
+		(property "Description" "800mA Low-Dropout Linear Regulator, 3.3V fixed output, TO-220/TO-252/TO-263/SOT-223"
 			(at 190.5 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -7908,7 +8199,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv1117lv.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1778432058514&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Ftlv1117lv"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tlv1117.pdf"
 			(at 190.5 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -7919,7 +8210,7 @@
 				)
 			)
 		)
-		(property "Description" "IC REG LINEAR 3.3V 1A SOT-223-4"
+		(property "Description" "800mA Low-Dropout Linear Regulator, 3.3V fixed output, TO-220/TO-252/TO-263/SOT-223"
 			(at 190.5 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -8012,7 +8303,7 @@
 				)
 			)
 		)
-		(property "Description" "Flyback Converters For For DC/DC Converters SMPS Transformer Isolation 350kHz Surface Mount"
+		(property "Description" "Transformer, single primary, single secondary"
 			(at 191.77 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8177,7 +8468,7 @@
 				)
 			)
 		)
-		(property "Description" "4.7 µF ±10% 25V Ceramic Capacitor X7R 1206 (3216 Metric)"
+		(property "Description" "Unpolarized capacitor"
 			(at 68.58 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -8930,7 +9221,7 @@
 				)
 			)
 		)
-		(property "Description" "DIODE SCHOTTKY 100V 1A DO214AC"
+		(property "Description" "Schottky diode"
 			(at 209.55 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -9285,7 +9576,7 @@
 				)
 			)
 		)
-		(property "Description" "6.8 µH Shielded Multilayer Inductor 550 mA 250mOhm 0805 (2012 Metric)"
+		(property "Description" "Inductor"
 			(at 44.45 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -9456,7 +9747,7 @@
 				)
 			)
 		)
-		(property "Description" "DIODE STANDARD 75V 150MA SOD323F"
+		(property "Description" "Diode"
 			(at 162.56 67.31 0)
 			(hide yes)
 			(show_name no)

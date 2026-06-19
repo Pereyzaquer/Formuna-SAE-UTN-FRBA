@@ -503,7 +503,8 @@
     "pinned_footprint_libs": [
       "FSAE-footprints",
       "NuevoGui",
-      "Snapeda"
+      "Snapeda",
+      "FSAE_footprints"
     ],
     "pinned_symbol_libs": [
       "Fsae",
@@ -759,6 +760,18 @@
           "label": "Purchase-URL",
           "name": "Purchase-URL",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MFR_NAME",
+          "name": "MFR_NAME",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER_PART_NUMBER",
+          "name": "MANUFACTURER_PART_NUMBER",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -798,6 +811,14 @@
       "version": 1
     },
     "net_format_name": "",
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 4,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "reuse_designators": true,
@@ -816,7 +837,7 @@
         "uuid": "d930f486-f6ac-489c-907e-47f2cb34cf04"
       }
     ],
-    "used_designators": "L1-7,T1,#PWR1-221,D1-64,J1-11,R3-194,C1-113,U1-30,TH1,PS1,TP1-7,Y1",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
@@ -825,7 +846,7 @@
       "Primero_esquematico"
     ],
     [
-      "07abf2f4-12ca-4cb5-9919-731c875d664e",
+      "3145a225-26ad-4004-be15-8a1076c951ad",
       "12V_Filtrada"
     ],
     [

@@ -71,6 +71,17 @@
 					)
 				)
 			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
 			(property "ki_keywords" "LED diode"
 				(at 0 0 0)
 				(show_name no)
@@ -608,7 +619,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Fsae:FS950R08A6P2BBPSA1"
+		(symbol "Snapeda:FS950R08A6P2BBPSA1"
 			(pin_names
 				(offset 1.016)
 			)
@@ -619,7 +630,7 @@
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
 				(at -12.7 11.43 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
 				(effects
 					(font
@@ -630,7 +641,7 @@
 			)
 			(property "Value" "FS950R08A6P2BBPSA1"
 				(at -12.7 -11.43 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
 				(effects
 					(font
@@ -639,11 +650,10 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "Snapeda:IC_FS950R08A6P2BBPSA1"
+			(property "Footprint" "FS950R08A6P2BBPSA1:IC_FS950R08A6P2BBPSA1"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -653,31 +663,29 @@
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
 			(property "DigiKey_Part_Number" "448-FS950R08A6P2BBPSA1-ND"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -687,9 +695,8 @@
 			)
 			(property "SnapEDA_Link" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=snap"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -699,9 +706,8 @@
 			)
 			(property "MAXIMUM_PACKAGE_HEIGHT" "25.75mm"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -711,9 +717,8 @@
 			)
 			(property "Package" "AG-HYBRIDD-1 Infineon Technologies"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -723,9 +728,8 @@
 			)
 			(property "Check_prices" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=eda"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -735,9 +739,8 @@
 			)
 			(property "STANDARD" "Manufacturer Recommendations"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -747,9 +750,8 @@
 			)
 			(property "PARTREV" "3.0"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -759,9 +761,8 @@
 			)
 			(property "MF" "Infineon Technologies"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -771,21 +772,8 @@
 			)
 			(property "MP" "FS950R08A6P2BBPSA1"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Description_1" "\n                        \n                            IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1\n                        \n"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -795,9 +783,8 @@
 			)
 			(property "MANUFACTURER" "Infineon Technologies"
 				(at 0 0 0)
-				(show_name no)
+				(show_name yes)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3818,6 +3805,193 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:GNDPWR"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GNDPWR"
+				(at 0 -3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GNDPWR_0_1"
+				(polyline
+					(pts
+						(xy -1.016 -1.27) (xy -1.27 -2.032) (xy -1.27 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -1.27) (xy -0.762 -2.032) (xy -0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -0.254 -2.032) (xy -0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 -1.27) (xy 0.254 -2.032) (xy 0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy -1.016 -1.27) (xy -1.016 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GNDPWR_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(rectangle
 		(start 99.06 13.97)
@@ -3915,18 +4089,12 @@
 		)
 		(uuid "b687040f-e276-4182-a571-843cba34be3d")
 	)
-	(junction
-		(at 16.5358 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ab640229-5815-4919-be46-724fb74b8d74")
-	)
 	(no_connect
 		(at 179.07 35.56)
 		(uuid "09df22c1-0366-43eb-a69c-0ba30b13649b")
 	)
 	(no_connect
-		(at 227.33 41.91)
+		(at 227.33 38.1)
 		(uuid "466fc4c5-0ee8-49d0-ab54-404b8c1f5232")
 	)
 	(no_connect
@@ -3942,12 +4110,12 @@
 		(uuid "bbd1270d-06dd-4c4b-a322-1358fec6f326")
 	)
 	(no_connect
-		(at 223.52 135.89)
+		(at 223.52 129.54)
 		(uuid "f32c4b83-cd1a-4372-9c93-278fa08bc9b1")
 	)
 	(wire
 		(pts
-			(xy 26.67 50.8) (xy 29.21 50.8)
+			(xy 26.67 44.45) (xy 29.21 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3987,17 +4155,7 @@
 	)
 	(wire
 		(pts
-			(xy 16.5358 38.1) (xy 16.51 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ee6596f-264f-43c6-9004-29773c1f77d0")
-	)
-	(wire
-		(pts
-			(xy 27.94 109.22) (xy 25.4 109.22)
+			(xy 27.94 102.87) (xy 25.4 102.87)
 		)
 		(stroke
 			(width 0)
@@ -4007,7 +4165,17 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 101.6) (xy 27.94 101.6)
+			(xy 27.94 134.62) (xy 29.21 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1687fbf3-bc9c-4384-912e-b0becd542bc4")
+	)
+	(wire
+		(pts
+			(xy 25.4 95.25) (xy 27.94 95.25)
 		)
 		(stroke
 			(width 0)
@@ -4087,33 +4255,13 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 58.42) (xy 26.67 58.42)
+			(xy 29.21 52.07) (xy 26.67 52.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "204ed145-d7e0-48ad-b8ee-043173eb2461")
-	)
-	(wire
-		(pts
-			(xy 20.32 46.99) (xy 29.21 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "258bbf9f-1fc5-45b3-a60d-8788d8be6716")
-	)
-	(wire
-		(pts
-			(xy 29.21 132.08) (xy 16.51 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2837fe1a-61a3-4d0b-b6a4-6143d448fd83")
 	)
 	(wire
 		(pts
@@ -4124,16 +4272,6 @@
 			(type default)
 		)
 		(uuid "29a06f3f-744d-451d-ba7e-02c56d303148")
-	)
-	(wire
-		(pts
-			(xy 233.68 110.49) (xy 242.57 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c345079-fe30-46e9-b979-57a1a090a865")
 	)
 	(wire
 		(pts
@@ -4157,7 +4295,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 50.8) (xy 232.41 50.8)
+			(xy 227.33 45.72) (xy 232.41 45.72)
 		)
 		(stroke
 			(width 0)
@@ -4187,7 +4325,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 62.23) (xy 232.41 62.23)
+			(xy 227.33 57.15) (xy 232.41 57.15)
 		)
 		(stroke
 			(width 0)
@@ -4217,7 +4355,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 156.21) (xy 26.67 156.21)
+			(xy 29.21 149.86) (xy 27.94 149.86)
 		)
 		(stroke
 			(width 0)
@@ -4227,7 +4365,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 58.42) (xy 232.41 58.42)
+			(xy 227.33 53.34) (xy 232.41 53.34)
 		)
 		(stroke
 			(width 0)
@@ -4237,17 +4375,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 102.87) (xy 88.9 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49322299-a08b-413c-acfa-d4b717ebb0ec")
-	)
-	(wire
-		(pts
-			(xy 223.52 144.78) (xy 226.06 144.78)
+			(xy 223.52 138.43) (xy 226.06 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4277,7 +4405,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 156.21) (xy 226.06 156.21)
+			(xy 223.52 149.86) (xy 226.06 149.86)
 		)
 		(stroke
 			(width 0)
@@ -4287,7 +4415,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 148.59) (xy 29.21 148.59)
+			(xy 27.94 142.24) (xy 29.21 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4297,7 +4425,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 105.41) (xy 204.47 105.41)
+			(xy 199.39 99.06) (xy 204.47 99.06)
 		)
 		(stroke
 			(width 0)
@@ -4307,33 +4435,33 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 140.97) (xy 29.21 140.97)
+			(xy 204.47 87.63) (xy 199.39 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6c6e859c-04d7-4753-9174-6e8bd86f12d6")
+		(uuid "6773c815-c95b-4363-98e2-2ea0caf238da")
 	)
 	(wire
 		(pts
-			(xy 27.94 85.09) (xy 15.24 85.09)
+			(xy 232.41 41.91) (xy 227.33 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "73b7325b-5955-4bd8-8093-d41142cecbf4")
+		(uuid "6b9e589b-9614-43a3-8258-2cd474298f15")
 	)
 	(wire
 		(pts
-			(xy 236.22 46.99) (xy 227.33 46.99)
+			(xy 26.67 40.64) (xy 29.21 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "744e3964-4618-43b5-b381-56e11cff9e39")
+		(uuid "6f32da63-a5ad-4502-b21f-ccc377fe869b")
 	)
 	(wire
 		(pts
@@ -4344,16 +4472,6 @@
 			(type default)
 		)
 		(uuid "745b4e5f-abc3-4f62-8546-679a05e0f084")
-	)
-	(wire
-		(pts
-			(xy 29.21 38.1) (xy 16.5358 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74eedac6-2aa3-4078-9cc9-6d187ce95f58")
 	)
 	(wire
 		(pts
@@ -4377,7 +4495,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 101.6) (xy 204.47 101.6)
+			(xy 199.39 95.25) (xy 204.47 95.25)
 		)
 		(stroke
 			(width 0)
@@ -4397,7 +4515,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 152.4) (xy 226.06 152.4)
+			(xy 223.52 146.05) (xy 226.06 146.05)
 		)
 		(stroke
 			(width 0)
@@ -4407,7 +4525,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 88.9) (xy 199.39 88.9)
+			(xy 204.47 82.55) (xy 199.39 82.55)
 		)
 		(stroke
 			(width 0)
@@ -4437,7 +4555,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 105.41) (xy 25.4 105.41)
+			(xy 27.94 99.06) (xy 25.4 99.06)
 		)
 		(stroke
 			(width 0)
@@ -4457,16 +4575,6 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 81.28) (xy 27.94 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87f17067-67ba-420e-ae6e-67689588bc82")
-	)
-	(wire
-		(pts
 			(xy 77.47 139.7) (xy 90.17 139.7)
 		)
 		(stroke
@@ -4477,7 +4585,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 54.61) (xy 29.21 54.61)
+			(xy 26.67 48.26) (xy 29.21 48.26)
 		)
 		(stroke
 			(width 0)
@@ -4497,7 +4605,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 88.9) (xy 27.94 88.9)
+			(xy 22.86 82.55) (xy 27.94 82.55)
 		)
 		(stroke
 			(width 0)
@@ -4507,17 +4615,17 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 93.98) (xy 199.39 93.98)
+			(xy 226.06 134.62) (xy 223.52 134.62)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "948df126-0216-4a4f-9e78-1ce30e8a4ea2")
+		(uuid "93dec6b7-83df-477c-ad49-eb59d64ab107")
 	)
 	(wire
 		(pts
-			(xy 223.52 148.59) (xy 226.06 148.59)
+			(xy 223.52 142.24) (xy 226.06 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4534,16 +4642,6 @@
 			(type default)
 		)
 		(uuid "96282578-510b-4266-bb71-1c014a098d26")
-	)
-	(wire
-		(pts
-			(xy 25.4 128.27) (xy 29.21 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c1a2f07-140e-42ed-b5ee-da40b469e078")
 	)
 	(wire
 		(pts
@@ -4567,37 +4665,17 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 38.1) (xy 242.57 38.1)
+			(xy 25.4 87.63) (xy 27.94 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a330be3e-c01b-481c-80a6-4ab4da014142")
+		(uuid "b002655b-627b-4540-95bc-de63423e3567")
 	)
 	(wire
 		(pts
-			(xy 81.28 149.86) (xy 90.17 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "afaedf7e-9051-4a72-8056-c90cb5433ce0")
-	)
-	(wire
-		(pts
-			(xy 227.33 128.27) (xy 223.52 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b18d6776-90c4-473c-bc39-b12cecdae93c")
-	)
-	(wire
-		(pts
-			(xy 24.13 135.89) (xy 29.21 135.89)
+			(xy 25.4 129.54) (xy 29.21 129.54)
 		)
 		(stroke
 			(width 0)
@@ -4627,26 +4705,6 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 132.08) (xy 236.22 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5947587-f5f3-42db-8ccf-c7eb933f7930")
-	)
-	(wire
-		(pts
-			(xy 25.4 34.29) (xy 29.21 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b985ff21-9354-49fc-8bdc-7b4a9a3b6182")
-	)
-	(wire
-		(pts
 			(xy 124.46 76.2) (xy 90.17 76.2)
 		)
 		(stroke
@@ -4667,7 +4725,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 144.78) (xy 29.21 144.78)
+			(xy 27.94 138.43) (xy 29.21 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4677,7 +4735,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 97.79) (xy 204.47 97.79)
+			(xy 199.39 91.44) (xy 204.47 91.44)
 		)
 		(stroke
 			(width 0)
@@ -4697,23 +4755,13 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 152.4) (xy 26.67 152.4)
+			(xy 29.21 146.05) (xy 27.94 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c7bfb16e-aad6-45f8-a82f-ee28c36e7cf6")
-	)
-	(wire
-		(pts
-			(xy 81.28 55.88) (xy 90.17 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cbbd4f8d-8b33-4ed5-95a3-ed4a9c049c78")
 	)
 	(wire
 		(pts
@@ -4737,7 +4785,7 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 41.91) (xy 29.21 41.91)
+			(xy 24.13 35.56) (xy 29.21 35.56)
 		)
 		(stroke
 			(width 0)
@@ -4757,33 +4805,13 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 85.09) (xy 213.36 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d87d0bc0-2791-45c9-b325-6fbe94602f36")
-	)
-	(wire
-		(pts
-			(xy 29.21 62.23) (xy 26.67 62.23)
+			(xy 29.21 55.88) (xy 26.67 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "dccfdba0-6d60-43ea-b5d9-298f47f28d07")
-	)
-	(wire
-		(pts
-			(xy 237.49 106.68) (xy 242.57 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ddb01a54-9362-4a49-a448-76ba6dbd76af")
 	)
 	(wire
 		(pts
@@ -4807,26 +4835,6 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 34.29) (xy 227.33 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e854853a-a7e0-4ab7-ac83-6de27a8e00c6")
-	)
-	(wire
-		(pts
-			(xy 19.05 93.98) (xy 27.94 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e8ff6648-0c0e-4a27-b61c-e0df787112a7")
-	)
-	(wire
-		(pts
 			(xy 125.73 29.21) (xy 91.44 29.21)
 		)
 		(stroke
@@ -4847,7 +4855,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 109.22) (xy 204.47 109.22)
+			(xy 199.39 102.87) (xy 204.47 102.87)
 		)
 		(stroke
 			(width 0)
@@ -4867,7 +4875,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 54.61) (xy 232.41 54.61)
+			(xy 227.33 49.53) (xy 232.41 49.53)
 		)
 		(stroke
 			(width 0)
@@ -4877,17 +4885,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 81.28) (xy 199.39 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8eb566a-de29-4d73-b8a3-7cff5c2386f6")
-	)
-	(wire
-		(pts
-			(xy 25.4 97.79) (xy 27.94 97.79)
+			(xy 25.4 91.44) (xy 27.94 91.44)
 		)
 		(stroke
 			(width 0)
@@ -4904,16 +4902,6 @@
 			(type default)
 		)
 		(uuid "fc5429d2-92eb-4bff-bc29-307475e8b287")
-	)
-	(wire
-		(pts
-			(xy 232.41 140.97) (xy 223.52 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd42b2b0-dc5e-4e33-9912-d80f5df3826a")
 	)
 	(image
 		(at 178.054 19.304)
@@ -5172,16 +5160,6 @@
 			"AIAPAiYAAAAA8EHABAAAAAAxGfP/Imhjjn2WqhQAAAAASUVORK5CYII="
 		)
 	)
-	(label "Reset"
-		(at 20.32 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0b4fb6dd-a509-49c4-a53b-164de7e4e4cf")
-	)
 	(label "MP_1"
 		(at 229.87 87.63 0)
 		(effects
@@ -5192,16 +5170,6 @@
 			(justify left bottom)
 		)
 		(uuid "0f96adaa-0523-4e0e-831b-1bc41c0dbe57")
-	)
-	(label "Reset"
-		(at 20.32 46.99 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1c3725b1-df89-4302-9cb1-b224cb2315e8")
 	)
 	(label "MP_1"
 		(at 128.27 45.72 0)
@@ -5215,26 +5183,6 @@
 		)
 		(uuid "2053622f-5b1d-4d71-b0f7-7e6f557d5739")
 	)
-	(label "Reset"
-		(at 232.41 140.97 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "29a65e4d-825f-4d51-98e1-43453e659a3d")
-	)
-	(label "GND_DC"
-		(at 81.28 149.86 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "36cdba9b-5615-4b70-b428-150b15cf98f1")
-	)
 	(label "VCC_DC"
 		(at 134.62 55.88 180)
 		(effects
@@ -5244,36 +5192,6 @@
 			(justify right bottom)
 		)
 		(uuid "38bde32a-3010-4425-a653-1649c96e2341")
-	)
-	(label "GND_DC"
-		(at 81.28 55.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4bb573b2-b578-400f-9a9b-3677ab81967f")
-	)
-	(label "Reset"
-		(at 19.05 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "659e9ff0-0bb0-49bf-a669-fc0f5ff071ed")
-	)
-	(label "Reset"
-		(at 236.22 46.99 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "82d6bf5a-8a7c-49a7-96fa-a6f524e0ea3a")
 	)
 	(label "VCC_DC"
 		(at 229.87 82.55 0)
@@ -5297,26 +5215,6 @@
 		)
 		(uuid "9414c371-8e6f-4107-a94d-9a357617460f")
 	)
-	(label "GND_DC"
-		(at 80.01 102.87 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9625c2cd-3c5a-4765-9848-ed47669a69d7")
-	)
-	(label "GND_DC"
-		(at 233.68 110.49 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a4fcfbf1-ba4f-4e32-b1f6-390ba8bda75a")
-	)
 	(label "MP_2"
 		(at 229.87 92.71 0)
 		(effects
@@ -5327,16 +5225,6 @@
 			(justify left bottom)
 		)
 		(uuid "a81ebc44-ae6a-4f48-9f4a-f69a50d68308")
-	)
-	(label "Reset"
-		(at 207.01 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b5570290-10a6-4bce-ad6a-c0712389f942")
 	)
 	(label "VCC_DC"
 		(at 133.35 102.87 180)
@@ -5392,20 +5280,9 @@
 		)
 		(uuid "03751299-7815-4697-be4a-36b2e10fe13b")
 	)
-	(hierarchical_label "12V"
-		(shape input)
-		(at 232.41 34.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "09c86c42-442a-488e-996f-3e3b9db653ea")
-	)
 	(hierarchical_label "C1_In_pos"
 		(shape input)
-		(at 232.41 50.8 0)
+		(at 232.41 45.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5416,7 +5293,7 @@
 	)
 	(hierarchical_label "TEMP_PCB"
 		(shape input)
-		(at 204.47 88.9 0)
+		(at 204.47 82.55 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5427,7 +5304,7 @@
 	)
 	(hierarchical_label "RDY"
 		(shape input)
-		(at 232.41 62.23 0)
+		(at 232.41 57.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5438,7 +5315,7 @@
 	)
 	(hierarchical_label "~FLT"
 		(shape input)
-		(at 26.67 152.4 180)
+		(at 27.94 146.05 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5458,9 +5335,20 @@
 		)
 		(uuid "255b4993-9aa5-45eb-b65e-218827d3be33")
 	)
+	(hierarchical_label "Reset{slash}EN"
+		(shape input)
+		(at 232.41 41.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "349c34ed-9155-4942-8ad5-8cc9c0f66046")
+	)
 	(hierarchical_label "~FLT"
 		(shape input)
-		(at 204.47 105.41 0)
+		(at 204.47 99.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5482,7 +5370,7 @@
 	)
 	(hierarchical_label "C2_In_pos"
 		(shape input)
-		(at 204.47 97.79 0)
+		(at 204.47 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5493,7 +5381,7 @@
 	)
 	(hierarchical_label "C2_In_neg"
 		(shape input)
-		(at 204.47 101.6 0)
+		(at 204.47 95.25 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5502,9 +5390,20 @@
 		)
 		(uuid "51b87ba5-8f53-4392-8ae8-ac7898768e29")
 	)
+	(hierarchical_label "Reset{slash}EN"
+		(shape input)
+		(at 226.06 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "537cd62c-3a67-4cdf-b488-0819bc9650da")
+	)
 	(hierarchical_label "C3_In_pos"
 		(shape input)
-		(at 25.4 101.6 180)
+		(at 25.4 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5515,7 +5414,7 @@
 	)
 	(hierarchical_label "Temp1"
 		(shape input)
-		(at 24.13 41.91 180)
+		(at 24.13 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5537,7 +5436,7 @@
 	)
 	(hierarchical_label "C2_In_neg"
 		(shape input)
-		(at 25.4 97.79 180)
+		(at 25.4 91.44 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5548,7 +5447,7 @@
 	)
 	(hierarchical_label "C1_In_neg"
 		(shape input)
-		(at 232.41 54.61 0)
+		(at 232.41 49.53 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5559,7 +5458,7 @@
 	)
 	(hierarchical_label "~FLT"
 		(shape input)
-		(at 26.67 58.42 180)
+		(at 26.67 52.07 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5570,7 +5469,7 @@
 	)
 	(hierarchical_label "C3_In_pos"
 		(shape input)
-		(at 26.67 148.59 180)
+		(at 27.94 142.24 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5592,7 +5491,7 @@
 	)
 	(hierarchical_label "~FLT"
 		(shape input)
-		(at 232.41 58.42 0)
+		(at 232.41 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5603,7 +5502,7 @@
 	)
 	(hierarchical_label "RDY"
 		(shape input)
-		(at 26.67 62.23 180)
+		(at 26.67 55.88 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5614,7 +5513,7 @@
 	)
 	(hierarchical_label "C3_In_pos"
 		(shape input)
-		(at 226.06 144.78 0)
+		(at 226.06 138.43 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5625,7 +5524,7 @@
 	)
 	(hierarchical_label "RDY"
 		(shape input)
-		(at 26.67 156.21 180)
+		(at 27.94 149.86 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5636,7 +5535,7 @@
 	)
 	(hierarchical_label "RDY"
 		(shape input)
-		(at 226.06 156.21 0)
+		(at 226.06 149.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5647,7 +5546,7 @@
 	)
 	(hierarchical_label "Temp3"
 		(shape input)
-		(at 24.13 135.89 180)
+		(at 25.4 129.54 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5658,7 +5557,7 @@
 	)
 	(hierarchical_label "C3_In_neg"
 		(shape input)
-		(at 226.06 148.59 0)
+		(at 226.06 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5680,7 +5579,7 @@
 	)
 	(hierarchical_label "RDY"
 		(shape input)
-		(at 25.4 109.22 180)
+		(at 25.4 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5691,7 +5590,7 @@
 	)
 	(hierarchical_label "C3_In_neg"
 		(shape input)
-		(at 26.67 144.78 180)
+		(at 27.94 138.43 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5702,7 +5601,7 @@
 	)
 	(hierarchical_label "RDY"
 		(shape input)
-		(at 204.47 109.22 0)
+		(at 204.47 102.87 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5713,7 +5612,7 @@
 	)
 	(hierarchical_label "C1_In_pos"
 		(shape input)
-		(at 26.67 54.61 180)
+		(at 26.67 48.26 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5722,9 +5621,20 @@
 		)
 		(uuid "94b3f246-924a-4e99-bda8-6dd1254c963a")
 	)
+	(hierarchical_label "Reset{slash}EN"
+		(shape input)
+		(at 26.67 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9596222c-c8df-4803-b059-81eced2d7d5a")
+	)
 	(hierarchical_label "C1_In_neg"
 		(shape input)
-		(at 26.67 50.8 180)
+		(at 26.67 44.45 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5733,42 +5643,31 @@
 		)
 		(uuid "97ef2388-138b-4679-98ed-ff69112ca28e")
 	)
-	(hierarchical_label "12V"
+	(hierarchical_label "Reset{slash}EN"
 		(shape input)
-		(at 25.4 128.27 180)
+		(at 25.4 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "a7270a76-7763-4bb2-a9fd-5f7ec31f1b1c")
+		(uuid "a893bff4-20e6-4825-b4ab-aa2d0fe4ff73")
 	)
-	(hierarchical_label "12V"
+	(hierarchical_label "Reset{slash}EN"
 		(shape input)
-		(at 24.13 81.28 180)
+		(at 27.94 134.62 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "a75ff693-8110-495c-b9da-ae94b014492d")
-	)
-	(hierarchical_label "12V"
-		(shape input)
-		(at 227.33 128.27 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c9cc5730-6236-4073-99b8-d3bc28f627ba")
+		(uuid "c1133998-d03d-4e73-9d83-a6336208e0c4")
 	)
 	(hierarchical_label "Temp2"
 		(shape input)
-		(at 22.86 88.9 180)
+		(at 22.86 82.55 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5777,31 +5676,20 @@
 		)
 		(uuid "cef6ab3a-fa65-41f1-97f9-53ed1da4c098")
 	)
-	(hierarchical_label "12V"
+	(hierarchical_label "Reset{slash}EN"
 		(shape input)
-		(at 237.49 106.68 180)
+		(at 204.47 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "f1cc7906-9830-4be9-ac5f-dfb86d66d589")
-	)
-	(hierarchical_label "12V"
-		(shape input)
-		(at 25.4 34.29 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f3bad018-680f-4a1b-949b-39c065ff3ba6")
+		(uuid "d11cbff8-3300-4a92-a687-267686614e9b")
 	)
 	(hierarchical_label "~FLT"
 		(shape input)
-		(at 25.4 105.41 180)
+		(at 25.4 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5821,20 +5709,9 @@
 		)
 		(uuid "fb72c610-ee1e-47b7-882f-cdf676cce9f4")
 	)
-	(hierarchical_label "12V"
-		(shape input)
-		(at 204.47 81.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fe4cab55-d170-4853-9f05-782141de6aa3")
-	)
 	(hierarchical_label "~FLT"
 		(shape input)
-		(at 226.06 152.4 0)
+		(at 226.06 146.05 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5844,8 +5721,8 @@
 		(uuid "ff386f88-1e1a-4148-8e27-ed45b8d586be")
 	)
 	(symbol
-		(lib_id "power:+3.3VA")
-		(at 16.5358 38.1 0)
+		(lib_id "Snapeda:FS950R08A6P2BBPSA1")
+		(at 107.95 48.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5853,11 +5730,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "00a1e0ce-9750-459f-807c-76b9ba8003f3")
-		(property "Reference" "#PWR0112"
-			(at 16.5358 41.91 0)
-			(hide yes)
+		(uuid "02e3993d-7832-47cc-8412-90ef8015aaea")
+		(property "Reference" "U2"
+			(at 107.188 32.766 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5866,8 +5741,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3VA"
-			(at 16.5358 33.02 0)
+		(property "Value" "FS950R08A6P2BBPSA1"
+			(at 107.188 35.306 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5876,8 +5751,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 16.5358 38.1 0)
+		(property "Footprint" "FS950R08A6P2BBPSA1:IC_FS950R08A6P2BBPSA1"
+			(at 107.95 7.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5888,7 +5763,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 16.5358 38.1 0)
+			(at 107.95 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5898,8 +5773,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 16.5358 38.1 0)
+		(property "Description" "IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1"
+			(at 107.95 10.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5909,13 +5784,192 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "8319272e-2d39-47b2-a346-d09b531be13a")
+		(property "DigiKey_Part_Number" "448-FS950R08A6P2BBPSA1-ND"
+			(at 107.95 12.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=snap"
+			(at 107.95 15.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "25.75mm"
+			(at 107.95 17.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" "AG-HYBRIDD-1 Infineon Technologies"
+			(at 107.95 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=eda"
+			(at 107.95 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 107.95 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" "3.0"
+			(at 107.95 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" "Infineon Technologies"
+			(at 107.95 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" "FS950R08A6P2BBPSA1"
+			(at 107.95 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Infineon Technologies"
+			(at 107.95 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "T1"
+			(uuid "0382ae77-fda5-4cfe-b40e-caca64c3e817")
+		)
+		(pin "T3"
+			(uuid "0ab8b245-e783-4d8a-82fd-8d09e324b2a9")
+		)
+		(pin "E4"
+			(uuid "7527357c-9cb6-4ee5-8fb3-ec04c17b6861")
+		)
+		(pin "C6"
+			(uuid "be59bdf4-2fed-4ab3-b326-ec9906b320a8")
+		)
+		(pin "G5"
+			(uuid "7c537533-4bc7-4d25-bb5c-12465cbe21b3")
+		)
+		(pin "T2"
+			(uuid "84d27b29-da1f-4d42-917f-2b4187d0a6ea")
+		)
+		(pin "C4"
+			(uuid "1abb726f-4951-4a5f-af6d-a6c1a3503409")
+		)
+		(pin "G1"
+			(uuid "d7f18ed7-d526-4f55-b218-f42842e46b00")
+		)
+		(pin "E6"
+			(uuid "1c5e0389-d768-48a4-a7ec-e93a06947185")
+		)
+		(pin "C1"
+			(uuid "f1d3e84c-2048-4d63-9bd4-5b67ff6921d6")
+		)
+		(pin "G3"
+			(uuid "229c3285-f372-460d-8731-56d954fe06f7")
+		)
+		(pin "G2"
+			(uuid "65108ea4-a292-4755-88c5-80f0c770b69e")
+		)
+		(pin "G4"
+			(uuid "c72f0edb-9cc4-4cc7-b057-1fcd64d87b46")
+		)
+		(pin "E2"
+			(uuid "0e48193b-1fdb-4543-80b4-94d0c442bec4")
+		)
+		(pin "C3"
+			(uuid "59df57de-082c-4867-a763-2423fb896a32")
+		)
+		(pin "C2"
+			(uuid "69e1ab38-1ea5-4f83-a457-7ca1246fce82")
+		)
+		(pin "E1"
+			(uuid "14b25ef6-199b-4632-a305-bbbeeb1361b6")
+		)
+		(pin "E3"
+			(uuid "2fa612f6-3e51-4766-ba8f-b12c8c59087e")
+		)
+		(pin "T4"
+			(uuid "58ca6862-094e-4362-9f0e-0b3183fa4639")
+		)
+		(pin "C5"
+			(uuid "cec0fe2c-2da1-4bc2-9488-456b69aa3af3")
+		)
+		(pin "E5"
+			(uuid "538b1c24-2138-4dc7-b10d-c6c04c9905b5")
+		)
+		(pin "T6"
+			(uuid "45fb2b1b-24c4-4d11-a4e7-5745922258a7")
+		)
+		(pin "G6"
+			(uuid "7fee45ae-08e7-40ea-ba97-89168d7994a9")
+		)
+		(pin "T5"
+			(uuid "418d3a82-4179-47e7-a10b-b13e6172b164")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "#PWR0112")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -5994,162 +6048,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
 					(reference "#PWR0135")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3VA")
-		(at 213.36 85.09 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0938b6bf-ff00-41a5-ae79-136298dbf75e")
-		(property "Reference" "#PWR013"
-			(at 213.36 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3VA"
-			(at 213.36 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 213.36 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 213.36 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 213.36 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "56ddd6d9-7239-4444-a42a-21939877671e")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3VA")
-		(at 242.57 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0b284df8-3e32-4a4e-95dc-11358ba3c24f")
-		(property "Reference" "#PWR015"
-			(at 242.57 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3VA"
-			(at 242.57 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 242.57 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 242.57 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 242.57 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "548384b2-fbdf-46b8-b9cc-af8ec3aebb06")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -6383,7 +6281,7 @@
 				)
 			)
 		)
-		(property "Description" "LED RED CLEAR CHIP SMD"
+		(property "Description" "Light emitting diode"
 			(at 143.51 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -6396,6 +6294,17 @@
 		)
 		(property "Compra" "https://www.digikey.com/en/products/detail/kingbright/APT2012EC/1747527"
 			(at 143.51 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 143.51 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6499,7 +6408,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Fsae:FS950R08A6P2BBPSA1")
+		(lib_id "Snapeda:FS950R08A6P2BBPSA1")
 		(at 107.95 142.24 0)
 		(unit 3)
 		(body_style 1)
@@ -6508,10 +6417,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2a81705f-6d56-48b7-982b-497fe04f0aa9")
+		(uuid "1f71c0ad-3b01-4297-8a5d-0f77d1da4f42")
 		(property "Reference" "U2"
-			(at 107.95 127 0)
+			(at 106.172 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6521,7 +6429,7 @@
 			)
 		)
 		(property "Value" "FS950R08A6P2BBPSA1"
-			(at 107.95 129.54 0)
+			(at 107.442 129.286 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6530,299 +6438,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Snapeda:IC_FS950R08A6P2BBPSA1"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/10/49/infineon-fs950r08a6p2b-datasheet-en.pdf?fileId=5546d4626da6c043016db9e7586868b4"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "DigiKey_Part_Number" "448-FS950R08A6P2BBPSA1-ND"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=snap"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "25.75mm"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Package" "AG-HYBRIDD-1 Infineon Technologies"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=eda"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "PARTREV" "3.0"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MF" "Infineon Technologies"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MP" "FS950R08A6P2BBPSA1"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Description_1" "\n                        \n                            IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1\n                        \n"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MANUFACTURER" "Infineon Technologies"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/infineon-technologies/fs950r08a6p2bbpsa1/10822749"
-			(at 107.95 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "E5"
-			(uuid "2bc8b472-648e-4f89-8973-028492cae9ad")
-		)
-		(pin "E2"
-			(uuid "1dbb8927-99da-4ae7-b986-e7d9d6093dff")
-		)
-		(pin "T3"
-			(uuid "68f221d2-b4bd-4ad2-b89c-d8729d34ee87")
-		)
-		(pin "C4"
-			(uuid "4f22d946-c4f6-4256-92a6-aa54dee15393")
-		)
-		(pin "E6"
-			(uuid "6e6f366f-7fae-46c9-b67a-66e7a2fc95a0")
-		)
-		(pin "C6"
-			(uuid "98f8759e-aac7-4255-99c5-b80e5439bfc9")
-		)
-		(pin "T4"
-			(uuid "997d2465-d95e-4374-87d4-ecf36c14802f")
-		)
-		(pin "T6"
-			(uuid "872f07dc-6893-4a19-80a7-ed5ddde0f32f")
-		)
-		(pin "T2"
-			(uuid "163aa294-bca5-474c-97f9-f9d0ab528a8b")
-		)
-		(pin "G4"
-			(uuid "347075c8-0df5-483c-b21e-37cd58a2be9f")
-		)
-		(pin "E4"
-			(uuid "65c8fb80-f903-4b5c-9c7c-1a929c02fcb1")
-		)
-		(pin "G6"
-			(uuid "4c255bff-f8dc-4b20-a6ff-67f09885f0e4")
-		)
-		(pin "C1"
-			(uuid "245885b6-0ca2-4400-ada4-6f4f00559459")
-		)
-		(pin "C2"
-			(uuid "597fa803-6a4f-4cbd-802b-2fb88232da99")
-		)
-		(pin "G2"
-			(uuid "65875568-b8cb-4fbe-aeb1-b33e7802daa8")
-		)
-		(pin "T1"
-			(uuid "b58c7a8d-d3bc-4b9f-899b-8d4eb6edf583")
-		)
-		(pin "E3"
-			(uuid "68bf9006-dd98-46bf-958e-c86da6283099")
-		)
-		(pin "G1"
-			(uuid "75450d6b-56c4-4ac8-adb8-be332dd86daa")
-		)
-		(pin "C5"
-			(uuid "4a14cb3b-3fb1-4741-b0f0-f31dbdb5a1b6")
-		)
-		(pin "G5"
-			(uuid "a48616f1-dd24-4bc5-ab46-e637f36c40c8")
-		)
-		(pin "T5"
-			(uuid "970395d9-cecb-40e7-a46a-62834961ae19")
-		)
-		(pin "C3"
-			(uuid "8bd2295c-cd75-49eb-a505-5f046dc0917e")
-		)
-		(pin "E1"
-			(uuid "c12e807c-2104-4aca-a4d3-034f5978bd24")
-		)
-		(pin "G3"
-			(uuid "107747ee-2cd8-487b-8b8f-50425b3db993")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "U2")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3VA")
-		(at 16.51 132.08 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2dcebc8f-c73e-43dd-87d8-ae24002844b4")
-		(property "Reference" "#PWR0108"
-			(at 16.51 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3VA"
-			(at 16.51 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 16.51 132.08 0)
+		(property "Footprint" "FS950R08A6P2BBPSA1:IC_FS950R08A6P2BBPSA1"
+			(at 107.95 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6833,7 +6450,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 16.51 132.08 0)
+			(at 107.95 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6843,8 +6460,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 16.51 132.08 0)
+		(property "Description" "IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1"
+			(at 107.95 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6854,14 +6471,193 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "e9c485e8-b345-43e0-aa23-8c2b5d0259e9")
+		(property "DigiKey_Part_Number" "448-FS950R08A6P2BBPSA1-ND"
+			(at 107.95 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=snap"
+			(at 107.95 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "25.75mm"
+			(at 107.95 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" "AG-HYBRIDD-1 Infineon Technologies"
+			(at 107.95 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=eda"
+			(at 107.95 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 107.95 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" "3.0"
+			(at 107.95 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" "Infineon Technologies"
+			(at 107.95 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" "FS950R08A6P2BBPSA1"
+			(at 107.95 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Infineon Technologies"
+			(at 107.95 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "T1"
+			(uuid "0382ae77-fda5-4cfe-b40e-caca64c3e818")
+		)
+		(pin "T3"
+			(uuid "0ab8b245-e783-4d8a-82fd-8d09e324b2aa")
+		)
+		(pin "E4"
+			(uuid "7527357c-9cb6-4ee5-8fb3-ec04c17b6862")
+		)
+		(pin "C6"
+			(uuid "be59bdf4-2fed-4ab3-b326-ec9906b320a9")
+		)
+		(pin "G5"
+			(uuid "7c537533-4bc7-4d25-bb5c-12465cbe21b4")
+		)
+		(pin "T2"
+			(uuid "84d27b29-da1f-4d42-917f-2b4187d0a6eb")
+		)
+		(pin "C4"
+			(uuid "1abb726f-4951-4a5f-af6d-a6c1a350340a")
+		)
+		(pin "G1"
+			(uuid "d7f18ed7-d526-4f55-b218-f42842e46b01")
+		)
+		(pin "E6"
+			(uuid "1c5e0389-d768-48a4-a7ec-e93a06947186")
+		)
+		(pin "C1"
+			(uuid "f1d3e84c-2048-4d63-9bd4-5b67ff6921d7")
+		)
+		(pin "G3"
+			(uuid "229c3285-f372-460d-8731-56d954fe06f8")
+		)
+		(pin "G2"
+			(uuid "65108ea4-a292-4755-88c5-80f0c770b69f")
+		)
+		(pin "G4"
+			(uuid "c72f0edb-9cc4-4cc7-b057-1fcd64d87b47")
+		)
+		(pin "E2"
+			(uuid "0e48193b-1fdb-4543-80b4-94d0c442bec5")
+		)
+		(pin "C3"
+			(uuid "59df57de-082c-4867-a763-2423fb896a33")
+		)
+		(pin "C2"
+			(uuid "69e1ab38-1ea5-4f83-a457-7ca1246fce83")
+		)
+		(pin "E1"
+			(uuid "14b25ef6-199b-4632-a305-bbbeeb1361b7")
+		)
+		(pin "E3"
+			(uuid "2fa612f6-3e51-4766-ba8f-b12c8c59087f")
+		)
+		(pin "T4"
+			(uuid "58ca6862-094e-4362-9f0e-0b3183fa463a")
+		)
+		(pin "C5"
+			(uuid "cec0fe2c-2da1-4bc2-9488-456b69aa3af4")
+		)
+		(pin "E5"
+			(uuid "538b1c24-2138-4dc7-b10d-c6c04c9905b6")
+		)
+		(pin "T6"
+			(uuid "45fb2b1b-24c4-4d11-a4e7-5745922258a8")
+		)
+		(pin "G6"
+			(uuid "7fee45ae-08e7-40ea-ba97-89168d7994aa")
+		)
+		(pin "T5"
+			(uuid "418d3a82-4179-47e7-a10b-b13e6172b165")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "#PWR0108")
-					(unit 1)
+					(reference "U2")
+					(unit 3)
 				)
 			)
 		)
@@ -6960,298 +6756,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Fsae:FS950R08A6P2BBPSA1")
-		(at 106.68 95.25 0)
-		(unit 2)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4d05cda5-70e3-400d-8c8f-d05dac10bbf1")
-		(property "Reference" "U2"
-			(at 106.68 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "FS950R08A6P2BBPSA1"
-			(at 106.68 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Snapeda:IC_FS950R08A6P2BBPSA1"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/10/49/infineon-fs950r08a6p2b-datasheet-en.pdf?fileId=5546d4626da6c043016db9e7586868b4"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "DigiKey_Part_Number" "448-FS950R08A6P2BBPSA1-ND"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=snap"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "25.75mm"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Package" "AG-HYBRIDD-1 Infineon Technologies"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=eda"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "PARTREV" "3.0"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MF" "Infineon Technologies"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MP" "FS950R08A6P2BBPSA1"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Description_1" "\n                        \n                            IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1\n                        \n"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MANUFACTURER" "Infineon Technologies"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/infineon-technologies/fs950r08a6p2bbpsa1/10822749"
-			(at 106.68 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "E5"
-			(uuid "53f29e0a-ee5a-42d4-aa05-dcc731dbd992")
-		)
-		(pin "E2"
-			(uuid "1dbb8927-99da-4ae7-b986-e7d9d6093e00")
-		)
-		(pin "T3"
-			(uuid "339f32b8-aaa3-4f80-b422-edb057c6321d")
-		)
-		(pin "C4"
-			(uuid "e1bf2c17-9373-4684-8065-efdff237bd84")
-		)
-		(pin "E6"
-			(uuid "d4d79f5a-664e-403d-948e-a126a7cd56d6")
-		)
-		(pin "C6"
-			(uuid "bd926eab-55fc-49c4-9943-07dba3837985")
-		)
-		(pin "T4"
-			(uuid "f6b46b12-668d-4f46-8cd9-374035214664")
-		)
-		(pin "T6"
-			(uuid "99ff2ff2-d6a0-4d66-a546-1b15cd69a310")
-		)
-		(pin "T2"
-			(uuid "163aa294-bca5-474c-97f9-f9d0ab528a8c")
-		)
-		(pin "G4"
-			(uuid "331ab8de-3469-4650-9f5b-c9da77609698")
-		)
-		(pin "E4"
-			(uuid "d5780fea-f8e2-4dd6-b64b-f1a0ea0fbedd")
-		)
-		(pin "G6"
-			(uuid "6918c803-0ca4-4967-ab19-5f8327c01f5f")
-		)
-		(pin "C1"
-			(uuid "245885b6-0ca2-4400-ada4-6f4f0055945a")
-		)
-		(pin "C2"
-			(uuid "597fa803-6a4f-4cbd-802b-2fb88232da9a")
-		)
-		(pin "G2"
-			(uuid "65875568-b8cb-4fbe-aeb1-b33e7802daa9")
-		)
-		(pin "T1"
-			(uuid "b58c7a8d-d3bc-4b9f-899b-8d4eb6edf584")
-		)
-		(pin "E3"
-			(uuid "2f72d5c1-c65e-49f3-9650-a9daae01079a")
-		)
-		(pin "G1"
-			(uuid "75450d6b-56c4-4ac8-adb8-be332dd86dab")
-		)
-		(pin "C5"
-			(uuid "d43d9361-3979-48fc-aded-f3d25264b9f1")
-		)
-		(pin "G5"
-			(uuid "da607d5c-d7a1-46cd-ae71-dea9f0e91c1d")
-		)
-		(pin "T5"
-			(uuid "60a1573a-c959-494a-9a68-2d23ce25294d")
-		)
-		(pin "C3"
-			(uuid "5c96db75-7409-4d95-93be-39696f6380f7")
-		)
-		(pin "E1"
-			(uuid "c12e807c-2104-4aca-a4d3-034f5978bd25")
-		)
-		(pin "G3"
-			(uuid "59004f73-79d7-4108-8355-74b225f892ec")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "U2")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3VA")
-		(at 15.24 85.09 0)
+		(lib_id "power:GNDPWR")
+		(at 90.17 55.88 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7260,9 +6766,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "54db9665-176b-493e-87ad-7e457282b2a8")
-		(property "Reference" "#PWR0110"
-			(at 15.24 88.9 0)
+		(uuid "59decbb3-4aaa-49c2-9867-3dcdc84b60f1")
+		(property "Reference" "#PWR0250"
+			(at 90.17 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7272,8 +6778,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3VA"
-			(at 15.24 80.01 0)
+		(property "Value" "GNDPWR"
+			(at 90.043 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7283,7 +6789,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 15.24 85.09 0)
+			(at 90.17 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7294,7 +6800,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 15.24 85.09 0)
+			(at 90.17 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7304,8 +6810,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 15.24 85.09 0)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 90.17 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7316,12 +6822,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "6a9dea3c-7fa8-4b40-bc15-9806fa5a4b9c")
+			(uuid "0ac78c84-ff95-46b4-8da2-514be6ce4ed2")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "#PWR0110")
+					(reference "#PWR0250")
 					(unit 1)
 				)
 			)
@@ -7384,7 +6890,7 @@
 				)
 			)
 		)
-		(property "Description" "LED RED CLEAR CHIP SMD"
+		(property "Description" "Light emitting diode"
 			(at 125.73 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -7397,6 +6903,17 @@
 		)
 		(property "Compra" "https://www.digikey.com/en/products/detail/kingbright/APT2012EC/1747527"
 			(at 125.73 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 125.73 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7515,6 +7032,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GNDPWR")
+		(at 88.9 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "63fa68c1-48c9-4838-a413-020202e48101")
+		(property "Reference" "#PWR0251"
+			(at 88.9 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 88.773 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 88.9 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f08a4a2a-21d9-4937-b25e-54659ddf34b0")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
+					(reference "#PWR0251")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND1")
 		(at 125.73 189.23 0)
 		(unit 1)
@@ -7593,8 +7188,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3VA")
-		(at 236.22 132.08 0)
+		(lib_id "power:GNDPWR")
+		(at 90.17 149.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7603,9 +7198,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "73bb2e61-66c2-4681-9f61-0c222642b3f4")
-		(property "Reference" "#PWR014"
-			(at 236.22 135.89 0)
+		(uuid "69d6e94f-22da-4870-ae53-78a51508dca3")
+		(property "Reference" "#PWR0252"
+			(at 90.17 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7615,8 +7210,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3VA"
-			(at 236.22 127 0)
+		(property "Value" "GNDPWR"
+			(at 90.043 153.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7626,7 +7221,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 236.22 132.08 0)
+			(at 90.17 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7637,7 +7232,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 236.22 132.08 0)
+			(at 90.17 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7647,8 +7242,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 236.22 132.08 0)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 90.17 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7659,12 +7254,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f8c8ded9-6bb8-4178-9cd7-4bc73171d4a7")
+			(uuid "b81077e8-db68-4789-9a75-6e8a34fcc8bf")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
-					(reference "#PWR014")
+					(reference "#PWR0252")
 					(unit 1)
 				)
 			)
@@ -7726,7 +7321,7 @@
 				)
 			)
 		)
-		(property "Description" "LED RED CLEAR CHIP SMD"
+		(property "Description" "Light emitting diode"
 			(at 166.37 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -7739,6 +7334,17 @@
 		)
 		(property "Compra" "https://www.digikey.com/en/products/detail/kingbright/APT2012EC/1747527"
 			(at 166.37 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 166.37 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7897,7 +7503,7 @@
 				)
 			)
 		)
-		(property "Description" "THERMISTOR NTC 10KOHM 4080K DISC"
+		(property "Description" "Temperature dependent resistor, negative temperature coefficient"
 			(at 143.51 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -8013,19 +7619,18 @@
 		)
 	)
 	(symbol
-		(lib_id "Fsae:FS950R08A6P2BBPSA1")
-		(at 107.95 48.26 0)
-		(unit 1)
+		(lib_id "Snapeda:FS950R08A6P2BBPSA1")
+		(at 106.68 95.25 0)
+		(unit 2)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e85e5615-bacf-45c0-8305-c7af8ca7a85b")
+		(uuid "fab05253-944b-4aa2-afbe-1f7a9b0ef0b5")
 		(property "Reference" "U2"
-			(at 107.95 33.02 0)
+			(at 105.918 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8035,7 +7640,7 @@
 			)
 		)
 		(property "Value" "FS950R08A6P2BBPSA1"
-			(at 107.95 35.56 0)
+			(at 106.172 81.534 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8044,20 +7649,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Snapeda:IC_FS950R08A6P2BBPSA1"
-			(at 107.95 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/10/49/infineon-fs950r08a6p2b-datasheet-en.pdf?fileId=5546d4626da6c043016db9e7586868b4"
-			(at 107.95 48.26 0)
+		(property "Footprint" "FS950R08A6P2BBPSA1:IC_FS950R08A6P2BBPSA1"
+			(at 106.68 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8067,8 +7660,19 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 107.95 48.26 0)
+		(property "Datasheet" ""
+			(at 106.68 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1"
+			(at 106.68 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8079,7 +7683,7 @@
 			)
 		)
 		(property "DigiKey_Part_Number" "448-FS950R08A6P2BBPSA1-ND"
-			(at 107.95 48.26 0)
+			(at 106.68 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8087,11 +7691,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=snap"
-			(at 107.95 48.26 0)
+			(at 106.68 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8099,11 +7702,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "25.75mm"
-			(at 107.95 48.26 0)
+			(at 106.68 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8111,11 +7713,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "Package" "AG-HYBRIDD-1 Infineon Technologies"
-			(at 107.95 48.26 0)
+			(at 106.68 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8123,11 +7724,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/FS950R08A6P2BBPSA1/Infineon/view-part/?ref=eda"
-			(at 107.95 48.26 0)
+			(at 106.68 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8135,11 +7735,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 107.95 48.26 0)
+			(at 106.68 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8147,11 +7746,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "PARTREV" "3.0"
-			(at 107.95 48.26 0)
+			(at 106.68 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8159,11 +7757,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "MF" "Infineon Technologies"
-			(at 107.95 48.26 0)
+			(at 106.68 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8171,11 +7768,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 			)
 		)
 		(property "MP" "FS950R08A6P2BBPSA1"
-			(at 107.95 48.26 0)
+			(at 106.68 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8183,35 +7779,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
-			)
-		)
-		(property "Description_1" "\n                        \n                            IGBT Module Trench Field Stop Three Phase Inverter 750 V 950 A 870 W Chassis Mount AG-HYBRIDD-1\n                        \n"
-			(at 107.95 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
 			)
 		)
 		(property "MANUFACTURER" "Infineon Technologies"
-			(at 107.95 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/infineon-technologies/fs950r08a6p2bbpsa1/10822749"
-			(at 107.95 48.26 0)
+			(at 106.68 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8220,91 +7791,91 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "E5"
-			(uuid "53f29e0a-ee5a-42d4-aa05-dcc731dbd993")
-		)
-		(pin "E2"
-			(uuid "e31cbfe1-8097-465a-b3d4-0c71ffe18e95")
-		)
-		(pin "T3"
-			(uuid "68f221d2-b4bd-4ad2-b89c-d8729d34ee89")
-		)
-		(pin "C4"
-			(uuid "4f22d946-c4f6-4256-92a6-aa54dee15395")
-		)
-		(pin "E6"
-			(uuid "d4d79f5a-664e-403d-948e-a126a7cd56d7")
-		)
-		(pin "C6"
-			(uuid "bd926eab-55fc-49c4-9943-07dba3837986")
-		)
-		(pin "T4"
-			(uuid "997d2465-d95e-4374-87d4-ecf36c148031")
-		)
-		(pin "T6"
-			(uuid "99ff2ff2-d6a0-4d66-a546-1b15cd69a311")
-		)
-		(pin "T2"
-			(uuid "feabfc88-e12f-4358-b2d4-25ac7e19f1a5")
-		)
-		(pin "G4"
-			(uuid "347075c8-0df5-483c-b21e-37cd58a2bea1")
-		)
-		(pin "E4"
-			(uuid "65c8fb80-f903-4b5c-9c7c-1a929c02fcb3")
-		)
-		(pin "G6"
-			(uuid "6918c803-0ca4-4967-ab19-5f8327c01f60")
-		)
-		(pin "C1"
-			(uuid "8acee83a-344d-4e72-897f-dda273bf3ee3")
-		)
-		(pin "C2"
-			(uuid "dfd0f04e-0ec7-4164-a4a1-f5408376337d")
-		)
-		(pin "G2"
-			(uuid "fd761737-3b90-430e-8287-2f9c812a197b")
 		)
 		(pin "T1"
-			(uuid "6d0ef42f-2c74-436d-864e-0920676aad99")
+			(uuid "0382ae77-fda5-4cfe-b40e-caca64c3e819")
 		)
-		(pin "E3"
-			(uuid "68bf9006-dd98-46bf-958e-c86da628309b")
+		(pin "T3"
+			(uuid "0ab8b245-e783-4d8a-82fd-8d09e324b2ab")
 		)
-		(pin "G1"
-			(uuid "3e2680a5-f532-4cc6-b652-c3f1d717fe42")
+		(pin "E4"
+			(uuid "7527357c-9cb6-4ee5-8fb3-ec04c17b6863")
 		)
-		(pin "C5"
-			(uuid "d43d9361-3979-48fc-aded-f3d25264b9f2")
+		(pin "C6"
+			(uuid "be59bdf4-2fed-4ab3-b326-ec9906b320aa")
 		)
 		(pin "G5"
-			(uuid "da607d5c-d7a1-46cd-ae71-dea9f0e91c1e")
+			(uuid "7c537533-4bc7-4d25-bb5c-12465cbe21b5")
 		)
-		(pin "T5"
-			(uuid "60a1573a-c959-494a-9a68-2d23ce25294e")
+		(pin "T2"
+			(uuid "84d27b29-da1f-4d42-917f-2b4187d0a6ec")
 		)
-		(pin "C3"
-			(uuid "8bd2295c-cd75-49eb-a505-5f046dc09180")
+		(pin "C4"
+			(uuid "1abb726f-4951-4a5f-af6d-a6c1a350340b")
 		)
-		(pin "E1"
-			(uuid "01f5eec6-5969-4ac8-b919-83a2834a7fa5")
+		(pin "G1"
+			(uuid "d7f18ed7-d526-4f55-b218-f42842e46b02")
+		)
+		(pin "E6"
+			(uuid "1c5e0389-d768-48a4-a7ec-e93a06947187")
+		)
+		(pin "C1"
+			(uuid "f1d3e84c-2048-4d63-9bd4-5b67ff6921d8")
 		)
 		(pin "G3"
-			(uuid "107747ee-2cd8-487b-8b8f-50425b3db995")
+			(uuid "229c3285-f372-460d-8731-56d954fe06f9")
+		)
+		(pin "G2"
+			(uuid "65108ea4-a292-4755-88c5-80f0c770b6a0")
+		)
+		(pin "G4"
+			(uuid "c72f0edb-9cc4-4cc7-b057-1fcd64d87b48")
+		)
+		(pin "E2"
+			(uuid "0e48193b-1fdb-4543-80b4-94d0c442bec6")
+		)
+		(pin "C3"
+			(uuid "59df57de-082c-4867-a763-2423fb896a34")
+		)
+		(pin "C2"
+			(uuid "69e1ab38-1ea5-4f83-a457-7ca1246fce84")
+		)
+		(pin "E1"
+			(uuid "14b25ef6-199b-4632-a305-bbbeeb1361b8")
+		)
+		(pin "E3"
+			(uuid "2fa612f6-3e51-4766-ba8f-b12c8c590880")
+		)
+		(pin "T4"
+			(uuid "58ca6862-094e-4362-9f0e-0b3183fa463b")
+		)
+		(pin "C5"
+			(uuid "cec0fe2c-2da1-4bc2-9488-456b69aa3af5")
+		)
+		(pin "E5"
+			(uuid "538b1c24-2138-4dc7-b10d-c6c04c9905b7")
+		)
+		(pin "T6"
+			(uuid "45fb2b1b-24c4-4d11-a4e7-5745922258a9")
+		)
+		(pin "G6"
+			(uuid "7fee45ae-08e7-40ea-ba97-89168d7994ab")
+		)
+		(pin "T5"
+			(uuid "418d3a82-4179-47e7-a10b-b13e6172b166")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
 					(reference "U2")
-					(unit 1)
+					(unit 2)
 				)
 			)
 		)
 	)
 	(sheet
 		(at 29.21 31.75)
-		(size 48.26 33.02)
+		(size 48.26 27.94)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -8330,7 +7901,7 @@
 			)
 		)
 		(property "Sheetfile" "GDsupply.kicad_sch"
-			(at 29.21 65.3546 0)
+			(at 29.21 60.2746 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8350,18 +7921,8 @@
 				(justify right)
 			)
 		)
-		(pin "3,3v" input
-			(at 29.21 38.1 180)
-			(uuid "14d77122-7fde-41a1-ab4e-ebb7dcb9fa32")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "APWM" input
-			(at 29.21 41.91 180)
+			(at 29.21 35.56 180)
 			(uuid "9eda10c2-c621-4bec-8146-f492d9e592db")
 			(effects
 				(font
@@ -8371,7 +7932,7 @@
 			)
 		)
 		(pin "RST{slash}EN" input
-			(at 29.21 46.99 180)
+			(at 29.21 40.64 180)
 			(uuid "d5a28dee-cfa1-46a4-8dc7-186929d9dbe7")
 			(effects
 				(font
@@ -8381,7 +7942,7 @@
 			)
 		)
 		(pin "-IN" input
-			(at 29.21 50.8 180)
+			(at 29.21 44.45 180)
 			(uuid "a3c9ab48-51a4-4e79-aca9-012ad5edd101")
 			(effects
 				(font
@@ -8391,7 +7952,7 @@
 			)
 		)
 		(pin "+IN" input
-			(at 29.21 54.61 180)
+			(at 29.21 48.26 180)
 			(uuid "98d7767c-cc14-4bf5-8afa-6a8424e6121b")
 			(effects
 				(font
@@ -8430,18 +7991,8 @@
 				(justify right)
 			)
 		)
-		(pin "Vin_FB" input
-			(at 29.21 34.29 180)
-			(uuid "da3da0af-6f57-49f9-aab4-868a8300b265")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "~FLT" input
-			(at 29.21 58.42 180)
+			(at 29.21 52.07 180)
 			(uuid "e6790bfa-78ef-46d0-ae7b-e5070c3595cf")
 			(effects
 				(font
@@ -8451,7 +8002,7 @@
 			)
 		)
 		(pin "RDY" input
-			(at 29.21 62.23 180)
+			(at 29.21 55.88 180)
 			(uuid "7c7e7d8e-bf56-48ca-bc3d-718860a5d8c2")
 			(effects
 				(font
@@ -8470,7 +8021,7 @@
 	)
 	(sheet
 		(at 151.13 78.74)
-		(size 48.26 33.02)
+		(size 48.26 27.94)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -8496,7 +8047,7 @@
 			)
 		)
 		(property "Sheetfile" "GDsupply.kicad_sch"
-			(at 151.13 112.3446 0)
+			(at 151.13 107.2646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8516,18 +8067,8 @@
 				(justify left)
 			)
 		)
-		(pin "3,3v" input
-			(at 199.39 85.09 0)
-			(uuid "88192feb-8a96-4d59-8774-fde560662f4c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "APWM" input
-			(at 199.39 88.9 0)
+			(at 199.39 82.55 0)
 			(uuid "d4d0ea88-e4de-41f7-990c-6d1aa373531a")
 			(effects
 				(font
@@ -8537,7 +8078,7 @@
 			)
 		)
 		(pin "RST{slash}EN" input
-			(at 199.39 93.98 0)
+			(at 199.39 87.63 0)
 			(uuid "2a6b4064-f19e-4bd3-9b62-7a97d3ae30de")
 			(effects
 				(font
@@ -8547,7 +8088,7 @@
 			)
 		)
 		(pin "-IN" input
-			(at 199.39 97.79 0)
+			(at 199.39 91.44 0)
 			(uuid "8f42a7f4-89bc-4f87-bcbc-cf6ea5505076")
 			(effects
 				(font
@@ -8557,7 +8098,7 @@
 			)
 		)
 		(pin "+IN" input
-			(at 199.39 101.6 0)
+			(at 199.39 95.25 0)
 			(uuid "a5117389-20fa-417c-93a8-2385dae20fed")
 			(effects
 				(font
@@ -8596,18 +8137,8 @@
 				(justify left)
 			)
 		)
-		(pin "Vin_FB" input
-			(at 199.39 81.28 0)
-			(uuid "89ab8fd4-2129-4fe9-aef8-d9e39e05c424")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "~FLT" input
-			(at 199.39 105.41 0)
+			(at 199.39 99.06 0)
 			(uuid "b0f47ec0-8e4e-4501-8d69-a18a0bb33888")
 			(effects
 				(font
@@ -8617,7 +8148,7 @@
 			)
 		)
 		(pin "RDY" input
-			(at 199.39 109.22 0)
+			(at 199.39 102.87 0)
 			(uuid "82cf8b70-2d3f-4870-9f38-0eec4f993176")
 			(effects
 				(font
@@ -8636,7 +8167,7 @@
 	)
 	(sheet
 		(at 179.07 31.75)
-		(size 48.26 33.02)
+		(size 48.26 30.48)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -8662,7 +8193,7 @@
 			)
 		)
 		(property "Sheetfile" "GDsupply.kicad_sch"
-			(at 179.07 65.3546 0)
+			(at 179.07 62.8146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8682,18 +8213,8 @@
 				(justify left)
 			)
 		)
-		(pin "3,3v" input
-			(at 227.33 38.1 0)
-			(uuid "2c37821e-2a5c-4faa-b624-a73e7ae26d35")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "APWM" input
-			(at 227.33 41.91 0)
+			(at 227.33 38.1 0)
 			(uuid "55cecfb4-0354-4409-a1f8-dcbf257c2d6a")
 			(effects
 				(font
@@ -8703,7 +8224,7 @@
 			)
 		)
 		(pin "RST{slash}EN" input
-			(at 227.33 46.99 0)
+			(at 227.33 41.91 0)
 			(uuid "815ac0f3-b154-4437-8dec-eac5555f3e46")
 			(effects
 				(font
@@ -8713,7 +8234,7 @@
 			)
 		)
 		(pin "-IN" input
-			(at 227.33 50.8 0)
+			(at 227.33 45.72 0)
 			(uuid "def9cc6e-b58f-44da-bec5-ea73505bd615")
 			(effects
 				(font
@@ -8723,7 +8244,7 @@
 			)
 		)
 		(pin "+IN" input
-			(at 227.33 54.61 0)
+			(at 227.33 49.53 0)
 			(uuid "0ff7cbe3-b4db-4fbe-a188-4c6d6dacacb1")
 			(effects
 				(font
@@ -8762,18 +8283,8 @@
 				(justify left)
 			)
 		)
-		(pin "Vin_FB" input
-			(at 227.33 34.29 0)
-			(uuid "2205bb3f-3a6f-4c5b-855e-161dc0aeafe7")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "~FLT" input
-			(at 227.33 58.42 0)
+			(at 227.33 53.34 0)
 			(uuid "335dfdfd-cacc-4974-9cf0-2635c66a82a7")
 			(effects
 				(font
@@ -8783,7 +8294,7 @@
 			)
 		)
 		(pin "RDY" input
-			(at 227.33 62.23 0)
+			(at 227.33 57.15 0)
 			(uuid "d3adb07b-3839-4fef-9300-9953240f0e70")
 			(effects
 				(font
@@ -8802,7 +8313,7 @@
 	)
 	(sheet
 		(at 242.57 77.47)
-		(size 24.13 36.83)
+		(size 24.13 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -8828,7 +8339,7 @@
 			)
 		)
 		(property "Sheetfile" "SensorTension.kicad_sch"
-			(at 242.57 114.8846 0)
+			(at 242.57 103.4546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8836,16 +8347,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "GND_HV" input
-			(at 242.57 110.49 180)
-			(uuid "16dbe3ea-d01f-4c76-b7d0-05d1cb60aab4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(pin "In_DC" input
@@ -8928,16 +8429,6 @@
 				(justify right)
 			)
 		)
-		(pin "Vin_FB" input
-			(at 242.57 106.68 180)
-			(uuid "73b7f3ff-42df-4e43-a9f5-fc1a7650859e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5"
@@ -8948,7 +8439,7 @@
 	)
 	(sheet
 		(at 29.21 125.73)
-		(size 48.26 33.02)
+		(size 48.26 27.94)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -8974,7 +8465,7 @@
 			)
 		)
 		(property "Sheetfile" "GDsupply.kicad_sch"
-			(at 29.21 159.3346 0)
+			(at 29.21 154.2546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8994,18 +8485,8 @@
 				(justify right)
 			)
 		)
-		(pin "3,3v" input
-			(at 29.21 132.08 180)
-			(uuid "94b13680-e81d-4cc3-815c-0769e73f0962")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "APWM" input
-			(at 29.21 135.89 180)
+			(at 29.21 129.54 180)
 			(uuid "19c67fb9-f973-4e55-b6fd-99d057833390")
 			(effects
 				(font
@@ -9015,7 +8496,7 @@
 			)
 		)
 		(pin "RST{slash}EN" input
-			(at 29.21 140.97 180)
+			(at 29.21 134.62 180)
 			(uuid "77d55d96-bc4c-41bb-8c67-e3633a1534f4")
 			(effects
 				(font
@@ -9025,7 +8506,7 @@
 			)
 		)
 		(pin "-IN" input
-			(at 29.21 144.78 180)
+			(at 29.21 138.43 180)
 			(uuid "68cee90a-203d-4913-a0f9-b8608ece4bc2")
 			(effects
 				(font
@@ -9035,7 +8516,7 @@
 			)
 		)
 		(pin "+IN" input
-			(at 29.21 148.59 180)
+			(at 29.21 142.24 180)
 			(uuid "83938989-3aa3-46f2-9cef-d0997c36987f")
 			(effects
 				(font
@@ -9074,18 +8555,8 @@
 				(justify right)
 			)
 		)
-		(pin "Vin_FB" input
-			(at 29.21 128.27 180)
-			(uuid "a06486ac-9ae5-4577-b27f-8a3aad8927fe")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "~FLT" input
-			(at 29.21 152.4 180)
+			(at 29.21 146.05 180)
 			(uuid "9cac4cb9-5d1a-4942-8dcf-8afa845afb60")
 			(effects
 				(font
@@ -9095,7 +8566,7 @@
 			)
 		)
 		(pin "RDY" input
-			(at 29.21 156.21 180)
+			(at 29.21 149.86 180)
 			(uuid "33b1142a-c7c5-4062-a14c-8b63393bcbb5")
 			(effects
 				(font
@@ -9114,7 +8585,7 @@
 	)
 	(sheet
 		(at 27.94 78.74)
-		(size 48.26 33.02)
+		(size 48.26 27.94)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -9140,7 +8611,7 @@
 			)
 		)
 		(property "Sheetfile" "GDsupply.kicad_sch"
-			(at 27.94 112.3446 0)
+			(at 27.94 107.2646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9160,18 +8631,8 @@
 				(justify right)
 			)
 		)
-		(pin "3,3v" input
-			(at 27.94 85.09 180)
-			(uuid "2e85f505-6216-4193-baaf-9ae85214c3aa")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "APWM" input
-			(at 27.94 88.9 180)
+			(at 27.94 82.55 180)
 			(uuid "d449b47d-7182-41c7-bf3e-9ebcc8a49ed5")
 			(effects
 				(font
@@ -9181,7 +8642,7 @@
 			)
 		)
 		(pin "RST{slash}EN" input
-			(at 27.94 93.98 180)
+			(at 27.94 87.63 180)
 			(uuid "068554ad-39e7-4db1-8924-709b9f5e6659")
 			(effects
 				(font
@@ -9191,7 +8652,7 @@
 			)
 		)
 		(pin "-IN" input
-			(at 27.94 97.79 180)
+			(at 27.94 91.44 180)
 			(uuid "21bd6bc2-34c1-4798-a782-f866bcc3407c")
 			(effects
 				(font
@@ -9201,7 +8662,7 @@
 			)
 		)
 		(pin "+IN" input
-			(at 27.94 101.6 180)
+			(at 27.94 95.25 180)
 			(uuid "2ff5bbdd-e65d-4822-80e1-b81fe93822bd")
 			(effects
 				(font
@@ -9240,18 +8701,8 @@
 				(justify right)
 			)
 		)
-		(pin "Vin_FB" input
-			(at 27.94 81.28 180)
-			(uuid "b050d689-6248-4d21-b8e1-b4b68c320bda")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "~FLT" input
-			(at 27.94 105.41 180)
+			(at 27.94 99.06 180)
 			(uuid "72cb46e6-ce32-4276-b7d8-ccd50e0c1b81")
 			(effects
 				(font
@@ -9261,7 +8712,7 @@
 			)
 		)
 		(pin "RDY" input
-			(at 27.94 109.22 180)
+			(at 27.94 102.87 180)
 			(uuid "eec808fe-7734-4ee1-a589-27b39f5ed85d")
 			(effects
 				(font
@@ -9280,7 +8731,7 @@
 	)
 	(sheet
 		(at 175.26 125.73)
-		(size 48.26 33.02)
+		(size 48.26 27.94)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -9306,7 +8757,7 @@
 			)
 		)
 		(property "Sheetfile" "GDsupply.kicad_sch"
-			(at 175.26 159.3346 0)
+			(at 175.26 154.2546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9326,18 +8777,8 @@
 				(justify left)
 			)
 		)
-		(pin "3,3v" input
-			(at 223.52 132.08 0)
-			(uuid "e2712812-4538-4925-90c3-0406ad92f855")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "APWM" input
-			(at 223.52 135.89 0)
+			(at 223.52 129.54 0)
 			(uuid "5cc37614-bcb6-42a7-a7b1-58e35529eb25")
 			(effects
 				(font
@@ -9347,7 +8788,7 @@
 			)
 		)
 		(pin "RST{slash}EN" input
-			(at 223.52 140.97 0)
+			(at 223.52 134.62 0)
 			(uuid "c7b4dca7-e8a5-42ba-80aa-51ec5c46f2b2")
 			(effects
 				(font
@@ -9357,7 +8798,7 @@
 			)
 		)
 		(pin "-IN" input
-			(at 223.52 144.78 0)
+			(at 223.52 138.43 0)
 			(uuid "71e1553d-80fa-4e46-8ff2-4c4b4346fe7f")
 			(effects
 				(font
@@ -9367,7 +8808,7 @@
 			)
 		)
 		(pin "+IN" input
-			(at 223.52 148.59 0)
+			(at 223.52 142.24 0)
 			(uuid "b7b9a767-ea7e-4a13-887f-b0f9c2488b9b")
 			(effects
 				(font
@@ -9406,18 +8847,8 @@
 				(justify left)
 			)
 		)
-		(pin "Vin_FB" input
-			(at 223.52 128.27 0)
-			(uuid "24711fce-db88-48c9-9cc5-62979f75063d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "~FLT" input
-			(at 223.52 152.4 0)
+			(at 223.52 146.05 0)
 			(uuid "f955e145-67c1-4c7f-9276-8afd2aa218dd")
 			(effects
 				(font
@@ -9427,7 +8858,7 @@
 			)
 		)
 		(pin "RDY" input
-			(at 223.52 156.21 0)
+			(at 223.52 149.86 0)
 			(uuid "de8220c7-e758-496f-84fe-ab3988fa6060")
 			(effects
 				(font
