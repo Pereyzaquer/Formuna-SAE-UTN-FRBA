@@ -441,42 +441,6 @@
 						(type none)
 					)
 				)
-				(pin output line
-					(at 0 0 0)
-					(length 7.62)
-					(name "2OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 0 -2.54 0)
-					(length 7.62)
-					(name "1OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin power_in line
 					(at 0 -5.08 0)
 					(length 7.62)
@@ -657,7 +621,45 @@
 						)
 					)
 				)
-				(pin output line
+			)
+			(symbol "TLV1704AQPWRQ1_1_1"
+				(pin open_collector line
+					(at 0 0 0)
+					(length 7.62)
+					(name "2OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 0 -2.54 0)
+					(length 7.62)
+					(name "1OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
 					(at 40.64 -2.54 180)
 					(length 7.62)
 					(name "4OUT"
@@ -675,7 +677,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin open_collector line
 					(at 40.64 0 180)
 					(length 7.62)
 					(name "3OUT"
@@ -1467,16 +1469,6 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 149.86) (xy 72.39 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1328f78e-b7ac-44ef-b974-9ba5afebc982")
-	)
-	(wire
-		(pts
 			(xy 148.59 86.36) (xy 144.78 86.36)
 		)
 		(stroke
@@ -2104,6 +2096,16 @@
 			(type default)
 		)
 		(uuid "bbe94fed-db94-452b-9cd2-7859ef87b939")
+	)
+	(wire
+		(pts
+			(xy 78.74 149.86) (xy 80.01 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bccd79cd-9595-4552-96d7-8e4720b0455d")
 	)
 	(wire
 		(pts
@@ -20706,7 +20708,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 76.2 149.86 90)
+		(at 74.93 149.86 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -20717,7 +20719,7 @@
 		(fields_autoplaced yes)
 		(uuid "09a917f0-b13f-42f4-92a7-a63914d9fbf3")
 		(property "Reference" "R163"
-			(at 76.2 143.51 90)
+			(at 74.93 143.51 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -20727,7 +20729,7 @@
 			)
 		)
 		(property "Value" "39"
-			(at 76.2 146.05 90)
+			(at 74.93 146.05 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -20737,7 +20739,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 76.2 151.638 90)
+			(at 74.93 151.638 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20748,7 +20750,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 76.2 149.86 0)
+			(at 74.93 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20759,7 +20761,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 76.2 149.86 0)
+			(at 74.93 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22094,7 +22096,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PW14_TEX"
+		(property "Footprint" "Snapeda:PW14_TEX-L"
 			(at 100.33 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -24557,7 +24559,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PW14_TEX"
+		(property "Footprint" "Snapeda:PW14_TEX-L"
 			(at 99.06 80.01 0)
 			(hide yes)
 			(show_name no)

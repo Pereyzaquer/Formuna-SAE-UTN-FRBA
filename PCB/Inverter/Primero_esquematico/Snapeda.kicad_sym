@@ -9200,7 +9200,7 @@
 					(type none)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 -5.08 0)
 				(length 5.08)
 				(name "VDDIO"
@@ -9218,7 +9218,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 15.24 0)
 				(length 5.08)
 				(name "VDD"
@@ -9254,7 +9254,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 2.54 0)
 				(length 5.08)
 				(name "VDDA"
@@ -9308,7 +9308,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 0 0)
 				(length 5.08)
 				(name "VDDA"
@@ -9344,7 +9344,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 12.7 0)
 				(length 5.08)
 				(name "VDD"
@@ -9362,7 +9362,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 -7.62 0)
 				(length 5.08)
 				(name "VDDIO"
@@ -9380,7 +9380,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 -10.16 0)
 				(length 5.08)
 				(name "VDDIO"
@@ -9398,7 +9398,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 10.16 0)
 				(length 5.08)
 				(name "VDD"
@@ -9434,7 +9434,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 -17.78 0)
 				(length 5.08)
 				(name "VDDIO_SW"
@@ -9488,7 +9488,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 7.62 0)
 				(length 5.08)
 				(name "VDD"
@@ -9506,7 +9506,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin passive line
 				(at -27.94 -12.7 0)
 				(length 5.08)
 				(name "VDDIO"
@@ -14160,24 +14160,6 @@
 					(type none)
 				)
 			)
-			(pin power_in line
-				(at 17.78 10.16 180)
-				(length 5.08)
-				(name "SW"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin input line
 				(at 17.78 0 180)
 				(length 5.08)
@@ -14189,24 +14171,6 @@
 					)
 				)
 				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -17.78 10.16 0)
-				(length 5.08)
-				(name "VIN"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -14323,6 +14287,44 @@
 				)
 			)
 		)
+		(symbol "LM25180QNGURQ1_1_1"
+			(pin passive line
+				(at 17.78 10.16 180)
+				(length 5.08)
+				(name "SW"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -17.78 10.16 0)
+				(length 5.08)
+				(name "VIN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
 		(embedded_fonts no)
 	)
 	(symbol "REF2033QDDCRQ1"
@@ -14335,7 +14337,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "U"
-			(at -10.16 8.382 0)
+			(at -8.636 10.16 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14357,7 +14359,7 @@
 			)
 		)
 		(property "Footprint" "REF2033QDDCRQ1:SOT95P0280X110-5N"
-			(at 0 0 0)
+			(at -0.508 -16.764 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14368,7 +14370,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at -4.064 -24.892 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14378,7 +14380,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at -4.064 -24.892 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14388,7 +14390,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "1.1mm"
-			(at 0 0 0)
+			(at -2.54 -23.876 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14399,7 +14401,7 @@
 			)
 		)
 		(property "CREATOR" "ANA"
-			(at 0 0 0)
+			(at -2.54 -18.288 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14410,7 +14412,7 @@
 			)
 		)
 		(property "STANDARD" "IPC-7351B"
-			(at 0 0 0)
+			(at -4.064 -24.892 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14421,7 +14423,7 @@
 			)
 		)
 		(property "PARTREV" "December 2021"
-			(at 0 0 0)
+			(at -2.54 -23.876 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14432,7 +14434,7 @@
 			)
 		)
 		(property "VERIFIER" "ASHISH"
-			(at 0 0 0)
+			(at -4.064 -24.892 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14443,7 +14445,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Texas Instruments"
-			(at 0 0 0)
+			(at -2.54 -23.876 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -14455,8 +14457,8 @@
 		)
 		(symbol "REF2033QDDCRQ1_0_0"
 			(rectangle
-				(start -10.16 -7.62)
-				(end 10.16 7.62)
+				(start -10.16 8.89)
+				(end 10.16 -6.35)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -14466,7 +14468,7 @@
 				)
 			)
 			(pin output line
-				(at 15.24 0 180)
+				(at 15.24 1.27 180)
 				(length 5.08)
 				(name "VBIAS"
 					(effects
@@ -14484,7 +14486,7 @@
 				)
 			)
 			(pin power_in line
-				(at 15.24 -5.08 180)
+				(at 15.24 -3.81 180)
 				(length 5.08)
 				(name "GND"
 					(effects
@@ -14537,7 +14539,9 @@
 					)
 				)
 			)
-			(pin output line
+		)
+		(symbol "REF2033QDDCRQ1_1_0"
+			(pin power_out line
 				(at 15.24 5.08 180)
 				(length 5.08)
 				(name "VREF"
@@ -15711,7 +15715,27 @@
 					(type background)
 				)
 			)
-			(pin input line
+			(pin no_connect line
+				(at 20.32 0 180)
+				(length 5.08)
+				(name "NC"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "8"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+		)
+		(symbol "TES_1-1211_1_0"
+			(pin power_in line
 				(at -20.32 -5.08 0)
 				(length 5.08)
 				(name "-VIN(GND)"
@@ -15729,7 +15753,7 @@
 					)
 				)
 			)
-			(pin input line
+			(pin power_out line
 				(at -20.32 5.08 0)
 				(length 5.08)
 				(name "+VIN(VCC)"
@@ -15747,7 +15771,7 @@
 					)
 				)
 			)
-			(pin output line
+			(pin power_in line
 				(at 20.32 -5.08 180)
 				(length 5.08)
 				(name "-VOUT"
@@ -15765,7 +15789,7 @@
 					)
 				)
 			)
-			(pin output line
+			(pin power_in line
 				(at 20.32 5.08 180)
 				(length 5.08)
 				(name "+VOUT"
@@ -15776,24 +15800,6 @@
 					)
 				)
 				(number "5"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin no_connect line
-				(at 20.32 0 180)
-				(length 5.08)
-				(name "NC"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "8"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -16137,42 +16143,6 @@
 					(type none)
 				)
 			)
-			(pin output line
-				(at 0 0 0)
-				(length 7.62)
-				(name "2OUT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 0 -2.54 0)
-				(length 7.62)
-				(name "1OUT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin power_in line
 				(at 0 -5.08 0)
 				(length 7.62)
@@ -16353,7 +16323,45 @@
 					)
 				)
 			)
-			(pin output line
+		)
+		(symbol "TLV1704AQPWRQ1_1_1"
+			(pin open_collector line
+				(at 0 0 0)
+				(length 7.62)
+				(name "2OUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin open_collector line
+				(at 0 -2.54 0)
+				(length 7.62)
+				(name "1OUT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin open_collector line
 				(at 40.64 -2.54 180)
 				(length 7.62)
 				(name "4OUT"
@@ -16371,7 +16379,7 @@
 					)
 				)
 			)
-			(pin output line
+			(pin open_collector line
 				(at 40.64 0 180)
 				(length 7.62)
 				(name "3OUT"
@@ -16661,24 +16669,6 @@
 				)
 			)
 			(pin output line
-				(at 17.78 10.16 180)
-				(length 5.08)
-				(name "OUT"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin output line
 				(at 17.78 5.08 180)
 				(length 5.08)
 				(name "~{FLT}"
@@ -16743,6 +16733,26 @@
 					)
 				)
 				(number "9"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+			)
+		)
+		(symbol "TPS259621DDAT_1_0"
+			(pin passive line
+				(at 17.78 10.16 180)
+				(length 5.08)
+				(name "OUT"
+					(effects
+						(font
+							(size 1.016 1.016)
+						)
+					)
+				)
+				(number "5"
 					(effects
 						(font
 							(size 1.016 1.016)
@@ -17557,42 +17567,6 @@
 					)
 				)
 			)
-			(pin output line
-				(at 45.72 -10.16 180)
-				(length 7.62)
-				(name "RDY"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 45.72 -7.62 180)
-				(length 7.62)
-				(name "*FLT"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin input line
 				(at 45.72 -5.08 180)
 				(length 7.62)
@@ -17640,6 +17614,44 @@
 					)
 				)
 				(number "16"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "UCC21750QDWRQ1_1_1"
+			(pin open_collector line
+				(at 45.72 -10.16 180)
+				(length 7.62)
+				(name "RDY"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin open_collector line
+				(at 45.72 -7.62 180)
+				(length 7.62)
+				(name "*FLT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "13"
 					(effects
 						(font
 							(size 1.27 1.27)
