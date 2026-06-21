@@ -283,186 +283,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C_Polarized_Small_US"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "C"
-				(at 0.254 1.778 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C_Polarized_Small_US"
-				(at 0.254 -2.032 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Polarized capacitor, small US symbol"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "CP_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "C_Polarized_Small_US_0_1"
-				(polyline
-					(pts
-						(xy -1.524 0.508) (xy 1.524 0.508)
-					)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.524) (xy -0.762 1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 1.27) (xy -1.016 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.524 -0.762)
-					(mid 0 -0.3734)
-					(end 1.524 -0.762)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_Polarized_Small_US_1_1"
-				(pin passive line
-					(at 0 2.54 270)
-					(length 2.032)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 2.032)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -1834,8 +1654,8 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "T"
-				(at 0 6.35 0)
+			(property "Reference" "Te1"
+				(at 0 -8.128 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1844,8 +1664,8 @@
 					)
 				)
 			)
-			(property "Value" "Transformer_1P_1S"
-				(at 0 -7.62 0)
+			(property "Value" "Trafo 30uH - 3:1"
+				(at 0.0127 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1854,7 +1674,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Snapeda:WE-FLYTI_EP7_4436"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1865,7 +1685,7 @@
 					)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/750317605/22040872?s=N4IgTCBcDaIOwFYAMBmAjHAbEhIC6AvkA"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2145,25 +1965,7 @@
 							)
 						)
 					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 10.16 -5.08 180)
-					(length 7.62)
-					(name "SA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2181,7 +1983,61 @@
 							)
 						)
 					)
-					(number "4"
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 7.62)
+					(name "SA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 7.62)
+					(name "SA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -5.08 180)
+					(length 7.62)
+					(name "SA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4419,12 +4275,6 @@
 		(uuid "05a11c6b-67a0-4174-8016-c41ceb33b7a3")
 	)
 	(junction
-		(at 57.15 72.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "05b08d86-3a62-47fc-b8d5-bb1e8336963d")
-	)
-	(junction
 		(at 222.25 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4533,6 +4383,12 @@
 		(uuid "cd61c2b7-d122-48de-8b4b-926822aef262")
 	)
 	(junction
+		(at 201.93 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2cf61a5-a3ce-45f8-8a25-74e3a50367cd")
+	)
+	(junction
 		(at 154.94 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4543,6 +4399,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e7787ec0-ff31-4445-a227-fc2c1ee4fc18")
+	)
+	(junction
+		(at 201.93 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee95b90c-01a7-4485-bd10-823d5a18439d")
 	)
 	(wire
 		(pts
@@ -4826,7 +4688,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 72.39) (xy 57.15 72.39)
+			(xy 48.26 72.39) (xy 68.58 72.39)
 		)
 		(stroke
 			(width 0)
@@ -4863,16 +4725,6 @@
 			(type default)
 		)
 		(uuid "6464189e-40ec-452a-b230-e49cce7558af")
-	)
-	(wire
-		(pts
-			(xy 57.15 72.39) (xy 68.58 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67d83467-8d15-43f8-92ff-79beb1478ebe")
 	)
 	(wire
 		(pts
@@ -5176,6 +5028,26 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 57.15) (xy 201.93 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbc4c2b5-dd59-4ae4-9707-b1211266a4d8")
+	)
+	(wire
+		(pts
+			(xy 201.93 64.77) (xy 201.93 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccb4a901-ed88-4135-89f0-466e075d7762")
+	)
+	(wire
+		(pts
 			(xy 205.74 67.31) (xy 217.17 67.31)
 		)
 		(stroke
@@ -5253,16 +5125,6 @@
 			(type default)
 		)
 		(uuid "e03492c9-d858-48fc-a2dc-fc2419b97ec7")
-	)
-	(wire
-		(pts
-			(xy 57.15 72.39) (xy 57.15 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e16647a2-4c40-4bfd-b67b-ed6f9ca5c380")
 	)
 	(wire
 		(pts
@@ -5849,98 +5711,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
 					(reference "#PWR0107")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized_Small_US")
-		(at 57.15 76.2 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "066d5633-c83f-4025-9076-bb7b31dc63e5")
-		(property "Reference" "C57"
-			(at 59.69 74.4981 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EEH-ZS1H271UP"
-			(at 38.354 77.216 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10"
-			(at 57.15 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDD0000/ast-ind-156941.pdf"
-			(at 57.15 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Polarized capacitor, small US symbol"
-			(at 57.15 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/panasonic-industry/EEH-ZS1H271UP/14324345"
-			(at 57.15 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3bf684b3-4f39-476c-88b2-3b6b3e31453a")
-		)
-		(pin "2"
-			(uuid "05785ba6-6d7a-435f-bd80-d0723e81466a")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
-					(reference "C57")
 					(unit 1)
 				)
 			)
@@ -8891,7 +8661,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
 			(at 153.162 77.47 90)
 			(hide yes)
 			(show_name no)
@@ -9047,6 +8817,7 @@
 	(symbol
 		(lib_id "Device:Transformer_1P_1S")
 		(at 191.77 62.23 0)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9055,8 +8826,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9908401b-eba2-4a64-b854-8b2440b3c96d")
-		(property "Reference" "T1"
-			(at 191.77 70.358 0)
+		(property "Reference" "Te1"
+			(at 191.77 54.102 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9066,7 +8837,7 @@
 			)
 		)
 		(property "Value" "Trafo 30uH - 3:1"
-			(at 191.7827 54.61 0)
+			(at 191.7827 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9111,19 +8882,25 @@
 		(pin "1"
 			(uuid "7acf1bfd-65b5-4aa6-aef7-5747b6aadcd0")
 		)
-		(pin "2"
+		(pin "4"
 			(uuid "4e0bff03-660c-4b58-a136-443f6018769c")
 		)
-		(pin "4"
+		(pin "8"
 			(uuid "bc2c6e76-25d7-4bf8-9b5f-2e0d5aced934")
 		)
-		(pin "3"
+		(pin "7"
 			(uuid "c0541f4b-5d6d-4f48-8025-9f82ca72410d")
+		)
+		(pin "6"
+			(uuid "6bcb967f-1634-4f34-8c31-a2f5534b71a0")
+		)
+		(pin "5"
+			(uuid "d6f31a98-c50e-4f8b-b7f1-d78d7b66d894")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
-					(reference "T1")
+					(reference "Te1")
 					(unit 1)
 				)
 			)
@@ -9486,7 +9263,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "307k"
+		(property "Value" "246k"
 			(at 93.98 77.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9590,7 +9367,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 160.3248 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -9983,7 +9760,7 @@
 				)
 			)
 		)
-		(property "Value" "VS-10MQ100NTRPBF"
+		(property "Value" "SDM1U100S1F-7"
 			(at 209.8675 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9993,7 +9770,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SMA"
+		(property "Footprint" "Diode_SMD:D_SOD-123F"
 			(at 209.55 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -10004,7 +9781,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.vishay.com/docs/94119/vs-10mq100ntrpbf.pdf"
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/SDM1U100S1F.pdf"
 			(at 209.55 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -10015,7 +9792,7 @@
 				)
 			)
 		)
-		(property "Description" "Schottky diode"
+		(property "Description" "DIODE SCHOTTKY 100V 1A SOD123F"
 			(at 209.55 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -10026,7 +9803,7 @@
 				)
 			)
 		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/vishay-general-semiconductor-diodes-division/VS-10MQ100NTRPBF/811498"
+		(property "Compra" "https://www.digikey.com/en/products/detail/diodes-incorporated/SDM1U100S1F-7/7354179?s=N4IgTCBcDaIMoBECyBGAqigDJuKBiAtAOwgC6AvkA"
 			(at 209.55 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -10829,84 +10606,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
 					(reference "#PWR0280")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fc07cb75-c60c-4ce9-bfde-ec71fc4700a6")
-		(property "Reference" "#PWR086"
-			(at 57.15 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 83.82 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "48f313a4-0ff6-4ee9-86d7-784b701c4f56")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
-					(reference "#PWR086")
 					(unit 1)
 				)
 			)
