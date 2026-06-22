@@ -147,22 +147,22 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.2,
+        "min_clearance": 0.0,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
-        "min_hole_clearance": 0.2,
-        "min_hole_to_hole": 0.15,
-        "min_microvia_diameter": 0.3,
-        "min_microvia_drill": 0.2,
+        "min_hole_clearance": 0.25,
+        "min_hole_to_hole": 0.25,
+        "min_microvia_diameter": 0.2,
+        "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
-        "min_silk_clearance": 0.1,
+        "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
-        "min_text_thickness": 0.15,
-        "min_through_hole_diameter": 0.25,
-        "min_track_width": 0.2,
-        "min_via_annular_width": 0.15,
-        "min_via_diameter": 0.55,
+        "min_text_thickness": 0.08,
+        "min_through_hole_diameter": 0.3,
+        "min_track_width": 0.0,
+        "min_via_annular_width": 0.1,
+        "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -537,101 +537,6 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.25,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "CAN",
-        "pcb_color": "rgb(0, 150, 0)",
-        "priority": 4,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.25,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Drv_Supply",
-        "pcb_color": "rgb(255, 140, 0)",
-        "priority": 1,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.7,
-        "tuning_profile": "",
-        "via_diameter": 0.8,
-        "via_drill": 0.3,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.25,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Drv_Supply_in",
-        "pcb_color": "rgb(255, 200, 0)",
-        "priority": 2,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.4,
-        "tuning_profile": "",
-        "via_diameter": 0.8,
-        "via_drill": 0.3,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.25,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Gate_Power",
-        "pcb_color": "rgb(200, 0, 0)",
-        "priority": 0,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.6,
-        "tuning_profile": "",
-        "via_diameter": 0.8,
-        "via_drill": 0.3,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.25,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Signal",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 3,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.25,
-        "tuning_profile": "",
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
       }
     ],
     "meta": {
@@ -932,7 +837,7 @@
         "uuid": "d930f486-f6ac-489c-907e-47f2cb34cf04"
       }
     ],
-    "used_designators": "#PWR250-252",
+    "used_designators": "Te1-7,C49,C57,C123-168,#FLG31-36,R14,R16,R25,R27,R36,R38,R47,R49,R58,R60,R69,R71,R178,R196-230,D10-11,D17-19,D25-27,D33-35,D41,D65-106,T1-6,#PWR86,#PWR283-342,TP53-64,U14-16,U40-48,L8-13",
     "variants": []
   },
   "sheets": [
@@ -1013,15 +918,4 @@
       "pcb_potencia"
     ],
     [
-      "0bcc01e0-1903-49c9-8a02-17640b3194e7",
-      "pcb_logica"
-    ]
-  ],
-  "text_variables": {},
-  "tuning_profiles": {
-    "meta": {
-      "version": 0
-    },
-    "tuning_profiles_impedance_geometric": []
-  }
-}
+      "0bcc01e0-1903-49c9-8a0
