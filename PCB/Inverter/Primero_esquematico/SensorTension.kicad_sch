@@ -2034,219 +2034,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Snapeda:TES_1-1211"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "PS"
-				(at -15.24 10.16 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "TES_1-1211"
-				(at -15.24 -10.16 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "TES_1-1211:CONV_TES_1-1211"
-				(at 0 0 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "PARTREV" "July 12, 2024"
-				(at 0 0 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MANUFACTURER" "Traco Power"
-				(at 0 0 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MAXIMUM_PACKAGE_HEIGHT" "7.7mm"
-				(at 0 0 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "STANDARD" "Manufacturer Recommendations"
-				(at 0 0 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(symbol "TES_1-1211_0_0"
-				(rectangle
-					(start -15.24 -7.62)
-					(end 15.24 7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin no_connect line
-					(at 20.32 0 180)
-					(length 5.08)
-					(name "NC"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(symbol "TES_1-1211_1_0"
-				(pin power_in line
-					(at -20.32 -5.08 0)
-					(length 5.08)
-					(name "-VIN(GND)"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at -20.32 5.08 0)
-					(length 5.08)
-					(name "+VIN(VCC)"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 20.32 -5.08 180)
-					(length 5.08)
-					(name "-VOUT"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 20.32 5.08 180)
-					(length 5.08)
-					(name "+VOUT"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+12V"
 			(power global)
 			(pin_numbers
@@ -3337,7 +3124,7 @@
 		(uuid "33d0b619-46d7-4bbb-b443-8af5bcbf125c")
 	)
 	(junction
-		(at 259.08 33.02)
+		(at 255.27 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3735bfd8-88aa-4a8c-b5a4-4e51fce1f438")
@@ -3463,10 +3250,10 @@
 		(uuid "9ddfc155-17d6-4463-8d36-85f15bc97ca0")
 	)
 	(junction
-		(at 203.2 33.02)
+		(at 203.2 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a222553f-0bf4-4787-9ad1-50f0ab1f7481")
+		(uuid "9e66b1b4-ed70-4642-856a-405a88f90414")
 	)
 	(junction
 		(at 73.66 85.09)
@@ -3523,7 +3310,7 @@
 		(uuid "dec0b952-ae19-44e7-8098-95431a1007e1")
 	)
 	(junction
-		(at 259.08 43.18)
+		(at 255.27 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e2fa9eeb-4186-4ad8-8cbc-1d45f1779a22")
@@ -4070,6 +3857,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 43.18) (xy 208.28 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61489db9-a590-4f87-911c-252c8e2be731")
+	)
+	(wire
+		(pts
 			(xy 72.39 118.11) (xy 74.93 118.11)
 		)
 		(stroke
@@ -4220,7 +4017,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 43.18) (xy 203.2 43.18)
+			(xy 203.2 43.18) (xy 208.28 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4257,16 +4054,6 @@
 			(type default)
 		)
 		(uuid "8037d2b7-6696-4c1d-9718-c8de2269fe42")
-	)
-	(wire
-		(pts
-			(xy 203.2 33.02) (xy 203.2 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80d10c87-bd2c-45f6-a3fa-5268abbdc126")
 	)
 	(wire
 		(pts
@@ -4370,13 +4157,23 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 35.56) (xy 259.08 33.02)
+			(xy 255.27 34.29) (xy 255.27 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "97bc46f3-4d37-4c13-b2dc-881e1cd94a69")
+	)
+	(wire
+		(pts
+			(xy 208.28 36.83) (xy 212.09 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "995176a9-b119-4dc2-a4e5-6a0c4327b403")
 	)
 	(wire
 		(pts
@@ -4440,7 +4237,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 33.02) (xy 205.74 33.02)
+			(xy 203.2 31.75) (xy 212.09 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4640,7 +4437,7 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 43.18) (xy 259.08 43.18)
+			(xy 242.57 41.91) (xy 255.27 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4780,7 +4577,7 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 33.02) (xy 259.08 33.02)
+			(xy 242.57 31.75) (xy 255.27 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4930,7 +4727,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 40.64) (xy 259.08 43.18)
+			(xy 255.27 39.37) (xy 255.27 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4967,16 +4764,6 @@
 			(type default)
 		)
 		(uuid "e760b198-c5eb-4fab-bdd3-431abd270335")
-	)
-	(wire
-		(pts
-			(xy 203.2 31.75) (xy 203.2 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e98b0376-1dbb-4c55-8a4f-7a8325e091d6")
 	)
 	(wire
 		(pts
@@ -5067,6 +4854,16 @@
 			(type default)
 		)
 		(uuid "fd5a574d-85d1-43d9-8c0e-865077b7fc64")
+	)
+	(wire
+		(pts
+			(xy 203.2 31.75) (xy 203.2 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd9009f1-2f3b-4d55-bab8-ae37844b55e6")
 	)
 	(image
 		(at 234.2978 134.223)
@@ -17926,7 +17723,7 @@
 		(uuid "3e044c4f-16f8-460d-a7df-9e8fb61fb8aa")
 	)
 	(label "5V_ISO"
-		(at 256.54 33.02 180)
+		(at 252.73 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -18254,7 +18051,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 259.08 33.02 0)
+		(at 255.27 31.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18265,7 +18062,7 @@
 		(fields_autoplaced yes)
 		(uuid "06259426-111c-47a7-aacb-59cbcfdba210")
 		(property "Reference" "#FLG06"
-			(at 259.08 31.115 0)
+			(at 255.27 29.845 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18276,7 +18073,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 259.08 27.94 0)
+			(at 255.27 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18286,7 +18083,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 259.08 33.02 0)
+			(at 255.27 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18297,7 +18094,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 33.02 0)
+			(at 255.27 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18308,7 +18105,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 259.08 33.02 0)
+			(at 255.27 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19379,7 +19176,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDPWR")
-		(at 259.08 43.18 0)
+		(at 255.27 41.91 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19390,7 +19187,7 @@
 		(fields_autoplaced yes)
 		(uuid "2ab42622-46cf-4abf-88a0-62511d27a4b9")
 		(property "Reference" "#PWR0249"
-			(at 259.08 48.26 0)
+			(at 255.27 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19401,7 +19198,7 @@
 			)
 		)
 		(property "Value" "GNDPWR"
-			(at 258.953 46.99 0)
+			(at 255.143 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19411,7 +19208,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 259.08 44.45 0)
+			(at 255.27 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19422,7 +19219,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 44.45 0)
+			(at 255.27 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19433,7 +19230,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 259.08 43.18 0)
+			(at 255.27 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22700,7 +22497,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 259.08 38.1 0)
+		(at 255.27 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22711,7 +22508,7 @@
 		(fields_autoplaced yes)
 		(uuid "75b90577-fea1-4815-9bbc-f008b069f286")
 		(property "Reference" "C69"
-			(at 261.62 36.8362 0)
+			(at 257.81 35.5662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22722,7 +22519,7 @@
 			)
 		)
 		(property "Value" "0,1uF"
-			(at 261.62 39.3762 0)
+			(at 257.81 38.1062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22733,7 +22530,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 259.08 38.1 0)
+			(at 255.27 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22744,7 +22541,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 38.1 0)
+			(at 255.27 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22755,7 +22552,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 259.08 38.1 0)
+			(at 255.27 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24489,149 +24286,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
 					(reference "R97")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Snapeda:TES_1-1211")
-		(at 226.06 38.1 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a3c027f2-ac34-4fc7-8d83-99f825479ecb")
-		(property "Reference" "PS1"
-			(at 225.552 25.908 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TES_1-1211"
-			(at 225.552 28.448 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Snapeda:CONV_TES_1-1211"
-			(at 226.06 17.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 226.06 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Isolated Module DC DC Converter 1 Output 5V 200mA 10.8V - 13.2V Input"
-			(at 226.06 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" "July 12, 2024"
-			(at 226.06 20.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" "Traco Power"
-			(at 226.06 22.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "7.7mm"
-			(at 226.06 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 226.06 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/traco-power/TES-1-1211/9382956"
-			(at 226.06 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "8"
-			(uuid "aa7a14c0-2b83-4c68-9895-d32a667c20df")
-		)
-		(pin "2"
-			(uuid "8cf6458f-a80f-40a1-ac50-4cbabb80307d")
-		)
-		(pin "4"
-			(uuid "14d15b6d-34a4-4f99-b93e-9fcf86a8333c")
-		)
-		(pin "5"
-			(uuid "d4ad6fcd-f02a-4da6-8dc8-aa9d963b326d")
-		)
-		(pin "1"
-			(uuid "57611f08-651c-4746-aea7-509c4cc141a3")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "PS1")
 					(unit 1)
 				)
 			)
