@@ -1548,6 +1548,10 @@
 		(color 0 0 0 0)
 		(uuid "7f9762a7-a9fa-44f2-a08d-4212c9c842b4")
 	)
+	(no_connect
+		(at 115.57 62.23)
+		(uuid "0a1c35be-3a42-4034-a4a8-f74a45260149")
+	)
 	(wire
 		(pts
 			(xy 229.87 105.41) (xy 229.87 102.87)
@@ -1617,16 +1621,6 @@
 			(type default)
 		)
 		(uuid "3860431b-df4c-43c9-85ad-7fb5c7b848fd")
-	)
-	(wire
-		(pts
-			(xy 111.76 62.23) (xy 115.57 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4919cae8-2d21-4357-a03b-96e521dd3fae")
 	)
 	(wire
 		(pts
@@ -2122,6 +2116,17 @@
 				)
 			)
 		)
+		(property "Purchase-URL" ""
+			(at 232.41 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "349641d8-dfe7-4edc-9945-3a08d9cead4a")
 		)
@@ -2456,6 +2461,17 @@
 				)
 			)
 		)
+		(property "Purchase-URL" ""
+			(at 205.74 104.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "695aa7f6-b6cb-4e69-9feb-bb5a2c9797c4")
 		)
@@ -2628,6 +2644,17 @@
 			)
 		)
 		(property "Description_1" ""
+			(at 215.9 102.87 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
 			(at 215.9 102.87 90)
 			(hide yes)
 			(show_name no)
@@ -3234,16 +3261,6 @@
 		(pin "Temp_C" bidirectional
 			(at 111.76 59.69 0)
 			(uuid "e82b67cc-d3d4-4f5a-ba7c-baf53b4a06e4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "Temp_PCB" bidirectional
-			(at 111.76 62.23 0)
-			(uuid "6381b55d-98a7-4589-9edb-60e6614e11fd")
 			(effects
 				(font
 					(size 1.27 1.27)
