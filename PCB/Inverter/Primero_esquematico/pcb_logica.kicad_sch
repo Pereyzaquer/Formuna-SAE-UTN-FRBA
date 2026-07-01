@@ -172,7 +172,7 @@
 		(uuid "343640a4-a724-4b9c-9e4b-f1e560010ca6")
 	)
 	(no_connect
-		(at 119.38 129.54)
+		(at 119.38 127)
 		(uuid "41e99e2a-e385-4b86-a810-c1e4e194c4cd")
 	)
 	(no_connect
@@ -198,16 +198,6 @@
 	(no_connect
 		(at 119.38 139.7)
 		(uuid "cfe23430-edc7-4f49-b22a-a14bacbe45b5")
-	)
-	(wire
-		(pts
-			(xy 120.65 102.87) (xy 121.92 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0198ac1f-c618-42df-b88a-4cb103410c71")
 	)
 	(wire
 		(pts
@@ -258,26 +248,6 @@
 			(type default)
 		)
 		(uuid "0b8b724f-685b-4e78-be0a-15eca12f85bb")
-	)
-	(wire
-		(pts
-			(xy 119.38 104.14) (xy 120.65 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d22528c-b72f-49a9-9462-1e96dc282957")
-	)
-	(wire
-		(pts
-			(xy 120.65 104.14) (xy 120.65 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e247f1c-cd06-463f-bbe9-6eec86ea5427")
 	)
 	(wire
 		(pts
@@ -501,16 +471,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 125.73) (xy 120.65 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a237440-4955-4317-95de-456cd947e631")
-	)
-	(wire
-		(pts
 			(xy 133.35 96.52) (xy 119.38 96.52)
 		)
 		(stroke
@@ -581,7 +541,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 127) (xy 119.38 127)
+			(xy 119.38 135.89) (xy 120.65 135.89)
 		)
 		(stroke
 			(width 0)
@@ -591,7 +551,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 132.08) (xy 120.65 132.08)
+			(xy 119.38 133.35) (xy 120.65 133.35)
 		)
 		(stroke
 			(width 0)
@@ -841,16 +801,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 125.73) (xy 120.65 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1097f3a-0a26-4373-b842-fa2dd690645c")
-	)
-	(wire
-		(pts
 			(xy 219.71 90.17) (xy 220.98 90.17)
 		)
 		(stroke
@@ -891,16 +841,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 132.08) (xy 120.65 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ccff10e2-942a-4dc7-be62-691a954e8769")
-	)
-	(wire
-		(pts
 			(xy 39.37 78.74) (xy 40.64 78.74)
 		)
 		(stroke
@@ -918,16 +858,6 @@
 			(type default)
 		)
 		(uuid "d04793df-0a4f-432f-bda5-fcaa180a3793")
-	)
-	(wire
-		(pts
-			(xy 120.65 130.81) (xy 121.92 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d7c5fbef-c603-46fa-afdc-fd9685a06798")
 	)
 	(wire
 		(pts
@@ -968,6 +898,16 @@
 			(type default)
 		)
 		(uuid "e81dd4f0-0f78-4f51-a47d-490c62ecba39")
+	)
+	(wire
+		(pts
+			(xy 119.38 130.81) (xy 120.65 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e82a7ce8-cc5b-4c52-86e7-289ed201857d")
 	)
 	(wire
 		(pts
@@ -1615,17 +1555,6 @@
 		)
 		(uuid "52b3bc29-3886-45b9-9f21-5ff33dffe0b7")
 	)
-	(hierarchical_label "GD_FLT"
-		(shape bidirectional)
-		(at 121.92 102.87 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5c8ac3a6-2abc-42dc-b22f-5ea53816ebf2")
-	)
 	(hierarchical_label "PWM_H_C"
 		(shape bidirectional)
 		(at 62.23 24.13 90)
@@ -1636,6 +1565,17 @@
 			(justify left)
 		)
 		(uuid "5fad95ce-8d42-4fc6-8e85-865dc580a2b3")
+	)
+	(hierarchical_label "GD_FLT"
+		(shape bidirectional)
+		(at 120.65 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "79ea059e-31fd-4974-93ba-cc5eed3e21e8")
 	)
 	(hierarchical_label "Temp_PCB"
 		(shape bidirectional)
@@ -1661,7 +1601,7 @@
 	)
 	(hierarchical_label "Reset_Pote"
 		(shape bidirectional)
-		(at 121.92 125.73 0)
+		(at 120.65 135.89 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1738,7 +1678,7 @@
 	)
 	(hierarchical_label "GD_RDY"
 		(shape bidirectional)
-		(at 121.92 130.81 0)
+		(at 120.65 133.35 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3582,29 +3522,9 @@
 				(justify right)
 			)
 		)
-		(pin "GP_34_Reset_Pote" bidirectional
-			(at 119.38 127 0)
-			(uuid "c4cc3445-dbea-4b36-a27e-ea49331289c9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "GP_39_E_STOP" bidirectional
-			(at 119.38 129.54 0)
+			(at 119.38 127 0)
 			(uuid "70b71fa4-1a3f-41de-86b4-0bfe85c1705d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "GP_40_GD_RDY" bidirectional
-			(at 119.38 132.08 0)
-			(uuid "2119b758-534e-46f4-9dec-00acd921640d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3792,9 +3712,29 @@
 				(justify right)
 			)
 		)
-		(pin "GP_22_GD_FLT" bidirectional
-			(at 119.38 104.14 0)
-			(uuid "0c9cacc7-eaa5-48d3-b917-a53f18442371")
+		(pin "GP_56_GD_FLT" bidirectional
+			(at 119.38 130.81 0)
+			(uuid "cb2dda4a-3d15-4279-82f8-4867f8d00ae3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GP_57_GD_RDY" bidirectional
+			(at 119.38 133.35 0)
+			(uuid "516b3654-94ad-4c4b-8989-9649969ad215")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GP_58_Reset_Pote" bidirectional
+			(at 119.38 135.89 0)
+			(uuid "52b61f40-7ffe-416a-88fc-6a500070c388")
 			(effects
 				(font
 					(size 1.27 1.27)

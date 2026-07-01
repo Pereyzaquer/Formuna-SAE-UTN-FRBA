@@ -13092,6 +13092,10 @@
 		(uuid "fc608875-d9ea-4d2f-afdc-14107ca0e2c8")
 	)
 	(no_connect
+		(at 41.91 151.13)
+		(uuid "029dd04d-941c-46a7-8463-9f440deb123e")
+	)
+	(no_connect
 		(at 30.48 63.5)
 		(uuid "11a8f5f9-8426-48b6-b65b-bce17eeca9ef")
 	)
@@ -13100,20 +13104,12 @@
 		(uuid "480646ae-6b5a-433b-992c-1d6ad8211cd7")
 	)
 	(no_connect
-		(at 96.52 184.15)
-		(uuid "4928e4a7-ce90-4873-8873-b9cedcadb89e")
-	)
-	(no_connect
 		(at 132.08 43.18)
 		(uuid "53dfe3f5-38cd-4f91-aaad-d00d6850b93f")
 	)
 	(no_connect
 		(at 132.08 30.48)
 		(uuid "5d2273af-7fe8-4c88-88f2-08f343933077")
-	)
-	(no_connect
-		(at 96.52 181.61)
-		(uuid "66ab2b16-2a30-4c03-8177-69833233342c")
 	)
 	(no_connect
 		(at 30.48 38.1)
@@ -13132,12 +13128,20 @@
 		(uuid "842eca48-27ee-4c4c-a851-e4185a80052c")
 	)
 	(no_connect
+		(at 96.52 179.07)
+		(uuid "8d91bcf3-0922-461e-a053-2e13bf7046a1")
+	)
+	(no_connect
 		(at 132.08 40.64)
 		(uuid "a2c062f9-3cdf-4f48-9937-0a196f1cdab5")
 	)
 	(no_connect
 		(at 96.52 166.37)
 		(uuid "a2c0fb02-11dc-4ddd-9037-8e22bdafd3e8")
+	)
+	(no_connect
+		(at 96.52 168.91)
+		(uuid "acfed707-7b83-427b-b364-b997f2be9012")
 	)
 	(no_connect
 		(at 132.08 33.02)
@@ -13154,10 +13158,6 @@
 	(no_connect
 		(at 132.08 38.1)
 		(uuid "e3889b41-d37c-46db-b268-f20fd461d06f")
-	)
-	(no_connect
-		(at 96.52 189.23)
-		(uuid "ea4fbf6f-c4a0-4575-864d-76d69213576f")
 	)
 	(no_connect
 		(at 30.48 83.82)
@@ -13835,6 +13835,16 @@
 	)
 	(wire
 		(pts
+			(xy 96.52 190.5) (xy 96.52 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c047769-a54a-489d-9cd9-4774ec1045fb")
+	)
+	(wire
+		(pts
 			(xy 115.57 125.73) (xy 115.57 127)
 		)
 		(stroke
@@ -14142,16 +14152,6 @@
 			(type default)
 		)
 		(uuid "a76aff93-9753-4417-8c66-a2fa0ec43424")
-	)
-	(wire
-		(pts
-			(xy 85.09 186.69) (xy 96.52 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7f43378-bf1f-4209-a326-8dd64f5bb253")
 	)
 	(wire
 		(pts
@@ -14645,6 +14645,16 @@
 	)
 	(wire
 		(pts
+			(xy 85.09 190.5) (xy 96.52 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed4d3870-29e3-4a80-a6f4-61d71206b2c0")
+	)
+	(wire
+		(pts
 			(xy 115.57 125.73) (xy 205.74 125.73)
 		)
 		(stroke
@@ -14833,28 +14843,6 @@
 		)
 		(uuid "4464994f-04f2-4ec3-8978-f20f35a577d5")
 	)
-	(label "GP_58_WD"
-		(at 85.09 186.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.1588)
-			)
-			(justify left bottom)
-		)
-		(uuid "54633a81-7f0d-47fd-b75a-a581290dd2b0")
-	)
-	(label "GP_58_WD"
-		(at 278.13 27.94 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.1588)
-			)
-			(justify right bottom)
-		)
-		(uuid "7139049e-2f73-46b9-ba8f-2c27c1200d58")
-	)
 	(label "GPIO18_X2"
 		(at 27.94 149.86 0)
 		(effects
@@ -14895,6 +14883,28 @@
 		)
 		(uuid "a067ca53-d071-4c73-b97d-7255b31c061c")
 	)
+	(label "GP_59_WD"
+		(at 278.13 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+			(justify right bottom)
+		)
+		(uuid "b0ec154a-4e91-46f2-b27f-a8744238814d")
+	)
+	(label "GP_59_WD"
+		(at 85.09 190.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+			(justify left bottom)
+		)
+		(uuid "d08a75ae-1f2e-4b51-9aa4-b53f50e272f3")
+	)
 	(label "GP_27_LED_C"
 		(at 107.95 92.71 0)
 		(effects
@@ -14904,17 +14914,6 @@
 			(justify left bottom)
 		)
 		(uuid "f9d5bfd6-8873-49c7-9e29-d3804fb10a49")
-	)
-	(hierarchical_label "GP_40_GD_RDY"
-		(shape bidirectional)
-		(at 96.52 179.07 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0291803e-5384-4128-bbc3-ff319742793d")
 	)
 	(hierarchical_label "GP_3_PWM_MP_L_B"
 		(shape bidirectional)
@@ -15070,17 +15069,6 @@
 		)
 		(uuid "43a2ae52-61a8-4011-9685-87d39add544a")
 	)
-	(hierarchical_label "GP_22_GD_FLT"
-		(shape bidirectional)
-		(at 41.91 151.13 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "47cb7758-feb0-4906-8885-71e76d8e6867")
-	)
 	(hierarchical_label "A5_Tension_DC"
 		(shape bidirectional)
 		(at 30.48 40.64 180)
@@ -15224,6 +15212,17 @@
 		)
 		(uuid "8c9c0996-e18b-4b2a-9364-75fe77eeaa80")
 	)
+	(hierarchical_label "GP_58_Reset_Pote"
+		(shape bidirectional)
+		(at 96.52 186.69 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "992d826a-a34d-4b79-b2a0-31f5a66586ba")
+	)
 	(hierarchical_label "C4_Temp_PCB"
 		(shape bidirectional)
 		(at 30.48 81.28 180)
@@ -15290,17 +15289,6 @@
 		)
 		(uuid "afb519f8-dd62-4cf0-8474-9b815e72abf0")
 	)
-	(hierarchical_label "GP_34_Reset_Pote"
-		(shape bidirectional)
-		(at 96.52 168.91 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b428a456-517b-4ac0-8070-1f7a32aec36f")
-	)
 	(hierarchical_label "GP_4_PWM_MP_H_C"
 		(shape bidirectional)
 		(at 41.91 113.03 180)
@@ -15322,6 +15310,17 @@
 			(justify right)
 		)
 		(uuid "b9381e35-afda-42d8-b766-3126ec7782fd")
+	)
+	(hierarchical_label "GP_56_GD_FLT"
+		(shape bidirectional)
+		(at 96.52 181.61 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bda1f1f6-3ca2-48c5-bc14-1579f572e496")
 	)
 	(hierarchical_label "GP_8_Encoder_SSI_CLK"
 		(shape bidirectional)
@@ -15355,6 +15354,17 @@
 			(justify right)
 		)
 		(uuid "c6ff377c-6e99-4af8-a143-ea063694f647")
+	)
+	(hierarchical_label "GP_57_GD_RDY"
+		(shape bidirectional)
+		(at 96.52 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c81a54ff-2cbc-49a5-a06c-c4ef47dae922")
 	)
 	(hierarchical_label "Reset_MCU"
 		(shape input)
