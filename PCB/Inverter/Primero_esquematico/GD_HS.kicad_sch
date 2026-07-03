@@ -2936,6 +2936,18 @@
 		)
 		(uuid "5ee4b9bc-2957-4b0a-b27a-5c9da946c5a9")
 	)
+	(text "CASO SiC\nC_BLK · dV/dt = Ichg + (V_DD − V_Z − V) / R_ext\n\nV_ss = (V_DD − V_Z) + Ichg·R_ext\nτ = R_ext · C_BLK\nt_BLK = τ · ln[ V_ss / (V_ss − V_DESAT) ]\n\nPara nuestro caso el tiempo de blanking es 121ns"
+		(exclude_from_sim no)
+		(at 70.104 171.196 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "7e6f7bb6-de81-4efe-a62b-b7ce162e682e")
+	)
 	(text "El Rst/En se suele juntar con +IN pero creo que no es obligatorio\nSi se junta con +IN revisar un tiempo que te limita el datasheet\n"
 		(exclude_from_sim no)
 		(at 204.724 141.478 0)
@@ -2945,6 +2957,16 @@
 			)
 		)
 		(uuid "8ff986af-0001-464b-ae2a-66fa45170b65")
+	)
+	(text "LAS Ressitencias estas no\niran en el diseño final\nsolo para el caso de usar SiC"
+		(exclude_from_sim no)
+		(at 83.566 101.092 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b1c5adac-c885-4efe-b95e-ea96174d22c6")
 	)
 	(text "Ejemplo de Teaxas de su implementacion\nhttps://www.ti.com/lit/ug/sluuck0a/sluuck0a.pdf?ts=1781860744035"
 		(exclude_from_sim no)
@@ -2966,9 +2988,21 @@
 		)
 		(uuid "d1195c55-a049-405c-9e69-cd3e078c1d95")
 	)
+	(text "Caso IGBT\nt_BLK = C_BLK · V_DESAT / Ichg\nt_BLK = 1,05 us"
+		(exclude_from_sim no)
+		(at 55.372 128.524 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "d76fcc0d-c545-4471-b1b8-3aba9d188901")
+	)
 	(text "Frecuencia de corte en 2khz (Comentario para componentes colocados en APWM)\nEsto se coloca para pasar de un PWM a una señal ADC para monitorear tension\ny temperatura, esta frecuencia de corte es elevada para temperatura pero\nquiero usar menos variedad de componentes y no deberia cambiar\n"
 		(exclude_from_sim no)
-		(at 131.572 179.07 0)
+		(at 149.098 178.054 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2989,7 +3023,7 @@
 	)
 	(text "Esta etapa vigila la saturación del IGBT midiendo su tensión colector-emisor (V_CE) mientras está encendido:\n- Si el IGBT satura, V_CE es baja → OK.\n- Si V_CE queda alta con el IGBT en ON (desaturación) → sobrecorriente/cortocircuito → dispara el soft turn-off.\n- El C de blanking (47 pF) fija una ventana inicial tras el encendido en la que la protección se ignora, para dar tiempo a que el IGBT sature.\n- Si hay disparos falsos en el encendido → subir un poco el C (alarga el blanking).\n- No subirlo de más: alarga la ventana sin protección; un cortocircuito real debe detectarse antes del aguante del módulo (≤3 µs en caliente)."
 		(exclude_from_sim no)
-		(at 78.232 165.354 0)
+		(at 148.844 166.878 0)
 		(effects
 			(font
 				(size 0.762 0.762)
@@ -9195,7 +9229,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "47pF"
+		(property "Value" "56pF"
 			(at 60.96 142.2399 0)
 			(show_name no)
 			(do_not_autoplace no)

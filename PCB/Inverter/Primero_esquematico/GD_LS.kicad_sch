@@ -3330,7 +3330,7 @@
 	)
 	(text "Frecuencia de corte en 2khz (Comentario para componentes colocados en APWM)\nEsto se coloca para pasar de un PWM a una señal ADC para monitorear tension\ny temperatura, esta frecuencia de corte es elevada para temperatura pero\nquiero usar menos variedad de componentes y no deberia cambiar\n"
 		(exclude_from_sim no)
-		(at 106.68 175.768 0)
+		(at 128.016 175.768 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3388,6 +3388,18 @@
 		)
 		(uuid "776781f5-7794-42a7-9b3c-2c40e33ee5d4")
 	)
+	(text "Caso IGBT\nt_BLK = C_BLK · V_DESAT / Ichg\nt_BLK = 1,05 us"
+		(exclude_from_sim no)
+		(at 37.338 127.508 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "8321a909-c78e-4608-af92-8953af943d35")
+	)
 	(text "Aca hay q conciderar el DC Bias\nDesteriora la capacitancia de los capacitores"
 		(exclude_from_sim no)
 		(at 262.128 22.098 0)
@@ -3397,6 +3409,16 @@
 			)
 		)
 		(uuid "8b6a02e7-7a02-47c0-a786-6daf6b918215")
+	)
+	(text "LAS Ressitencias estas no\niran en el diseño final\nsolo para el caso de usar SiC"
+		(exclude_from_sim no)
+		(at 67.31 100.838 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "94d9c27c-a53a-4222-b132-118a45aac066")
 	)
 	(text "Ejemplo de Teaxas de su implementacion\nhttps://www.ti.com/lit/ug/sluuck0a/sluuck0a.pdf?ts=1781860744035"
 		(exclude_from_sim no)
@@ -3410,7 +3432,7 @@
 	)
 	(text "Esta etapa vigila la saturación del IGBT midiendo su tensión colector-emisor (V_CE) mientras está encendido:\n- Si el IGBT satura, V_CE es baja → OK.\n- Si V_CE queda alta con el IGBT en ON (desaturación) → sobrecorriente/cortocircuito → dispara el soft turn-off.\n- El C de blanking (47 pF) fija una ventana inicial tras el encendido en la que la protección se ignora, para dar tiempo a que el IGBT sature.\n- Si hay disparos falsos en el encendido → subir un poco el C (alarga el blanking).\n- No subirlo de más: alarga la ventana sin protección; un cortocircuito real debe detectarse antes del aguante del módulo (≤3 µs en caliente)."
 		(exclude_from_sim no)
-		(at 58.42 164.592 0)
+		(at 130.302 165.608 0)
 		(effects
 			(font
 				(size 0.762 0.762)
@@ -3437,6 +3459,18 @@
 			)
 		)
 		(uuid "cefc7920-8226-4fb8-af80-a5e4fce96565")
+	)
+	(text "CASO SiC\nC_BLK · dV/dt = Ichg + (V_DD − V_Z − V) / R_ext\n\nV_ss = (V_DD − V_Z) + Ichg·R_ext\nτ = R_ext · C_BLK\nt_BLK = τ · ln[ V_ss / (V_ss − V_DESAT) ]\n\nPara nuestro caso el tiempo de blanking es 121ns"
+		(exclude_from_sim no)
+		(at 53.848 171.958 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "cfa480a1-dc6a-483b-9cde-2f39946fd8ad")
 	)
 	(text "Pagina 23"
 		(exclude_from_sim no)
@@ -8133,7 +8167,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "47pF"
+		(property "Value" "56pF"
 			(at 43.18 142.2399 0)
 			(show_name no)
 			(do_not_autoplace no)
