@@ -51,7 +51,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -180,7 +186,12 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.3,
+        0.6,
+        0.8
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -207,7 +218,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -560,14 +576,56 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Descripción",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PaginaProveedor",
+          "name": "PaginaProveedor",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "JLCPart",
+          "name": "JLCPart",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "ProvedorSec",
+          "name": "ProvedorSec",
+          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
-      "sort_field": "Referencia"
+      "sort_field": "Datasheet"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -613,6 +671,22 @@
     [
       "794055b5-0f32-485f-b098-05722541fd08",
       "Root"
+    ],
+    [
+      "a14f7713-af33-42d2-b730-b3c11f90247d",
+      "Medicion"
+    ],
+    [
+      "355149b5-b49a-4fd1-8019-77373b4a4111",
+      "MCU"
+    ],
+    [
+      "fe4cadb8-7caf-4696-9d3d-678caebaaf16",
+      "Fuente"
+    ],
+    [
+      "47c2bb38-7e57-46d4-86d8-77f86c77d7af",
+      "CAN"
     ]
   ],
   "text_variables": {}
