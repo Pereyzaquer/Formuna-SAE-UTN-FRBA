@@ -3286,7 +3286,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0107c71b-c696-4186-b7e3-c34e446ca9c5")
-		(property "Reference" "C151"
+		(property "Reference" "C155"
 			(at 91.44 41.9162 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3372,7 +3372,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "C151")
+					(reference "C155")
 					(unit 1)
 				)
 			)
@@ -3390,7 +3390,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "05f858b7-91d9-4122-8e1a-23568e84cda5")
-		(property "Reference" "#PWR0233"
+		(property "Reference" "#PWR0224"
 			(at 140.97 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -3450,7 +3450,123 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0233")
+					(reference "#PWR0224")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:SM712_SOT23")
+		(at 137.16 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "06905c0c-adfd-4b40-a0ec-1c40107193f7")
+		(property "Reference" "D82"
+			(at 137.16 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PESD5V0S2UAT,215"
+			(at 137.16 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 137.16 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXS2UAT_SER.pdf"
+			(at 133.35 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
+			(at 137.16 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" "https://ar.mouser.com/es/ProductDetail/Nexperia/PESD5V0S2UAT215?qs=LOCUfHb8d9udSD7DS71Scw%3D%3D"
+			(at 137.16 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description_1" ""
+			(at 137.16 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 137.16 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "80474ff3-2993-4f13-b7bd-47b6c01c9337")
+		)
+		(pin "3"
+			(uuid "3c289a6d-439a-4129-9a76-49473825b793")
+		)
+		(pin "1"
+			(uuid "415b3ba5-62a6-4bbe-84a0-263187e93e20")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "D82")
 					(unit 1)
 				)
 			)
@@ -3468,7 +3584,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0d8697bb-19d1-44d5-ad77-fe48a39f482d")
-		(property "Reference" "#PWR0237"
+		(property "Reference" "#PWR0228"
 			(at 166.37 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -3528,7 +3644,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0237")
+					(reference "#PWR0228")
 					(unit 1)
 				)
 			)
@@ -3545,7 +3661,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "105705c8-0bfc-40e3-8cd9-9e1ca2440044")
-		(property "Reference" "#PWR0224"
+		(property "Reference" "#PWR0215"
 			(at 90.17 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -3606,7 +3722,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0224")
+					(reference "#PWR0215")
 					(unit 1)
 				)
 			)
@@ -3624,7 +3740,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1acb52f9-98cb-42bc-825d-d1c6284b29d2")
-		(property "Reference" "#PWR0239"
+		(property "Reference" "#PWR0230"
 			(at 247.65 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -3684,7 +3800,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0239")
+					(reference "#PWR0230")
 					(unit 1)
 				)
 			)
@@ -3702,7 +3818,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2297533d-f104-4bb3-b1bc-d87590e4f99c")
-		(property "Reference" "J3"
+		(property "Reference" "J2"
 			(at 179.07 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3904,7 +4020,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "J3")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -3922,7 +4038,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "22cea824-718b-4f01-ac3a-f67113340d85")
-		(property "Reference" "#PWR0220"
+		(property "Reference" "#PWR0211"
 			(at 82.55 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -3982,7 +4098,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0220")
+					(reference "#PWR0211")
 					(unit 1)
 				)
 			)
@@ -4000,7 +4116,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "236dd83e-0b14-40b9-8b10-1e57b6a88571")
-		(property "Reference" "C154"
+		(property "Reference" "C158"
 			(at 143.51 48.2662 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4086,123 +4202,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "C154")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:SM712_SOT23")
-		(at 138.43 144.78 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "310955ce-b12b-4a22-a874-641e51f88d2f")
-		(property "Reference" "D81"
-			(at 138.43 138.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PESD2CANFD24LT-QR"
-			(at 138.43 140.97 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 138.43 153.67 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf"
-			(at 134.62 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
-			(at 138.43 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD2CANFD24LT-QR/16681728?gclsrc=aw.ds&gad_source=1&gad_campaignid=203759898&gbraid=0AAAAADrbLli8eWfm9W3LaMb7UAYqwSSMQ&gclid=Cj0KCQjwz9_QBhD_ARIsADnSCfCGHQRZB0EHiXDFWn5xwCqk_3yF4DBu2SlKsFxERLFgcyw0xAPfLIsaAsdqEALw_wcB"
-			(at 138.43 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 138.43 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 138.43 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "58382eb4-3564-46b3-bb20-a5b4959c63a3")
-		)
-		(pin "3"
-			(uuid "c53f04b6-3d87-4129-b089-a53bb96b71e2")
-		)
-		(pin "1"
-			(uuid "a717cf14-6122-4045-8851-8fd2f2331fec")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "D81")
+					(reference "C158")
 					(unit 1)
 				)
 			)
@@ -4219,7 +4219,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "449f9f0e-ac88-4a4a-b291-c5ebc6d66e00")
-		(property "Reference" "U31"
+		(property "Reference" "U33"
 			(at 102.87 48.768 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4345,7 +4345,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "U31")
+					(reference "U33")
 					(unit 1)
 				)
 			)
@@ -4363,7 +4363,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "45bbf000-32bf-4fd6-8aa1-9dd90cf5df94")
-		(property "Reference" "R190"
+		(property "Reference" "R174"
 			(at 137.16 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4449,7 +4449,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "R190")
+					(reference "R174")
 					(unit 1)
 				)
 			)
@@ -4467,7 +4467,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4a5d0fa8-d308-4983-a0a3-7ce4042a0a20")
-		(property "Reference" "J4"
+		(property "Reference" "J3"
 			(at 180.34 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4669,7 +4669,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "J4")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -4687,7 +4687,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a644f68-6573-4a06-8a71-af80bc2c3b5c")
-		(property "Reference" "#PWR0226"
+		(property "Reference" "#PWR0217"
 			(at 123.19 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -4747,7 +4747,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0226")
+					(reference "#PWR0217")
 					(unit 1)
 				)
 			)
@@ -4765,7 +4765,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d09456e-63cd-4b6e-9911-625b648eb37e")
-		(property "Reference" "#PWR0223"
+		(property "Reference" "#PWR0214"
 			(at 88.9 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -4825,7 +4825,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0223")
+					(reference "#PWR0214")
 					(unit 1)
 				)
 			)
@@ -4843,7 +4843,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "571c210a-21fd-416b-95a1-f39aad7e6f6c")
-		(property "Reference" "#FLG021"
+		(property "Reference" "#FLG017"
 			(at 247.65 112.395 0)
 			(hide yes)
 			(show_name no)
@@ -4903,7 +4903,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#FLG021")
+					(reference "#FLG017")
 					(unit 1)
 				)
 			)
@@ -4921,7 +4921,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5ef6a282-9af7-4c46-a964-c33255e753b8")
-		(property "Reference" "C153"
+		(property "Reference" "C157"
 			(at 132.08 104.1462 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5007,7 +5007,123 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "C153")
+					(reference "C157")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:SM712_SOT23")
+		(at 138.43 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "63a1b8a9-284f-42e1-ae79-83a911561b9d")
+		(property "Reference" "D83"
+			(at 138.43 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PESD5V0S2UAT,215"
+			(at 138.43 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 138.43 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESDXS2UAT_SER.pdf"
+			(at 134.62 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
+			(at 138.43 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" "https://ar.mouser.com/es/ProductDetail/Nexperia/PESD5V0S2UAT215?qs=LOCUfHb8d9udSD7DS71Scw%3D%3D"
+			(at 138.43 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description_1" ""
+			(at 138.43 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 138.43 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f0618aff-c8f0-4ecd-ae4e-4b2d0a1262f6")
+		)
+		(pin "3"
+			(uuid "328157ad-0b41-4324-808a-e098736d02b7")
+		)
+		(pin "1"
+			(uuid "a77b92c9-0223-41ee-ba2a-a751b8d0f57e")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "D83")
 					(unit 1)
 				)
 			)
@@ -5025,7 +5141,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a419a9c-90e2-476e-b50d-40293f369a97")
-		(property "Reference" "#PWR0225"
+		(property "Reference" "#PWR0216"
 			(at 90.17 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -5085,7 +5201,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0225")
+					(reference "#PWR0216")
 					(unit 1)
 				)
 			)
@@ -5103,7 +5219,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "797e2f5a-4f08-45d9-81aa-c0a29feaa7f5")
-		(property "Reference" "#PWR0221"
+		(property "Reference" "#PWR0212"
 			(at 83.82 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -5163,7 +5279,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0221")
+					(reference "#PWR0212")
 					(unit 1)
 				)
 			)
@@ -5181,7 +5297,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7c1999b3-28de-4d1a-8250-402176a5d58d")
-		(property "Reference" "#PWR0240"
+		(property "Reference" "#PWR0231"
 			(at 260.35 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -5241,7 +5357,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0240")
+					(reference "#PWR0231")
 					(unit 1)
 				)
 			)
@@ -5259,7 +5375,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8a82f8c3-262b-42a1-bfec-b6527d1b35bd")
-		(property "Reference" "#PWR0231"
+		(property "Reference" "#PWR0222"
 			(at 130.81 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -5319,7 +5435,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0231")
+					(reference "#PWR0222")
 					(unit 1)
 				)
 			)
@@ -5337,7 +5453,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c37c937-3f34-4892-b7ff-c12b7af0612f")
-		(property "Reference" "#PWR0227"
+		(property "Reference" "#PWR0218"
 			(at 124.46 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -5397,7 +5513,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0227")
+					(reference "#PWR0218")
 					(unit 1)
 				)
 			)
@@ -5414,7 +5530,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8d538743-cde7-4154-82e3-fc28e9ddabba")
-		(property "Reference" "#PWR0219"
+		(property "Reference" "#PWR0210"
 			(at 80.01 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -5475,7 +5591,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0219")
+					(reference "#PWR0210")
 					(unit 1)
 				)
 			)
@@ -5493,7 +5609,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "916ddc22-a240-49f9-ae67-443178ef56f9")
-		(property "Reference" "#PWR0241"
+		(property "Reference" "#PWR0232"
 			(at 260.35 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -5553,7 +5669,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0241")
+					(reference "#PWR0232")
 					(unit 1)
 				)
 			)
@@ -5571,7 +5687,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "918a63ea-c224-45ea-aeb7-f55042edcab5")
-		(property "Reference" "#PWR0228"
+		(property "Reference" "#PWR0219"
 			(at 128.27 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -5631,7 +5747,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0228")
+					(reference "#PWR0219")
 					(unit 1)
 				)
 			)
@@ -5649,7 +5765,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "97ba10fd-edc4-4bb9-b3bc-d7a05b69cd1c")
-		(property "Reference" "#PWR0229"
+		(property "Reference" "#PWR0220"
 			(at 129.54 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -5709,7 +5825,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0229")
+					(reference "#PWR0220")
 					(unit 1)
 				)
 			)
@@ -5727,7 +5843,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a96be4c7-1b12-4656-9c1f-5e492b6ee5db")
-		(property "Reference" "#PWR0232"
+		(property "Reference" "#PWR0223"
 			(at 140.97 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -5787,7 +5903,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0232")
+					(reference "#PWR0223")
 					(unit 1)
 				)
 			)
@@ -5805,7 +5921,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aaf47141-08d7-4c55-be2c-54baca1d9bd2")
-		(property "Reference" "#FLG022"
+		(property "Reference" "#FLG018"
 			(at 260.35 99.695 0)
 			(hide yes)
 			(show_name no)
@@ -5865,7 +5981,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#FLG022")
+					(reference "#FLG018")
 					(unit 1)
 				)
 			)
@@ -5883,7 +5999,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab4c58a4-c1b1-4e1c-b5b0-ee2a9d5fe62a")
-		(property "Reference" "#PWR0236"
+		(property "Reference" "#PWR0227"
 			(at 165.1 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -5943,7 +6059,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0236")
+					(reference "#PWR0227")
 					(unit 1)
 				)
 			)
@@ -5961,7 +6077,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bb2b440c-56df-4cd0-a72e-0c58066ae79a")
-		(property "Reference" "R191"
+		(property "Reference" "R175"
 			(at 138.43 130.8099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6047,7 +6163,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "R191")
+					(reference "R175")
 					(unit 1)
 				)
 			)
@@ -6065,7 +6181,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf529a83-30d0-4965-a086-e7438021d5c2")
-		(property "Reference" "#PWR0234"
+		(property "Reference" "#PWR0225"
 			(at 157.48 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -6125,7 +6241,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0234")
+					(reference "#PWR0225")
 					(unit 1)
 				)
 			)
@@ -6143,7 +6259,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c893fe85-f4c5-4166-8ae5-fd1313504062")
-		(property "Reference" "U32"
+		(property "Reference" "U34"
 			(at 104.14 112.268 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6269,7 +6385,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "U32")
+					(reference "U34")
 					(unit 1)
 				)
 			)
@@ -6287,7 +6403,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cf2f0532-6703-44cd-adc4-0ea609ebb38e")
-		(property "Reference" "#PWR0238"
+		(property "Reference" "#PWR0229"
 			(at 247.65 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6347,7 +6463,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0238")
+					(reference "#PWR0229")
 					(unit 1)
 				)
 			)
@@ -6365,7 +6481,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d3234627-fe5b-449a-8dcc-fbcaea2a4bb9")
-		(property "Reference" "#PWR0235"
+		(property "Reference" "#PWR0226"
 			(at 158.75 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -6425,123 +6541,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0235")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:SM712_SOT23")
-		(at 137.16 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "db789693-265d-4766-9718-f832ec382543")
-		(property "Reference" "D80"
-			(at 137.16 74.93 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PESD2CANFD24LT-QR"
-			(at 137.16 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 137.16 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf"
-			(at 133.35 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23"
-			(at 137.16 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/nexperia-usa-inc/PESD2CANFD24LT-QR/16681728?gclsrc=aw.ds&gad_source=1&gad_campaignid=203759898&gbraid=0AAAAADrbLli8eWfm9W3LaMb7UAYqwSSMQ&gclid=Cj0KCQjwz9_QBhD_ARIsADnSCfCGHQRZB0EHiXDFWn5xwCqk_3yF4DBu2SlKsFxERLFgcyw0xAPfLIsaAsdqEALw_wcB"
-			(at 137.16 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 137.16 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 137.16 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "95ecaa89-2690-430f-a6b3-6edd5dc61d89")
-		)
-		(pin "3"
-			(uuid "9a21de40-1d91-45b7-a902-6ea210310379")
-		)
-		(pin "1"
-			(uuid "af5d4df8-203f-4c9b-94c3-67b402de5fc0")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "D80")
+					(reference "#PWR0226")
 					(unit 1)
 				)
 			)
@@ -6559,7 +6559,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de526811-f250-4f79-b2ce-82ec3f08a841")
-		(property "Reference" "C152"
+		(property "Reference" "C156"
 			(at 92.71 105.4162 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6645,7 +6645,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "C152")
+					(reference "C156")
 					(unit 1)
 				)
 			)
@@ -6663,7 +6663,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0195442-7a9a-4129-a36f-1787be8c5f47")
-		(property "Reference" "#PWR0230"
+		(property "Reference" "#PWR0221"
 			(at 129.54 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -6723,7 +6723,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0230")
+					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -6741,7 +6741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e045be2c-a0eb-4bb3-b433-d36e4371692b")
-		(property "Reference" "#FLG020"
+		(property "Reference" "#FLG016"
 			(at 247.65 99.695 0)
 			(hide yes)
 			(show_name no)
@@ -6801,7 +6801,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#FLG020")
+					(reference "#FLG016")
 					(unit 1)
 				)
 			)
@@ -6818,7 +6818,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e502bc7e-677e-4300-b142-4cdec063e20f")
-		(property "Reference" "#PWR0222"
+		(property "Reference" "#PWR0213"
 			(at 88.9 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -6879,7 +6879,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0222")
+					(reference "#PWR0213")
 					(unit 1)
 				)
 			)
@@ -6897,7 +6897,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f7768c90-e2d0-4ca5-b177-783a47376b7c")
-		(property "Reference" "#FLG023"
+		(property "Reference" "#FLG019"
 			(at 260.35 112.395 0)
 			(hide yes)
 			(show_name no)
@@ -6957,7 +6957,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#FLG023")
+					(reference "#FLG019")
 					(unit 1)
 				)
 			)
@@ -6974,7 +6974,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ffccb1ff-35a9-483c-a4f4-05edacce077e")
-		(property "Reference" "#PWR0218"
+		(property "Reference" "#PWR0209"
 			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -7035,7 +7035,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0218")
+					(reference "#PWR0209")
 					(unit 1)
 				)
 			)

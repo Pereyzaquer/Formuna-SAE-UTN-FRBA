@@ -1,0 +1,112 @@
+
+(rules PCB freerouting.dsn
+  (snap_angle 
+    fortyfive_degree
+  )
+  (rule
+    (width 200.0)
+    (clearance 200.0)
+    (clearance 100.0 (type smd_to_turn_gap))
+    (clearance 50.0 (type smd))
+    (clearance 200.0 (type "kicad_default"))
+  )
+  (padstack "Via[0-5]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In3.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In4.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-5]_600:300_um" "Via[0-5]_600:300_um" default
+  )
+  (via 
+    "Via[0-5]_600:300_um-kicad_default" "Via[0-5]_600:300_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-5]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-5]_600:300_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu In3.Cu In4.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "GND_Can_1" "/pcb_potencia/Gate_Driver/ISO_HS_GND" "GNDPWR_2" "GNDPWR_3" "GND_Can_2" "GNDPWR_1" "/pcb_potencia/Gate_Driver/GD_HS_2/ISO_GND" "/pcb_potencia/Gate_Driver/GD_HS_3/ISO_GND"
+    GND "+3.3_digital" "+3.3V_analog" "/pcb_potencia/Gate_Driver/15V_HS_ISO" "/pcb_potencia/Gate_Driver/GD_LS_3/+15V" "/pcb_logica/LogicSupply/5V_FB" "/pcb_potencia/Gate_Driver/GD_HS_2/+15V" "/pcb_potencia/Gate_Driver/GD_LS_1/+15V"
+    "+5V_Can_1" "+5V_digital" "/pcb_potencia/Gate_Driver/GD_HS_3/+15V" "/pcb_potencia/Gate_Driver/GD_LS_2/+15V" "+5V_Can_2" +12V "/pcb_logica/F280049C/GPIO18_X2" "unconnected-(Y1-NC-Pad2)"
+    "/pcb_logica/F280049C/X1" "unconnected-(Y1-NC__1-Pad4)" "/pcb_potencia/Gate_Driver/GD_HS_2/S_HV" "Net-(U10-AIN)" "Net-(U15E-VDDIO_SW)" "Net-(U20-VINN)" "/pcb_logica/PWM_L_B" "/pcb_potencia/Gate_Driver/GD_HS_2/-8V"
+    "Net-(D33-K)" "/pcb_potencia/Gate_Driver/GD_HS_3/-8V" "Net-(U21A--)" "Net-(U21A-+)" "Net-(U21B-+)" "Net-(U21B--)" "Net-(R151-Pad2)" "Net-(R148-Pad2)"
+    "Net-(U21C--)" "Net-(U21C-+)" "Net-(U21D-+)" "Net-(U21D--)" "Net-(R149-Pad2)" "Net-(R150-Pad2)" "Net-(D77-A)" "/pcb_potencia/Gate_Driver/GD_LS_2/-8V"
+    "Net-(D66-K)" "Net-(D67-A)" "Net-(U36B--)" "/pcb_potencia/currentS/Uot2" "/pcb_logica/Temp_A" "Net-(U14-APWM)" "Net-(U18-VOUTN)" "Net-(D22-K)"
+    "Net-(D20-K)" "Net-(D18-A)" "Net-(U29-1IN-)" +3V0 "Net-(D34-A)" "/pcb_logica/GD_FLT" "Net-(D13-A)" "Net-(R110-Pad1)"
+    "Net-(R106-Pad2)" "/pcb_logica/GD_RDY" "Net-(D80-A1)" "Net-(D80-A2)" "/pcb_potencia/Gate_Driver/GD_LS_3/-8V" "/pcb_potencia/Gate_Driver/GD_HS_1/DESAT" "Net-(D64-K)" "Net-(U28-2IN+)"
+    "Net-(U29-3IN+)" "/pcb_potencia/Gate_Driver/GD_LS_2/S_HV" "/pcb_potencia/Gate_Driver/GD_LS_2/DESAT" "Net-(U4-OUTH)" "Net-(U4-OUTL)" "/pcb_potencia/Gate_Driver/GD_LS_2/Gate" "/pcb_logica/PWM_H_B" "/pcb_logica/Reset_Pote"
+    "/pcb_potencia/Gate_Driver/GD_LS_2/APWM" "Net-(U13-EN_UVLO)" "Net-(U17-VINP)" "Net-(U17-VINN)" "Net-(D25-K)" "Net-(D7-A)" "/pcb_logica/CAN_TX_B" "unconnected-(U32-NC-Pad4)"
+    "/pcb_logica/CAN_RX_B" "unconnected-(U32-NC-Pad6)" "unconnected-(U32-NC-Pad7)" "Net-(D81-A2)" "Net-(D81-A1)" "unconnected-(U32-NC-Pad14)" "Net-(D42-K)" "Net-(D40-A)"
+    "Net-(D56-A)" "Net-(U11-FB)" "Net-(U11-EN_UVLO)" "Net-(U11-SS_BIAS)" "Net-(U11-TC)" "Net-(U11-RSET)" "/pcb_potencia/Gate_Driver/GD_HS_2/Gate" "Net-(U10-OUTH)"
+    "Net-(R118-Pad1)" "Net-(U13-SS_BIAS)" "Net-(R116-Pad1)" "Net-(R112-Pad2)" "/pcb_potencia/Gate_Driver/MP_3" "Net-(D17-A)" "/pcb_logica/Tension_B" "Net-(D29-A)"
+    "Net-(U8-OUTH)" "Net-(U28-1IN-)" "/pcb_logica/ErrorCurrent" "Net-(U19-VINN)" "Net-(D44-K)" "Net-(D45-A)" "Net-(U29-4IN+)" "Net-(U44-~{ERROR})"
+    "/pcb_potencia/Gate_Driver/5V_ISO_1" "Net-(D76-A)" "Net-(U23-FB)" "Net-(U36C-+)" "/pcb_logica/F280049C/GP_26_LED_B" "Net-(D73-A)" "/pcb_potencia/Gate_Driver/VCC_DC" "Net-(R103-Pad2)"
+    "/pcb_logica/encoder/Data-" "Net-(C158-Pad2)" "Net-(R195-Pad1)" "Net-(D12-A)" "Net-(D14-K)" "Net-(C106-Pad2)" "Net-(U9-EN_UVLO)" "Net-(U3-EN_UVLO)"
+    "/pcb_logica/A" "Net-(D31-K)" "/pcb_logica/Boot_Mode_2" "/pcb_potencia/Gate_Driver/MP_1" "Net-(D50-A)" "Net-(U13-TC)" "Net-(U13-RSET)" "/pcb_potencia/Gate_Driver/GD_HS_3/S_HV"
+    "Net-(U8-AIN)" "/pcb_logica/Temp_PCB" "Net-(U4-APWM)" "/pcb_logica/encoder/A-" "Net-(C161-Pad2)" "Net-(U19-VOUTP)" "Net-(D62-A)" "Net-(U14-OUTH)"
+    "/pcb_potencia/Gate_Driver/GD_LS_1/-8V" "/pcb_potencia/Gate_Driver/GD_LS_3/DESAT" "Net-(U15D-FLT1)" "/pcb_potencia/Gate_Driver/GDsupply3/APWM" "Net-(U6-APWM)" "Net-(D75-A)" "Net-(U23-EN_UVLO)" "Net-(U23-SS_BIAS)"
+    "Net-(U23-TC)" "Net-(U23-RSET)" "/pcb_logica/encoder/B+" "Net-(C160-Pad2)" "Net-(U7-TC)" "Net-(U7-RSET)" "Net-(U20-VINP)" "Net-(R117-Pad1)"
+    "Net-(U19-VINP)" "Net-(U36C--)" "/pcb_potencia/currentS/Uot3" "/pcb_logica/encoder/Clock+" "Net-(C155-Pad2)" "Net-(U3-TC)" "Net-(U3-RSET)" "Net-(U18-VINP)"
+    "Net-(U18-VINN)" "Net-(D51-A)" "Net-(U12-OUTH)" "Net-(D28-A)" "/pcb_potencia/Gate_Driver/5V_ISO_2" "/pcb_potencia/Gate_Driver/GD_HS_1/Gate" "Net-(U14-OUTL)" "/pcb_logica/encoder/A_MCU_5V"
+    "/pcb_logica/encoder/B_MCU_5V" "/pcb_logica/encoder/Z_MCU_5V" "/pcb_logica/encoder/DATA_MCU_5V" "unconnected-(U35-B8-Pad11)" "unconnected-(U35-B7-Pad12)" "unconnected-(U35-B6-Pad13)" "unconnected-(U35-B5-Pad14)" "/pcb_logica/Data"
+    "/pcb_logica/Z" "/pcb_logica/B" "Net-(U5-EN_UVLO)" "/pcb_logica/Temp_C" "/pcb_potencia/Gate_Driver/GD_HS_3/Gate" "Net-(U36B-+)" "/pcb_potencia/currentS/Uot1" "Net-(R100-Pad2)"
+    "Net-(R104-Pad2)" "Net-(U18-VOUTP)" "/pcb_potencia/Gate_Driver/GD_HS_1/-8V" "Net-(U28-4IN+)" "unconnected-(U33-R-Pad1)" "Net-(U33-*RE)" "/pcb_logica/Clk" "/pcb_logica/encoder/Clock-"
+    "Net-(R114-Pad2)" "Net-(C102-Pad1)" "Net-(U14-AIN)" "/pcb_logica/PWM_L_A" "/pcb_logica/PWM_H_A" "Net-(U28-3IN+)" "Net-(U20-VOUTP)" "Net-(U9-FB)"
+    "unconnected-(U25-NC-Pad2)" "unconnected-(U25-NC-Pad7)" "Net-(D11-K)" "Net-(U28-1IN+)" "Net-(U6-OUTH)" "Net-(D69-K)" "/pcb_logica/Tension_DC" "Net-(U28-3IN-)"
+    "Net-(D35-A)" "Net-(D36-K)" "/pcb_logica/Temp_B" "Net-(U10-APWM)" "Net-(D23-A)" "Net-(U5-FB)" "/pcb_potencia/Gate_Driver/GD_HS_2/DESAT" "Net-(U19-VOUTN)"
+    "/pcb_logica/F280049C/GP_27_LED_C" "Net-(D74-A)" GND1 "Net-(U43-~{ERROR})" "/pcb_potencia/Gate_Driver/5V_ISO_3" "/pcb_logica/Mcu_reset" +1V5 "Net-(U13-FB)"
+    "/pcb_logica/Tension_C" "Net-(D79-A)" "Net-(U5-TC)" "Net-(U5-RSET)" "Net-(U36A-+)" "Net-(U43-FEEDBACK)" "Net-(R102-Pad2)" "/pcb_logica/F280049C/GP_28_UART_RX"
+    "/pcb_logica/F280049C/A6_ADC_PS" "unconnected-(U15C-B3_VDAC-Pad8)" "unconnected-(U15C-A2_B6_PGA1_OF-Pad9)" "/pcb_logica/Tension_A" "unconnected-(U15C-PGA5_IN-Pad16)" "unconnected-(U15C-PGA1_IN-Pad18)" "unconnected-(U15C-PGA3_IN-Pad20)" "unconnected-(U15C-A1_DACB_OUT-Pad22)"
+    "unconnected-(U15C-C5_PGA6_IN-Pad28)" "unconnected-(U15C-PGA2_IN-Pad30)" "unconnected-(U15C-C3_PGA4_IN-Pad31)" "unconnected-(U15C-A4_B8_PGA2_OF-Pad36)" "/pcb_logica/F280049C/A8_5V_C_SP" "unconnected-(U15C-A9-Pad38)" "unconnected-(U15C-PGA7_IN-Pad43)" "unconnected-(U15C-C14-Pad44)"
+    "Net-(U15D-FLT2)" "unconnected-(U15B-GPIO33-Pad53)" "/pcb_logica/F280049C/GP_16_OverCurrent_MP_C" "/pcb_logica/F280049C/GP_17_OverDC" "/pcb_logica/F280049C/GP_25_LED_A" "/pcb_logica/TCK" "/pcb_logica/TDO" "/pcb_logica/TMS"
+    "/pcb_logica/TDI" "/pcb_logica/Boot_Mode_1" "/pcb_logica/PWM_H_C" "unconnected-(U15A-GPIO23_SW-Pad81)" "unconnected-(U15A-GPIO22_SW-Pad83)" "unconnected-(U15B-GPIO40-Pad85)" "/pcb_logica/PWM_L_C" "/pcb_logica/F280049C/GP_39_E_STOP"
+    "/pcb_logica/F280049C/GP_59_WD" "unconnected-(U15B-GPIO34-Pad94)" "/pcb_logica/F280049C/GP_15_OverCurrent_MP_B" "/pcb_logica/F280049C/GP_14_OverCurrent_MP_A" "/pcb_logica/F280049C/GP_6_PWM_FAN" "/pcb_logica/CAN_RX_A" "/pcb_logica/CAN_TX_A" "/pcb_logica/F280049C/GP_29_UART_TX"
+    GNDPWR "Net-(U9-TC)" "Net-(D39-A)" "Net-(U36A--)" "unconnected-(U36D-+-Pad11)" "unconnected-(U36D---Pad12)" "unconnected-(U36-Pad13)" "Net-(D75-K)"
+    "/pcb_potencia/Gate_Driver/GD_LS_1/DESAT" "Net-(D53-K)" "/pcb_potencia/Gate_Driver/MP_2" "Net-(R101-Pad2)" "Net-(U3-FB)" "Net-(U3-SS_BIAS)" "/pcb_potencia/Gate_Driver/GD_LS_3/Gate" "Net-(R107-Pad2)"
+    "/pcb_potencia/Gate_Driver/GD_HS_3/DESAT" "Net-(U8-OUTL)" "Net-(U8-APWM)" "/pcb_potencia/Gate_Driver/GD_HS_1/S_HV" "Net-(U29-1IN+)" "Net-(D46-A)" "Net-(U29-2IN+)" "Net-(D47-K)"
+    "Net-(U29-3IN-)" "/pcb_potencia/Gate_Driver/GD_LS_1/S_HV" "Net-(U12-OUTL)" "/pcb_potencia/Gate_Driver/GD_LS_1/Gate" "/pcb_potencia/Gate_Driver/GD_LS_1/APWM" "Net-(R96-Pad2)" "Net-(U5-SS_BIAS)" "Net-(U17-VOUTN)"
+    "/pcb_logica/encoder/A+" "Net-(U9-SS_BIAS)" "Net-(R108-Pad1)" "unconnected-(U24-NC-Pad4)" "Net-(U17-VOUTP)" "Net-(R109-Pad1)" "Net-(R113-Pad2)" "Net-(U7-SS_BIAS)"
+    "Net-(D9-K)" "/pcb_logica/ErrorDC" "Net-(R111-Pad1)" "Net-(D24-A)" "Net-(U10-OUTL)" "+5V_analog" "Net-(U42-~{ERROR})" "Net-(U42-FEEDBACK)"
+    "unconnected-(U31-NC-Pad4)" "unconnected-(U31-NC-Pad6)" "unconnected-(U31-NC-Pad7)" "unconnected-(U31-NC-Pad14)" "Net-(R105-Pad2)" "Net-(U20-VOUTN)" "Net-(D72-A)" "Net-(U44-FEEDBACK)"
+    "Net-(D68-A)" "Net-(D61-A)" "Net-(U7-EN_UVLO)" "Net-(D57-A)" "/pcb_logica/encoder/Data+" "/pcb_potencia/Gate_Driver/GDsupply5/APWM" "Net-(R193-Pad1)" "Net-(U9-RSET)"
+    "Net-(D58-K)" "/pcb_logica/encoder/Z+" "Net-(C159-Pad2)" "unconnected-(U37-N{slash}C-Pad4)" "/pcb_logica/encoder/B-" "/pcb_logica/encoder/Z-" "Net-(D6-A)" "unconnected-(U26-N{slash}C-Pad4)"
+    "/pcb_potencia/Gate_Driver/GD_LS_3/S_HV" "Net-(U6-OUTL)" "/pcb_potencia/Gate_Driver/GD_LS_3/APWM" "Net-(U12-APWM)" "Net-(R119-Pad1)" "Net-(R115-Pad2)" "Net-(U7-FB)" "Net-(D55-K)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu In3.Cu In4.Cu B.Cu)
+    )
+  )
+)

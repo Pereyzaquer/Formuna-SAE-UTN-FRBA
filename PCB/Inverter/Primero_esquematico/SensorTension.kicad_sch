@@ -1644,145 +1644,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+1V5"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+1V5"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+1V5\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+1V5_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+1V5_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3.3VP"
 			(power global)
 			(pin_numbers
@@ -2250,8 +2111,8 @@
 		(uuid "8f40a8e0-86b8-4c65-a396-348b2cba895b")
 	)
 	(rectangle
-		(start 13.97 17.78)
-		(end 173.99 187.96)
+		(start 15.24 17.78)
+		(end 175.26 187.96)
 		(stroke
 			(width 0)
 			(type default)
@@ -2273,18 +2134,6 @@
 		)
 		(uuid "b7b70b62-3722-4af4-98e5-f599efa4aafe")
 	)
-	(text "RANGO de 0V a 516,2 V"
-		(exclude_from_sim no)
-		(at 61.468 145.796 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-			)
-		)
-		(uuid "00cc7c43-ee34-4154-80bb-7f94be1eb1b9")
-	)
 	(text "Coloco un capa en la entrada de alimentacion para \ntener una alimentacion estable"
 		(exclude_from_sim no)
 		(at 225.552 51.562 0)
@@ -2294,18 +2143,6 @@
 			)
 		)
 		(uuid "4ce33458-de6e-4362-b0cd-2ba9f72b7a7e")
-	)
-	(text "RANGO de 0V a 516,2 V, rango lineal"
-		(exclude_from_sim no)
-		(at 57.658 65.278 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-			)
-		)
-		(uuid "50aa6569-cb3a-410b-b15a-476281f248d8")
 	)
 	(text "Medicion Aislada"
 		(exclude_from_sim no)
@@ -2318,18 +2155,6 @@
 			)
 		)
 		(uuid "688120b4-3ff8-471f-8a88-deabf78852c4")
-	)
-	(text "RANGO de 0V a 516,2 V"
-		(exclude_from_sim no)
-		(at 68.072 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-			)
-		)
-		(uuid "9952f976-ca69-4c44-b020-a76b711ec7dc")
 	)
 	(text "Alimentacion y referencia"
 		(exclude_from_sim no)
@@ -2378,18 +2203,6 @@
 			)
 		)
 		(uuid "ba91397e-06b9-4459-8930-58ca0a309aa1")
-	)
-	(text "RANGO de 0V a 516,2 V"
-		(exclude_from_sim no)
-		(at 65.532 24.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-			)
-		)
-		(uuid "e3621a68-9588-4ed4-9920-637c7cb6adc6")
 	)
 	(text "Buscar modelos que aguanten mucha V"
 		(exclude_from_sim no)
@@ -2440,52 +2253,16 @@
 		(uuid "11f2aac1-ab0a-4f2d-bfe6-04db75a72cb3")
 	)
 	(junction
-		(at 73.66 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1886630e-42af-4abb-8baa-3dbbba1baf43")
-	)
-	(junction
-		(at 74.93 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1918f471-a1f2-4148-8b41-30df31a54d3c")
-	)
-	(junction
 		(at 132.08 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1a8c9dab-29e6-495c-ba82-e40e3d2d2a51")
 	)
 	(junction
-		(at 72.39 179.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1d052d58-04ed-4194-a4f2-18a2338b18f9")
-	)
-	(junction
-		(at 133.35 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1d15837e-de1e-40f8-aeab-dfefde72bad1")
-	)
-	(junction
 		(at 74.93 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "236c92a6-372e-424e-95ff-46566077ece8")
-	)
-	(junction
-		(at 85.09 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2602a996-14f1-40bd-8c2e-61f630480123")
-	)
-	(junction
-		(at 160.02 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2d0fd11e-520a-4a97-be85-5caa824b3f23")
 	)
 	(junction
 		(at 87.63 128.27)
@@ -2500,6 +2277,12 @@
 		(uuid "39a8537e-5be4-4f20-9b58-d339790deefe")
 	)
 	(junction
+		(at 114.3 168.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3bc97c10-b970-47d6-9706-d98433f9edef")
+	)
+	(junction
 		(at 149.86 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2512,10 +2295,10 @@
 		(uuid "44eda0bf-649f-4229-a1d2-d5703e9727c8")
 	)
 	(junction
-		(at 72.39 53.34)
+		(at 86.36 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "473b547c-c833-4029-a57f-18d8eea8fba3")
+		(uuid "45cf0f95-477b-48ac-b4c8-34fd7b1fa90b")
 	)
 	(junction
 		(at 133.35 77.47)
@@ -2542,12 +2325,6 @@
 		(uuid "5baeef40-5a63-4a5f-ad8a-bcfc853fe28f")
 	)
 	(junction
-		(at 132.08 43.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5dc5a3ff-f5c7-4f89-9af6-bd67f541f01a")
-	)
-	(junction
 		(at 156.21 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2560,16 +2337,16 @@
 		(uuid "6d34394d-5061-4966-9441-d87909f54d93")
 	)
 	(junction
+		(at 129.54 120.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6d9c8053-c53c-47f0-8e85-8c4eec205e01")
+	)
+	(junction
 		(at 87.63 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6f6f4bdf-dad6-41b2-b6e2-f1d3c897e1be")
-	)
-	(junction
-		(at 88.9 171.45)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "706608b5-d600-4785-997c-90ca02f19c4b")
 	)
 	(junction
 		(at 158.75 40.64)
@@ -2578,28 +2355,22 @@
 		(uuid "716ae735-ed1d-459e-a375-36583dadc1cd")
 	)
 	(junction
+		(at 132.08 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "76be5270-3b78-4ccf-88b8-bc995b2dcd7f")
+	)
+	(junction
 		(at 115.57 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7f083f8d-995b-475e-ae0b-d25eb6a13300")
 	)
 	(junction
-		(at 129.54 168.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7f576c37-21bb-432d-8778-3e3afe603beb")
-	)
-	(junction
 		(at 73.66 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9cff7162-7ed5-4aa8-9613-0d8a3aa02bcd")
-	)
-	(junction
-		(at 86.36 171.45)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a4ba9e74-4d78-4209-9d08-3ec5130e5b3c")
 	)
 	(junction
 		(at 147.32 123.19)
@@ -2620,22 +2391,34 @@
 		(uuid "a8c71d42-646b-4dc0-a36d-db5b4bd46b09")
 	)
 	(junction
-		(at 113.03 168.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aa894a7a-dffe-4e5c-a9d6-b17ba80e212a")
-	)
-	(junction
 		(at 118.11 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b17c1ae1-6921-402e-b375-fa1c0881594a")
 	)
 	(junction
-		(at 113.03 163.83)
+		(at 129.54 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c3055cb5-8501-4a91-bd48-ba8264e3a2f1")
+		(uuid "b4330f16-c8e6-48e1-8096-ed0039e6dd7a")
+	)
+	(junction
+		(at 114.3 163.83)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bdf58cd9-8681-471b-a02f-a17f518853f3")
+	)
+	(junction
+		(at 129.54 168.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ca8d2037-3fbe-411c-bddc-50a758282909")
+	)
+	(junction
+		(at 133.35 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d302ead4-29c5-44e2-9e15-acde0677c540")
 	)
 	(junction
 		(at 115.57 125.73)
@@ -2644,10 +2427,10 @@
 		(uuid "d53cf246-afaf-4979-93d5-87a9dd92561e")
 	)
 	(junction
-		(at 129.54 128.27)
+		(at 72.39 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "dd2e7f63-0ba3-40e1-b364-0798ccfddb07")
+		(uuid "d990ba69-4868-462d-85e6-f2148bf07c1e")
 	)
 	(junction
 		(at 87.63 118.11)
@@ -2656,22 +2439,10 @@
 		(uuid "dec0b952-ae19-44e7-8098-95431a1007e1")
 	)
 	(junction
-		(at 86.36 85.09)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e03b19f8-f03f-4ca0-a14a-57775082ba28")
-	)
-	(junction
 		(at 86.36 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1f602ac-28dc-4473-b893-b1f314271091")
-	)
-	(junction
-		(at 129.54 119.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e455935b-a1f2-453e-8150-cb9649c70d69")
 	)
 	(junction
 		(at 118.11 82.55)
@@ -2680,16 +2451,10 @@
 		(uuid "e47edc70-61f3-46d7-9b38-d3c70b7e972f")
 	)
 	(junction
-		(at 85.09 45.72)
+		(at 160.02 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ebcd0184-16b0-4ef6-b5fa-a8f58c7d1c5b")
-	)
-	(junction
-		(at 72.39 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ef5e3fd3-b2b7-44c3-969b-52a8cc2a2cdc")
+		(uuid "fd1383c1-922e-428c-98e4-5c22118ac8ab")
 	)
 	(wire
 		(pts
@@ -2713,27 +2478,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 45.72) (xy 87.63 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "024bf3f6-5fb5-49ac-b52f-12e1c21d79b0")
-	)
-	(wire
-		(pts
-			(xy 83.82 179.07) (xy 86.36 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "049d62a7-4c6d-4338-acf9-9df09fd6e475")
-	)
-	(wire
-		(pts
-			(xy 129.54 168.91) (xy 129.54 180.34)
+			(xy 129.54 168.91) (xy 129.54 171.45)
 		)
 		(stroke
 			(width 0)
@@ -2763,26 +2508,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 119.38) (xy 120.65 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e8c4b87-351f-4ad0-bdcc-70f50fb536f0")
-	)
-	(wire
-		(pts
-			(xy 123.19 95.25) (xy 125.73 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0eae52e2-04ab-41d0-b703-50cb9dfd3d59")
-	)
-	(wire
-		(pts
 			(xy 158.75 40.64) (xy 163.83 40.64)
 		)
 		(stroke
@@ -2793,17 +2518,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 181.61) (xy 88.9 184.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1439095c-7eae-4f00-9d4c-4f6ff08aefc8")
-	)
-	(wire
-		(pts
-			(xy 133.35 95.25) (xy 133.35 82.55)
+			(xy 133.35 87.63) (xy 133.35 82.55)
 		)
 		(stroke
 			(width 0)
@@ -2833,16 +2548,6 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 137.16) (xy 85.09 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b2aa673-6b87-4588-aaf1-1f08c9451aa7")
-	)
-	(wire
-		(pts
 			(xy 156.21 123.19) (xy 156.21 124.46)
 		)
 		(stroke
@@ -2863,23 +2568,13 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 85.09) (xy 88.9 85.09)
+			(xy 129.54 109.22) (xy 129.54 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1f8ab424-c1de-48e1-bc59-cf3b4e7e00d5")
-	)
-	(wire
-		(pts
-			(xy 119.38 128.27) (xy 119.38 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "239ec566-b883-4cdf-9d9e-ce08096cb4c9")
+		(uuid "207cfead-1af5-487d-a83d-19e8b84e6393")
 	)
 	(wire
 		(pts
@@ -2900,6 +2595,16 @@
 			(type default)
 		)
 		(uuid "25c8d902-ca5a-434a-b0d3-4e7078cc69f5")
+	)
+	(wire
+		(pts
+			(xy 114.3 163.83) (xy 121.92 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "264dcc84-4afb-460d-8155-e20a604cd0d4")
 	)
 	(wire
 		(pts
@@ -2933,36 +2638,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 171.45) (xy 86.36 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2be2e1ad-fea2-4b14-8da7-5447024bcfb9")
-	)
-	(wire
-		(pts
-			(xy 129.54 119.38) (xy 129.54 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ccbf631-f542-4d58-b995-e3cf077a7a31")
-	)
-	(wire
-		(pts
-			(xy 69.85 93.98) (xy 73.66 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2fa923b1-55fa-4fea-ae29-e5c078a8b9c1")
-	)
-	(wire
-		(pts
 			(xy 87.63 120.65) (xy 87.63 118.11)
 		)
 		(stroke
@@ -2973,7 +2648,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 171.45) (xy 76.2 171.45)
+			(xy 72.39 171.45) (xy 86.36 171.45)
 		)
 		(stroke
 			(width 0)
@@ -2990,26 +2665,6 @@
 			(type default)
 		)
 		(uuid "3793b38d-7ae9-449a-9b81-dfcc86e3cfb4")
-	)
-	(wire
-		(pts
-			(xy 76.2 53.34) (xy 72.39 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "37bcea6c-2f12-493c-b471-bc18fdd5d7c9")
-	)
-	(wire
-		(pts
-			(xy 82.55 45.72) (xy 85.09 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3954426e-1a3a-4f5b-ba55-5abd399b8d9f")
 	)
 	(wire
 		(pts
@@ -3043,16 +2698,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 171.45) (xy 88.9 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4232c205-8ca8-4923-aaac-5190f8285b60")
-	)
-	(wire
-		(pts
 			(xy 86.36 161.29) (xy 92.71 161.29)
 		)
 		(stroke
@@ -3070,16 +2715,6 @@
 			(type default)
 		)
 		(uuid "446373b1-f597-4c90-8fef-6f8cea3a7db0")
-	)
-	(wire
-		(pts
-			(xy 86.36 93.98) (xy 86.36 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44b7ad96-f5dc-4582-961e-837365d866b4")
 	)
 	(wire
 		(pts
@@ -3113,16 +2748,6 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 128.27) (xy 129.54 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "497d734b-e3f0-4358-be2f-249c1d481daa")
-	)
-	(wire
-		(pts
 			(xy 118.11 82.55) (xy 116.84 82.55)
 		)
 		(stroke
@@ -3153,7 +2778,17 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 85.09) (xy 76.2 85.09)
+			(xy 114.3 163.83) (xy 113.03 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f013f0d-5650-46a1-8846-46ff09a24164")
+	)
+	(wire
+		(pts
+			(xy 73.66 85.09) (xy 88.9 85.09)
 		)
 		(stroke
 			(width 0)
@@ -3173,7 +2808,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 128.27) (xy 74.93 128.27)
+			(xy 74.93 128.27) (xy 87.63 128.27)
 		)
 		(stroke
 			(width 0)
@@ -3213,26 +2848,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 140.97) (xy 121.92 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65468ff9-7dfd-4cb9-9e52-26c570441c07")
-	)
-	(wire
-		(pts
-			(xy 78.74 179.07) (xy 72.39 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65a8d750-4bf1-4730-a740-f33cbf2cf5ac")
-	)
-	(wire
-		(pts
 			(xy 85.09 149.86) (xy 85.09 151.13)
 		)
 		(stroke
@@ -3260,16 +2875,6 @@
 			(type default)
 		)
 		(uuid "6b114daa-17ca-4629-9d55-d8d0d0f9cfdd")
-	)
-	(wire
-		(pts
-			(xy 72.39 171.45) (xy 72.39 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6bc14c1a-dfb4-40f3-823a-5094b774675a")
 	)
 	(wire
 		(pts
@@ -3353,13 +2958,13 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 137.16) (xy 74.93 137.16)
+			(xy 129.54 125.73) (xy 129.54 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7928f0a9-b48a-4901-ab37-230e79551970")
+		(uuid "7e2b54b0-6101-4a17-bd36-1d43ab07c6ca")
 	)
 	(wire
 		(pts
@@ -3370,26 +2975,6 @@
 			(type default)
 		)
 		(uuid "8037d2b7-6696-4c1d-9718-c8de2269fe42")
-	)
-	(wire
-		(pts
-			(xy 87.63 129.54) (xy 87.63 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "812a57a3-00f2-4c21-9b57-7a1b4a47f5f5")
-	)
-	(wire
-		(pts
-			(xy 77.47 137.16) (xy 74.93 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "822a3e0f-54cd-4814-ba0b-7eed7358ef36")
 	)
 	(wire
 		(pts
@@ -3423,16 +3008,6 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 128.27) (xy 120.65 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b458a4a-3c40-4521-80ca-ac57da209e3a")
-	)
-	(wire
-		(pts
 			(xy 116.84 43.18) (xy 124.46 43.18)
 		)
 		(stroke
@@ -3440,16 +3015,6 @@
 			(type default)
 		)
 		(uuid "91cdfcb0-b6fa-471c-9da7-7753ed8bb694")
-	)
-	(wire
-		(pts
-			(xy 81.28 53.34) (xy 85.09 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9314a004-8228-42f0-829b-9e68a9760a23")
 	)
 	(wire
 		(pts
@@ -3483,26 +3048,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 53.34) (xy 85.09 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c5ebf24-16c4-48d1-957a-ced872ca95ac")
-	)
-	(wire
-		(pts
-			(xy 83.82 85.09) (xy 86.36 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d423aad-0722-4345-b708-696079bccbaa")
-	)
-	(wire
-		(pts
 			(xy 115.57 43.18) (xy 116.84 43.18)
 		)
 		(stroke
@@ -3520,16 +3065,6 @@
 			(type default)
 		)
 		(uuid "9f313aee-cfe7-4647-abe4-1d061ac9002c")
-	)
-	(wire
-		(pts
-			(xy 129.54 109.22) (xy 129.54 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a01deacc-e5ff-4ac4-9d60-3d7dd492d020")
 	)
 	(wire
 		(pts
@@ -3553,13 +3088,13 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 119.38) (xy 128.27 119.38)
+			(xy 114.3 168.91) (xy 121.92 168.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a2ed8ab8-5327-45ad-b2ca-345846445fd5")
+		(uuid "a1b4e255-b0c1-4e90-86f9-f3c0fba9b9bd")
 	)
 	(wire
 		(pts
@@ -3643,16 +3178,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 45.72) (xy 72.39 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad660afe-6ced-4853-a29f-907cb84d1f5d")
-	)
-	(wire
-		(pts
 			(xy 72.39 44.45) (xy 72.39 45.72)
 		)
 		(stroke
@@ -3683,17 +3208,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 128.27) (xy 129.54 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b2d1f0c1-f55a-40a1-a67a-513e8084f38b")
-	)
-	(wire
-		(pts
-			(xy 113.03 168.91) (xy 121.92 168.91)
+			(xy 113.03 168.91) (xy 114.3 168.91)
 		)
 		(stroke
 			(width 0)
@@ -3703,13 +3218,13 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 137.16) (xy 85.09 128.27)
+			(xy 86.36 171.45) (xy 92.71 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b41b2b9f-7050-482d-89f4-748bb2e4516c")
+		(uuid "b5625698-911d-4ea7-956c-63d6f6ddd547")
 	)
 	(wire
 		(pts
@@ -3733,26 +3248,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 179.07) (xy 86.36 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7b081db-9119-455e-88d3-d236a7ad6ead")
-	)
-	(wire
-		(pts
-			(xy 87.63 53.34) (xy 87.63 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7c7d1ce-aad6-4d75-a48d-9f0c8ceeb84b")
-	)
-	(wire
-		(pts
 			(xy 147.32 109.22) (xy 138.43 109.22)
 		)
 		(stroke
@@ -3763,17 +3258,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 140.97) (xy 129.54 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ba416c84-658e-4167-acfc-21d5d47cb95f")
-	)
-	(wire
-		(pts
-			(xy 120.65 120.65) (xy 115.57 120.65)
+			(xy 121.92 120.65) (xy 115.57 120.65)
 		)
 		(stroke
 			(width 0)
@@ -3793,17 +3278,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 55.88) (xy 124.46 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c064d1ae-ca88-4070-897d-ac382d0a99d3")
-	)
-	(wire
-		(pts
-			(xy 72.39 45.72) (xy 74.93 45.72)
+			(xy 72.39 45.72) (xy 87.63 45.72)
 		)
 		(stroke
 			(width 0)
@@ -3813,7 +3288,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 125.73) (xy 115.57 125.73)
+			(xy 115.57 125.73) (xy 121.92 125.73)
 		)
 		(stroke
 			(width 0)
@@ -3833,53 +3308,13 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 80.01) (xy 165.1 80.01)
+			(xy 160.02 80.01) (xy 163.83 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c886565a-072c-4cd8-9773-92a0c71fc685")
-	)
-	(wire
-		(pts
-			(xy 74.93 128.27) (xy 74.93 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c9d9595a-785f-4191-9434-deaec05bd26c")
-	)
-	(wire
-		(pts
-			(xy 68.58 53.34) (xy 72.39 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cac6b12d-5f79-44c7-ab1e-122d78d2ca1f")
-	)
-	(wire
-		(pts
-			(xy 85.09 128.27) (xy 87.63 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "caff1cad-96d7-494b-88dd-0a3a22f99c3d")
-	)
-	(wire
-		(pts
-			(xy 88.9 173.99) (xy 88.9 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cc70f8dd-10d6-44cc-8cbb-3d715edad03e")
 	)
 	(wire
 		(pts
@@ -3903,33 +3338,13 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 55.88) (xy 132.08 43.18)
+			(xy 132.08 46.99) (xy 132.08 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d2cebd8d-ca69-4689-aee9-85bc50946581")
-	)
-	(wire
-		(pts
-			(xy 83.82 128.27) (xy 85.09 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d330f43e-8b9b-45df-ba32-5cd575c5e896")
-	)
-	(wire
-		(pts
-			(xy 69.85 179.07) (xy 72.39 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d7e68704-e1ac-4271-bdf7-bb4cfefc4c6f")
 	)
 	(wire
 		(pts
@@ -3940,16 +3355,6 @@
 			(type default)
 		)
 		(uuid "d835831d-d838-4078-b99a-31491ece06fe")
-	)
-	(wire
-		(pts
-			(xy 82.55 93.98) (xy 86.36 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d891355e-e5a4-4fb6-aa7e-95001bc779eb")
 	)
 	(wire
 		(pts
@@ -4023,16 +3428,6 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 171.45) (xy 92.71 171.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea61e111-f37c-4222-a5bd-2d50a8ba5446")
-	)
-	(wire
-		(pts
 			(xy 74.93 127) (xy 74.93 128.27)
 		)
 		(stroke
@@ -4043,16 +3438,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 180.34) (xy 120.65 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ecfc478d-3283-4ab3-9ead-22b31d264424")
-	)
-	(wire
-		(pts
 			(xy 133.35 82.55) (xy 134.62 82.55)
 		)
 		(stroke
@@ -4060,16 +3445,6 @@
 			(type default)
 		)
 		(uuid "f15dc74b-72da-4001-b10a-152fcb172e93")
-	)
-	(wire
-		(pts
-			(xy 77.47 93.98) (xy 73.66 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f31431a3-70d6-42f0-8ead-135a8ba8bf33")
 	)
 	(wire
 		(pts
@@ -4100,46 +3475,6 @@
 			(type default)
 		)
 		(uuid "f7ff6393-7209-451a-919c-b5571c03b009")
-	)
-	(wire
-		(pts
-			(xy 73.66 93.98) (xy 73.66 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f89b2ca5-a1f0-4706-bb38-0a711236165a")
-	)
-	(wire
-		(pts
-			(xy 113.03 163.83) (xy 121.92 163.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8fc5290-5a32-40b1-ab85-cf26dd6d6015")
-	)
-	(wire
-		(pts
-			(xy 88.9 92.71) (xy 88.9 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb25b1ac-7b93-4f41-8224-2cec4dd3f2ec")
-	)
-	(wire
-		(pts
-			(xy 87.63 137.16) (xy 87.63 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb37b06a-bea8-4168-9a56-cc837af2d401")
 	)
 	(wire
 		(pts
@@ -17001,17 +16336,6 @@
 		)
 		(uuid "38894680-4f72-48e4-8ae3-e5ce84ad4db6")
 	)
-	(hierarchical_label "5V_ISO_3"
-		(shape input)
-		(at 87.63 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3cb3a4e7-e19e-4e32-9f1d-286e1130c012")
-	)
 	(hierarchical_label "In_MP_3"
 		(shape input)
 		(at 26.67 118.11 180)
@@ -17025,7 +16349,7 @@
 	)
 	(hierarchical_label "Out_MP_2"
 		(shape input)
-		(at 165.1 80.01 0)
+		(at 163.83 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17033,28 +16357,6 @@
 			(justify left)
 		)
 		(uuid "5b3ef7ec-25a4-4fad-b2d4-3325494fca91")
-	)
-	(hierarchical_label "5V_ISO_1"
-		(shape input)
-		(at 87.63 55.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "72935440-7c59-437a-ac27-5d79482b5b5f")
-	)
-	(hierarchical_label "5V_ISO_2"
-		(shape input)
-		(at 88.9 96.52 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8fb26f89-f7dc-44d4-9178-8b94c1fc0a63")
 	)
 	(hierarchical_label "Out_MP_3"
 		(shape input)
@@ -17144,20 +16446,9 @@
 		)
 		(uuid "eb1f61ab-5781-4900-a498-a6aa639bb27a")
 	)
-	(hierarchical_label "5V_ISO_1"
-		(shape input)
-		(at 88.9 184.15 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f1aff7ef-f10c-4bfe-90ee-a659c778cfdd")
-	)
 	(symbol
 		(lib_id "power:GNDPWR")
-		(at 72.39 137.16 0)
+		(at 74.93 128.27 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17166,8 +16457,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "00128e03-a299-4c33-9919-0bf32e4f64cb")
-		(property "Reference" "#PWR0131"
-			(at 72.39 142.24 0)
+		(property "Reference" "#PWR0120"
+			(at 74.93 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17178,7 +16469,7 @@
 			)
 		)
 		(property "Value" "GNDPWR_3"
-			(at 62.738 141.732 0)
+			(at 65.278 132.842 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17189,7 +16480,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 138.43 0)
+			(at 74.93 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17200,7 +16491,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 138.43 0)
+			(at 74.93 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17211,7 +16502,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 72.39 137.16 0)
+			(at 74.93 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17227,7 +16518,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0131")
+					(reference "#PWR0120")
 					(unit 1)
 				)
 			)
@@ -17245,7 +16536,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00948d53-3b21-4efc-a7d5-04285848b465")
-		(property "Reference" "#PWR0328"
+		(property "Reference" "#PWR0141"
 			(at 160.02 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -17305,109 +16596,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0328")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 81.28 179.07 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "06ac39a5-f0f0-44ee-96ba-26798da81290")
-		(property "Reference" "C170"
-			(at 81.2736 185.42 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0,1uF"
-			(at 81.2736 182.88 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 81.28 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 81.28 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 81.28 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 81.28 179.07 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9586f4d2-8dde-4271-86fb-f5549b01b5ea")
-		)
-		(pin "2"
-			(uuid "b5c4ecc8-3116-4327-acec-d4ee65b27d3e")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C170")
+					(reference "#PWR0141")
 					(unit 1)
 				)
 			)
@@ -17425,7 +16614,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a6c734c-ef1a-4adc-8d12-70f35b93b934")
-		(property "Reference" "C178"
+		(property "Reference" "C137"
 			(at 248.92 33.0262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17511,120 +16700,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C178")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 80.01 171.45 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0be55c2e-71e7-4cbd-8599-67758449045d")
-		(property "Reference" "R223"
-			(at 80.01 174.244 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "780"
-			(at 80.01 176.784 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 80.01 173.228 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 80.01 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 80.01 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 80.01 171.45 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 80.01 171.45 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6889b473-e959-4636-b202-6ca3231d6a63")
-		)
-		(pin "2"
-			(uuid "32734054-6ce0-4757-832e-368cb0195b28")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R223")
+					(reference "C137")
 					(unit 1)
 				)
 			)
@@ -17641,7 +16717,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0dade9d1-50f5-4f3f-87e4-e344d6bcd083")
-		(property "Reference" "R107"
+		(property "Reference" "R99"
 			(at 38.1 156.21 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17736,7 +16812,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R107")
+					(reference "R99")
 					(unit 1)
 				)
 			)
@@ -17754,7 +16830,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0e78287e-1aa0-40a6-8f46-eeda744ab5ec")
-		(property "Reference" "R152"
+		(property "Reference" "R136"
 			(at 151.13 118.364 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17764,7 +16840,7 @@
 				)
 			)
 		)
-		(property "Value" "348"
+		(property "Value" "100"
 			(at 151.13 120.904 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17849,7 +16925,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R152")
+					(reference "R136")
 					(unit 1)
 				)
 			)
@@ -17867,7 +16943,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0fafc463-aab0-4293-b1b9-018164612da0")
-		(property "Reference" "R148"
+		(property "Reference" "R132"
 			(at 134.62 104.394 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17877,7 +16953,7 @@
 				)
 			)
 		)
-		(property "Value" "3k3"
+		(property "Value" "7k68"
 			(at 134.62 106.934 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17962,7 +17038,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R148")
+					(reference "R132")
 					(unit 1)
 				)
 			)
@@ -17980,7 +17056,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "16f0f42e-643c-4ded-bada-3dd3e955280f")
-		(property "Reference" "C126"
+		(property "Reference" "C122"
 			(at 83.82 165.1062 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17991,7 +17067,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 83.82 167.6462 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18066,7 +17142,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C126")
+					(reference "C122")
 					(unit 1)
 				)
 			)
@@ -18083,7 +17159,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1aca37c7-eef8-45da-8429-7faf453cd0bf")
-		(property "Reference" "#PWR0146"
+		(property "Reference" "#PWR0150"
 			(at 250.19 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -18144,120 +17220,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0146")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 78.74 45.72 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1f698ce4-5ffe-45ee-843b-1f59caa524a0")
-		(property "Reference" "R217"
-			(at 78.74 48.514 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "780"
-			(at 78.74 51.054 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 78.74 47.498 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 78.74 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 78.74 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 78.74 45.72 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 78.74 45.72 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1a0c37b0-f4ae-4ff2-b739-2d8da0f5ce46")
-		)
-		(pin "2"
-			(uuid "57f88496-0c78-4346-bfe8-7dc53e376aad")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R217")
+					(reference "#PWR0150")
 					(unit 1)
 				)
 			)
@@ -18274,7 +17237,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2324d1fe-8ac3-42c1-8c3c-9ee3f9e49dcd")
-		(property "Reference" "R125"
+		(property "Reference" "R118"
 			(at 69.85 81.026 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18284,7 +17247,7 @@
 				)
 			)
 		)
-		(property "Value" "1k13"
+		(property "Value" "2k2"
 			(at 69.85 78.486 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18369,7 +17332,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R125")
+					(reference "R118")
 					(unit 1)
 				)
 			)
@@ -18387,7 +17350,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "26126e6f-567f-40d6-892f-474b3eb54ba6")
-		(property "Reference" "U20"
+		(property "Reference" "U22"
 			(at 105.918 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18397,7 +17360,7 @@
 				)
 			)
 		)
-		(property "Value" "AMC1301QDWVRQ1"
+		(property "Value" "AMC1311BQDWVRQ1"
 			(at 105.918 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18440,7 +17403,7 @@
 				)
 			)
 		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1301QDWVRQ1/7244172"
+		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1311BQDWVRQ1/9477603"
 			(at 106.68 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -18500,7 +17463,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U20")
+					(reference "U22")
 					(unit 1)
 				)
 			)
@@ -18518,7 +17481,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "274682f6-035a-415d-89e4-427f7f6e20ed")
-		(property "Reference" "R155"
+		(property "Reference" "R139"
 			(at 154.94 75.184 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18528,7 +17491,7 @@
 				)
 			)
 		)
-		(property "Value" "348"
+		(property "Value" "100"
 			(at 154.94 77.724 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18613,7 +17576,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R155")
+					(reference "R139")
 					(unit 1)
 				)
 			)
@@ -18631,7 +17594,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2b85b531-3d3b-407e-8fc5-92aef89c0b3c")
-		(property "Reference" "R153"
+		(property "Reference" "R137"
 			(at 151.13 161.544 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18641,7 +17604,7 @@
 				)
 			)
 		)
-		(property "Value" "348"
+		(property "Value" "100"
 			(at 151.13 164.084 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18726,7 +17689,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R153")
+					(reference "R137")
 					(unit 1)
 				)
 			)
@@ -18744,7 +17707,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2dafd6b7-f081-482b-8520-40d137b41575")
-		(property "Reference" "C137"
+		(property "Reference" "C135"
 			(at 212.09 33.0262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18830,7 +17793,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C137")
+					(reference "C135")
 					(unit 1)
 				)
 			)
@@ -18838,7 +17801,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 124.46 128.27 90)
+		(at 125.73 125.73 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18847,8 +17810,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "37a6e28e-b725-423c-8b27-0615f37578ef")
-		(property "Reference" "R137"
-			(at 124.46 133.096 90)
+		(property "Reference" "R121"
+			(at 125.73 130.556 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18858,7 +17821,7 @@
 			)
 		)
 		(property "Value" "4k42"
-			(at 124.46 130.556 90)
+			(at 125.73 128.016 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18868,7 +17831,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 124.46 130.048 90)
+			(at 125.73 127.508 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18879,7 +17842,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 124.46 128.27 0)
+			(at 125.73 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18890,7 +17853,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 124.46 128.27 0)
+			(at 125.73 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18901,7 +17864,7 @@
 			)
 		)
 		(property "Compra" ""
-			(at 124.46 128.27 0)
+			(at 125.73 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18912,7 +17875,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 124.46 128.27 90)
+			(at 125.73 125.73 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18923,7 +17886,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 124.46 128.27 90)
+			(at 125.73 125.73 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18942,119 +17905,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R137")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 88.9 177.8 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3b1ddca7-e40e-4881-9de1-80eed41220d0")
-		(property "Reference" "R224"
-			(at 92.71 176.784 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "6420"
-			(at 92.71 179.324 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 90.678 177.8 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 88.9 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 88.9 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 88.9 177.8 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 88.9 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6cc585bd-43be-455b-a86b-8e151f843ed5")
-		)
-		(pin "2"
-			(uuid "a82c5e55-5a73-4db4-b40d-56b6286990c0")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R224")
+					(reference "R121")
 					(unit 1)
 				)
 			)
@@ -19072,7 +17923,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3d1d1a35-5416-4914-afcd-3a571984f98d")
-		(property "Reference" "C125"
+		(property "Reference" "C124"
 			(at 85.09 121.9262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19083,7 +17934,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 85.09 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19158,7 +18009,85 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C125")
+					(reference "C124")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 72.39 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3dbc2e5d-cca8-476b-9210-75640e8b1b5e")
+		(property "Reference" "#PWR0117"
+			(at 72.39 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR_1"
+			(at 68.834 50.038 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 72.39 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8e2c26ca-5f4a-43c0-9421-04b4c80ab1cb")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
+					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
@@ -19175,7 +18104,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "41420017-5915-452b-a8f0-9d8b5410e72a")
-		(property "Reference" "R122"
+		(property "Reference" "R114"
 			(at 68.58 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19270,7 +18199,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R122")
+					(reference "R114")
 					(unit 1)
 				)
 			)
@@ -19287,7 +18216,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4290ed2c-47b5-4ea0-90e6-c152d354d453")
-		(property "Reference" "#PWR0136"
+		(property "Reference" "#PWR0128"
 			(at 109.22 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -19348,7 +18277,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0136")
+					(reference "#PWR0128")
 					(unit 1)
 				)
 			)
@@ -19366,7 +18295,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43925809-1d82-41bf-ab01-bc7fd52708e3")
-		(property "Reference" "#PWR0367"
+		(property "Reference" "#PWR0145"
 			(at 191.77 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -19426,7 +18355,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0367")
+					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
@@ -19443,7 +18372,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4657ace9-c498-4afc-a7f8-a71806fbd43e")
-		(property "Reference" "U18"
+		(property "Reference" "U20"
 			(at 102.108 144.78 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19453,7 +18382,7 @@
 				)
 			)
 		)
-		(property "Value" "AMC1301QDWVRQ1"
+		(property "Value" "AMC1311BQDWVRQ1"
 			(at 102.108 147.32 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19496,7 +18425,7 @@
 				)
 			)
 		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1301QDWVRQ1/7244172"
+		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1311BQDWVRQ1/9477603"
 			(at 102.87 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -19556,7 +18485,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U18")
+					(reference "U20")
 					(unit 1)
 				)
 			)
@@ -19573,7 +18502,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "466f15e1-5803-47e7-a7cf-8887ee870f3d")
-		(property "Reference" "R127"
+		(property "Reference" "R117"
 			(at 68.58 167.386 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19583,7 +18512,7 @@
 				)
 			)
 		)
-		(property "Value" "1k13"
+		(property "Value" "2k2"
 			(at 68.58 164.846 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19668,7 +18597,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R127")
+					(reference "R117")
 					(unit 1)
 				)
 			)
@@ -19686,7 +18615,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "47ce22b6-2d67-42ef-8f50-dba1841a8e19")
-		(property "Reference" "R154"
+		(property "Reference" "R138"
 			(at 153.67 35.814 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19696,7 +18625,7 @@
 				)
 			)
 		)
-		(property "Value" "348"
+		(property "Value" "100"
 			(at 153.67 38.354 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19781,7 +18710,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R154")
+					(reference "R138")
 					(unit 1)
 				)
 			)
@@ -19799,7 +18728,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "48b065e7-d1b2-4c22-883d-8226404d3645")
-		(property "Reference" "#PWR0325"
+		(property "Reference" "#PWR0140"
 			(at 158.75 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19859,7 +18788,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0325")
+					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
@@ -19876,7 +18805,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "49faac3e-1a86-4e83-b95a-df47bb12b196")
-		(property "Reference" "R112"
+		(property "Reference" "R104"
 			(at 50.8 30.48 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19971,7 +18900,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R112")
+					(reference "R104")
 					(unit 1)
 				)
 			)
@@ -19979,7 +18908,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDPWR")
-		(at 69.85 179.07 0)
+		(at 72.39 171.45 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19988,8 +18917,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4a73756e-2fa4-40f0-b7b0-bf01ed2b6a99")
-		(property "Reference" "#PWR0142"
-			(at 69.85 184.15 0)
+		(property "Reference" "#PWR0118"
+			(at 72.39 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20000,7 +18929,7 @@
 			)
 		)
 		(property "Value" "GNDPWR_1"
-			(at 66.294 183.388 0)
+			(at 68.834 175.768 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -20011,7 +18940,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 69.85 180.34 0)
+			(at 72.39 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20022,7 +18951,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 69.85 180.34 0)
+			(at 72.39 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20033,7 +18962,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 69.85 179.07 0)
+			(at 72.39 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20049,7 +18978,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0142")
+					(reference "#PWR0118")
 					(unit 1)
 				)
 			)
@@ -20067,7 +18996,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b8d069b-4cbd-46c3-8701-7c2a3c69d7fd")
-		(property "Reference" "C134"
+		(property "Reference" "C132"
 			(at 161.29 43.1862 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20078,7 +19007,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 161.29 45.7262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20153,85 +19082,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C134")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+1V5")
-		(at 123.19 95.25 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "50d8b8e5-c72b-47c2-ad4d-7f3709505c14")
-		(property "Reference" "#PWR0302"
-			(at 123.19 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+1V5"
-			(at 123.19 90.17 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 123.19 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+1V5\""
-			(at 123.19 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "abbc2698-9085-45fb-a6da-c80471192eea")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0302")
+					(reference "C132")
 					(unit 1)
 				)
 			)
@@ -20248,7 +19099,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "511ee871-283f-460f-8cb9-64fe6c428e52")
-		(property "Reference" "#PWR0154"
+		(property "Reference" "#PWR0142"
 			(at 166.37 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -20309,7 +19160,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0154")
+					(reference "#PWR0142")
 					(unit 1)
 				)
 			)
@@ -20326,7 +19177,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5384d3bc-af28-43bd-ac7d-c8e6ed28a5af")
-		(property "Reference" "R124"
+		(property "Reference" "R116"
 			(at 68.58 41.656 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20336,7 +19187,7 @@
 				)
 			)
 		)
-		(property "Value" "1k13"
+		(property "Value" "2k2"
 			(at 68.58 39.116 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20421,7 +19272,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R124")
+					(reference "R116")
 					(unit 1)
 				)
 			)
@@ -20438,7 +19289,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "53b06d23-5dd9-406c-ac13-11bf06ab5c37")
-		(property "Reference" "R117"
+		(property "Reference" "R109"
 			(at 59.69 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20533,7 +19384,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R117")
+					(reference "R109")
 					(unit 1)
 				)
 			)
@@ -20551,7 +19402,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5788d384-dbf9-4e27-a86f-b3b49dac7cec")
-		(property "Reference" "C135"
+		(property "Reference" "C133"
 			(at 162.56 82.5562 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20562,7 +19413,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 162.56 85.0962 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20637,7 +19488,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C135")
+					(reference "C133")
 					(unit 1)
 				)
 			)
@@ -20655,7 +19506,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "598c07f0-45b2-4b0d-9f43-4d2128782d82")
-		(property "Reference" "R149"
+		(property "Reference" "R133"
 			(at 134.62 147.574 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20665,7 +19516,7 @@
 				)
 			)
 		)
-		(property "Value" "3k3"
+		(property "Value" "7k68"
 			(at 134.62 150.114 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20750,7 +19601,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R149")
+					(reference "R133")
 					(unit 1)
 				)
 			)
@@ -20768,7 +19619,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59c056b0-6dcf-46be-b3f9-49b6d5aad0eb")
-		(property "Reference" "U21"
+		(property "Reference" "U23"
 			(at 138.43 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20788,7 +19639,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:Texas_S-PX2QFN-14"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 138.43 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -20899,7 +19750,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U21")
+					(reference "U23")
 					(unit 3)
 				)
 			)
@@ -20916,7 +19767,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5a54c207-f5f8-4810-a338-09b4179069ba")
-		(property "Reference" "R101"
+		(property "Reference" "R93"
 			(at 29.21 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21011,7 +19862,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R101")
+					(reference "R93")
 					(unit 1)
 				)
 			)
@@ -21028,7 +19879,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5e694c77-c79f-4f22-ad4a-974a1f855989")
-		(property "Reference" "#PWR0329"
+		(property "Reference" "#PWR0133"
 			(at 109.22 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -21088,7 +19939,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0329")
+					(reference "#PWR0133")
 					(unit 1)
 				)
 			)
@@ -21105,7 +19956,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5eecf9ee-7c5c-495c-808d-4cf65ac65fe0")
-		(property "Reference" "R115"
+		(property "Reference" "R107"
 			(at 53.34 156.21 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21200,7 +20051,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R115")
+					(reference "R107")
 					(unit 1)
 				)
 			)
@@ -21217,7 +20068,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5efcfd54-11f5-4dca-a192-1b638ce1d9f1")
-		(property "Reference" "R113"
+		(property "Reference" "R105"
 			(at 52.07 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21312,7 +20163,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R113")
+					(reference "R105")
 					(unit 1)
 				)
 			)
@@ -21329,7 +20180,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5fea0925-3395-4ebe-a721-ea60c5daa0a9")
-		(property "Reference" "#PWR0145"
+		(property "Reference" "#PWR0148"
 			(at 231.14 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -21390,7 +20241,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0145")
+					(reference "#PWR0148")
 					(unit 1)
 				)
 			)
@@ -21407,7 +20258,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "62ce573f-b90b-436a-8a97-ccb1a9864b0e")
-		(property "Reference" "R126"
+		(property "Reference" "R119"
 			(at 71.12 124.206 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21417,7 +20268,7 @@
 				)
 			)
 		)
-		(property "Value" "1k13"
+		(property "Value" "2k2"
 			(at 71.12 121.666 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21502,7 +20353,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R126")
+					(reference "R119")
 					(unit 1)
 				)
 			)
@@ -21519,7 +20370,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "64be1695-631f-4265-b3a4-079f6cac1e5e")
-		(property "Reference" "U17"
+		(property "Reference" "U19"
 			(at 102.108 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21529,7 +20380,7 @@
 				)
 			)
 		)
-		(property "Value" "AMC1301QDWVRQ1"
+		(property "Value" "AMC1311BQDWVRQ1"
 			(at 102.108 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21572,7 +20423,7 @@
 				)
 			)
 		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1301QDWVRQ1/7244172"
+		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1311BQDWVRQ1/9477603"
 			(at 102.87 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -21632,7 +20483,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U17")
+					(reference "U19")
 					(unit 1)
 				)
 			)
@@ -21640,7 +20491,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 125.73 140.97 90)
+		(at 129.54 133.35 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21649,8 +20500,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "64e72b1f-b16c-4dcd-9e4c-b1a027dd23b6")
-		(property "Reference" "R138"
-			(at 125.73 145.796 90)
+		(property "Reference" "R128"
+			(at 133.35 132.334 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21659,8 +20510,8 @@
 				)
 			)
 		)
-		(property "Value" "3k3"
-			(at 125.73 143.256 90)
+		(property "Value" "7k68"
+			(at 133.35 134.874 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21670,7 +20521,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 125.73 142.748 90)
+			(at 131.318 133.35 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21681,7 +20532,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 140.97 0)
+			(at 129.54 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21692,7 +20543,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 125.73 140.97 0)
+			(at 129.54 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21703,7 +20554,7 @@
 			)
 		)
 		(property "Compra" ""
-			(at 125.73 140.97 0)
+			(at 129.54 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21714,7 +20565,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 125.73 140.97 90)
+			(at 129.54 133.35 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21725,7 +20576,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 125.73 140.97 90)
+			(at 129.54 133.35 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21744,7 +20595,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R138")
+					(reference "R128")
 					(unit 1)
 				)
 			)
@@ -21761,7 +20612,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6595595b-3cf6-4a1d-a2d3-b7ff0610fc8f")
-		(property "Reference" "R146"
+		(property "Reference" "R127"
 			(at 129.54 87.376 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21856,7 +20707,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R146")
+					(reference "R127")
 					(unit 1)
 				)
 			)
@@ -21873,7 +20724,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "66ce7617-bad6-4b4e-b431-76d71a09dd34")
-		(property "Reference" "#PWR0132"
+		(property "Reference" "#PWR0124"
 			(at 102.87 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -21934,7 +20785,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0132")
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)
@@ -21952,7 +20803,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b0bc1d7-bee3-4811-b698-98670ca9b464")
-		(property "Reference" "#PWR0331"
+		(property "Reference" "#PWR0138"
 			(at 156.21 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -22012,7 +20863,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0331")
+					(reference "#PWR0138")
 					(unit 1)
 				)
 			)
@@ -22029,7 +20880,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6d48e5fc-5372-4465-9fe8-baec13af200d")
-		(property "Reference" "R140"
+		(property "Reference" "R123"
 			(at 120.65 171.196 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22124,111 +20975,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R140")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 80.01 93.98 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6e75f1a4-f97a-4332-b6ea-cee7d220618c")
-		(property "Reference" "C172"
-			(at 82.296 99.314 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0,1uF"
-			(at 82.296 96.774 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 80.01 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 80.01 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 80.01 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 80.01 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "302978b1-15e4-431e-a051-2115e824043e")
-		)
-		(pin "2"
-			(uuid "ffb7bf98-f86c-411a-b429-a7bef62b0015")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C172")
+					(reference "R123")
 					(unit 1)
 				)
 			)
@@ -22246,7 +20993,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "71dc6c8a-264d-4f57-b11c-4f652fd88619")
-		(property "Reference" "R151"
+		(property "Reference" "R135"
 			(at 138.43 61.214 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22256,7 +21003,7 @@
 				)
 			)
 		)
-		(property "Value" "3k3"
+		(property "Value" "7k68"
 			(at 138.43 63.754 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22341,7 +21088,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R151")
+					(reference "R135")
 					(unit 1)
 				)
 			)
@@ -22359,7 +21106,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7a379721-1cdf-4551-866d-61e11f3e2694")
-		(property "Reference" "C131"
+		(property "Reference" "C129"
 			(at 120.65 78.7462 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22370,7 +21117,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 120.65 81.2862 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22445,7 +21192,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C131")
+					(reference "C129")
 					(unit 1)
 				)
 			)
@@ -22453,7 +21200,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDPWR")
-		(at 69.85 93.98 0)
+		(at 73.66 85.09 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22462,8 +21209,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7a9196b1-890e-4b33-b07c-8a43b91a53e6")
-		(property "Reference" "#PWR0139"
-			(at 69.85 99.06 0)
+		(property "Reference" "#PWR0119"
+			(at 73.66 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22474,7 +21221,7 @@
 			)
 		)
 		(property "Value" "GNDPWR_2"
-			(at 66.04 99.822 0)
+			(at 69.85 90.932 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22485,7 +21232,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 69.85 95.25 0)
+			(at 73.66 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22496,7 +21243,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 69.85 95.25 0)
+			(at 73.66 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22507,7 +21254,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 69.85 93.98 0)
+			(at 73.66 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22523,120 +21270,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0139")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 80.01 85.09 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7f772e94-96ed-48eb-945c-d463ed7b932a")
-		(property "Reference" "R219"
-			(at 80.01 87.884 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "780"
-			(at 80.01 90.424 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 80.01 86.868 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 80.01 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 80.01 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 80.01 85.09 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 80.01 85.09 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7927b2c8-a2b2-4ae8-a390-0458e9a9ad1b")
-		)
-		(pin "2"
-			(uuid "fb7099c3-d091-401c-a547-e631adb0cf60")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R219")
+					(reference "#PWR0119")
 					(unit 1)
 				)
 			)
@@ -22654,7 +21288,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "83ab085a-5267-4329-9428-f848e68e1654")
-		(property "Reference" "R150"
+		(property "Reference" "R134"
 			(at 137.16 21.844 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22664,7 +21298,7 @@
 				)
 			)
 		)
-		(property "Value" "3k3"
+		(property "Value" "7k68"
 			(at 137.16 24.384 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22749,7 +21383,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R150")
+					(reference "R134")
 					(unit 1)
 				)
 			)
@@ -22767,7 +21401,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "855f4d38-e788-4272-88e9-d3a708702861")
-		(property "Reference" "#PWR0335"
+		(property "Reference" "#PWR0139"
 			(at 156.21 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -22827,7 +21461,84 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0335")
+					(reference "#PWR0139")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 129.54 137.16 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8789053e-158c-4ae8-a48f-5883f109637f")
+		(property "Reference" "#PWR0134"
+			(at 129.54 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 131.826 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 129.54 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8db856a-b5b6-410b-9d4e-425b66960038")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
+					(reference "#PWR0134")
 					(unit 1)
 				)
 			)
@@ -22844,7 +21555,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "89168bb6-500f-41da-bf3a-317e591acaad")
-		(property "Reference" "R118"
+		(property "Reference" "R110"
 			(at 60.96 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22939,7 +21650,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R118")
+					(reference "R110")
 					(unit 1)
 				)
 			)
@@ -22957,7 +21668,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8948e609-a114-473a-ae56-8361f328fd59")
-		(property "Reference" "#PWR0369"
+		(property "Reference" "#PWR0149"
 			(at 227.33 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -23017,7 +21728,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0369")
+					(reference "#PWR0149")
 					(unit 1)
 				)
 			)
@@ -23034,7 +21745,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8c351582-39f0-44f2-97c5-32a7a199f2a2")
-		(property "Reference" "#PWR0133"
+		(property "Reference" "#PWR0125"
 			(at 104.14 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -23095,7 +21806,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0133")
+					(reference "#PWR0125")
 					(unit 1)
 				)
 			)
@@ -23112,7 +21823,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8e6ef00c-5532-4cd2-a022-939842d7760a")
-		(property "Reference" "R143"
+		(property "Reference" "R125"
 			(at 128.27 48.006 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23207,7 +21918,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R143")
+					(reference "R125")
 					(unit 1)
 				)
 			)
@@ -23225,7 +21936,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f9c8e01-9340-4417-b565-bec08b23c86c")
-		(property "Reference" "U21"
+		(property "Reference" "U23"
 			(at 140.97 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23245,7 +21956,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:Texas_S-PX2QFN-14"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 140.97 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -23356,7 +22067,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U21")
+					(reference "U23")
 					(unit 1)
 				)
 			)
@@ -23374,7 +22085,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "90a9572d-c774-435f-8ad1-ad7341f61578")
-		(property "Reference" "C133"
+		(property "Reference" "C131"
 			(at 158.75 168.9162 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23385,7 +22096,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 158.75 171.4562 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23460,7 +22171,84 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C133")
+					(reference "C131")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 132.08 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "90e8a42e-cf86-46ed-977b-6e3885df78a7")
+		(property "Reference" "#PWR0136"
+			(at 132.08 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 134.62 57.912 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 132.08 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 132.08 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d38b767c-67c8-4e79-85f2-9dc86056587b")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
+					(reference "#PWR0136")
 					(unit 1)
 				)
 			)
@@ -23477,7 +22265,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "959d431c-b7bb-4990-850a-9ef6a6cc9daa")
-		(property "Reference" "#PWR0143"
+		(property "Reference" "#PWR0144"
 			(at 195.58 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -23538,7 +22326,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0143")
+					(reference "#PWR0144")
 					(unit 1)
 				)
 			)
@@ -23556,7 +22344,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a6cb563-9f85-4a69-a7df-05715faeabe7")
-		(property "Reference" "R145"
+		(property "Reference" "R126"
 			(at 129.54 72.644 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23651,109 +22439,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R145")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 80.01 137.16 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9a9b6d90-f227-48bd-bc43-110af76e06fa")
-		(property "Reference" "C171"
-			(at 80.0036 143.51 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0,1uF"
-			(at 80.0036 140.97 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 80.01 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 80.01 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 80.01 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 80.01 137.16 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "95a63c11-f5aa-4f3b-8219-7eba22c797d1")
-		)
-		(pin "2"
-			(uuid "557bcbe9-4a7c-4fd8-8ca5-704d86420200")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C171")
+					(reference "R126")
 					(unit 1)
 				)
 			)
@@ -23771,7 +22457,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9c02ab7c-d273-433b-9720-ea62a5a00719")
-		(property "Reference" "#PWR0333"
+		(property "Reference" "#PWR0143"
 			(at 162.56 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -23831,7 +22517,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0333")
+					(reference "#PWR0143")
 					(unit 1)
 				)
 			)
@@ -23848,7 +22534,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9e455085-4f22-429c-a725-f0a7dc80ed12")
-		(property "Reference" "#PWR0144"
+		(property "Reference" "#PWR0146"
 			(at 213.36 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -23909,7 +22595,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0144")
+					(reference "#PWR0146")
 					(unit 1)
 				)
 			)
@@ -23926,7 +22612,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9f1ed8fb-c256-4db6-ba36-06ece3af2e2b")
-		(property "Reference" "R106"
+		(property "Reference" "R98"
 			(at 38.1 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24021,7 +22707,84 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R106")
+					(reference "R98")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 129.54 179.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9f37f8c9-cf43-4cf8-84d4-9f0002c7f04b")
+		(property "Reference" "#PWR0135"
+			(at 129.54 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 131.572 183.896 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 129.54 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4071b594-e8a7-4793-bd70-a2d12ec17fc1")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
+					(reference "#PWR0135")
 					(unit 1)
 				)
 			)
@@ -24038,7 +22801,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a3160562-6483-4331-a27c-aab9207e8c55")
-		(property "Reference" "R119"
+		(property "Reference" "R111"
 			(at 60.96 156.21 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24133,7 +22896,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R119")
+					(reference "R111")
 					(unit 1)
 				)
 			)
@@ -24151,7 +22914,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a952b0d0-b359-4324-888a-520f304ff975")
-		(property "Reference" "C132"
+		(property "Reference" "C130"
 			(at 158.75 125.7362 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24162,7 +22925,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 158.75 128.2762 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24237,7 +23000,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C132")
+					(reference "C130")
 					(unit 1)
 				)
 			)
@@ -24254,7 +23017,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a95d6b75-96c1-4119-919f-227d9feab227")
-		(property "Reference" "#PWR0130"
+		(property "Reference" "#PWR0122"
 			(at 100.33 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -24315,7 +23078,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0130")
+					(reference "#PWR0122")
 					(unit 1)
 				)
 			)
@@ -24332,7 +23095,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ab4afbe5-98e0-4b89-885a-4d4a98e3c967")
-		(property "Reference" "R120"
+		(property "Reference" "R112"
 			(at 66.04 30.48 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24427,7 +23190,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R120")
+					(reference "R112")
 					(unit 1)
 				)
 			)
@@ -24444,7 +23207,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ad3c8589-6ce4-419d-8d36-4b8c00e38432")
-		(property "Reference" "#PWR0324"
+		(property "Reference" "#PWR0131"
 			(at 107.95 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -24504,7 +23267,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0324")
+					(reference "#PWR0131")
 					(unit 1)
 				)
 			)
@@ -24521,7 +23284,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ae11c7d9-2142-42a4-a572-fe0bf27600bf")
-		(property "Reference" "R114"
+		(property "Reference" "R106"
 			(at 53.34 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24616,7 +23379,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R114")
+					(reference "R106")
 					(unit 1)
 				)
 			)
@@ -24633,7 +23396,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ae9dfdf2-d4fc-413f-a7f9-1b25102f2a87")
-		(property "Reference" "#PWR0140"
+		(property "Reference" "#PWR0132"
 			(at 113.03 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -24694,7 +23457,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0140")
+					(reference "#PWR0132")
 					(unit 1)
 				)
 			)
@@ -24702,7 +23465,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 128.27 55.88 90)
+		(at 132.08 50.8 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24711,8 +23474,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "af664aaf-a6f2-4c4b-a370-0afec346130a")
-		(property "Reference" "R144"
-			(at 128.27 60.706 90)
+		(property "Reference" "R130"
+			(at 135.89 49.784 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24721,8 +23484,8 @@
 				)
 			)
 		)
-		(property "Value" "3k3"
-			(at 128.27 58.166 90)
+		(property "Value" "7k68"
+			(at 135.89 52.324 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24732,7 +23495,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 128.27 57.658 90)
+			(at 133.858 50.8 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24743,7 +23506,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 55.88 0)
+			(at 132.08 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24754,7 +23517,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 128.27 55.88 0)
+			(at 132.08 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24765,7 +23528,7 @@
 			)
 		)
 		(property "Compra" ""
-			(at 128.27 55.88 0)
+			(at 132.08 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24776,7 +23539,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 128.27 55.88 90)
+			(at 132.08 50.8 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24787,7 +23550,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 128.27 55.88 90)
+			(at 132.08 50.8 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24806,7 +23569,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R144")
+					(reference "R130")
 					(unit 1)
 				)
 			)
@@ -24824,7 +23587,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b08d4de4-e983-486d-96e0-0b9f981b8749")
-		(property "Reference" "#PWR0135"
+		(property "Reference" "#PWR0121"
 			(at 85.09 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -24884,85 +23647,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0135")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+1V5")
-		(at 120.65 180.34 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b4b34339-8b01-43de-b8b9-79d2c49a83a6")
-		(property "Reference" "#PWR0300"
-			(at 120.65 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+1V5"
-			(at 120.65 175.26 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 120.65 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 120.65 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+1V5\""
-			(at 120.65 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e15245f4-6a48-4e04-a34e-c25738563d44")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0300")
+					(reference "#PWR0121")
 					(unit 1)
 				)
 			)
@@ -24980,7 +23665,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b93a38af-6749-4312-8cdd-b89f3b151ac8")
-		(property "Reference" "U21"
+		(property "Reference" "U23"
 			(at 142.24 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25000,7 +23685,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:Texas_S-PX2QFN-14"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 142.24 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -25111,7 +23796,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U21")
+					(reference "U23")
 					(unit 2)
 				)
 			)
@@ -25128,7 +23813,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bd57b07b-3afe-47d8-99b5-3d413803a86e")
-		(property "Reference" "#PWR0141"
+		(property "Reference" "#PWR0123"
 			(at 100.33 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -25189,7 +23874,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0141")
+					(reference "#PWR0123")
 					(unit 1)
 				)
 			)
@@ -25206,7 +23891,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "be47b7ba-b283-4dfc-9b1a-c954f4c562d2")
-		(property "Reference" "R111"
+		(property "Reference" "R103"
 			(at 45.72 156.21 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25301,7 +23986,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R111")
+					(reference "R103")
 					(unit 1)
 				)
 			)
@@ -25318,7 +24003,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "be9ef70e-705b-48c2-acdc-8bfe3ade70cf")
-		(property "Reference" "R109"
+		(property "Reference" "R101"
 			(at 44.45 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25413,7 +24098,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R109")
+					(reference "R101")
 					(unit 1)
 				)
 			)
@@ -25430,7 +24115,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c180e54c-cff1-4011-9145-9f4ff80e1bed")
-		(property "Reference" "R121"
+		(property "Reference" "R113"
 			(at 67.31 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25525,7 +24210,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R121")
+					(reference "R113")
 					(unit 1)
 				)
 			)
@@ -25533,7 +24218,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 124.46 119.38 90)
+		(at 125.73 120.65 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -25543,8 +24228,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c3079164-5747-4da0-bfdd-75339e9c2c4d")
-		(property "Reference" "R136"
-			(at 124.46 114.554 90)
+		(property "Reference" "R120"
+			(at 125.73 115.824 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -25554,7 +24239,7 @@
 			)
 		)
 		(property "Value" "4k42"
-			(at 124.46 117.094 90)
+			(at 125.73 118.364 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -25564,7 +24249,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 124.46 117.602 90)
+			(at 125.73 118.872 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25575,7 +24260,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 124.46 119.38 0)
+			(at 125.73 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25586,7 +24271,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 124.46 119.38 0)
+			(at 125.73 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25597,7 +24282,7 @@
 			)
 		)
 		(property "Compra" ""
-			(at 124.46 119.38 0)
+			(at 125.73 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25608,7 +24293,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 124.46 119.38 90)
+			(at 125.73 120.65 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25619,7 +24304,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 124.46 119.38 90)
+			(at 125.73 120.65 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25638,7 +24323,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R136")
+					(reference "R120")
 					(unit 1)
 				)
 			)
@@ -25655,7 +24340,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c49c94e1-63c6-4097-96fa-f536cf5124ee")
-		(property "Reference" "R104"
+		(property "Reference" "R96"
 			(at 35.56 30.48 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25750,119 +24435,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R104")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 129.54 95.25 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c69f6d1c-575d-422a-b91a-c195c618fdf3")
-		(property "Reference" "R147"
-			(at 129.54 100.076 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3k3"
-			(at 129.54 97.536 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 129.54 97.028 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 129.54 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 129.54 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 129.54 95.25 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 129.54 95.25 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "705fd9d5-a524-4809-b518-15452f1e25e8")
-		)
-		(pin "2"
-			(uuid "f454673c-4160-4e4c-958c-f95782147e5e")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R147")
+					(reference "R96")
 					(unit 1)
 				)
 			)
@@ -25879,7 +24452,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c708835e-26c8-4a8f-8baa-c44318013ed3")
-		(property "Reference" "R110"
+		(property "Reference" "R102"
 			(at 45.72 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25974,7 +24547,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R110")
+					(reference "R102")
 					(unit 1)
 				)
 			)
@@ -25991,7 +24564,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ca97b42e-5724-4779-87a4-f02cbb936b53")
-		(property "Reference" "U19"
+		(property "Reference" "U21"
 			(at 104.648 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26001,7 +24574,7 @@
 				)
 			)
 		)
-		(property "Value" "AMC1301QDWVRQ1"
+		(property "Value" "AMC1311BQDWVRQ1"
 			(at 104.648 21.59 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26044,7 +24617,7 @@
 				)
 			)
 		)
-		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1301QDWVRQ1/7244172"
+		(property "Compra" "https://www.digikey.com/en/products/detail/texas-instruments/AMC1311BQDWVRQ1/9477603"
 			(at 105.41 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -26104,7 +24677,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U19")
+					(reference "U21")
 					(unit 1)
 				)
 			)
@@ -26122,7 +24695,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cb57f700-d86f-4f13-8dca-71156ad851bf")
-		(property "Reference" "C195"
+		(property "Reference" "C121"
 			(at 82.55 152.4062 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26208,7 +24781,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C195")
+					(reference "C121")
 					(unit 1)
 				)
 			)
@@ -26226,7 +24799,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cbda9f2d-e188-44d8-b6e8-6d90913d664a")
-		(property "Reference" "C124"
+		(property "Reference" "C123"
 			(at 85.09 39.3762 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26237,7 +24810,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 85.09 41.9162 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26312,7 +24885,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C124")
+					(reference "C123")
 					(unit 1)
 				)
 			)
@@ -26329,7 +24902,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cbdf5708-5e58-4e47-9a04-6cce4df6f0a2")
-		(property "Reference" "R123"
+		(property "Reference" "R115"
 			(at 68.58 156.21 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26424,7 +24997,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R123")
+					(reference "R115")
 					(unit 1)
 				)
 			)
@@ -26441,7 +25014,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cd41fff5-e14c-4ad1-b8b4-08ab42c7ed4b")
-		(property "Reference" "#PWR0138"
+		(property "Reference" "#PWR0130"
 			(at 111.76 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -26502,7 +25075,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0138")
+					(reference "#PWR0130")
 					(unit 1)
 				)
 			)
@@ -26520,7 +25093,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ce71efa7-770c-479a-ba54-825aff8119c6")
-		(property "Reference" "C127"
+		(property "Reference" "C125"
 			(at 86.36 78.7462 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26531,7 +25104,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 86.36 81.2862 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26606,7 +25179,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C127")
+					(reference "C125")
 					(unit 1)
 				)
 			)
@@ -26624,7 +25197,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cec53ed3-2c5f-4016-821f-058d86a225d0")
-		(property "Reference" "C136"
+		(property "Reference" "C134"
 			(at 194.31 33.0262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26710,7 +25283,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C136")
+					(reference "C134")
 					(unit 1)
 				)
 			)
@@ -26727,7 +25300,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cf665480-45df-44ca-a84d-4ccd88949282")
-		(property "Reference" "R103"
+		(property "Reference" "R95"
 			(at 30.48 156.21 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26822,15 +25395,15 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R103")
+					(reference "R95")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 113.03 166.37 0)
+		(lib_id "Device:R")
+		(at 133.35 91.44 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -26838,32 +25411,29 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "daa23feb-9ced-400c-9d84-9959f9af309f")
-		(property "Reference" "C128"
-			(at 115.57 165.1062 0)
+		(uuid "d9dd2dc0-74f7-44cc-99ea-3305e47da5ee")
+		(property "Reference" "R131"
+			(at 137.16 90.424 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "100nF"
-			(at 115.57 167.6462 0)
+		(property "Value" "7k68"
+			(at 137.16 92.964 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 113.03 166.37 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 135.128 91.44 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26874,7 +25444,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 166.37 0)
+			(at 133.35 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26884,8 +25454,19 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 113.03 166.37 0)
+		(property "Description" "Resistor"
+			(at 133.35 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" ""
+			(at 133.35 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26896,7 +25477,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 113.03 166.37 0)
+			(at 133.35 91.44 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26907,7 +25488,111 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 113.03 166.37 0)
+			(at 133.35 91.44 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8a172991-3df8-430c-91ff-bb4f1976cbb7")
+		)
+		(pin "2"
+			(uuid "2da6352d-f7a8-4cac-ab51-741d3c7f382d")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
+					(reference "R131")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 114.3 166.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "daa23feb-9ced-400c-9d84-9959f9af309f")
+		(property "Reference" "C126"
+			(at 116.84 165.1062 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1nF"
+			(at 116.84 167.6462 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 114.3 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 114.3 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description_1" ""
+			(at 114.3 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 114.3 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26926,7 +25611,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C128")
+					(reference "C126")
 					(unit 1)
 				)
 			)
@@ -26944,7 +25629,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "daf05c71-e348-494a-a592-ea9f1013f200")
-		(property "Reference" "R139"
+		(property "Reference" "R122"
 			(at 125.73 159.004 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27039,120 +25724,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R139")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 80.01 128.27 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "db7c5496-f00a-4fdb-87d8-69b704ab5d0e")
-		(property "Reference" "R221"
-			(at 80.01 131.064 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "780"
-			(at 80.01 133.604 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 80.01 130.048 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 80.01 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 80.01 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 80.01 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 80.01 128.27 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 80.01 128.27 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3e1eab83-3002-4066-8609-59c912cbc033")
-		)
-		(pin "2"
-			(uuid "ea07aa44-3ed0-4494-800c-711185142720")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R221")
+					(reference "R122")
 					(unit 1)
 				)
 			)
@@ -27169,7 +25741,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dbdf0ed3-5b4b-4deb-a92d-05e9df6cbab2")
-		(property "Reference" "R100"
+		(property "Reference" "R92"
 			(at 27.94 30.48 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27264,7 +25836,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R100")
+					(reference "R92")
 					(unit 1)
 				)
 			)
@@ -27282,7 +25854,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dcb07b64-f2c3-456a-806d-ab9823f01a33")
-		(property "Reference" "C129"
+		(property "Reference" "C127"
 			(at 118.11 121.9262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27293,7 +25865,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 118.11 124.4662 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27368,7 +25940,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C129")
+					(reference "C127")
 					(unit 1)
 				)
 			)
@@ -27376,7 +25948,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 125.73 180.34 90)
+		(at 129.54 175.26 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -27385,8 +25957,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "de710fde-f99b-40bc-8263-41c921f2ebdf")
-		(property "Reference" "R141"
-			(at 125.73 185.166 90)
+		(property "Reference" "R129"
+			(at 133.35 174.244 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -27395,8 +25967,8 @@
 				)
 			)
 		)
-		(property "Value" "3k3"
-			(at 125.73 182.626 90)
+		(property "Value" "7k68"
+			(at 133.35 176.784 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -27406,7 +25978,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 125.73 182.118 90)
+			(at 131.318 175.26 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27417,7 +25989,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 180.34 0)
+			(at 129.54 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27428,7 +26000,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 125.73 180.34 0)
+			(at 129.54 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27439,7 +26011,7 @@
 			)
 		)
 		(property "Compra" ""
-			(at 125.73 180.34 0)
+			(at 129.54 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27450,7 +26022,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 125.73 180.34 90)
+			(at 129.54 175.26 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27461,7 +26033,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 125.73 180.34 90)
+			(at 129.54 175.26 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27480,163 +26052,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R141")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+1V5")
-		(at 120.65 140.97 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dec3d990-7585-44cc-8f35-be5aa42c278e")
-		(property "Reference" "#PWR0301"
-			(at 120.65 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+1V5"
-			(at 120.65 135.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 120.65 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 120.65 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+1V5\""
-			(at 120.65 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a5a887e6-e9e8-4691-957f-0b1433222680")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0301")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDPWR")
-		(at 68.58 53.34 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e481345f-4710-4f8b-82ff-5ac63106dfb6")
-		(property "Reference" "#PWR0137"
-			(at 68.58 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GNDPWR_1"
-			(at 65.024 57.658 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 68.58 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 68.58 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 68.58 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cc2ba8bb-0dc2-4549-a9fa-d0d86488f045")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0137")
+					(reference "R129")
 					(unit 1)
 				)
 			)
@@ -27653,7 +26069,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e5ccfa3b-5881-47e4-9abd-297cae39a0f6")
-		(property "Reference" "#PWR0134"
+		(property "Reference" "#PWR0126"
 			(at 109.22 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -27714,7 +26130,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0134")
+					(reference "#PWR0126")
 					(unit 1)
 				)
 			)
@@ -27732,7 +26148,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e66851ca-3ab1-4a59-accf-b4a76eb996ee")
-		(property "Reference" "#PWR0368"
+		(property "Reference" "#PWR0147"
 			(at 209.55 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -27792,7 +26208,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0368")
+					(reference "#PWR0147")
 					(unit 1)
 				)
 			)
@@ -27810,7 +26226,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e7b6e606-bdad-430e-9386-745923fa6bfc")
-		(property "Reference" "U21"
+		(property "Reference" "U23"
 			(at 138.43 156.21 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27830,7 +26246,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:Texas_S-PX2QFN-14"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 138.43 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -27941,7 +26357,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U21")
+					(reference "U23")
 					(unit 4)
 				)
 			)
@@ -27958,7 +26374,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e94af052-b3a2-42cc-9496-01e2e3dc0ba7")
-		(property "Reference" "R108"
+		(property "Reference" "R100"
 			(at 43.18 30.48 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28053,16 +26469,15 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R108")
+					(reference "R100")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 78.74 53.34 270)
-		(mirror x)
+		(lib_id "power:GND")
+		(at 133.35 95.25 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -28070,9 +26485,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "ea8a6ab4-691d-48ab-83b6-edbbd045e7b8")
-		(property "Reference" "C173"
-			(at 78.7336 59.69 90)
+		(uuid "ecafd82d-f0a9-4489-9cf7-4cb12dba1057")
+		(property "Reference" "#PWR0137"
+			(at 133.35 101.6 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -28081,8 +26497,8 @@
 				)
 			)
 		)
-		(property "Value" "0,1uF"
-			(at 78.7336 57.15 90)
+		(property "Value" "GND"
+			(at 135.636 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -28091,8 +26507,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 78.74 53.34 0)
+		(property "Footprint" ""
+			(at 133.35 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28103,7 +26519,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 53.34 0)
+			(at 133.35 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28113,30 +26529,8 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 78.74 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 78.74 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 78.74 53.34 90)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 133.35 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28147,15 +26541,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c25d8c6-6ae1-439c-86d8-0365de4b35ac")
-		)
-		(pin "2"
-			(uuid "893bbd92-5646-44ca-acda-6d1cf41d42d5")
+			(uuid "87404d91-4761-4f27-b896-5a0e8b26e112")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C173")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -28172,7 +26563,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ed55c090-dcef-40d4-a592-41660c9016ee")
-		(property "Reference" "R116"
+		(property "Reference" "R108"
 			(at 58.42 30.48 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28267,119 +26658,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R116")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 88.9 88.9 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ee523958-0b27-4028-8d03-4b12d9a7f08e")
-		(property "Reference" "R220"
-			(at 92.71 87.884 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "6420"
-			(at 92.71 90.424 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 90.678 88.9 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 88.9 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 88.9 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 88.9 88.9 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 88.9 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "567e1f98-d7db-4cba-84ef-a17ded9ab43f")
-		)
-		(pin "2"
-			(uuid "a0b1eae4-5079-4c6e-b7e8-09325dd47350")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R220")
+					(reference "R108")
 					(unit 1)
 				)
 			)
@@ -28396,7 +26675,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "eee29c95-331b-4ddb-8d79-948460aceb44")
-		(property "Reference" "R102"
+		(property "Reference" "R94"
 			(at 30.48 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28491,7 +26770,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R102")
+					(reference "R94")
 					(unit 1)
 				)
 			)
@@ -28509,7 +26788,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef1585ab-7774-4d60-b44f-d0b7daaa6855")
-		(property "Reference" "C130"
+		(property "Reference" "C128"
 			(at 119.38 39.3762 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28520,7 +26799,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "1nF"
 			(at 119.38 41.9162 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28595,7 +26874,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C130")
+					(reference "C128")
 					(unit 1)
 				)
 			)
@@ -28613,7 +26892,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0198175-8159-494b-aaab-8deeb7dd84f8")
-		(property "Reference" "#PWR0370"
+		(property "Reference" "#PWR0151"
 			(at 246.38 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -28673,7 +26952,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0370")
+					(reference "#PWR0151")
 					(unit 1)
 				)
 			)
@@ -28691,7 +26970,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f1fbb246-c57f-4baf-a8e1-5bc7ab65c200")
-		(property "Reference" "C177"
+		(property "Reference" "C136"
 			(at 229.87 33.0262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28777,119 +27056,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "C177")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 87.63 49.53 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f5e601b5-56d3-438f-b6d5-10b267080165")
-		(property "Reference" "R218"
-			(at 91.44 48.514 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "6420"
-			(at 91.44 51.054 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 89.408 49.53 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 87.63 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 87.63 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 87.63 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 87.63 49.53 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 87.63 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3041a6ee-3965-472a-b140-11b1b22263f9")
-		)
-		(pin "2"
-			(uuid "16e0b75e-67cf-45d1-a656-a668c6702e6c")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R218")
+					(reference "C136")
 					(unit 1)
 				)
 			)
@@ -28906,7 +27073,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f66b85e9-4a27-4549-a384-4d75f440b6f0")
-		(property "Reference" "#PWR0336"
+		(property "Reference" "#PWR0129"
 			(at 105.41 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -28966,7 +27133,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0336")
+					(reference "#PWR0129")
 					(unit 1)
 				)
 			)
@@ -28983,7 +27150,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f6738475-8088-482c-837f-ed413c50456b")
-		(property "Reference" "#PWR0332"
+		(property "Reference" "#PWR0127"
 			(at 105.41 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -29043,85 +27210,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0332")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+1V5")
-		(at 123.19 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f88f0394-7925-48b2-b5fb-7a7ea7bbf941")
-		(property "Reference" "#PWR0303"
-			(at 123.19 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+1V5"
-			(at 123.19 50.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 123.19 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+1V5\""
-			(at 123.19 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b6b67b15-d501-471a-ad73-3f54be8ffcbb")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0303")
+					(reference "#PWR0127")
 					(unit 1)
 				)
 			)
@@ -29139,7 +27228,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fa77e4cb-119e-45e4-931c-2e40ac3cf40c")
-		(property "Reference" "R142"
+		(property "Reference" "R124"
 			(at 128.27 33.274 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29234,7 +27323,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R142")
+					(reference "R124")
 					(unit 1)
 				)
 			)
@@ -29251,7 +27340,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "faf00e49-b069-4ca9-9a30-b69074a6bfe8")
-		(property "Reference" "R105"
+		(property "Reference" "R97"
 			(at 36.83 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29346,119 +27435,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R105")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 87.63 133.35 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fdd129f6-f4e4-40d3-985e-3203f70c9d8b")
-		(property "Reference" "R222"
-			(at 91.44 132.334 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "6420"
-			(at 91.44 134.874 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 89.408 133.35 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 87.63 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 87.63 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Compra" ""
-			(at 87.63 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description_1" ""
-			(at 87.63 133.35 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 87.63 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "07b9dc07-f798-463a-bd96-462c664d3dfb")
-		)
-		(pin "2"
-			(uuid "430ffd33-10e8-49ba-aa67-7026955f2b85")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "R222")
+					(reference "R97")
 					(unit 1)
 				)
 			)
@@ -29477,7 +27454,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fe7aa8c4-8c80-4324-859c-89c8d02ebc1a")
-		(property "Reference" "U21"
+		(property "Reference" "U23"
 			(at 161.29 144.7799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29499,7 +27476,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:Texas_S-PX2QFN-14"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 160.02 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -29610,7 +27587,7 @@
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "U21")
+					(reference "U23")
 					(unit 5)
 				)
 			)

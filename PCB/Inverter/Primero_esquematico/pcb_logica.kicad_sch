@@ -56,6 +56,10 @@
 		(uuid "61ff23a1-be6b-41c8-9f2b-1af41a782db8")
 	)
 	(no_connect
+		(at 120.65 135.89)
+		(uuid "9440da98-2be4-4997-9681-2cac0bf6946b")
+	)
+	(no_connect
 		(at 119.38 78.74)
 		(uuid "9536257d-660d-4c78-a1e9-33e4a11e1fe0")
 	)
@@ -127,6 +131,26 @@
 	)
 	(wire
 		(pts
+			(xy 22.86 144.78) (xy 40.64 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f483b9c-030e-482d-99e3-8957f3862e7f")
+	)
+	(wire
+		(pts
+			(xy 252.73 49.53) (xy 255.27 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1288f0d5-2fa8-4232-99e3-401ff3885902")
+	)
+	(wire
+		(pts
 			(xy 218.44 135.89) (xy 232.41 135.89)
 		)
 		(stroke
@@ -164,6 +188,16 @@
 			(type default)
 		)
 		(uuid "1b7bde89-a8f0-4fe9-83d9-08368222452d")
+	)
+	(wire
+		(pts
+			(xy 207.01 54.61) (xy 224.79 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28011fc9-a124-4322-8e7c-fd8c0bd941f3")
 	)
 	(wire
 		(pts
@@ -427,6 +461,16 @@
 	)
 	(wire
 		(pts
+			(xy 22.86 148.59) (xy 40.64 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c9943c4-2f9f-4c63-87c3-dcbebd69664f")
+	)
+	(wire
+		(pts
 			(xy 119.38 133.35) (xy 120.65 133.35)
 		)
 		(stroke
@@ -634,6 +678,16 @@
 			(type default)
 		)
 		(uuid "b7edfa7d-fe72-471d-abc4-b269de8cdca6")
+	)
+	(wire
+		(pts
+			(xy 207.01 49.53) (xy 224.79 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b83e136c-55f1-47ab-965d-d22d45fa544f")
 	)
 	(wire
 		(pts
@@ -869,6 +923,18 @@
 		)
 		(uuid "1bfed32f-7ce6-48a5-82b5-4583c4d14816")
 	)
+	(label "acelerador_2"
+		(at 207.01 54.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "209f58be-0224-4ad1-941a-812cf2f7a90d")
+	)
 	(label "TDO"
 		(at 149.86 138.43 0)
 		(effects
@@ -989,6 +1055,18 @@
 		)
 		(uuid "437d3c36-9160-4f61-b92a-932286212dbb")
 	)
+	(label "acelerador_1"
+		(at 207.01 49.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "4444043c-e045-479c-9430-f48bdd6f9f6f")
+	)
 	(label "Data"
 		(at 133.35 96.52 180)
 		(effects
@@ -1036,6 +1114,18 @@
 			(justify left bottom)
 		)
 		(uuid "683f9ce6-d3a2-4262-8160-3dbb8a64f469")
+	)
+	(label "acelerador_1"
+		(at 22.86 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "6ca2b556-5557-4233-b103-a5d7bb156273")
 	)
 	(label "Clk"
 		(at 149.86 105.41 0)
@@ -1216,6 +1306,18 @@
 			(justify left bottom)
 		)
 		(uuid "dab3fbfc-2886-40b0-b0a2-184d5f8ae984")
+	)
+	(label "acelerador_2"
+		(at 22.86 148.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "dabf51d3-5586-4963-b466-0cdd5e9d1c5f")
 	)
 	(label "Mcu_reset"
 		(at 26.67 119.38 0)
@@ -1409,17 +1511,6 @@
 		)
 		(uuid "834cfc9a-3602-49d0-bc1f-ab8e8921d4b0")
 	)
-	(hierarchical_label "Reset_Pote"
-		(shape bidirectional)
-		(at 120.65 135.89 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "841a3702-32f3-4bfb-9a35-411f5bb1a083")
-	)
 	(hierarchical_label "PWM_H_B"
 		(shape bidirectional)
 		(at 123.19 67.31 0)
@@ -1508,6 +1599,17 @@
 		)
 		(uuid "ba447195-e1fa-4ec0-864f-8ab51764673e")
 	)
+	(hierarchical_label "Reset_Pote"
+		(shape bidirectional)
+		(at 255.27 49.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ca5ae341-ae03-405f-a573-54c3fee262f2")
+	)
 	(hierarchical_label "PWM_L_C"
 		(shape bidirectional)
 		(at 123.19 74.93 0)
@@ -1540,6 +1642,82 @@
 			(justify right)
 		)
 		(uuid "e700d4bf-33a6-4ca8-b921-8d8d01718e7a")
+	)
+	(sheet
+		(at 224.79 44.45)
+		(size 27.94 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "41535892-746b-4be8-bb63-27fc288bf5fc")
+		(property "Sheetname" "apps"
+			(at 224.79 43.7384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "apps.kicad_sch"
+			(at 224.79 60.2746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "apps_1" bidirectional
+			(at 224.79 49.53 180)
+			(uuid "630e822a-431c-49a8-bbf2-aa774ea307f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "apps_2" bidirectional
+			(at 224.79 54.61 180)
+			(uuid "62450b67-9a6b-4c1a-9522-fef5177f8e05")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "out_power_ready" bidirectional
+			(at 252.73 49.53 0)
+			(uuid "f4a3760f-7542-4164-9b8c-cdbed7b15e47")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7"
+					(page "2")
+				)
+			)
+		)
 	)
 	(sheet
 		(at 163.83 121.92)
@@ -2173,6 +2351,26 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "acelerador_1" bidirectional
+			(at 40.64 144.78 180)
+			(uuid "0bcd7696-a5c1-489e-a4b1-95317ca70834")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "acelerador_2" bidirectional
+			(at 40.64 148.59 180)
+			(uuid "3f023625-5991-4211-8277-94212ac79476")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
