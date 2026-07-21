@@ -5,9 +5,9 @@
 	(uuid "994983ff-726b-4b3e-a2dd-17a27a9c3e0b")
 	(paper "A4")
 	(lib_symbols)
-	(text "Aca van a ir todos los compnentes\nque se conecten en\nPCB Logia o PCB Hija"
+	(text "Aca van a ir todos los compnentes\nDe baja tension y baja potencia"
 		(exclude_from_sim no)
-		(at 154.686 29.21 0)
+		(at 133.096 33.274 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -138,16 +138,6 @@
 			(type default)
 		)
 		(uuid "0f483b9c-030e-482d-99e3-8957f3862e7f")
-	)
-	(wire
-		(pts
-			(xy 252.73 49.53) (xy 255.27 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1288f0d5-2fa8-4232-99e3-401ff3885902")
 	)
 	(wire
 		(pts
@@ -621,6 +611,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 52.07) (xy 270.51 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2ff72dd-1699-454e-86e3-cfd1fb4ce3f4")
+	)
+	(wire
+		(pts
 			(xy 149.86 138.43) (xy 163.83 138.43)
 		)
 		(stroke
@@ -731,6 +731,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 33.02) (xy 222.25 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c42a3dc8-7098-46fc-beb3-a88ba3058df6")
+	)
+	(wire
+		(pts
 			(xy 219.71 90.17) (xy 220.98 90.17)
 		)
 		(stroke
@@ -768,6 +778,16 @@
 			(type default)
 		)
 		(uuid "ca90e629-09e5-4947-88a0-145f6539a6e1")
+	)
+	(wire
+		(pts
+			(xy 270.51 33.02) (xy 265.43 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccebc45e-3fc7-4622-a220-5a4d953a3325")
 	)
 	(wire
 		(pts
@@ -878,6 +898,16 @@
 			(type default)
 		)
 		(uuid "f1896e1e-9f60-4f22-8860-f40d83548fa6")
+	)
+	(wire
+		(pts
+			(xy 265.43 52.07) (xy 270.51 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3a94bf1-ca4e-4d3a-b708-34160a92cef5")
 	)
 	(wire
 		(pts
@@ -1412,6 +1442,17 @@
 		)
 		(uuid "1105d989-15ee-4bda-bd08-34a9caff53fd")
 	)
+	(hierarchical_label "Reset_Pote"
+		(shape bidirectional)
+		(at 222.25 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "22b1da95-ae2c-446f-9bd8-ed6cd9c3bdf4")
+	)
 	(hierarchical_label "Tension_A"
 		(shape bidirectional)
 		(at 39.37 78.74 180)
@@ -1599,17 +1640,6 @@
 		)
 		(uuid "ba447195-e1fa-4ec0-864f-8ab51764673e")
 	)
-	(hierarchical_label "Reset_Pote"
-		(shape bidirectional)
-		(at 255.27 49.53 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ca5ae341-ae03-405f-a573-54c3fee262f2")
-	)
 	(hierarchical_label "PWM_L_C"
 		(shape bidirectional)
 		(at 123.19 74.93 0)
@@ -1645,7 +1675,7 @@
 	)
 	(sheet
 		(at 224.79 44.45)
-		(size 27.94 15.24)
+		(size 40.64 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1671,7 +1701,7 @@
 			)
 		)
 		(property "Sheetfile" "apps.kicad_sch"
-			(at 224.79 60.2746 0)
+			(at 224.79 59.0046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1701,9 +1731,9 @@
 				(justify left)
 			)
 		)
-		(pin "out_power_ready" bidirectional
-			(at 252.73 49.53 0)
-			(uuid "f4a3760f-7542-4164-9b8c-cdbed7b15e47")
+		(pin "power_ready_conector" bidirectional
+			(at 265.43 52.07 0)
+			(uuid "3d98d46e-3c94-4825-a70f-b856a0b6059d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2690,7 +2720,7 @@
 		)
 	)
 	(sheet
-		(at 162.56 53.34)
+		(at 41.91 21.59)
 		(size 15.24 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2706,7 +2736,7 @@
 		)
 		(uuid "d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e")
 		(property "Sheetname" "LogicSupply"
-			(at 162.56 52.6284 0)
+			(at 41.91 20.8784 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2717,7 +2747,7 @@
 			)
 		)
 		(property "Sheetfile" "LogicSupply.kicad_sch"
-			(at 162.56 67.8946 0)
+			(at 41.91 36.1446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2731,6 +2761,72 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7"
 					(page "12")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 224.79 27.94)
+		(size 40.64 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "fe43f99f-eb0f-43d0-9083-f20c36697212")
+		(property "Sheetname" "batt_status"
+			(at 224.79 27.2284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "batt_status.kicad_sch"
+			(at 224.79 38.6846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "out_power_ready" bidirectional
+			(at 224.79 33.02 180)
+			(uuid "6182414d-6701-427c-b821-1f38cc135ca2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "power_ready_conector" bidirectional
+			(at 265.43 33.02 0)
+			(uuid "9bde5728-211c-451f-b70c-d2527eb328c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7"
+					(page "21")
 				)
 			)
 		)

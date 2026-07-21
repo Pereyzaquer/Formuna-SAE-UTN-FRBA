@@ -2848,7 +2848,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 149.86) (xy 85.09 151.13)
+			(xy 82.55 144.78) (xy 82.55 146.05)
 		)
 		(stroke
 			(width 0)
@@ -3487,7 +3487,7 @@
 		(uuid "fd5a574d-85d1-43d9-8c0e-865077b7fc64")
 	)
 	(image
-		(at 234.2978 134.223)
+		(at 229.2178 85.963)
 		(scale 0.250473)
 		(uuid "a9db7721-b2c8-4c98-896a-763cbe064f12")
 		(data "iVBORw0KGgoAAAANSUhEUgAACIwAAAOkCAYAAADOFD29AAAAAXNSR0IArs4c6QAAAARnQU1BAACx"
@@ -16404,7 +16404,7 @@
 	)
 	(hierarchical_label "5V_ISO_1"
 		(shape input)
-		(at 85.09 149.86 180)
+		(at 82.55 144.78 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -21095,6 +21095,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GNDPWR")
+		(at 82.55 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "78beb4ac-b4bb-452c-9ec0-f38902a35ab3")
+		(property "Reference" "#PWR0297"
+			(at 82.55 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR_1"
+			(at 76.962 156.21 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 82.55 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "69d7f3a6-2840-48d9-b66e-b8b8d7f9266f")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
+					(reference "#PWR0297")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 118.11 80.01 0)
 		(unit 1)
@@ -23576,84 +23654,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDPWR")
-		(at 85.09 156.21 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b08d4de4-e983-486d-96e0-0b9f981b8749")
-		(property "Reference" "#PWR0121"
-			(at 85.09 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GNDPWR"
-			(at 84.963 160.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 157.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 157.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 85.09 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "98d3000b-7111-40a9-b747-b3c978feed1a")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a3f260ee-b65b-4ad3-a336-2964f3b13ec0"
-					(reference "#PWR0121")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Amplifier_Operational:TLV9004xRUCR")
 		(at 142.24 80.01 0)
 		(unit 2)
@@ -24685,7 +24685,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 85.09 153.67 0)
+		(at 82.55 148.59 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -24696,7 +24696,7 @@
 		(dnp no)
 		(uuid "cb57f700-d86f-4f13-8dca-71156ad851bf")
 		(property "Reference" "C121"
-			(at 82.55 152.4062 0)
+			(at 80.01 147.3262 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24707,7 +24707,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 82.55 154.9462 0)
+			(at 80.01 149.8662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24718,7 +24718,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 85.09 153.67 0)
+			(at 82.55 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24729,7 +24729,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 153.67 0)
+			(at 82.55 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24740,7 +24740,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 85.09 153.67 0)
+			(at 82.55 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24751,7 +24751,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 85.09 153.67 0)
+			(at 82.55 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24762,7 +24762,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 85.09 153.67 0)
+			(at 82.55 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
