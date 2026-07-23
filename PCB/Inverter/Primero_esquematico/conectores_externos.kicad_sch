@@ -1030,6 +1030,260 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Snapeda:TPD6E05U06RVZR"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at -7.6223 12.7038 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "TPD6E05U06RVZR"
+				(at -7.6202 -12.7003 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Snapeda:SON50P135X350X55-14N"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "PARTREV" "L"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "STANDARD" "IPC-7351B"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MANUFACTURER" "Texas Instruments"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(symbol "TPD6E05U06RVZR_0_0"
+				(rectangle
+					(start -7.62 -12.7)
+					(end 7.62 12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at 10.16 -10.16 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "D3N"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "D3P"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 10.16 -10.16 180)
+					(length 2.54)
+					(name "GND__1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "D2N"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "D2P"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 7.62 180)
+					(length 2.54)
+					(name "D1N"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 10.16 180)
+					(length 2.54)
+					(name "D1P"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power global)
 			(pin_numbers
@@ -1308,7 +1562,7 @@
 		(uuid "6d7cfaa5-ce72-43fd-8214-ad0da326d609")
 	)
 	(junction
-		(at 231.14 105.41)
+		(at 231.14 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2957137f-0dd2-434f-b4d1-605cbcd95ce0")
@@ -1330,6 +1584,26 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c92675dc-0116-411b-9ec1-f1ed4fc61d18")
+	)
+	(wire
+		(pts
+			(xy 232.41 76.2) (xy 236.22 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "080d0d0b-1477-4353-a5ef-5370f3c03b3a")
+	)
+	(wire
+		(pts
+			(xy 232.41 71.12) (xy 236.22 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1882f853-a2f8-401d-9262-1ec164672391")
 	)
 	(wire
 		(pts
@@ -1363,7 +1637,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 102.87) (xy 231.14 105.41)
+			(xy 231.14 115.57) (xy 231.14 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1373,7 +1647,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 105.41) (xy 231.14 106.68)
+			(xy 231.14 118.11) (xy 231.14 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1393,13 +1667,33 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 87.63) (xy 232.41 87.63)
+			(xy 227.33 66.04) (xy 236.22 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79295dce-ba13-4238-bff4-31bc95245ca2")
+	)
+	(wire
+		(pts
+			(xy 227.33 100.33) (xy 232.41 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "7b1719c4-f5e2-4a52-a585-2dcb29f5baa2")
+	)
+	(wire
+		(pts
+			(xy 232.41 73.66) (xy 236.22 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d36a178-1ec9-4dc8-8eb9-c091e1bc1045")
 	)
 	(wire
 		(pts
@@ -1423,7 +1717,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 102.87) (xy 231.14 102.87)
+			(xy 232.41 115.57) (xy 231.14 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1433,7 +1727,17 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 105.41) (xy 231.14 105.41)
+			(xy 232.41 68.58) (xy 236.22 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1b72e76-f1a4-40c4-81f0-9875b32a81e3")
+	)
+	(wire
+		(pts
+			(xy 232.41 118.11) (xy 231.14 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1470,6 +1774,16 @@
 			(type default)
 		)
 		(uuid "e242734b-d7dc-4195-8bd5-3f2cc250aa20")
+	)
+	(wire
+		(pts
+			(xy 232.41 78.74) (xy 236.22 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7728f55-c6f8-4ef9-ba17-fa9470fcdc80")
 	)
 	(wire
 		(pts
@@ -6636,6 +6950,28 @@
 			"AABAUb4F/J0/Swhmb4oAAAAASUVORK5CYII="
 		)
 	)
+	(hierarchical_label "TCK"
+		(shape bidirectional)
+		(at 232.41 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "00165812-d867-4e5b-b829-f78e5cb0192c")
+	)
+	(hierarchical_label "TDI"
+		(shape bidirectional)
+		(at 232.41 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0fb0b614-0226-45cd-a5cc-0424554d59dd")
+	)
 	(hierarchical_label "GP_32_BOOT_MODE_1"
 		(shape bidirectional)
 		(at 176.53 87.63 0)
@@ -6649,7 +6985,7 @@
 	)
 	(hierarchical_label "TDO"
 		(shape bidirectional)
-		(at 232.41 95.25 180)
+		(at 232.41 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6660,7 +6996,7 @@
 	)
 	(hierarchical_label "TDI"
 		(shape bidirectional)
-		(at 232.41 92.71 180)
+		(at 232.41 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6671,7 +7007,7 @@
 	)
 	(hierarchical_label "TMS"
 		(shape bidirectional)
-		(at 232.41 100.33 180)
+		(at 232.41 113.03 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6679,6 +7015,17 @@
 			(justify right)
 		)
 		(uuid "37ba1527-da0e-4c1d-a09c-16b2c277525e")
+	)
+	(hierarchical_label "Mcu_Reset"
+		(shape bidirectional)
+		(at 232.41 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3fe1aa88-6b4d-41f7-9c45-0a3e77fa1b11")
 	)
 	(hierarchical_label "GP_24_BOOT_MODE_2"
 		(shape bidirectional)
@@ -6693,7 +7040,7 @@
 	)
 	(hierarchical_label "Mcu_Reset"
 		(shape bidirectional)
-		(at 232.41 90.17 180)
+		(at 232.41 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6702,9 +7049,20 @@
 		)
 		(uuid "6b66e2cb-cf80-476e-8f15-84c79dc8374e")
 	)
+	(hierarchical_label "TDO"
+		(shape bidirectional)
+		(at 232.41 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7fc30a8e-40b9-438b-b926-6dcc8575c725")
+	)
 	(hierarchical_label "TCK"
 		(shape bidirectional)
-		(at 232.41 97.79 180)
+		(at 232.41 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6713,9 +7071,20 @@
 		)
 		(uuid "a9ae51d1-2c54-42d8-b5eb-4eaa97d41929")
 	)
+	(hierarchical_label "TMS"
+		(shape bidirectional)
+		(at 232.41 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d5ba6fb3-b541-4a44-bd40-8652a5ffbc94")
+	)
 	(symbol
 		(lib_id "Snapeda:347928082")
-		(at 232.41 87.63 0)
+		(at 232.41 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6725,7 +7094,7 @@
 		(dnp no)
 		(uuid "13c46849-949f-4ba3-bb1d-38b6a695a6b6")
 		(property "Reference" "J4"
-			(at 247.65 94.996 0)
+			(at 247.65 107.696 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6736,7 +7105,7 @@
 			)
 		)
 		(property "Value" "347928082"
-			(at 247.65 97.536 0)
+			(at 247.65 110.236 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6747,77 +7116,6 @@
 			)
 		)
 		(property "Footprint" "Snapeda:CONN08_34792_MOL"
-			(at 246.38 86.3599 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/347928082?display=pdf&utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API?utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API"
-			(at 232.41 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Automotive Connectors Mini50 UNSLD VHDR SR 8CKT POL C DGRY"
-			(at 246.38 88.8999 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MF" "Molex"
-			(at 246.38 91.4399 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Package" "None"
-			(at 246.38 93.9799 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Price" "None"
-			(at 246.38 96.5199 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/347928082/Molex/view-part/?ref=eda"
 			(at 246.38 99.0599 0)
 			(hide yes)
 			(show_name no)
@@ -6829,7 +7127,18 @@
 				(justify left)
 			)
 		)
-		(property "Availability" "In Stock"
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/347928082?display=pdf&utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API?utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API"
+			(at 232.41 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Automotive Connectors Mini50 UNSLD VHDR SR 8CKT POL C DGRY"
 			(at 246.38 101.5999 0)
 			(hide yes)
 			(show_name no)
@@ -6841,7 +7150,7 @@
 				(justify left)
 			)
 		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/347928082/Molex/view-part/?ref=snap"
+		(property "MF" "Molex"
 			(at 246.38 104.1399 0)
 			(hide yes)
 			(show_name no)
@@ -6853,7 +7162,7 @@
 				(justify left)
 			)
 		)
-		(property "MP" "347928082"
+		(property "Package" "None"
 			(at 246.38 106.6799 0)
 			(hide yes)
 			(show_name no)
@@ -6865,7 +7174,7 @@
 				(justify left)
 			)
 		)
-		(property "MFR_NAME" "Molex Connector Corporation"
+		(property "Price" "None"
 			(at 246.38 109.2199 0)
 			(hide yes)
 			(show_name no)
@@ -6877,7 +7186,7 @@
 				(justify left)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" "347928082"
+		(property "Check_prices" "https://www.snapeda.com/parts/347928082/Molex/view-part/?ref=eda"
 			(at 246.38 111.7599 0)
 			(hide yes)
 			(show_name no)
@@ -6889,8 +7198,68 @@
 				(justify left)
 			)
 		)
+		(property "Availability" "In Stock"
+			(at 246.38 114.2999 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/347928082/Molex/view-part/?ref=snap"
+			(at 246.38 116.8399 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MP" "347928082"
+			(at 246.38 119.3799 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MFR_NAME" "Molex Connector Corporation"
+			(at 246.38 121.9199 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" "347928082"
+			(at 246.38 124.4599 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(property "Compra" "https://ar.mouser.com/ProductDetail/Molex/34792-8082?qs=sGAEpiMZZMvlX3nhDDO4AEvDUxDP%2FxEUkg6iDo6ojC8%3D"
-			(at 232.41 87.63 0)
+			(at 232.41 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6901,7 +7270,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 232.41 87.63 0)
+			(at 232.41 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7100,7 +7469,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 227.33 87.63 0)
+		(at 227.33 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7110,7 +7479,7 @@
 		(dnp no)
 		(uuid "171e268d-e793-4196-a1d8-0bab8476e4f5")
 		(property "Reference" "#PWR0236"
-			(at 227.33 91.44 0)
+			(at 227.33 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7121,7 +7490,7 @@
 			)
 		)
 		(property "Value" "+3.3_digital"
-			(at 221.996 81.534 0)
+			(at 221.996 94.234 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7132,7 +7501,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 227.33 87.63 0)
+			(at 227.33 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7143,7 +7512,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 227.33 87.63 0)
+			(at 227.33 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7154,7 +7523,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 227.33 87.63 0)
+			(at 227.33 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7177,8 +7546,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 231.14 106.68 0)
+		(lib_id "power:+3.3V")
+		(at 227.33 66.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7186,10 +7555,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2ef64099-fa1c-491f-bba9-ae0294e4d3db")
-		(property "Reference" "#PWR0237"
-			(at 231.14 113.03 0)
+		(uuid "2e640bd7-cdbd-4b1f-b828-559b9e9deae9")
+		(property "Reference" "#PWR0326"
+			(at 227.33 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7199,18 +7567,19 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 231.14 111.76 0)
+		(property "Value" "+3.3_digital"
+			(at 221.996 59.944 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 106.68 0)
+			(at 227.33 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7221,7 +7590,85 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 106.68 0)
+			(at 227.33 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 227.33 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3526569f-5aed-47b9-905b-a3e5a09f5ac9")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/49867297-e849-416a-bae2-6d0463384f96"
+					(reference "#PWR0326")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 231.14 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ef64099-fa1c-491f-bba9-ae0294e4d3db")
+		(property "Reference" "#PWR0237"
+			(at 231.14 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 231.14 124.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.14 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 231.14 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7232,7 +7679,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 231.14 106.68 0)
+			(at 231.14 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7249,6 +7696,148 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/49867297-e849-416a-bae2-6d0463384f96"
 					(reference "#PWR0237")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Snapeda:TPD6E05U06RVZR")
+		(at 246.38 76.2 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6a76163d-563c-42f1-9bb6-5288dd029426")
+		(property "Reference" "D87"
+			(at 246.38 57.912 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TPD6E05U06RVZR"
+			(at 246.38 60.452 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Snapeda:SON50P135X350X55-14N"
+			(at 246.38 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" "L"
+			(at 246.38 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" "IPC-7351B"
+			(at 246.38 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Texas Instruments"
+			(at 246.38 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" "https://www.digikey.com/es/products/detail/texas-instruments/TPD6E05U06RVZR/4307639"
+			(at 246.38 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "12"
+			(uuid "11162314-0f2a-4499-9b9e-62ea8f5dc388")
+		)
+		(pin "8"
+			(uuid "59e617ee-6e00-497c-b012-2533d16929a3")
+		)
+		(pin "11"
+			(uuid "bbd0ff3b-2fff-48bb-82b6-a2c66f3fc880")
+		)
+		(pin "5"
+			(uuid "600e6464-3e4c-4851-9b80-7d1d4254ce47")
+		)
+		(pin "9"
+			(uuid "4dbc6059-85c1-4858-bb0c-02debe47ecbd")
+		)
+		(pin "13"
+			(uuid "5e15a4d8-e130-442e-8f51-18a63937082e")
+		)
+		(pin "10"
+			(uuid "87a61a69-fb72-4e03-9447-707f91cd47a8")
+		)
+		(pin "14"
+			(uuid "7c9dc108-c00f-43d5-8e74-30a5373b3e46")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/49867297-e849-416a-bae2-6d0463384f96"
+					(reference "D87")
 					(unit 1)
 				)
 			)
@@ -7353,6 +7942,84 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/49867297-e849-416a-bae2-6d0463384f96"
 					(reference "R177")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 236.22 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7c98bbd0-b0b5-4366-b11d-2b2ee48c0577")
+		(property "Reference" "#PWR0327"
+			(at 236.22 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 236.22 91.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 236.22 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "13857802-56cd-4b28-aaf0-1137e1a11881")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/49867297-e849-416a-bae2-6d0463384f96"
+					(reference "#PWR0327")
 					(unit 1)
 				)
 			)

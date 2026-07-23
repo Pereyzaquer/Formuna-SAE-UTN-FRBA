@@ -39,13 +39,13 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 132.08) (xy 82.55 132.08)
+			(xy 114.3 123.19) (xy 113.03 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "14d9f0e5-1bde-48a2-a2dd-20e2e486933b")
+		(uuid "1dee959c-af07-441e-a0da-913cf95d0d5d")
 	)
 	(wire
 		(pts
@@ -109,6 +109,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 125.73) (xy 113.03 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a33c16b-80cd-414e-9d05-4f2749f7af75")
+	)
+	(wire
+		(pts
 			(xy 81.28 88.9) (xy 82.55 88.9)
 		)
 		(stroke
@@ -119,13 +129,13 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 128.27) (xy 82.55 128.27)
+			(xy 113.03 128.27) (xy 114.3 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7857cff0-7bd1-4839-8ca9-f574601fbb4e")
+		(uuid "6fc4ebfd-a2f0-4076-9adb-6aaff817b4d6")
 	)
 	(wire
 		(pts
@@ -136,6 +146,16 @@
 			(type default)
 		)
 		(uuid "aa38fd25-b05f-4cfe-80c4-222dc17d8337")
+	)
+	(wire
+		(pts
+			(xy 113.03 133.35) (xy 115.57 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b47d9074-61df-4fd4-a0eb-71811a505343")
 	)
 	(wire
 		(pts
@@ -197,16 +217,6 @@
 		)
 		(uuid "f317bf30-8005-4ec1-b769-fccaee20d6f6")
 	)
-	(wire
-		(pts
-			(xy 80.01 124.46) (xy 82.55 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f475f9fe-40c2-4c77-a465-a8143598767c")
-	)
 	(hierarchical_label "PWM_H_A"
 		(shape bidirectional)
 		(at 81.28 67.31 180)
@@ -217,28 +227,6 @@
 			(justify right)
 		)
 		(uuid "00a56263-f27c-4723-9e62-ab7ea6338565")
-	)
-	(hierarchical_label "Current_B"
-		(shape bidirectional)
-		(at 80.01 128.27 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "09e0ddfd-1319-45be-b9b9-2930aa2eca4f")
-	)
-	(hierarchical_label "Current_C"
-		(shape bidirectional)
-		(at 80.01 132.08 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "20817d1e-87ac-4abb-8d0d-622fd6c87632")
 	)
 	(hierarchical_label "Tension_A"
 		(shape bidirectional)
@@ -295,16 +283,16 @@
 		)
 		(uuid "53d0ed1b-aecf-447b-a775-4e1145173fbf")
 	)
-	(hierarchical_label "Current_A"
+	(hierarchical_label "OCD_OUT"
 		(shape bidirectional)
-		(at 80.01 124.46 180)
+		(at 115.57 133.35 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "62b3d4e6-a750-4182-88c5-794783cdeade")
+		(uuid "5e55b977-71db-4fe9-b904-c82c501a18c6")
 	)
 	(hierarchical_label "GD_FLT"
 		(shape bidirectional)
@@ -350,6 +338,17 @@
 		)
 		(uuid "716c45ca-58c6-4e0c-b7a8-bd50925ae955")
 	)
+	(hierarchical_label "Current_C"
+		(shape bidirectional)
+		(at 114.3 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "79663549-8e6a-4286-8f36-c5d95f347f9c")
+	)
 	(hierarchical_label "Temp_C"
 		(shape bidirectional)
 		(at 81.28 102.87 180)
@@ -371,6 +370,17 @@
 			(justify right)
 		)
 		(uuid "81541368-401f-44f3-a610-b4edbd8bd932")
+	)
+	(hierarchical_label "Current_A"
+		(shape bidirectional)
+		(at 114.3 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bc77b876-7a9c-4951-88f9-eb550bdf9a96")
 	)
 	(hierarchical_label "GD_RDY"
 		(shape bidirectional)
@@ -416,6 +426,17 @@
 		)
 		(uuid "e4bb0655-3c04-400c-86c3-085d8712b784")
 	)
+	(hierarchical_label "Current_B"
+		(shape bidirectional)
+		(at 114.3 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ff475806-1baa-4afe-bb8d-c1c8f4a5048e")
+	)
 	(sheet
 		(at 82.55 120.65)
 		(size 30.48 16.51)
@@ -454,34 +475,44 @@
 				(justify left top)
 			)
 		)
-		(pin "Uot1" bidirectional
-			(at 82.55 124.46 180)
-			(uuid "4567255f-1236-4da7-9946-75a940b91d9d")
+		(pin "I_MCU_1" bidirectional
+			(at 113.03 123.19 0)
+			(uuid "cf71e484-a18b-4b76-968e-b439f4afd16c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(pin "Uot2" bidirectional
-			(at 82.55 128.27 180)
-			(uuid "56f40511-b0c7-42d5-bb72-fbfcee007bd0")
+		(pin "I_MCU_2" bidirectional
+			(at 113.03 125.73 0)
+			(uuid "bb281d2c-af14-406f-a277-1bc9ed85cee4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(pin "Uot3" bidirectional
-			(at 82.55 132.08 180)
-			(uuid "9ee7dd2b-2580-4742-ab07-e71bbfac7ac2")
+		(pin "I_MCU_3" bidirectional
+			(at 113.03 128.27 0)
+			(uuid "3eef5323-98c6-468e-8341-de0fa7a9b057")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
+			)
+		)
+		(pin "OCD" bidirectional
+			(at 113.03 133.35 0)
+			(uuid "03314bca-e1e6-4b48-8a89-ce4236bc8762")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
