@@ -2,31 +2,6 @@
 FileName = BSPD_General_PCB.GBR
 AutoAperture = True
 *************************************************************
-Generating : Bottom Overlay
-      File : BSPD_General_PCB.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D10
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : BSPD_General_PCB.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
 Generating : Mechanical 1
       File : BSPD_General_PCB.GM1
 
@@ -34,7 +9,60 @@ Generating : Mechanical 1
 
 
 Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : BSPD_General_PCB.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
     D11
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : BSPD_General_PCB.GD1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D59
+    D60
+    D61
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BSPD_General_PCB.GG1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D59
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : BSPD_General_PCB.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
 *************************************************************
 
 *************************************************************
@@ -49,11 +77,11 @@ Generating : Bottom Solder
 
 
 Used DCodes :
+    D18
     D19
     D20
     D21
     D22
-    D23
     D24
     D25
     D26
@@ -68,40 +96,6 @@ Used DCodes :
     D35
     D36
     D37
-*************************************************************
-
-*************************************************************
-Generating : Top Layer
-      File : BSPD_General_PCB.GTL
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D13
-    D18
-    D19
-    D20
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
-    D51
-    D52
-    D53
-    D54
 *************************************************************
 
 *************************************************************
@@ -139,35 +133,37 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Overlay
-      File : BSPD_General_PCB.GTO
+Generating : Top Layer
+      File : BSPD_General_PCB.GTL
 
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-    D17
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : BSPD_General_PCB.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
+    Adding Layer      : Top Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
+    D12
+    D13
+    D22
+    D23
+    D24
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
 *************************************************************
 
 *************************************************************
@@ -180,12 +176,12 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D10
     D11
+    D12
     D13
-    D18
-    D19
-    D20
+    D22
+    D23
+    D24
     D38
     D40
     D41
@@ -204,33 +200,39 @@ Used DCodes :
     D54
     D55
     D56
-*************************************************************
-
-*************************************************************
-Generating : Drill Drawing
-      File : BSPD_General_PCB.GD1
-
-    Adding Drill Pair : Top Layer-Bottom Layer
-
-    Adding Layer      : Drill Drawing
-
-
-Used DCodes :
     D57
     D58
-    D59
 *************************************************************
 
 *************************************************************
-Generating : Drill Guide
-      File : BSPD_General_PCB.GG1
+Generating : Top Paste
+      File : BSPD_General_PCB.GTP
 
-    Adding Drill Pair : Top Layer-Bottom Layer
+    Adding Layer      : Top Paste
 
-    Adding Layer      : Drill Guide
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D57
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : BSPD_General_PCB.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
 *************************************************************
 
