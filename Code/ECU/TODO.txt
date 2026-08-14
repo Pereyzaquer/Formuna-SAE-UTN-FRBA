@@ -1,0 +1,212 @@
+============================================================
+ Proyecto : ECU
+ Archivo  : TODO.txt
+ Equipo   : UTN BA Motorsport Formula student team
+ Fecha    : 14/8/2026
+
+ Descripcion:
+ ------------------------------------------------------------
+ Pendientes abiertos del firmware, agrupados por el dato que
+ hace falta conseguir para poder cerrarlos. Cada item apunta
+ al archivo y la linea donde esta el TODO en el codigo.
+
+ Notas:
+ ------------------------------------------------------------
+ Los numeros de linea se corren al editar los archivos: si no
+ coinciden, buscar "TODO" en el archivo indicado.
+ Al cerrar un pendiente hay que borrar el TODO del codigo y el
+ item de esta lista, para que no queden desincronizados.
+============================================================
+
+
+------------------------------------------------------------
+ 1. ESQUEMATICO DE LA BASEBOARD
+------------------------------------------------------------
+Falta: confirmar el ruteo de los GPIO al transceiver CAN.
+
+  [ ] include/ECU.h:45
+      CAN_TX_PIN / CAN_RX_PIN estan en 4 y 5. Son provisorios,
+      puestos solo para que el proyecto compile. Confirmar
+      antes de la primera prueba sobre el auto.
+
+
+------------------------------------------------------------
+ 2. LAYOUT DE LAS TRAMAS CAN
+------------------------------------------------------------
+Falta: definir en equipo el orden de bytes, escalas y
+endianness de cada mensaje. Es el pendiente que mas cosas
+desbloquea: hasta que no este, ningun handler puede parsear.
+
+Definicion de cada ID (include/can_ids.h):
+
+  [ ] can_ids.h:29   0x080 FAULT / emergencia
+                     Minimo: nodo origen, codigo de falla y nivel.
+  [ ] can_ids.h:37   0x100 Estado ECU + heartbeat
+                     Minimo: estado, contador y flags de sensores.
+  [ ] can_ids.h:45   0x180 APPS + BSE
+                     Las dos señales de APPS por separado (el chequeo
+                     de implausibilidad las necesita crudas) + freno.
+  [ ] can_ids.h:54   0x200 RPM ruedas delanteras
+                     Dos ruedas por trama, unidad y escala.
+  [ ] can_ids.h:62   0x201 RPM ruedas traseras
+                     Mismo formato que 0x200.
+  [ ] can_ids.h:69   0x280 Volante
+                     Que botones entran, incluido el de RTD.
+  [ ] can_ids.h:85   0x380 BMS / bateria
+                     Minimo: tension de pack, corriente, temperatura
+                     maxima de celda y estado del AIR.
+  [ ] can_ids.h:93   0x400 IMU
+                     Tres ejes de cada sensor no entran en 8 bytes con
+                     buena resolucion: partir en dos tramas o recortar.
+  [ ] can_ids.h:101  0x500 TPMS
+                     Una trama por rueda, o una sola con indice.
+
+  (0x300 Driver / inversor: ver grupo 4.)
+
+Consecuencias en el codigo, se cierran junto con lo de arriba:
+
+  [ ] src/can.cpp:177   sendHeartbeat() manda estado + contador. Faltan
+                        las flags de sensores.
+  [ ] src/fault.cpp:61  faultReport() manda nivel + codigo en crudo.
+  [ ] src/can.cpp:192   handleFault()    no parsea nada.
+  [ ] src/can.cpp:218   handleBms()      no parsea nada.
+  [ ] src/can.cpp:231   handleAppsBse()  no parsea nada. (ver grupo 7)
+  [ ] src/can.cpp:245   handleRpm()      no parsea nada.
+  [ ] src/can.cpp:257   handleSteering() no parsea nada. (ver grupo 8)
+  [ ] src/can.cpp:270   handleImu()      no parsea nada.
+  [ ] src/can.cpp:282   handleTpms()     no parsea nada.
+
+
+------------------------------------------------------------
+ 3. TABLA DE CODIGOS DE FALLA DEL EQUIPO
+------------------------------------------------------------
+Falta: acordar la lista de codigos. Se define junto con el
+layout de 0x080 (grupo 2).
+
+  [ ] src/state.cpp:52   FAULT_CODE_CATEGORY_B y FAULT_CODE_NODE_A_LOST
+                         son provisorios (0x0001 y 0x0002).
+  [ ] src/state.cpp:285  warnMissingCategoryA() emite un unico WARNING
+                         generico: no dice cual de los nodos de
+                         categoria A falto. Un codigo por nodo.
+
+
+------------------------------------------------------------
+ 4. HOJA DE DATOS DEL INVERSOR
+------------------------------------------------------------
+Falta: la documentacion del fabricante. Impone su propio
+protocolo CAN, no lo elegimos nosotros.
+
+  [ ] include/can_ids.h:76  CAN_ID_DRIVER (0x300) es un placeholder.
+                            Muy probablemente haya que reemplazarlo por
+                            varios IDs.
+  [ ] src/can.cpp:205       handleDriver(): parsear estado del inversor.
+                            Nodo categoria B: un estado de error tiene
+                            que derivar en faultReport(CRITICAL).
+  [ ] src/state.cpp:187     enterState(CAR_ON): habilitar torque.
+  [ ] src/state.cpp:191     enterState(FAULT): cortar torque y dejar los
+                            nodos en reposo.
+
+
+------------------------------------------------------------
+ 5. PROTOCOLO DE CONFIGURACION DE NODOS
+------------------------------------------------------------
+Falta: definir si se configura por un ID propio de
+configuracion o por un campo dentro de la trama de cada nodo,
+y que parametros se mandan (periodo de reporte, rango,
+filtros). Hoy no existe el mensaje, asi que sensorsConfigure()
+no hace nada.
+
+  [ ] src/sensors.cpp:83   Definir el mecanismo de configuracion.
+  [ ] src/sensors.cpp:89   APPS: rangos de calibracion.
+  [ ] src/sensors.cpp:92   BSE: configuracion del sensor de freno.
+  [ ] src/sensors.cpp:95   RPM: cantidad de dientes / imanes de la
+                           rueda fonica.
+  [ ] src/sensors.cpp:98   Volante: el cero.
+  [ ] src/sensors.cpp:101  IMU: rangos de acelerometro y giroscopo.
+  [ ] src/sensors.cpp:104  TPMS: presiones objetivo por rueda.
+  [ ] src/state.cpp:245    sensorsConfigured() devuelve true de una
+                           porque no hay acuse que esperar. Cuando
+                           exista el mensaje, esperar el acuse de cada
+                           nodo antes de pasar a CAR_READY.
+
+
+------------------------------------------------------------
+ 6. MEDICIONES SOBRE EL AUTO Y EN BANCO
+------------------------------------------------------------
+Falta: datos que solo salen de medir, no de decidir.
+
+  [ ] src/sensors.cpp:117  sensorsScaleApps(): medir el valor crudo con
+                           el pedal en reposo y a fondo, y decidir si la
+                           curva es lineal. Hoy devuelve 0.0 siempre,
+                           que es lo seguro (torque en ralenti).
+  [ ] src/sensors.cpp:132  sensorsScaleBse(): conversion cuentas -> bar.
+                           Depende del sensor de presion elegido.
+  [ ] include/rules.h:77   RULE_BSE_ACTUATED_BAR esta en 0.0f. Es el
+                           umbral para considerar el freno accionado.
+                           Medir en banco.
+  [ ] src/state.cpp:47     BOOT_PRESENCE_TIMEOUT_MS esta en 2000 ms. Es
+                           lo que BOOT espera a que se presenten los
+                           nodos: depende de cuanto tarda en arrancar el
+                           mas lento (probablemente el BMS).
+
+
+------------------------------------------------------------
+ 7. RULEBOOK DE LA EDICION VIGENTE
+------------------------------------------------------------
+Falta: validar valor Y numero de articulo de cada umbral. La
+numeracion cambia entre ediciones, asi que esto se revisa
+antes de cada competencia.
+
+  [ ] include/rules.h:33  RULE_APPS_IMPLAUSIBILITY_PCT (10%).
+  [ ] include/rules.h:43  RULE_APPS_IMPLAUSIBILITY_TIME_MS (100 ms).
+  [ ] include/rules.h:54  RULE_APPS_BRAKE_CUT_PCT (25%, historico).
+  [ ] include/rules.h:66  RULE_APPS_REARM_PCT (5%, historico).
+  [ ] src/can.cpp:231     handleAppsBse(): implementar las dos reglas
+                          (implausibilidad APPS y plausibilidad
+                          APPS/freno) usando las constantes de rules.h.
+                          No hardcodear los valores aca.
+  [ ] src/state.cpp:256   rtdSequenceComplete(): hoy alcanza con el
+                          boton. El reglamento exige ademas freno
+                          accionado y tractive system activo, mas el
+                          sonido de RTD antes de habilitar torque.
+  [ ] src/state.cpp:170   Wifi disponible en todos los estados menos
+                          CAR_ON, para poder actualizar la ECU montada
+                          en el auto. Falta confirmar que dice el
+                          reglamento sobre transmision inalambrica en
+                          el auto: varias ediciones restringen el wifi
+                          bidireccional que pueda alterar el
+                          comportamiento del vehiculo, y esto lo altera
+                          (reflashea la ECU). Puede que haya que
+                          limitarlo a CONFIG y FAULT, o exigir que el
+                          tractive system este desactivado.
+
+
+------------------------------------------------------------
+ 8. DEFINICION DEL VOLANTE
+------------------------------------------------------------
+Falta: decidir la botonera con el equipo de chasis.
+
+  [ ] src/can.cpp:257     handleSteering(): el boton de RTD tiene que
+                          encolar un EcuEventType::RTD_REQUEST en
+                          qEvents.
+  [ ] src/state.cpp:269   shutdownRequestReceived(): definir que cuenta
+                          como pedido de apagado ademas del boton.
+
+
+------------------------------------------------------------
+ 9. LOGICA DE ARRANQUE (depende de los grupos 2 y 4)
+------------------------------------------------------------
+Los chequeos de la maquina de estados son stubs. Ojo con el
+segundo: no es un descuido que devuelva false.
+
+  [ ] src/state.cpp:221  categoryBChecksOk() devuelve true fijo, para
+                         poder probar la maquina de estados en banco sin
+                         el auto armado. Tiene que chequear de verdad
+                         driver, bms, apps y bse, y que sus valores sean
+                         plausibles.
+  [ ] src/state.cpp:233  categoryBFailed() devuelve false A PROPOSITO.
+                         Es una condicion de falla: un stub en true
+                         latchearia FAULT apenas arranca y dejaria el
+                         auto muerto. Implementar la deteccion de falla
+                         explicita del driver o del BMS (no la ausencia,
+                         que la cubre categoryBChecksOk).

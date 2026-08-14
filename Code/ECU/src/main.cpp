@@ -1,7 +1,7 @@
 /************************************************************
  *  Proyecto : ECU
  *  Archivo  : main.cpp
- *  Equipo   : UTN BA Motorsport Formula student team 
+ *  Equipo   : UTN BA Motorsport Formula student team
  *  Fecha    : 23/12/2025
  *
  *  Descripción:
@@ -12,10 +12,17 @@
  *  Hardware:
  *  --------------------------------------------------------
  *  - MCU: ESP32 S3.
- *  - Sensores: 
+ *  - Sensores:
  *
  *  Notas:
  *  --------------------------------------------------------
+ *  Este archivo solo arma el sistema: inicializa periferico y
+ *  crea las tasks. La logica vive en state.cpp, can.cpp,
+ *  sensors.cpp, fault.cpp e indicators.cpp.
+ *
+ *  Reparto de cores: core 1 corre lo que tiene que ser
+ *  determinista (estados y CAN); core 0 queda para WiFi/OTA,
+ *  que es donde el stack de radio ya corre sus propias tasks.
  *
  ************************************************************/
 
@@ -27,13 +34,20 @@
 /************************************************************
  *               CONSTANTES DEL SISTEMA
  ************************************************************/
+static const uint16_t STACK_STATE = 4096;
+static const uint16_t STACK_CAN   = 4096;
+static const uint16_t STACK_OTA   = 4096;
 
+static const uint8_t QUEUE_EVENTS_LEN = 16;
+static const uint8_t QUEUE_OTA_LEN    = 4;
 
 /************************************************************
  *                VARIABLES GLOBALES
  ************************************************************/
-uint32_t ESTADO = BOOT;
 Adafruit_NeoPixel rgb(NUM_PIXELS, RGB_PIN, NEO_GRB + NEO_KHZ800);
+
+QueueHandle_t qEvents = nullptr;
+QueueHandle_t qOta    = nullptr;
 
 /************************************************************
  *                       SETUP
@@ -42,59 +56,29 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
 
-  otaSetup();
-
   rgb_init();
+
+  qEvents = xQueueCreate(QUEUE_EVENTS_LEN, sizeof(EcuEvent));
+  qOta    = xQueueCreate(QUEUE_OTA_LEN, sizeof(OtaCmd));
+
+  /* Sin bus CAN la ECU esta ciega: no hay nada util que hacer, asi que se
+     queda en rojo fijo en vez de arrancar una maquina de estados que nunca
+     va a recibir un dato. */
+  if (!canInit()) {
+    rgb_set(64, 0, 0);
+    return;
+  }
+
+  xTaskCreatePinnedToCore(taskState, "state", STACK_STATE, nullptr, 3, nullptr, 1);
+  xTaskCreatePinnedToCore(taskCan,   "can",   STACK_CAN,   nullptr, 4, nullptr, 1);
+  xTaskCreatePinnedToCore(taskOta,   "ota",   STACK_OTA,   nullptr, 1, nullptr, 0);
 }
 
 /************************************************************
  *                        LOOP
  ************************************************************/
 void loop() {
-  ArduinoOTA.handle();
-
-  switch (ESTADO)
-    {
-    case BOOT:
-        // Chequeo del bus CAN e inicio del bus CAN
-        // Chequeo del driver (junto con el estado del mismo)
-        // Chequeo de los sensores de la bateria (junto con el estado de la misma)
-        // Chequeo de los sensores de RPM de las ruedas
-        // Chequeo del sensor del volante
-        // Chequeo del sensor del acelerador
-        // Chequeo del sensor del freno
-        // Chequeo del sensor mpu6050 (giroscopio y acelerometro)
-        // Chequeo del sensor de precion y temperatura de los neumaticos*
-
-        // Todos los chequeos deben setear una flag para determinar si se configurará el sensor o no en el siguient estado.
-        // El caso del driver y la bateria, no debe de haber flag dado que no puede bootearse el esp si no esta alguno de los dos 
-        // Para las pruebas vamos a excluir esto pero en un futuro deberiamos considerar que el driver y la bateria causen el estado
-        // de falla en el estado BOOT si no se comunican.
-
-        break;
-    case CONFIG:
-        
-        // Configuracion de los sensores detectados en el anterior estado
-
-        break;
-    case CAR_READY:
-        
-        // Seteo de los leds indicados por reglamento del estado del vehiculo
-
-        break;
-    case CAR_ON:
-        
-        // Seteo de los leds indicados por reglamento del estado del vehiculo y
-        // habilitacion del driver para comenzar a funcionar
-
-        break;
-    case FAULT:
-        
-        // Se debe apagar el driver, indicar falla mediante el led indicado por la normativa y apagar o dejar en modo "sleep" a todos los sensores
-
-        break;
-    
-    default:
-        break;
-    }
+  /* Todo el trabajo vive en las tasks. Se cede el core para no comerse
+     tiempo del scheduler al pedo. */
+  vTaskDelay(pdMS_TO_TICKS(1000));
 }
