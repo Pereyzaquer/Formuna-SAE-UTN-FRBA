@@ -20,7 +20,7 @@
    solos y por eso alcanza con escuchar.
 2. Pasa por CONFIG y queda en CAR_READY, led verde fijo,
    esperando la orden de arranque.
-3. Al apretar "Arrancar corrida" en la pagina web, o el boton
+3. Al apretar "Arrancar ejecucion" en la pagina web, o el boton
    fisico si hay uno, entra en CAR_ON, led verde pulsante, y
    empieza a grabar.
 4. A los 90 segundos la grabacion termina sola y la ECU vuelve
@@ -122,9 +122,9 @@ y la otra.
    Ahi se ve el estado, cuantos nodos se detectaron, y el valor
    en vivo de cada canal. ANTES de apretar el boton conviene
    mirar que el sensor este dando numeros razonables: es la
-   forma de descubrir un cable flojo sin gastar una corrida.
+   forma de descubrir un cable flojo sin gastar una ejecucion.
 
-4. Apretar "Arrancar corrida" en la pagina, o el boton fisico
+4. Apretar "Arrancar ejecucion" en la pagina, o el boton fisico
    si hay uno conectado. El led pasa a verde pulsante y la
    barra de avance empieza a moverse.
 
@@ -133,7 +133,7 @@ y la otra.
 
 5. Esperar 90 segundos. La grabacion termina sola. Si algo
    salio mal y no vale la pena esperar, "Detener" corta la
-   corrida y conserva lo grabado hasta ese momento.
+   ejecucion y conserva lo grabado hasta ese momento.
 
 6. Bajar el archivo desde el enlace de la pagina, o directo:
        http://192.168.4.1/registro.csv

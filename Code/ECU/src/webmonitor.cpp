@@ -11,9 +11,9 @@
  *
  *    /              pagina de estado en vivo
  *    /api/estado    el mismo dato en JSON, para la pagina
- *    /registro.csv  la grabacion de la ultima corrida
- *    /api/rtd       arranca la corrida, reemplaza al boton fisico
- *    /api/detener   corta la corrida antes de tiempo
+ *    /registro.csv  la grabacion de la ultima ejecucion
+ *    /api/rtd       arranca la ejecucion, reemplaza al boton fisico
+ *    /api/detener   corta la ejecucion antes de tiempo
  *
  *  Hardware:
  *  --------------------------------------------------------
@@ -131,7 +131,7 @@ static const char PAGE[] PROGMEM = R"HTML(<!DOCTYPE html>
  <span class="clave">Muestras</span><span id="muestras">--</span>
 </div>
 <p id="controles">
- <button id="arrancar" onclick="mandar('/api/rtd')">Arrancar corrida</button>
+ <button id="arrancar" onclick="mandar('/api/rtd')">Arrancar ejecucion</button>
  <button id="detener" onclick="mandar('/api/detener')">Detener</button>
 </p>
 <p><a href="/registro.csv" download>Descargar registro.csv</a></p>
@@ -168,7 +168,7 @@ function dibujar(datos){
  document.getElementById("avance").style.width=datos.avance+"%";
 
  // El boton de arranque solo sirve en CAR_READY, y el de parada solo
- // durante una corrida. Deshabilitarlos evita mandar ordenes que la
+ // durante una ejecucion. Deshabilitarlos evita mandar ordenes que la
  // maquina de estados va a ignorar, que desde afuera parece una falla.
  document.getElementById("controles").style.display=
    datos.control?"block":"none";
@@ -268,9 +268,9 @@ static void handlePageRequest(void) {
  * @return void
  */
 static void handleStateRequest(void) {
-  /* Duracion de la corrida expresada en porcentaje, para la barra de
+  /* Duracion de la ejecucion expresada en porcentaje, para la barra de
      avance. Se calcula aca y no en la pagina para no repetir el dato de
-     cuanto dura una corrida en dos lugares. */
+     cuanto dura una ejecucion en dos lugares. */
   uint32_t elapsed = loggerGetElapsedMilliseconds();
   uint32_t progressPercent = loggerIsRecording() ? (elapsed / 900) : 100;
   if (progressPercent > 100) {
@@ -336,7 +336,7 @@ static bool sendEventToStateMachine(EcuEventType type) {
 }
 
 /**
- * @brief Arranca la corrida, en reemplazo del boton fisico de RTD.
+ * @brief Arranca la ejecucion, en reemplazo del boton fisico de RTD.
  *
  * @return void
  */
@@ -360,7 +360,7 @@ static void handleReadyToDriveRequest(void) {
 }
 
 /**
- * @brief Corta la corrida antes de que se cumplan los 90 segundos.
+ * @brief Corta la ejecucion antes de que se cumplan los 90 segundos.
  *
  * @return void
  */
@@ -391,7 +391,7 @@ static void handleStopRequest(void) {
  * mostraria una medicion que nunca existio.
  *
  * Se manda por partes en lugar de armar todo el texto en memoria: una
- * corrida completa son cientos de kB y no entran comodos en RAM.
+ * ejecucion completa son cientos de kB y no entran comodos en RAM.
  *
  * @return void
  */

@@ -22,7 +22,7 @@
  *    BOOT       -> FAULT       falla categoria B
  *    CONFIG     -> CAR_READY   nodos presentes configurados
  *    CAR_READY  -> CAR_ON      secuencia RTD completa
- *    CAR_ON     -> CAR_READY   apagado pedido, o corrida terminada
+ *    CAR_ON     -> CAR_READY   apagado pedido, o ejecucion terminada
  *    cualquiera -> FAULT       falla CRITICAL
  *    FAULT      -> sin salida por software
  *
@@ -183,7 +183,7 @@ void taskState(void *argument) {
         break;
 
       case EcuState::CAR_ON:
-        /* La corrida termina sola al cumplirse la duracion. Tambien se
+        /* La ejecucion termina sola al cumplirse la duracion. Tambien se
            puede cortar antes pidiendo el apagado. */
         if (!loggerIsRecording() || shutdownWasRequested()) {
           shutdownRequested = false;
@@ -231,7 +231,7 @@ static void enterState(EcuState nextState) {
 
   switch (nextState) {
     case EcuState::CAR_ON:
-      /* Entrar en CAR_ON es lo que dispara la corrida de la prueba.
+      /* Entrar en CAR_ON es lo que dispara la ejecucion de la prueba.
          Pendiente para el auto: aca tambien va la habilitacion de
          torque en el inversor. */
       loggerStart();

@@ -7,7 +7,7 @@
  *  Descripción:
  *  --------------------------------------------------------
  *  Registrador de datos de la prueba. Guarda en memoria las
- *  muestras que llegan por CAN durante la corrida y las deja
+ *  muestras que llegan por CAN durante la ejecucion y las deja
  *  disponibles para exportarlas como CSV.
  *
  *  Hardware:
@@ -36,7 +36,7 @@
  *               CONSTANTES DEL SISTEMA
  ************************************************************/
 
-/** Duracion de una corrida. Definida en 90 segundos para la prueba. */
+/** Duracion de una ejecucion. Definida en 90 segundos para la prueba. */
 static const uint32_t RECORDING_DURATION_MILLISECONDS = 90000;
 
 /**
@@ -70,7 +70,7 @@ static uint32_t  recordingStartMilliseconds = 0;
 static bool      recording = false;
 
 /* Ultimo valor recibido de cada canal, se grabe o no. Sirve para que la
-   pagina web muestre el sensor en vivo antes de arrancar la corrida, que
+   pagina web muestre el sensor en vivo antes de arrancar la ejecucion, que
    es como se comprueba que el cableado esta bien sin gastar una prueba. */
 static float currentValues[static_cast<uint8_t>(LogChannel::COUNT)] = {};
 static bool  currentValueIsValid[static_cast<uint8_t>(LogChannel::COUNT)] = {};

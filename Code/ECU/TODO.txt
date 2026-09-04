@@ -110,7 +110,7 @@ El wifi queda encendido tambien en CAR_ON.
 
 El monitoreo web dejo de ser de solo lectura.
     Los endpoints /api/rtd y /api/detener arrancan y cortan la
-    corrida, porque para la prueba no hay boton fisico de RTD.
+    ejecucion, porque para la prueba no hay boton fisico de RTD.
     Cualquiera que se conecte al punto de acceso llega a ellos
     sin contraseña.
 
@@ -124,7 +124,7 @@ El monitoreo web dejo de ser de solo lectura.
       Es el unico punto de la Parte 1 que es una tarea y no
       solo una decision a revisar.
 
-Corrida de 90 segundos, 4000 muestras como maximo.
+Ejecucion de 90 segundos, 4000 muestras como maximo.
     Con los dos nodos emitiendo son unas 1900 muestras, asi que
     sobra margen. Ver RECORDING_DURATION_MILLISECONDS y
     MAXIMUM_SAMPLE_COUNT en logger.cpp.
