@@ -1,23 +1,23 @@
 /************************************************************
  *  Proyecto : ECU
- *  Archivo  : fault.cpp
+ *  Archivo  : errors.cpp
  *  Equipo   : UTN BA Motorsport Formula student team
- *  Fecha    : 14/8/2026
+ *  Fecha    : 2/9/2026
  *
  *  Descripción:
  *  --------------------------------------------------------
- *  Registro y latcheo de fallas del vehiculo.
+ *  Registro y latcheo de las fallas del vehiculo.
  *
  *  Hardware:
  *  --------------------------------------------------------
  *  - MCU: ESP32 S3.
- *  - Sensores:
+ *  - Sensores: ninguno propio.
  *
  *  Notas:
  *  --------------------------------------------------------
- *  Una falla CRITICAL queda latcheada hasta el proximo reset.
+ *  Una falla CRITICAL queda latcheada hasta el proximo reinicio.
  *  No existe una funcion para bajarla por software: si el auto
- *  entro en FAULT alguien tiene que ir a mirar por que.
+ *  entro en FAULT, alguien tiene que ir a mirar por que.
  *
  ************************************************************/
 
@@ -30,16 +30,16 @@
 /************************************************************
  *                VARIABLES GLOBALES
  ************************************************************/
-/* volatile porque las escribe la task de CAN y las lee la de estados.
-   Son de una sola palabra, asi que no hace falta mutex. */
-static volatile FaultLevel currentLevel = FaultLevel::NONE;
+/* volatile porque las escribe taskCan y las lee taskState. Son de una
+   sola palabra, asi que no hace falta un mutex. */
+static volatile ErrorLevel currentLevel = ErrorLevel::NONE;
 static volatile uint16_t   currentCode  = 0;
 static volatile bool       latched      = false;
 
 /**
- * @brief Registra una falla y, si es CRITICAL, la latchea.
+ * @brief Registra una falla y, si es CRITICAL, la deja latcheada.
  *
- * La falla se emite tambien por CAN para que el resto de los nodos y la
+ * La falla tambien se emite por CAN para que el resto de los nodos y la
  * telemetria se enteren sin tener que preguntar.
  *
  * @param[in]  level  Severidad de la falla.
@@ -47,25 +47,26 @@ static volatile bool       latched      = false;
  *
  * @return void
  */
-void faultReport(FaultLevel level, uint16_t code) {
+void errorReport(ErrorLevel level, uint16_t code) {
   /* Una WARNING posterior no debe tapar una CRITICAL ya registrada. */
   if (level >= currentLevel) {
     currentLevel = level;
     currentCode  = code;
   }
 
-  if (level == FaultLevel::CRITICAL) {
+  if (level == ErrorLevel::CRITICAL) {
     latched = true;
   }
 
-  /* TODO: cerrar el layout de la trama 0x080 en can_ids.h. Por ahora se
-     manda nivel + codigo en crudo, que es lo minimo util para debug. */
-  uint8_t payload[3] = {
-    static_cast<uint8_t>(level),
-    static_cast<uint8_t>(code >> 8),
-    static_cast<uint8_t>(code & 0xFF)
-  };
-  canSend(CAN_ID_FAULT, payload, sizeof(payload));
+  /* Layout de la trama 0x080, definido en can_ids.h:
+       byte 0    nivel de falla
+       byte 1-2  codigo, big-endian */
+  uint8_t payload[3];
+  payload[0] = static_cast<uint8_t>(level);
+  payload[1] = static_cast<uint8_t>(code >> 8);
+  payload[2] = static_cast<uint8_t>(code & 0xFF);
+
+  canSendFrame(CAN_ID_FAULT, payload, sizeof(payload));
 }
 
 /**
@@ -73,16 +74,16 @@ void faultReport(FaultLevel level, uint16_t code) {
  *
  * @return bool  true si el vehiculo debe permanecer en FAULT.
  */
-bool faultIsLatched(void) {
+bool errorIsLatched(void) {
   return latched;
 }
 
 /**
  * @brief Devuelve el nivel de la ultima falla registrada.
  *
- * @return FaultLevel  Nivel vigente.
+ * @return ErrorLevel  Nivel vigente.
  */
-FaultLevel faultGetLevel(void) {
+ErrorLevel errorGetLevel(void) {
   return currentLevel;
 }
 
@@ -91,7 +92,7 @@ FaultLevel faultGetLevel(void) {
  *
  * @return uint16_t  Codigo, o 0 si no hubo fallas.
  */
-uint16_t faultGetCode(void) {
+uint16_t errorGetCode(void) {
   return currentCode;
 }
 
@@ -102,11 +103,11 @@ uint16_t faultGetCode(void) {
  *
  * @return const char*  Nombre en mayusculas.
  */
-const char *faultLevelName(FaultLevel level) {
+const char *errorGetLevelName(ErrorLevel level) {
   switch (level) {
-    case FaultLevel::NONE:     return "NONE";
-    case FaultLevel::WARNING:  return "WARNING";
-    case FaultLevel::CRITICAL: return "CRITICAL";
+    case ErrorLevel::NONE:     return "NONE";
+    case ErrorLevel::WARNING:  return "WARNING";
+    case ErrorLevel::CRITICAL: return "CRITICAL";
   }
-  return "?";
+  return "DESCONOCIDO";
 }

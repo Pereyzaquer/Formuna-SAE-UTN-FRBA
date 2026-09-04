@@ -1,0 +1,220 @@
+============================================================
+ Proyecto : ECU + SensorNode
+ Archivo  : PRUEBA.txt
+ Equipo   : UTN BA Motorsport Formula student team
+ Fecha    : 2/9/2026
+
+ Descripcion:
+ ------------------------------------------------------------
+ Como correr la prueba de banco: una ECU ESP32-S3 y uno o dos
+ nodos ESP32-C3 comunicados por CAN, grabando 90 segundos de
+ datos que despues se bajan por wifi como archivo CSV.
+============================================================
+
+
+------------------------------------------------------------
+ QUE HACE LA PRUEBA
+------------------------------------------------------------
+1. La ECU arranca y escucha el bus 2 segundos para ver que
+   nodos hay. No le pregunta nada a nadie: los nodos emiten
+   solos y por eso alcanza con escuchar.
+2. Pasa por CONFIG y queda en CAR_READY, led verde fijo,
+   esperando la orden de arranque.
+3. Al apretar "Arrancar corrida" en la pagina web, o el boton
+   fisico si hay uno, entra en CAR_ON, led verde pulsante, y
+   empieza a grabar.
+4. A los 90 segundos la grabacion termina sola y la ECU vuelve
+   a CAR_READY.
+5. Se baja el CSV desde el navegador y se grafica.
+
+Funciona con un solo nodo conectado, con los dos, o con
+ninguno. Un nodo ausente no traba nada: su columna en el CSV
+queda vacia y el resto de la prueba sigue igual.
+
+
+------------------------------------------------------------
+ CABLEADO
+------------------------------------------------------------
+Bus CAN, comun a todas las placas:
+  - Cada placa necesita su transceiver CAN (no alcanza con
+    conectar los pines entre si: el bus es diferencial).
+  - CAN_H con CAN_H, CAN_L con CAN_L.
+  - Una resistencia de 120 ohm en cada extremo del bus.
+  - Masa comun entre todas las placas.
+
+ECU, ESP32-S3:
+  GPIO 4  -> TX del transceiver
+  GPIO 5  -> RX del transceiver
+  GPIO 6  -> boton de Ready To Drive, el otro extremo a masa
+             (usa la resistencia interna, no hace falta agregar
+             ninguna)
+
+             El boton es OPCIONAL: la pagina web tiene el suyo
+             y hace exactamente lo mismo. Si no hay nada
+             conectado a este pin, no pasa nada: la resistencia
+             interna lo mantiene sin apretar.
+
+Nodo, ESP32-C3, los dos:
+  GPIO 4  -> TX del transceiver
+  GPIO 5  -> RX del transceiver
+
+Nodo de temperatura, DHT11:
+  GPIO 3  -> DATA, con resistencia de 10 kohm a 3.3 V
+             (si el modulo ya la trae, no agregar otra)
+
+Nodo de velocidad de giro, modulo infrarrojo LM393:
+  GPIO 8  -> D0 del modulo
+  VCC     -> 3.3 V, NO 5 V. La salida del LM393 es colector
+             abierto con pull-up a su propia alimentacion: a
+             5 V entregaria 5 V y el ESP32-C3 no lo tolera.
+
+  Ademas del cableado hace falta algo que gire con una marca
+  que pase por delante del sensor: un disco de carton con una
+  lengüeta alcanza. Cada pasada es un pulso.
+
+  Ajustar el preset del modulo hasta que su led encienda con la
+  lengüeta delante y se apague sin ella. Si queda muy sensible,
+  dispara con cualquier cosa y las RPM salen infladas.
+
+
+Los numeros de pin estan definidos en ECU.h y en SensorNode.h.
+Si el cableado real termina siendo otro, se cambian ahi y en
+ningun otro lado.
+
+
+------------------------------------------------------------
+ GRABAR LAS PLACAS
+------------------------------------------------------------
+Antes de grabar, siempre:
+    pio device list
+
+Sirve para confirmar que la placa que se quiere grabar esta
+enchufada. Si no lo esta, PlatformIO agarra cualquier otro
+puerto serie de la maquina e intenta grabarle el firmware.
+
+ECU, desde Code/ECU:
+    pio run -t upload
+
+Nodo de velocidad de giro, desde Code/SensorNode:
+    pio run -e rueda -t upload
+
+Nodo de temperatura, desde Code/SensorNode:
+    pio run -e temperatura -t upload
+
+
+Los entornos del nodo comparten todo el codigo salvo el archivo
+del sensor. No hay que cambiar nada a mano entre una grabacion
+y la otra.
+
+
+------------------------------------------------------------
+ CORRER LA PRUEBA
+------------------------------------------------------------
+1. Alimentar todas las placas y esperar unos segundos.
+
+2. Conectarse a la red wifi que levanta la ECU:
+       Red:          ESP32 S3 ECU
+       Contraseña:   12345678
+
+3. Abrir en el navegador:
+       http://192.168.4.1/
+
+   Ahi se ve el estado, cuantos nodos se detectaron, y el valor
+   en vivo de cada canal. ANTES de apretar el boton conviene
+   mirar que el sensor este dando numeros razonables: es la
+   forma de descubrir un cable flojo sin gastar una corrida.
+
+4. Apretar "Arrancar corrida" en la pagina, o el boton fisico
+   si hay uno conectado. El led pasa a verde pulsante y la
+   barra de avance empieza a moverse.
+
+   El boton se habilita solo en CAR_READY. Si aparece gris, la
+   ECU todavia no llego a ese estado.
+
+5. Esperar 90 segundos. La grabacion termina sola. Si algo
+   salio mal y no vale la pena esperar, "Detener" corta la
+   corrida y conserva lo grabado hasta ese momento.
+
+6. Bajar el archivo desde el enlace de la pagina, o directo:
+       http://192.168.4.1/registro.csv
+
+
+------------------------------------------------------------
+ EL ARCHIVO CSV
+------------------------------------------------------------
+Sale con una columna por canal, tenga datos o no:
+
+  tiempo_s, temperatura_C, humedad_pct, rpm_delantera_izq,
+  acelerador_pct, freno_bar
+
+Cada fila es una muestra y solo lleva valor en la columna del
+canal que hablo en ese instante. Las demas quedan vacias.
+
+Eso es a proposito: una celda vacia es un hueco en el grafico,
+que es lo correcto. Si se rellenara con cero, el grafico
+mostraria una medicion que nunca existio.
+
+Con los dos nodos actuales se llenan temperatura_C,
+humedad_pct y rpm_delantera_izq. Quedan vacios acelerador_pct
+y freno_bar, porque todavia no existe ningun nodo que los
+alimente. Estan igual para comprobar que la ECU maneja bien el
+caso de varios canales definidos con solo algunos con datos.
+
+Para graficar: el CSV se abre en Excel, en Python o en MoTeC
+i2. 
+Para motec: https://app.notion.com/p/fsae-utn-frba-electronica/Motec-i2-Conversor-de-CSV-a-LD-2eed1b4deb1480cdb61ff08b69d709eb
+
+
+
+------------------------------------------------------------
+ SI ALGO NO ANDA
+------------------------------------------------------------
+El led queda en rojo apenas arranca
+    No se pudo inicializar el bus CAN. Revisar que los pines 4
+    y 5 sean los que van al transceiver.
+
+La pagina dice 0 nodos presentes y 0 tramas
+    La ECU no recibe nada. Revisar masa comun entre placas, las
+    dos resistencias de 120 ohm, y que CAN_H y CAN_L no esten
+    cruzados. Tambien que los dos extremos esten a 500 kbps: si
+    un nodo usa otra velocidad, ensucia el bus para todos.
+
+El contador "Bus caido" sube sin parar
+    Es normal si la ECU esta encendida sola: en CAN toda trama
+    tiene que ser confirmada por otro nodo, y sin nadie que la
+    confirme el controlador se desconecta del bus. La ECU se
+    reengancha sola cada vez, asi que apenas enchufes un nodo el
+    contador se queda quieto.
+
+    Si sigue subiendo CON un nodo encendido, entonces el nodo no
+    esta llegando al bus: revisar su transceiver, su cableado, y
+    que este emitiendo (mirar su puerto serie).
+
+    Si el contador esta en cero y aun asi no se reciben tramas,
+    el problema no es el bus sino los identificadores.
+
+La pagina cuenta tramas pero los canales dicen "sin datos"
+    El bus anda pero la ECU no reconoce el identificador. Es lo
+    que separa "el bus esta mudo" de "el bus habla y no lo
+    entiendo": comparar el ID que emite el nodo contra el que
+    espera can_ids.h.
+
+El valor del sensor esta multiplicado o dividido por diez
+    Emisor y receptor no coinciden en la escala. Estan definidas
+    en can_ids.h y las aplican can.cpp de la ECU y el archivo
+    sensor_*.cpp del nodo. Los tres tienen que decir lo mismo.
+
+Las RPM salen multiplicadas por un numero entero
+    El disco tiene mas de una marca. La constante
+    PULSES_PER_REVOLUTION de sensor_wheel_speed.cpp esta en 1 y
+    tiene que decir cuantas marcas tiene el disco de verdad.
+
+Las RPM saltan a valores altisimos con el disco quieto
+    El preset del modulo esta muy sensible y dispara solo, o
+    hay luz infrarroja de fondo, por ejemplo sol directo.
+    Ajustar el preset mirando el led del modulo.
+
+El DHT11 no devuelve nada
+    Es lo mas comun: falta la resistencia de pull-up en el pin
+    de datos, o el cable es muy largo. El nodo reintenta cada
+    segundo, asi que si aparece intermitente, es eso.
