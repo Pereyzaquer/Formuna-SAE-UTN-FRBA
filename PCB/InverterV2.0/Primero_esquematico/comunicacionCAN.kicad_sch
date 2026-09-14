@@ -161,6 +161,158 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:Fuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R_Small"
 			(pin_numbers
 				(hide yes)
@@ -1840,6 +1992,387 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Snapeda:MEV1S1205SC"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "PS"
+				(at 21.59 7.62 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "MEV1S1205SC"
+				(at 21.59 5.08 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Snapeda:MEV1S1205SC"
+				(at 21.59 -94.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "https://www.murata.com/products/productdata/8807029899294/kdc-mev.pdf?1660879822000"
+				(at 21.59 -194.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "Murata Power Solutions MEV1 1W Isolated DC-DC Converter Through Hole, Voltage in 10.8  13.2 V dc, Voltage out"
+				(at 0 0 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "10.25"
+				(at 21.59 -394.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "Murata Electronics"
+				(at 21.59 -494.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "MEV1S1205SC"
+				(at 21.59 -594.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "580-MEV1S1205SC"
+				(at 21.59 -694.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Power-Solutions/MEV1S1205SC?qs=zbGHxLLsg8c5gnqusU9GoQ%3D%3D"
+				(at 21.59 -794.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" "MEV1S1205SC"
+				(at 21.59 -894.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/mev1s1205sc/murata-power-solutions?utm_currency=USD&region=nac"
+				(at 21.59 -994.92 0)
+				(show_name yes)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "MEV1S1205SC_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 20.32 -12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "+VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "-VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "-VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "0V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 0)
+					(length 5.08)
+					(name "+VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+12V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+12V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+12V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+12V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power global)
 			(pin_numbers
@@ -2490,7 +3023,7 @@
 	)
 	(text "ISO 11898-2 -> Esta norma especifica la impedancia caracteristica"
 		(exclude_from_sim no)
-		(at 192.024 109.728 0)
+		(at 231.14 162.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2510,7 +3043,7 @@
 	)
 	(text "Uso de la resistencia de 120 Ohms"
 		(exclude_from_sim no)
-		(at 193.802 86.868 0)
+		(at 232.918 139.7 0)
 		(effects
 			(font
 				(size 1.778 1.778)
@@ -2522,13 +3055,23 @@
 	)
 	(text "La utilizacion de la resitencia de 120 Ohms es para adaptar la linea\nesto sirve para velocidades de conmutacion rapidas y es valida\ncuando el cable que se utiliza tiene una impedancia caracteristica de\n120 Ohms. En caso de que no se cumpla eso la linea estara desadaptada \ny la funcion de la resistencia no tendra mucho sentido. Si se utiliza\nun CAN paracomunicar muchos nodos tampoco tiene sentido la resistencia\nde 120 Ohms. Para ambos casos se tendra que remover"
 		(exclude_from_sim no)
-		(at 194.056 98.044 0)
+		(at 233.172 150.876 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "74a5e810-1702-42c2-9e7c-559829189816")
+	)
+	(text "Esta resistencia cumple la funcion de\nestabilizar la salida con una carga\nminima"
+		(exclude_from_sim no)
+		(at 254.762 42.672 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "be29d780-57f0-4274-a5a6-5221feaaaa50")
 	)
 	(text "Estos transreciver son una version grande se podrian achicar a la mitad.\nElegi estos porque ya los compre pero se pueden comprar nuevos"
 		(exclude_from_sim no)
@@ -2667,6 +3210,10 @@
 		(uuid "d35e3f28-7b9d-4a6a-8494-cc627569a713")
 	)
 	(no_connect
+		(at 209.55 58.42)
+		(uuid "d932acd1-5aa6-4b7e-b3cb-2d8b343f9ea1")
+	)
+	(no_connect
 		(at 123.19 76.2)
 		(uuid "dd8b4a9b-4a02-4439-8c78-ff0a6874fdb0")
 	)
@@ -2679,46 +3226,6 @@
 			(type default)
 		)
 		(uuid "02de9158-705e-4ca7-94ea-3dee2405822c")
-	)
-	(wire
-		(pts
-			(xy 166.37 121.92) (xy 166.37 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "039ee1a9-d1d0-443c-8151-75c3ee794411")
-	)
-	(wire
-		(pts
-			(xy 151.13 67.31) (xy 165.1 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "078078e4-b595-477e-86b3-340df7f61b3d")
-	)
-	(wire
-		(pts
-			(xy 152.4 130.81) (xy 166.37 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07b373a5-ecad-4fb6-b9af-ea44d0d1b5be")
-	)
-	(wire
-		(pts
-			(xy 152.4 130.81) (xy 152.4 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c077886-b0ae-4169-851c-ff7842abddc1")
 	)
 	(wire
 		(pts
@@ -2772,23 +3279,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 133.35) (xy 166.37 133.35)
+			(xy 214.63 60.96) (xy 214.63 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "198d6a10-b6b3-4f53-9a67-6f922bb3d458")
-	)
-	(wire
-		(pts
-			(xy 165.1 64.77) (xy 163.83 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c21c74e-a605-4073-9e34-eb06500d7862")
+		(uuid "1907e6c2-38c9-4f5d-8621-0ca1df703b3e")
 	)
 	(wire
 		(pts
@@ -2802,7 +3299,27 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 57.15) (xy 128.27 58.42)
+			(xy 219.71 50.8) (xy 219.71 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ee879ac-3f33-44a5-a134-19377874d885")
+	)
+	(wire
+		(pts
+			(xy 209.55 50.8) (xy 219.71 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "261b41c9-6b8d-441a-b9d6-8057f2c36a28")
+	)
+	(wire
+		(pts
+			(xy 128.27 52.07) (xy 128.27 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2832,6 +3349,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 93.98) (xy 193.04 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38f46f8a-8802-49d4-948b-06997ee99348")
+	)
+	(wire
+		(pts
 			(xy 124.46 129.54) (xy 127 129.54)
 		)
 		(stroke
@@ -2842,7 +3369,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 129.54) (xy 152.4 129.54)
+			(xy 135.89 129.54) (xy 165.1 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2852,7 +3379,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 134.62) (xy 152.4 134.62)
+			(xy 149.86 134.62) (xy 168.91 134.62)
 		)
 		(stroke
 			(width 0)
@@ -2862,17 +3389,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 58.42) (xy 157.48 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e30c5b8-ea29-484e-9ee6-7a941318b012")
-	)
-	(wire
-		(pts
-			(xy 134.62 66.04) (xy 151.13 66.04)
+			(xy 134.62 66.04) (xy 168.91 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2882,33 +3399,13 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 64.77) (xy 163.83 58.42)
+			(xy 231.14 55.88) (xy 231.14 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "50de123d-544c-4742-b9c2-5273369bfedb")
-	)
-	(wire
-		(pts
-			(xy 151.13 71.12) (xy 151.13 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "521132a5-c022-43db-982e-687e5f46267d")
-	)
-	(wire
-		(pts
-			(xy 165.1 128.27) (xy 165.1 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "548fe71d-104f-4609-9dc9-148b8956fc38")
+		(uuid "56c4e8a8-ecd0-435f-9431-cfb50e0b726f")
 	)
 	(wire
 		(pts
@@ -2922,16 +3419,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 121.92) (xy 158.75 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "597317a3-ca34-4e87-b96e-28d209eed700")
-	)
-	(wire
-		(pts
 			(xy 124.46 121.92) (xy 124.46 124.46)
 		)
 		(stroke
@@ -2939,6 +3426,16 @@
 			(type default)
 		)
 		(uuid "63445c6e-c16e-4ace-a50b-fb39b1b26af4")
+	)
+	(wire
+		(pts
+			(xy 209.55 55.88) (xy 231.14 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69b129df-0489-48a5-b7da-c87b10725f32")
 	)
 	(wire
 		(pts
@@ -2952,23 +3449,13 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 58.42) (xy 165.1 62.23)
+			(xy 193.04 91.44) (xy 168.91 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "70b4471c-bf6e-4dd3-8eca-cab0f67e68c5")
-	)
-	(wire
-		(pts
-			(xy 151.13 67.31) (xy 151.13 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7820aa1f-a597-456b-b26c-12671682d140")
+		(uuid "72a3e030-3859-4c42-9387-1ee77897e3e8")
 	)
 	(wire
 		(pts
@@ -3012,6 +3499,26 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 71.12) (xy 165.1 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "934d704f-caca-4b10-b20d-e0badfc017ad")
+	)
+	(wire
+		(pts
+			(xy 168.91 91.44) (xy 168.91 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "944a991a-e9f9-4f9b-81da-d315773a7e2d")
+	)
+	(wire
+		(pts
 			(xy 138.43 149.86) (xy 138.43 148.59)
 		)
 		(stroke
@@ -3022,7 +3529,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 71.12) (xy 151.13 71.12)
+			(xy 148.59 71.12) (xy 165.1 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3042,6 +3549,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 96.52) (xy 165.1 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6202217-b0bc-4fb5-bdca-8af1d72a4d83")
+	)
+	(wire
+		(pts
 			(xy 124.46 144.78) (xy 124.46 147.32)
 		)
 		(stroke
@@ -3049,6 +3566,16 @@
 			(type default)
 		)
 		(uuid "aaf381ce-7d12-42ed-8316-96cfee0699b6")
+	)
+	(wire
+		(pts
+			(xy 193.04 99.06) (xy 168.91 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab6045af-df5f-4473-acda-f2756ed3f8e8")
 	)
 	(wire
 		(pts
@@ -3092,16 +3619,6 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 69.85) (xy 165.1 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b4ba59be-f762-473e-b612-9fbc23912cf7")
-	)
-	(wire
-		(pts
 			(xy 127 129.54) (xy 135.89 129.54)
 		)
 		(stroke
@@ -3109,26 +3626,6 @@
 			(type default)
 		)
 		(uuid "bb6f89eb-ef0a-43e4-86b2-9a192becf7b1")
-	)
-	(wire
-		(pts
-			(xy 157.48 58.42) (xy 157.48 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "be520901-4d0b-415f-9265-767f2e89c889")
-	)
-	(wire
-		(pts
-			(xy 166.37 128.27) (xy 165.1 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1091df1-5f7d-44db-9ccb-c4b79fda8cf7")
 	)
 	(wire
 		(pts
@@ -3162,6 +3659,26 @@
 	)
 	(wire
 		(pts
+			(xy 209.55 60.96) (xy 214.63 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca0c3786-b86a-4987-8b4d-02013de547f5")
+	)
+	(wire
+		(pts
+			(xy 193.04 96.52) (xy 165.1 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3f65b1d-3f36-4c97-a885-296d1c29289e")
+	)
+	(wire
+		(pts
 			(xy 124.46 134.62) (xy 135.89 134.62)
 		)
 		(stroke
@@ -3192,13 +3709,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 133.35) (xy 152.4 134.62)
+			(xy 251.46 53.34) (xy 251.46 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e5fcf8dc-481b-4133-aafd-4611a3c459f9")
+		(uuid "dd2a1295-c637-42e5-a260-89fe9974ad89")
 	)
 	(wire
 		(pts
@@ -3212,13 +3729,23 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 121.92) (xy 158.75 121.92)
+			(xy 168.91 99.06) (xy 168.91 134.62)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f8d1c46c-2eb2-42d5-8c87-d3d9e3d7956d")
+		(uuid "e87062d2-9924-4560-9eec-cb291512dc9c")
+	)
+	(wire
+		(pts
+			(xy 251.46 60.96) (xy 251.46 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f11d7278-8001-41c3-8dfd-e7181d1ec24c")
 	)
 	(wire
 		(pts
@@ -3373,6 +3900,163 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
 					(reference "C155")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5F")
+		(at 251.46 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "02fd9b31-0b5a-4331-9d29-a02229b8613b")
+		(property "Reference" "#PWR0330"
+			(at 251.46 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_Can"
+			(at 254 52.0699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5F\""
+			(at 251.46 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6177f96b-5ea2-446b-941e-2486574e3446")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "#PWR0330")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND1")
+		(at 124.46 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "03fdbae6-6c64-4fc3-a160-f879ea77c303")
+		(property "Reference" "#PWR0218"
+			(at 124.46 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND_Can"
+			(at 127 152.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 124.46 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9aed59f4-3707-4bb0-a17d-89668d64c552")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "#PWR0218")
 					(unit 1)
 				)
 			)
@@ -3573,8 +4257,9 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5F")
-		(at 166.37 121.92 0)
+		(lib_id "power:+12V")
+		(at 219.71 46.99 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3583,9 +4268,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "0d8697bb-19d1-44d5-ad77-fe48a39f482d")
-		(property "Reference" "#PWR0228"
-			(at 166.37 125.73 0)
+		(uuid "0ef91c57-5ae7-42e4-b046-335eeaed9faf")
+		(property "Reference" "#PWR0329"
+			(at 219.71 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3595,8 +4280,8 @@
 				)
 			)
 		)
-		(property "Value" "+5V_Can_2"
-			(at 166.37 116.84 0)
+		(property "Value" "+12V"
+			(at 219.71 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3606,7 +4291,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 166.37 121.92 0)
+			(at 219.71 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3617,7 +4302,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 121.92 0)
+			(at 219.71 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3627,8 +4312,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5F\""
-			(at 166.37 121.92 0)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 219.71 46.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3639,12 +4324,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "add9729b-e2ed-4433-a712-c91207a25f97")
+			(uuid "66db6ff8-63b6-4ae5-b63d-6a5a0780c78c")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0228")
+					(reference "#PWR0329")
 					(unit 1)
 				)
 			)
@@ -3801,226 +4486,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
 					(reference "#PWR0230")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Snapeda:347920040")
-		(at 165.1 69.85 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2297533d-f104-4bb3-b1bc-d87590e4f99c")
-		(property "Reference" "J2"
-			(at 179.07 68.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "347920040"
-			(at 179.07 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Snapeda:CONN04_34792_MOL"
-			(at 179.07 76.2001 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/347920040?display=pdf&utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API?utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API"
-			(at 165.1 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Conn Shrouded Header (4 Sides) HDR 4 POS 2mm Solder ST Thru-Hole Mini 50™ Automotive Tray"
-			(at 179.07 73.6601 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MF" "Molex"
-			(at 179.07 71.1201 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Package" "None"
-			(at 179.07 68.5801 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Price" "None"
-			(at 179.07 66.0401 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/347920040/Molex/view-part/?ref=eda"
-			(at 179.07 63.5001 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 179.07 60.9601 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/347920040/Molex/view-part/?ref=snap"
-			(at 179.07 58.4201 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MP" "347920040"
-			(at 179.07 55.8801 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MFR_NAME" "Molex Connector Corporation"
-			(at 179.07 53.3401 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" "347920040"
-			(at 179.07 50.8001 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Compra" "https://ar.mouser.com/ProductDetail/Molex/34792-0040?qs=sGAEpiMZZMvlX3nhDDO4AJy9rGo00fjPM2c1TumqwZg%3D"
-			(at 165.1 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 165.1 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8fb34dfa-71c4-465e-aaec-04e0ede6a013")
-		)
-		(pin "4"
-			(uuid "e91f8faf-fc3a-426b-8d13-e5bc087c8b43")
-		)
-		(pin "2"
-			(uuid "f0b407bd-adad-4bd3-9364-718da5fad9ed")
-		)
-		(pin "3"
-			(uuid "c5cffe5c-2a3d-4d01-bf67-b7c0966d3bad")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -4203,6 +4668,404 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
 					(reference "C158")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Snapeda:MEV1S1205SC")
+		(at 209.55 50.8 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "243ed3ea-1b0e-476d-9c99-6c54118c7aed")
+		(property "Reference" "PS1"
+			(at 187.452 48.768 0)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MEV1S1205SC"
+			(at 187.452 51.308 0)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Snapeda:MEV1S1205SC"
+			(at 187.96 46.9899 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://pim.murata.com/asset/pim4/isolatedDCDCconverter/KDC_MEV_PDF_ISOLATEDDCDCCONVERTER?lastModifiedDatetime=20250707193456"
+			(at 187.96 49.5299 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Murata Power Solutions MEV1 1W Isolated DC-DC Converter Through Hole, Voltage in 10.8  13.2 V dc, Voltage out"
+			(at 187.96 52.0699 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Height" "10.25"
+			(at 187.96 54.6099 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer_Name" "Murata Electronics"
+			(at 187.96 57.1499 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Manufacturer_Part_Number" "MEV1S1205SC"
+			(at 187.96 59.6899 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Mouser Part Number" "580-MEV1S1205SC"
+			(at 187.96 62.2299 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Murata-Power-Solutions/MEV1S1205SC?qs=zbGHxLLsg8c5gnqusU9GoQ%3D%3D"
+			(at 187.96 64.7699 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Arrow Part Number" "MEV1S1205SC"
+			(at 187.96 67.3099 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/mev1s1205sc/murata-power-solutions?utm_currency=USD&region=nac"
+			(at 187.96 69.8499 0)
+			(hide yes)
+			(show_name yes)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "5"
+			(uuid "5e606f76-b2a3-42d3-b015-8c7dc2a30cbc")
+		)
+		(pin "1"
+			(uuid "70efb665-40fb-477d-8e30-c2420f34f27e")
+		)
+		(pin "6"
+			(uuid "6aed59be-b724-4aa4-a523-3f6f6947e226")
+		)
+		(pin "2"
+			(uuid "345b739b-2527-4a8b-b2e4-77475f258909")
+		)
+		(pin "7"
+			(uuid "7aa1a847-88db-4b64-9519-97b5b2e53dea")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "PS1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Snapeda:347920040")
+		(at 193.04 99.06 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "43777530-dc9a-4b88-8d43-59f43c7aad63")
+		(property "Reference" "J3"
+			(at 207.01 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "347920040"
+			(at 207.01 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Snapeda:CONN04_34792_MOL"
+			(at 207.01 105.4101 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/347920040?display=pdf&utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API?utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API"
+			(at 193.04 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Conn Shrouded Header (4 Sides) HDR 4 POS 2mm Solder ST Thru-Hole Mini 50™ Automotive Tray"
+			(at 207.01 102.8701 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MF" "Molex"
+			(at 207.01 100.3301 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "None"
+			(at 207.01 97.7901 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Price" "None"
+			(at 207.01 95.2501 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/347920040/Molex/view-part/?ref=eda"
+			(at 207.01 92.7101 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 207.01 90.1701 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/347920040/Molex/view-part/?ref=snap"
+			(at 207.01 87.6301 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MP" "347920040"
+			(at 207.01 85.0901 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MFR_NAME" "Molex Connector Corporation"
+			(at 207.01 82.5501 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" "347920040"
+			(at 207.01 80.0101 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Compra" "https://ar.mouser.com/ProductDetail/Molex/34792-0040?qs=sGAEpiMZZMvlX3nhDDO4AJy9rGo00fjPM2c1TumqwZg%3D"
+			(at 193.04 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 193.04 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9decbdd5-5454-409f-a980-d16057cb1140")
+		)
+		(pin "4"
+			(uuid "11c9c163-5afe-461e-a895-75cfcc542852")
+		)
+		(pin "2"
+			(uuid "b74cb932-511c-4bc3-bbfb-847f877631c4")
+		)
+		(pin "3"
+			(uuid "43409e70-858c-41d5-8577-fa0389c0b2d2")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -4456,226 +5319,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Snapeda:347920040")
-		(at 166.37 133.35 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4a5d0fa8-d308-4983-a0a3-7ce4042a0a20")
-		(property "Reference" "J3"
-			(at 180.34 132.08 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "347920040"
-			(at 180.34 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Snapeda:CONN04_34792_MOL"
-			(at 180.34 139.7001 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail/347920040?display=pdf&utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API?utm_source=M2X&utm_medium=api&utm_campaign=api&utm_id=M2X_API"
-			(at 166.37 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Conn Shrouded Header (4 Sides) HDR 4 POS 2mm Solder ST Thru-Hole Mini 50™ Automotive Tray"
-			(at 180.34 137.1601 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MF" "Molex"
-			(at 180.34 134.6201 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Package" "None"
-			(at 180.34 132.0801 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Price" "None"
-			(at 180.34 129.5401 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/347920040/Molex/view-part/?ref=eda"
-			(at 180.34 127.0001 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 180.34 124.4601 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/347920040/Molex/view-part/?ref=snap"
-			(at 180.34 121.9201 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MP" "347920040"
-			(at 180.34 119.3801 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MFR_NAME" "Molex Connector Corporation"
-			(at 180.34 116.8401 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" "347920040"
-			(at 180.34 114.3001 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Compra" "https://ar.mouser.com/ProductDetail/Molex/34792-0040?qs=sGAEpiMZZMvlX3nhDDO4AJy9rGo00fjPM2c1TumqwZg%3D"
-			(at 166.37 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Purchase-URL" ""
-			(at 166.37 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d50a9b47-2c37-4bc6-b9b7-4bea02b2ee8a")
-		)
-		(pin "4"
-			(uuid "084fc38e-23dd-4056-8cf3-7f07812aa745")
-		)
-		(pin "2"
-			(uuid "d2d71805-019b-4adc-b88f-1fa22cd9a5d8")
-		)
-		(pin "3"
-			(uuid "9762edf9-4c67-454c-9f9b-4e9f26c1dbde")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND1")
 		(at 123.19 86.36 0)
 		(unit 1)
@@ -4698,14 +5341,15 @@
 				)
 			)
 		)
-		(property "Value" "GND_Can_1"
-			(at 123.19 91.44 0)
+		(property "Value" "GND_Can"
+			(at 125.73 87.6299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -5364,86 +6008,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5F")
-		(at 130.81 121.92 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8a82f8c3-262b-42a1-bfec-b6527d1b35bd")
-		(property "Reference" "#PWR0222"
-			(at 130.81 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_Can_2"
-			(at 130.81 116.84 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 130.81 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 130.81 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5F\""
-			(at 130.81 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fb3bc1e1-9cc3-4e3d-a103-3ae0b127cc95")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0222")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND1")
-		(at 124.46 151.13 0)
+		(at 251.46 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5451,10 +6017,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8c37c937-3f34-4892-b7ff-c12b7af0612f")
-		(property "Reference" "#PWR0218"
-			(at 124.46 157.48 0)
+		(uuid "7dc47b03-23d3-4760-acfd-e50713724f7c")
+		(property "Reference" "#PWR0221"
+			(at 251.46 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5464,18 +6029,19 @@
 				)
 			)
 		)
-		(property "Value" "GND_Can_2"
-			(at 124.46 156.21 0)
+		(property "Value" "GND_Can"
+			(at 254 62.2299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 124.46 151.13 0)
+			(at 251.46 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5486,7 +6052,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 124.46 151.13 0)
+			(at 251.46 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5497,7 +6063,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
-			(at 124.46 151.13 0)
+			(at 251.46 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5508,12 +6074,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "eea10c8f-a29b-41d3-ad14-f21a4551f0c2")
+			(uuid "5d9fadc2-2fe1-42f2-b495-4e33ad8bc9db")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0218")
+					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -5592,6 +6158,85 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
 					(reference "#PWR0210")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5F")
+		(at 129.54 102.87 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e401410-43dd-4489-b8db-81b7c3442cb1")
+		(property "Reference" "#PWR0227"
+			(at 129.54 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_Can"
+			(at 127 101.5999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5F\""
+			(at 129.54 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "155fd37c-1ad1-49ad-826e-71b23e5bedce")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "#PWR0227")
 					(unit 1)
 				)
 			)
@@ -5677,7 +6322,7 @@
 	)
 	(symbol
 		(lib_id "power:+5F")
-		(at 128.27 57.15 0)
+		(at 214.63 69.85 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5685,10 +6330,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "918a63ea-c224-45ea-aeb7-f55042edcab5")
-		(property "Reference" "#PWR0219"
-			(at 128.27 60.96 0)
+		(uuid "9a91e393-da7f-4df5-b8ae-ac6f5f4ed8a4")
+		(property "Reference" "#PWR0328"
+			(at 214.63 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5698,18 +6342,19 @@
 				)
 			)
 		)
-		(property "Value" "+5V_Can_1"
-			(at 128.27 52.07 0)
+		(property "Value" "+5V_Can"
+			(at 212.09 71.1201 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 57.15 0)
+			(at 214.63 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5720,7 +6365,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 57.15 0)
+			(at 214.63 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5731,7 +6376,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5F\""
-			(at 128.27 57.15 0)
+			(at 214.63 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5742,20 +6387,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "4b1edb69-b462-48a4-833c-d031e37448e5")
+			(uuid "46f2009f-b1a5-4559-b76a-dd8d30eeef35")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0219")
+					(reference "#PWR0328")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+5F")
-		(at 129.54 102.87 0)
+		(lib_id "Device:R_Small")
+		(at 251.46 57.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5764,30 +6409,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "97ba10fd-edc4-4bb9-b3bc-d7a05b69cd1c")
-		(property "Reference" "#PWR0220"
-			(at 129.54 106.68 0)
-			(hide yes)
+		(uuid "9d61e317-3c9c-4415-8412-53ab6d312669")
+		(property "Reference" "R186"
+			(at 254 55.8799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "220 1/4W"
+			(at 254 58.4199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "+5V_Can_2"
-			(at 129.54 97.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 129.54 102.87 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 251.46 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5798,7 +6444,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 102.87 0)
+			(at 251.46 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5808,8 +6454,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5F\""
-			(at 129.54 102.87 0)
+		(property "Description" "Resistor, small symbol"
+			(at 251.46 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5818,14 +6464,39 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(property "Description_1" ""
+			(at 251.46 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 251.46 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "6b71e57b-42ac-4ea5-837d-fb9e44f13327")
 		)
 		(pin "1"
-			(uuid "4856357b-2259-4882-b7fb-4e7143632591")
+			(uuid "b4749dad-1f4e-45b3-afaa-deaae0479125")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0220")
+					(reference "R186")
 					(unit 1)
 				)
 			)
@@ -5854,14 +6525,15 @@
 				)
 			)
 		)
-		(property "Value" "+5V_Can_1"
-			(at 140.97 41.91 0)
+		(property "Value" "+5V_Can"
+			(at 143.51 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -5988,8 +6660,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5F")
-		(at 165.1 58.42 0)
+		(lib_id "power:GND1")
+		(at 231.14 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5997,10 +6669,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ab4c58a4-c1b1-4e1c-b5b0-ee2a9d5fe62a")
-		(property "Reference" "#PWR0227"
-			(at 165.1 62.23 0)
+		(uuid "b0a9965e-e49f-4484-bcbb-2f105adbc6ea")
+		(property "Reference" "#PWR0220"
+			(at 231.14 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6010,18 +6681,19 @@
 				)
 			)
 		)
-		(property "Value" "+5V_Can_1"
-			(at 165.1 53.34 0)
+		(property "Value" "GND_Can"
+			(at 233.68 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 165.1 58.42 0)
+			(at 231.14 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6032,7 +6704,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 165.1 58.42 0)
+			(at 231.14 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6042,8 +6714,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5F\""
-			(at 165.1 58.42 0)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 231.14 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6054,12 +6726,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "a44b1ce4-3dcd-4137-b036-f4da88584f4f")
+			(uuid "784b18c5-78f8-47e4-9932-407a869a417c")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0227")
+					(reference "#PWR0220")
 					(unit 1)
 				)
 			)
@@ -6171,7 +6843,7 @@
 	)
 	(symbol
 		(lib_id "power:GND1")
-		(at 157.48 59.69 0)
+		(at 129.54 107.95 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6180,9 +6852,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "bf529a83-30d0-4965-a086-e7438021d5c2")
-		(property "Reference" "#PWR0225"
-			(at 157.48 66.04 0)
+		(uuid "c24f9397-4460-4713-a862-265aec33e01e")
+		(property "Reference" "#PWR0219"
+			(at 129.54 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6192,18 +6864,19 @@
 				)
 			)
 		)
-		(property "Value" "GND_Can_1"
-			(at 157.48 64.77 0)
+		(property "Value" "GND_Can"
+			(at 132.08 109.2199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 157.48 59.69 0)
+			(at 129.54 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6214,7 +6887,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 157.48 59.69 0)
+			(at 129.54 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6225,7 +6898,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
-			(at 157.48 59.69 0)
+			(at 129.54 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6236,12 +6909,90 @@
 			)
 		)
 		(pin "1"
-			(uuid "a3b0c51c-49b4-4ac0-956f-a78e8cfa1a11")
+			(uuid "a8b7c53d-a2c7-467a-a56f-41cff377d660")
 		)
 		(instances
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0225")
+					(reference "#PWR0219")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5F")
+		(at 130.81 121.92 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c81a0dd8-1a76-4e03-8cda-7ff3cd52bab1")
+		(property "Reference" "#PWR0228"
+			(at 130.81 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_Can"
+			(at 133.35 120.6499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5F\""
+			(at 130.81 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e28b4b28-6635-4ec6-b1e8-e10626f0b14a")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "#PWR0228")
 					(unit 1)
 				)
 			)
@@ -6392,6 +7143,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Fuse")
+		(at 214.63 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c955b531-d2e6-40be-aaf9-ee06d9c266fa")
+		(property "Reference" "F1"
+			(at 217.17 64.7699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100mA"
+			(at 217.17 67.3099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_0603_1608Metric"
+			(at 212.852 66.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 214.63 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ae1298d-bdf0-4736-ab2b-d44ef86e5cb4")
+		)
+		(pin "2"
+			(uuid "e928adae-09bc-47a9-8dee-b7dfc4c28895")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5F")
 		(at 247.65 97.79 0)
 		(unit 1)
@@ -6464,84 +7297,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
 					(reference "#PWR0229")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND1")
-		(at 158.75 123.19 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d3234627-fe5b-449a-8dcc-fbcaea2a4bb9")
-		(property "Reference" "#PWR0226"
-			(at 158.75 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND_Can_2"
-			(at 158.75 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 158.75 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 158.75 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
-			(at 158.75 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8d1842b7-5041-4987-8a7c-85db42dd59b4")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0226")
 					(unit 1)
 				)
 			)
@@ -6646,84 +7401,6 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
 					(reference "C156")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND1")
-		(at 129.54 107.95 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e0195442-7a9a-4129-a36f-1787be8c5f47")
-		(property "Reference" "#PWR0221"
-			(at 129.54 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND_Can_2"
-			(at 129.54 113.03 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 129.54 107.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 107.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
-			(at 129.54 107.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ec093ebe-d95d-4605-99e7-bec82eb47a4e")
-		)
-		(instances
-			(project "Primero_esquematico"
-				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
-					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -6958,6 +7635,85 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
 					(reference "#FLG019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5F")
+		(at 128.27 52.07 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fdcac7d7-2375-48e6-bb56-ae096b26e737")
+		(property "Reference" "#PWR0226"
+			(at 128.27 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_Can"
+			(at 125.73 50.7999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5F\""
+			(at 128.27 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "627cf58d-2fec-4716-a6b5-9f80d12f9482")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/cccdc52d-aa33-435d-ba3f-59e699ecebcf"
+					(reference "#PWR0226")
 					(unit 1)
 				)
 			)
