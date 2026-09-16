@@ -4672,6 +4672,12 @@
 		(uuid "4bc88e7b-8cc6-4512-b067-68d10de94fd6")
 	)
 	(junction
+		(at 48.26 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5030330c-1cda-4644-bf2d-4173cda8e521")
+	)
+	(junction
 		(at 245.11 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4714,12 +4720,6 @@
 		(uuid "93102ed7-0d8f-4fb7-8e06-16545ac0cd43")
 	)
 	(junction
-		(at 81.28 72.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9a60d0f4-1675-4e99-b9f6-aa2d3fb7239e")
-	)
-	(junction
 		(at 222.25 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4750,6 +4750,12 @@
 		(uuid "cd61c2b7-d122-48de-8b4b-926822aef262")
 	)
 	(junction
+		(at 77.47 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cd8b8eee-3a52-4f71-8014-db6140ce1583")
+	)
+	(junction
 		(at 191.77 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4774,6 +4780,12 @@
 		(uuid "e17386e8-5141-4aeb-9646-39f5c8b7d1f2")
 	)
 	(junction
+		(at 81.28 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e1db0b9f-5ea9-4e92-b6ee-e319bfc9ee98")
+	)
+	(junction
 		(at 81.28 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4790,6 +4802,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fd1d6b30-2fcc-48bc-80db-cac6a3c3390d")
+	)
+	(wire
+		(pts
+			(xy 77.47 78.74) (xy 77.47 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00e1b496-8b60-47e6-ba21-6c28364926eb")
 	)
 	(wire
 		(pts
@@ -5083,6 +5105,16 @@
 	)
 	(wire
 		(pts
+			(xy 48.26 78.74) (xy 48.26 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e3983ee-d78b-4c94-820f-dfd01dc5193f")
+	)
+	(wire
+		(pts
 			(xy 101.6 82.55) (xy 106.68 82.55)
 		)
 		(stroke
@@ -5093,7 +5125,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 72.39) (xy 81.28 72.39)
+			(xy 67.31 72.39) (xy 77.47 72.39)
 		)
 		(stroke
 			(width 0)
@@ -5150,6 +5182,16 @@
 			(type default)
 		)
 		(uuid "6e751ba6-bfa6-47aa-9f6c-6ba083c96fc1")
+	)
+	(wire
+		(pts
+			(xy 67.31 78.74) (xy 77.47 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7195314b-b543-4394-9ec0-731321661330")
 	)
 	(wire
 		(pts
@@ -5290,6 +5332,16 @@
 			(type default)
 		)
 		(uuid "84b8d656-0fa6-4d19-9f0e-7e566dc98f37")
+	)
+	(wire
+		(pts
+			(xy 77.47 72.39) (xy 81.28 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a66b76e-78a9-4fea-bdd7-e892c38e563e")
 	)
 	(wire
 		(pts
@@ -5453,7 +5505,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 72.39) (xy 66.04 72.39)
+			(xy 48.26 72.39) (xy 59.69 72.39)
 		)
 		(stroke
 			(width 0)
@@ -5520,6 +5572,16 @@
 			(type default)
 		)
 		(uuid "b79ce3bd-1129-4aa0-97f8-49966d6bb9e7")
+	)
+	(wire
+		(pts
+			(xy 59.69 78.74) (xy 48.26 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfca338f-b2db-4e70-94ed-8e4e7aa7aaf2")
 	)
 	(wire
 		(pts
@@ -5613,7 +5675,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 71.12) (xy 57.15 72.39)
+			(xy 48.26 69.85) (xy 48.26 72.39)
 		)
 		(stroke
 			(width 0)
@@ -8398,7 +8460,7 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 57.15 71.12 0)
+		(at 48.26 69.85 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8409,7 +8471,7 @@
 		(fields_autoplaced yes)
 		(uuid "4ed5dcf5-2a77-4836-a9e3-ca3b95169fbb")
 		(property "Reference" "#PWR0152"
-			(at 57.15 74.93 0)
+			(at 48.26 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8420,7 +8482,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 57.15 66.04 0)
+			(at 48.26 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8430,7 +8492,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 71.12 0)
+			(at 48.26 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8441,7 +8503,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 71.12 0)
+			(at 48.26 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8452,7 +8514,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 57.15 71.12 0)
+			(at 48.26 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11251,6 +11313,119 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:L")
+		(at 63.5 78.74 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b5aae510-31c7-4f88-9634-7f5beb14d2e1")
+		(property "Reference" "L4"
+			(at 63.5 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MLZ2012N6R8LT000"
+			(at 63.5 76.2 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
+			(at 63.5 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/en/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_decoupling_mlz2012_en.pdf"
+			(at 63.5 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Inductor"
+			(at 63.5 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" "https://www.digikey.com/en/products/detail/tdk/MLZ2012N6R8LT000/2523499"
+			(at 63.5 78.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description_1" ""
+			(at 63.5 78.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 63.5 78.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "c1cd9757-4dbb-46d3-82ed-bcd55d8521cb")
+		)
+		(pin "1"
+			(uuid "67881f00-7a31-48bf-813a-d8781e2bb794")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "L4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 189.23 137.16 0)
 		(unit 1)
@@ -12022,7 +12197,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 69.85 72.39 90)
+		(at 63.5 72.39 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12033,7 +12208,7 @@
 		(fields_autoplaced yes)
 		(uuid "f8d505c1-498c-4b8a-81ae-0140c0c98827")
 		(property "Reference" "L1"
-			(at 69.85 67.31 90)
+			(at 63.5 67.31 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12043,7 +12218,7 @@
 			)
 		)
 		(property "Value" "MLZ2012N6R8LT000"
-			(at 69.85 69.85 90)
+			(at 63.5 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12053,7 +12228,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 69.85 72.39 0)
+			(at 63.5 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12064,7 +12239,7 @@
 			)
 		)
 		(property "Datasheet" "https://product.tdk.com/en/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_decoupling_mlz2012_en.pdf"
-			(at 69.85 72.39 0)
+			(at 63.5 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12075,7 +12250,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 69.85 72.39 0)
+			(at 63.5 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12086,7 +12261,7 @@
 			)
 		)
 		(property "Compra" "https://www.digikey.com/en/products/detail/tdk/MLZ2012N6R8LT000/2523499"
-			(at 69.85 72.39 90)
+			(at 63.5 72.39 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12097,7 +12272,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 69.85 72.39 90)
+			(at 63.5 72.39 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12108,7 +12283,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 69.85 72.39 90)
+			(at 63.5 72.39 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

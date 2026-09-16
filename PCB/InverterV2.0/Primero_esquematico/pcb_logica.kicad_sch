@@ -545,16 +545,6 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 96.52) (xy 40.64 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9adced7a-3068-4d6d-a315-c0924498f515")
-	)
-	(wire
-		(pts
 			(xy 121.92 74.93) (xy 121.92 76.2)
 		)
 		(stroke
@@ -752,6 +742,16 @@
 			(type default)
 		)
 		(uuid "d04793df-0a4f-432f-bda5-fcaa180a3793")
+	)
+	(wire
+		(pts
+			(xy 17.78 96.52) (xy 40.64 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0d466f4-29e2-4292-bbe4-2b1b39566adc")
 	)
 	(wire
 		(pts
@@ -1048,6 +1048,18 @@
 			(justify left bottom)
 		)
 		(uuid "6ca2b556-5557-4233-b103-a5d7bb156273")
+	)
+	(label "Temp_Motor"
+		(at 17.78 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "7097c127-17fc-415a-ac1a-97178028859f")
 	)
 	(label "Clk"
 		(at 149.86 105.41 0)
@@ -1409,17 +1421,6 @@
 			(justify right)
 		)
 		(uuid "7ce3e114-832d-4293-bb7f-4dd70be33034")
-	)
-	(hierarchical_label "Temp_PCB"
-		(shape bidirectional)
-		(at 39.37 96.52 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7d2ee6aa-0ae0-4aab-b3aa-4981bd567716")
 	)
 	(hierarchical_label "PWM_H_A"
 		(shape bidirectional)
@@ -1881,16 +1882,6 @@
 				(justify left)
 			)
 		)
-		(pin "C4_Temp_PCB" bidirectional
-			(at 40.64 96.52 180)
-			(uuid "82b33898-eafd-4bc6-b277-40be9a8de6ac")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "GP_0_PWM_MP_H_A" bidirectional
 			(at 119.38 63.5 0)
 			(uuid "7b0d4884-b114-4b2d-acf5-c62c1dcbc83c")
@@ -2254,6 +2245,16 @@
 		(pin "acelerador_2" bidirectional
 			(at 40.64 148.59 180)
 			(uuid "3f023625-5991-4211-8277-94212ac79476")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "C4_Temp_Motor" bidirectional
+			(at 40.64 96.52 180)
+			(uuid "cbc9b511-1827-4dba-9864-8c668d45179d")
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -3695,6 +3695,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 59.69) (xy 49.53 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40541661-c808-4980-a989-45988bdbb569")
+	)
+	(wire
+		(pts
 			(xy 87.63 144.78) (xy 87.63 147.32)
 		)
 		(stroke
@@ -4035,7 +4045,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 59.69) (xy 49.53 59.69)
+			(xy 33.02 59.69) (xy 36.83 59.69)
 		)
 		(stroke
 			(width 0)
@@ -4235,7 +4245,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 58.42) (xy 36.83 59.69)
+			(xy 33.02 53.34) (xy 33.02 59.69)
 		)
 		(stroke
 			(width 0)
@@ -8463,6 +8473,127 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 40.64 59.69 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7f885fcb-c41e-4f06-b7de-1e5cafc842d1")
+		(property "Reference" "R146"
+			(at 40.64 53.34 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 40.64 55.88 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 40.64 61.468 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 40.64 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" ""
+			(at 40.64 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description_1" ""
+			(at 40.64 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 40.64 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8bcb9a6-054e-4d33-80db-69a30175f7cc")
+		)
+		(pin "2"
+			(uuid "a42b5612-72ba-4b18-ad76-e9fec8071ca0")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/3742c66c-85ff-4287-9a19-7809bdcfdde9"
+					(reference "R148")
+					(unit 1)
+				)
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/a6c67f59-8868-40d8-9141-527ce9b5d508"
+					(reference "R146")
+					(unit 1)
+				)
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/d101e913-ebd1-4e08-b728-82218f47123b/f5297dcd-d9e2-4174-98d4-ada2947e9df5/d86b56e9-6f01-47d4-af65-f49184945e26"
+					(reference "R147")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 252.73 44.45 0)
 		(mirror x)
@@ -9699,7 +9830,7 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 36.83 58.42 0)
+		(at 33.02 53.34 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9710,7 +9841,7 @@
 		(fields_autoplaced yes)
 		(uuid "b7e2ffe7-de8b-4db1-863d-05e27caedb1c")
 		(property "Reference" "#PWR042"
-			(at 36.83 62.23 0)
+			(at 33.02 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9721,7 +9852,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 36.83 53.34 0)
+			(at 33.02 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9731,7 +9862,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 36.83 58.42 0)
+			(at 33.02 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9742,7 +9873,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 36.83 58.42 0)
+			(at 33.02 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9753,7 +9884,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 36.83 58.42 0)
+			(at 33.02 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
