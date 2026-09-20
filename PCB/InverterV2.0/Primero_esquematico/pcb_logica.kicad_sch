@@ -425,6 +425,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 110.49) (xy 163.83 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5957e7b1-338b-4101-a4d2-ed073afcef21")
+	)
+	(wire
+		(pts
 			(xy 119.38 91.44) (xy 133.35 91.44)
 		)
 		(stroke
@@ -964,6 +974,18 @@
 			(justify left bottom)
 		)
 		(uuid "3602d095-cace-472a-ac00-470d74d89989")
+	)
+	(label "Temp_Motor"
+		(at 149.86 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "3bde2dd2-20fd-4ef6-ab69-9fd050f194cb")
 	)
 	(label "Z"
 		(at 149.86 96.52 0)
@@ -2308,9 +2330,9 @@
 				(justify left top)
 			)
 		)
-		(pin "A_MCU" bidirectional
+		(pin "A_PCB_MCU" bidirectional
 			(at 163.83 88.9 180)
-			(uuid "56062dc8-0c86-4388-ad2e-9f6d0cc7a223")
+			(uuid "55b49ee8-1fe4-46b0-943d-9006f5eb769e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2318,9 +2340,9 @@
 				(justify left)
 			)
 		)
-		(pin "B_MCU" bidirectional
+		(pin "B_PCB_MCU" bidirectional
 			(at 163.83 92.71 180)
-			(uuid "441e0d49-af2b-45b0-8370-46e86b33a945")
+			(uuid "59f86988-82bd-4f46-8d9e-dd99be13bdcc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2328,9 +2350,9 @@
 				(justify left)
 			)
 		)
-		(pin "Clock_MCU" bidirectional
+		(pin "CLK_PCB_MCU" bidirectional
 			(at 163.83 105.41 180)
-			(uuid "295bde24-17c2-4cb4-886b-0b6573cb0814")
+			(uuid "81e414df-56c3-49e0-8f95-e02cdbc3b553")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2338,9 +2360,9 @@
 				(justify left)
 			)
 		)
-		(pin "Data_MCU" bidirectional
+		(pin "DATA_PCB_MCU" bidirectional
 			(at 163.83 102.87 180)
-			(uuid "eee68e8d-7dd8-42c2-8fff-be9332949e41")
+			(uuid "c176684a-67fd-4ded-b184-0a155db7a62d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2348,9 +2370,19 @@
 				(justify left)
 			)
 		)
-		(pin "Z_MCU" bidirectional
+		(pin "TEMP_MCU" bidirectional
+			(at 163.83 110.49 180)
+			(uuid "5bb08d26-16f3-4ba1-9223-46940ccf1ff8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Z_PCB_MCU" bidirectional
 			(at 163.83 96.52 180)
-			(uuid "f8532123-d283-4825-9389-e0b347dd2e79")
+			(uuid "584ea7bd-9747-4f33-968c-5a727d49b613")
 			(effects
 				(font
 					(size 1.27 1.27)
