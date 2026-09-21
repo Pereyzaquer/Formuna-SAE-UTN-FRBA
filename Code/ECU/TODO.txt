@@ -73,10 +73,36 @@ Los chequeos de nodos de seguridad dan por buena la situacion.
     inconsistencia: es una condicion de falla, y devolver true
     dejaria el auto muerto en el arranque.
 
-De FAULT solo se sale reiniciando el micro.
-    Deliberado. Si el auto entro en FAULT, alguien tiene que ir
-    a mirar por que. Por eso no existe ninguna funcion para
-    bajar el latch por software.
+Un corte de comunicacion es WARNING, no FAULT.
+    Perder un nodo (0x0002, a los 3 s) o todas las ruedas a la
+    vez (0x0003, a los 500 ms) no cambia de estado ni corta la
+    grabacion: el auto puede estar perfecto y haberse soltado un
+    conector un instante. Queda el aviso en el monitor, se cuenta
+    la caida en el CSV y cuando todo vuelve el aviso se borra.
+    La ECU trabaja con los nodos que aparecieron en la ventana
+    de descubrimiento, no con la lista completa del auto.
+    Definido en la prueba de banco; pendiente validar en el
+    definitivo, sobre todo si el reglamento pide otra cosa para
+    la velocidad.
+
+Cada caida de nodo se cuenta y va al CSV.
+    sensorsGetDropCount() por nodo; canales caidas_* en el
+    registrador, con valor inicial al arrancar la ejecucion y un
+    escalon por cada corte.
+
+De FAULT se sale reiniciando el micro, o solo si la causa se fue.
+    FAULT queda para fallas de seguridad reales (categoria B,
+    hoy sin implementar). Si la causa desaparece
+    (faultCauseHasCleared() en state.cpp), la ECU se rearma y
+    vuelve a BOOT, con su ventana de descubrimiento, hasta
+    CAR_READY esperando el boton. Las fallas cuya causa no se
+    puede comprobar siguen enclavadas.
+
+Duracion de la ejecucion: 90 s por defecto, configurable en la web.
+    Los 90 s no salen de ningun reglamento. El campo "Duracion"
+    de la pagina viaja con la orden de arranque; tope 180 s
+    (MAXIMUM_DURATION_SECONDS en logger.cpp, atado al tamano del
+    buffer de muestras).
 
 Ventana de descubrimiento de nodos: 2 segundos.
     Alcanza de sobra para que un ESP32-C3 arranque y mande su
@@ -124,9 +150,11 @@ El monitoreo web dejo de ser de solo lectura.
       Es el unico punto de la Parte 1 que es una tarea y no
       solo una decision a revisar.
 
-Ejecucion de 90 segundos, 4000 muestras como maximo.
-    Con los dos nodos emitiendo son unas 1900 muestras, asi que
-    sobra margen. Ver RECORDING_DURATION_MILLISECONDS y
+Ejecucion de 90 segundos, 20000 muestras como maximo, en PSRAM.
+    Con los tres nodos del banco son unas 80 muestras por segundo
+    (7300 en 90 s). Con 4000 en RAM interna la grabacion se
+    cortaba sola a los 49 s; por eso el buffer paso a la PSRAM
+    del S3 con 20000. Ver RECORDING_DURATION_MILLISECONDS y
     MAXIMUM_SAMPLE_COUNT en logger.cpp.
 
 Las muestras se guardan como tuplas y no como filas completas.
@@ -173,11 +201,10 @@ Contraseña del wifi: 12345678.
       por varios identificadores.
 
   [ ] Tabla de codigos de falla del equipo.
-      ERROR_CODE_SAFETY_NODE_MISSING y
-      ERROR_CODE_INFORMATIVE_NODE_MISSING en state.cpp son
-      provisorios. Con la tabla completa, cada nodo ausente
-      deberia tener su propio codigo en vez de compartir uno
-      generico.
+      ERROR_CODE_SAFETY_NODE_MISSING y ERROR_CODE_NODE_LOST
+      en state.cpp son provisorios. Con la tabla completa, cada
+      nodo perdido deberia tener su propio codigo en vez de
+      compartir uno generico. (Hoy el serie imprime cual fue.)
 
 ------------------------------------------------------------
  2.2 Layout de tramas todavia abierto

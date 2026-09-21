@@ -2,13 +2,13 @@
  *  Proyecto : ECU
  *  Archivo  : can.cpp
  *  Equipo   : UTN BA Motorsport Formula student team
- *  Fecha    : 2/9/2026
+ *  Fecha    : 10/9/2026
  *
  *  Descripción:
  *  --------------------------------------------------------
- *  Bus CAN del vehiculo sobre el periferico TWAI del ESP32:
- *  inicializacion, transmision, recepcion, y un handler por
- *  cada trama que la ECU sabe interpretar.
+ *  Parte comun del bus CAN: la task que lo atiende, el
+ *  heartbeat, y un handler por cada trama que la ECU sabe
+ *  interpretar.
  *
  *  Hardware:
  *  --------------------------------------------------------
@@ -17,13 +17,17 @@
  *
  *  Notas:
  *  --------------------------------------------------------
- *  Bus a 500 kbps. Los identificadores y el layout de cada
- *  trama estan en can_ids.h; aca solo se aplican.
+ *  Este archivo no sabe con que chip se habla al bus. Eso lo
+ *  resuelven can_twai.cpp (controlador interno del ESP32) o
+ *  can_mcp2515.cpp (modulo externo por SPI), y platformio.ini
+ *  elige cual se compila. Los dos exponen las mismas cuatro
+ *  funciones canHardware*, declaradas en ECU.h.
  *
- *  Los handlers convierten los bytes crudos a unidades de
- *  ingenieria y se los pasan al registrador. Esa conversion es
- *  el unico lugar del programa donde importa el layout, asi que
- *  si una trama cambia, se toca can_ids.h y este archivo.
+ *  Los identificadores y el layout de cada trama estan en
+ *  can_ids.h; aca solo se aplican. Los handlers convierten los
+ *  bytes crudos a unidades de ingenieria y se los pasan al
+ *  registrador: esa conversion es el unico lugar del programa
+ *  donde importa el layout.
  *
  ************************************************************/
 
@@ -52,35 +56,21 @@ static volatile uint32_t busRecoveryCount = 0;
 /************************************************************
  *             PROTOTIPOS DE FUNCIONES LOCALES
  ************************************************************/
-static void handleTestTemperatureFrame(const twai_message_t *frame);
-static void handleWheelSpeedFrontFrame(const twai_message_t *frame);
+static void handleTestTemperatureFrame(const CanFrame *frame);
+static void handleWheelSpeedFrontFrame(const CanFrame *frame);
+static void handleWheelSpeedRearFrame(const CanFrame *frame);
 static void sendHeartbeatFrame(void);
-static void recoverBusIfNeeded(void);
+static void recordVehicleSpeed(void);
 static uint16_t readUnsignedInteger16LittleEndian(const uint8_t *data);
 static int16_t readSignedInteger16LittleEndian(const uint8_t *data);
 
 /**
- * @brief Inicializa el periferico TWAI a 500 kbps en modo normal.
+ * @brief Deja el bus CAN listo para usar.
  *
- * Se acepta todo el trafico del bus porque la ECU necesita ver a todos
- * los nodos para saber cuales estan presentes, incluso los que todavia
- * no sabe interpretar.
- *
- * @return bool  true si el driver quedo instalado y arrancado.
+ * @return bool  true si el controlador quedo andando.
  */
 bool canInitialize(void) {
-  twai_general_config_t generalConfiguration = TWAI_GENERAL_CONFIG_DEFAULT(
-      (gpio_num_t)CAN_TRANSMIT_PIN, (gpio_num_t)CAN_RECEIVE_PIN,
-      TWAI_MODE_NORMAL);
-  twai_timing_config_t timingConfiguration = TWAI_TIMING_CONFIG_500KBITS();
-  twai_filter_config_t filterConfiguration = TWAI_FILTER_CONFIG_ACCEPT_ALL();
-
-  if (twai_driver_install(&generalConfiguration, &timingConfiguration,
-                          &filterConfiguration) != ESP_OK) {
-    return false;
-  }
-
-  return (twai_start() == ESP_OK);
+  return canHardwareInitialize();
 }
 
 /**
@@ -90,25 +80,22 @@ bool canInitialize(void) {
  * @param[in]  data        Puntero a los bytes a enviar.
  * @param[in]  length      Cantidad de bytes, de 0 a 8.
  *
- * @return bool  true si la trama entro en la cola de transmision.
+ * @return bool  true si el controlador acepto la trama.
  */
 bool canSendFrame(uint32_t identifier, const uint8_t *data, uint8_t length) {
   if (length > 8) {
     return false;
   }
 
-  twai_message_t frame = {};
-  frame.identifier       = identifier;
-  frame.data_length_code = length;
-  frame.extd             = 0; /* Todo el mapa usa identificadores de 11 bits. */
+  CanFrame frame;
+  frame.identifier = identifier;
+  frame.length     = length;
 
   for (uint8_t index = 0; index < length; index++) {
     frame.data[index] = data[index];
   }
 
-  /* Sin espera: si la cola de transmision esta llena preferimos perder
-     la trama antes que bloquear a la task que la mando. */
-  return (twai_transmit(&frame, 0) == ESP_OK);
+  return canHardwareSend(&frame);
 }
 
 /**
@@ -123,7 +110,7 @@ bool canSendFrame(uint32_t identifier, const uint8_t *data, uint8_t length) {
  *
  * @return void
  */
-void canDispatchFrame(const twai_message_t *frame) {
+void canDispatchFrame(const CanFrame *frame) {
   receivedFrameCount++;
   sensorsMarkNodeSeen(frame->identifier);
 
@@ -134,6 +121,10 @@ void canDispatchFrame(const twai_message_t *frame) {
 
     case CAN_ID_RPM_FRONT:
       handleWheelSpeedFrontFrame(frame);
+      break;
+
+    case CAN_ID_RPM_REAR:
+      handleWheelSpeedRearFrame(frame);
       break;
 
     default:
@@ -156,7 +147,7 @@ uint32_t canGetReceivedFrameCount(void) {
  * @brief Cuantas veces hubo que reenganchar el controlador al bus.
  *
  * Si este numero crece sin parar, la ECU esta sola en el bus o el
- * cableado esta mal. Ver recoverBusIfNeeded().
+ * cableado esta mal: nadie le esta confirmando lo que transmite.
  *
  * @return uint32_t  Cantidad de recuperaciones.
  */
@@ -178,9 +169,8 @@ void taskCan(void *argument) {
   uint32_t lastBusCheckMilliseconds = 0;
 
   for (;;) {
-    twai_message_t frame;
-    if (twai_receive(&frame, pdMS_TO_TICKS(RECEIVE_TIMEOUT_MILLISECONDS)) ==
-        ESP_OK) {
+    CanFrame frame;
+    if (canHardwareReceive(&frame, RECEIVE_TIMEOUT_MILLISECONDS)) {
       canDispatchFrame(&frame);
     }
 
@@ -189,9 +179,19 @@ void taskCan(void *argument) {
       sendHeartbeatFrame();
     }
 
+    /* En CAN toda trama transmitida tiene que ser confirmada por OTRO
+       nodo. Si la ECU esta sola en el bus, nadie le confirma el
+       heartbeat, el controlador acumula errores y termina desconectado
+       del bus. Sin este chequeo, encender la ECU antes que los nodos la
+       dejaria sorda para siempre, que desde afuera se ve igual que un
+       cable mal puesto. */
     if (millis() - lastBusCheckMilliseconds >= BUS_CHECK_PERIOD_MILLISECONDS) {
       lastBusCheckMilliseconds = millis();
-      recoverBusIfNeeded();
+      if (canHardwareRecoverIfNeeded()) {
+        busRecoveryCount++;
+        Serial.printf("[%lu ms] CAN caido, reenganchando (van %lu)\n",
+                      millis(), busRecoveryCount);
+      }
     }
   }
 }
@@ -220,48 +220,6 @@ static void sendHeartbeatFrame(void) {
 }
 
 /**
- * @brief Reengancha el controlador al bus si se cayo.
- *
- * En CAN toda trama transmitida tiene que ser confirmada por OTRO nodo.
- * Si la ECU esta sola en el bus, nadie le confirma el heartbeat: el
- * controlador reintenta, suma 8 a su contador de errores por cada
- * intento fallido, y al pasar de 255 se declara "bus off". Ahi se
- * desconecta solo y deja de transmitir Y de recibir.
- *
- * Lo importante es que de ese estado no sale por su cuenta. Sin esta
- * funcion, encender la ECU antes que los nodos la dejaria sorda para
- * siempre: aunque despues se enchufe un nodo que funciona, la ECU
- * seguiria contando cero tramas, que desde afuera se ve igual que un
- * cable mal puesto.
- *
- * La recuperacion tiene dos tiempos. Primero se pide, y el hardware
- * espera a que el bus este tranquilo. Cuando termina queda detenido, y
- * recien ahi se lo vuelve a arrancar; por eso el estado STOPPED se
- * trata aca como "termino de recuperarse".
- *
- * @return void
- */
-static void recoverBusIfNeeded(void) {
-  twai_status_info_t status;
-
-  if (twai_get_status_info(&status) != ESP_OK) {
-    return;
-  }
-
-  if (status.state == TWAI_STATE_BUS_OFF) {
-    twai_initiate_recovery();
-    busRecoveryCount++;
-    Serial.printf("[%lu ms] CAN bus-off, reenganchando (van %lu)\n",
-                  millis(), busRecoveryCount);
-  } else if (status.state == TWAI_STATE_STOPPED) {
-    /* La recuperacion termino. En este punto del programa STOPPED solo
-       puede significar eso, porque canInitialize() ya arranco el bus
-       antes de que existiera esta task. */
-    twai_start();
-  }
-}
-
-/**
  * @brief Interpreta la trama del nodo de temperatura DHT11.
  *
  * Layout, definido en can_ids.h:
@@ -272,10 +230,10 @@ static void recoverBusIfNeeded(void) {
  *
  * @return void
  */
-static void handleTestTemperatureFrame(const twai_message_t *frame) {
+static void handleTestTemperatureFrame(const CanFrame *frame) {
   /* Una trama corta significa que el emisor no respeta el layout: se
      descarta en vez de leer bytes que no existen. */
-  if (frame->data_length_code < 4) {
+  if (frame->length < 4) {
     return;
   }
 
@@ -294,22 +252,78 @@ static void handleTestTemperatureFrame(const twai_message_t *frame) {
  *   byte 0-1  RPM rueda izquierda, uint16, little-endian, 1 RPM/bit
  *   byte 2-3  RPM rueda derecha,   uint16, little-endian, 1 RPM/bit
  *
- * Por ahora solo se registra la rueda izquierda, que es la unica que
- * tiene sensor. Cuando exista la derecha hay que agregarle su canal en
- * LogChannel y guardarla aca al lado.
+ * @param[in]  frame  Trama recibida.
+ *
+ * @return void
+ */
+static void handleWheelSpeedFrontFrame(const CanFrame *frame) {
+  if (frame->length < 4) {
+    return;
+  }
+
+  uint16_t leftRpm  = readUnsignedInteger16LittleEndian(&frame->data[0]);
+  uint16_t rightRpm = readUnsignedInteger16LittleEndian(&frame->data[2]);
+
+  /* Un nodo con un solo sensor marca la otra rueda como no medida. Esa
+     rueda no se registra ni entra en la velocidad del auto. */
+  if (leftRpm != RPM_NOT_MEASURED) {
+    speedUpdateWheel(WheelPosition::FRONT_LEFT, leftRpm);
+    loggerRecordValue(LogChannel::WHEEL_RPM_FRONT_LEFT, leftRpm);
+  }
+  if (rightRpm != RPM_NOT_MEASURED) {
+    speedUpdateWheel(WheelPosition::FRONT_RIGHT, rightRpm);
+    loggerRecordValue(LogChannel::WHEEL_RPM_FRONT_RIGHT, rightRpm);
+  }
+
+  recordVehicleSpeed();
+}
+
+/**
+ * @brief Interpreta la trama de RPM de las ruedas traseras.
+ *
+ * Mismo layout que la delantera.
  *
  * @param[in]  frame  Trama recibida.
  *
  * @return void
  */
-static void handleWheelSpeedFrontFrame(const twai_message_t *frame) {
-  if (frame->data_length_code < 4) {
+static void handleWheelSpeedRearFrame(const CanFrame *frame) {
+  if (frame->length < 4) {
     return;
   }
 
-  uint16_t leftWheelRpm = readUnsignedInteger16LittleEndian(&frame->data[0]);
+  uint16_t leftRpm  = readUnsignedInteger16LittleEndian(&frame->data[0]);
+  uint16_t rightRpm = readUnsignedInteger16LittleEndian(&frame->data[2]);
 
-  loggerRecordValue(LogChannel::WHEEL_RPM_FRONT_LEFT, leftWheelRpm);
+  /* Un nodo con un solo sensor marca la otra rueda como no medida. Esa
+     rueda no se registra ni entra en la velocidad del auto. */
+  if (leftRpm != RPM_NOT_MEASURED) {
+    speedUpdateWheel(WheelPosition::REAR_LEFT, leftRpm);
+    loggerRecordValue(LogChannel::WHEEL_RPM_REAR_LEFT, leftRpm);
+  }
+  if (rightRpm != RPM_NOT_MEASURED) {
+    speedUpdateWheel(WheelPosition::REAR_RIGHT, rightRpm);
+    loggerRecordValue(LogChannel::WHEEL_RPM_REAR_RIGHT, rightRpm);
+  }
+
+  recordVehicleSpeed();
+}
+
+/**
+ * @brief Recalcula la velocidad del vehiculo y la guarda.
+ *
+ * Se llama despues de cada trama de ruedas y no en una task aparte,
+ * porque la velocidad solo puede cambiar cuando llega un dato nuevo:
+ * recalcularla a intervalo fijo repetiria el mismo numero.
+ *
+ * @return void
+ */
+static void recordVehicleSpeed(void) {
+  float kilometersPerHour;
+
+  if (speedGetVehicleKph(&kilometersPerHour)) {
+    loggerRecordValue(LogChannel::VEHICLE_SPEED_KPH, kilometersPerHour);
+  }
 }
 
 /**

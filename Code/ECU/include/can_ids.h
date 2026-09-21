@@ -81,11 +81,22 @@ constexpr uint32_t CAN_ID_APPS = 0x180;
 constexpr uint32_t CAN_ID_BSE = 0x181;
 
 /**
+ * @brief Valor de RPM que significa "esta rueda no tiene sensor".
+ *
+ * Un nodo con un solo sensor manda este valor en la rueda que no mide,
+ * y la ECU lo saltea. Sin esto mandaria cero, y cero es una medicion
+ * valida: la ECU creeria que esa rueda esta parada y la usaria para
+ * calcular la velocidad del auto, arrastrando el promedio a la mitad.
+ */
+constexpr uint16_t RPM_NOT_MEASURED = 0xFFFF;
+
+/**
  * @brief RPM ruedas delanteras. 50 Hz.
  *
- * Layout propuesto, a validar cuando exista la placa de RPM:
+ * Layout, en uso en la prueba de banco:
  *   byte 0-1  RPM rueda izquierda, uint16, little-endian, 1 RPM/bit
  *   byte 2-3  RPM rueda derecha,   uint16, little-endian, 1 RPM/bit
+ *   0xFFFF en cualquiera de las dos = sin sensor, ver RPM_NOT_MEASURED
  */
 constexpr uint32_t CAN_ID_RPM_FRONT = 0x200;
 
@@ -159,10 +170,10 @@ constexpr uint32_t CAN_ID_TPMS = 0x500;
  * prioridad baja, que es lo que corresponde a un dato que no frena el
  * auto.
  *
- * El otro nodo de la prueba, el de velocidad de giro con el modulo
- * LM393, NO esta aca: usa CAN_ID_RPM_FRONT (0x200), porque medir
- * vueltas por minuto contando pulsos es exactamente lo que va a hacer
- * el sensor definitivo del auto.
+ * El otro nodo de la prueba, el de velocidad de giro con el sensor
+ * inductivo LJ12A3, NO esta aca: usa CAN_ID_RPM_FRONT (0x200), porque
+ * contar pulsos de metal que pasan es exactamente lo que va a hacer el
+ * sensor definitivo del auto.
  */
 
 /**

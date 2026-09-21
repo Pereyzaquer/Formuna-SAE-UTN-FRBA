@@ -12,7 +12,7 @@
  *
  *  Hardware:
  *  --------------------------------------------------------
- *  - MCU: ESP32 C3.
+ *  - MCU: Arduino Nano, ESP32-C3 o NodeMCU, segun el entorno.
  *  - Sensores: uno por nodo, elegido con el entorno de
  *    platformio.ini. Ver sensor_temperature.cpp y
  *    sensor_wheel_speed.cpp.

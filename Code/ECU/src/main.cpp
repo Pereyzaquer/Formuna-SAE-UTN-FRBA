@@ -66,6 +66,7 @@ void setup() {
   delay(1000);
 
   indicatorsInitialize();
+  namesInitialize();
 
   queueEvents = xQueueCreate(QUEUE_LENGTH_EVENTS, sizeof(EcuEvent));
   queueWifi   = xQueueCreate(QUEUE_LENGTH_WIFI, sizeof(WifiCommand));

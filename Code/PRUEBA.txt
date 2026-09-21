@@ -6,8 +6,8 @@
 
  Descripcion:
  ------------------------------------------------------------
- Como correr la prueba de banco: una ECU ESP32-S3 y uno o dos
- nodos ESP32-C3 comunicados por CAN, grabando 90 segundos de
+ Como correr la prueba de banco: una ECU ESP32-S3 y tres
+ nodos sensores comunicados por CAN, grabando 90 segundos de
  datos que despues se bajan por wifi como archivo CSV.
 ============================================================
 
@@ -20,62 +20,41 @@
    solos y por eso alcanza con escuchar.
 2. Pasa por CONFIG y queda en CAR_READY, led verde fijo,
    esperando la orden de arranque.
-3. Al apretar "Arrancar ejecucion" en la pagina web, o el boton
+3. Al apretar "Ready to move" en la pagina web, o el boton
    fisico si hay uno, entra en CAR_ON, led verde pulsante, y
    empieza a grabar.
 4. A los 90 segundos la grabacion termina sola y la ECU vuelve
    a CAR_READY.
 5. Se baja el CSV desde el navegador y se grafica.
 
-Funciona con un solo nodo conectado, con los dos, o con
-ninguno. Un nodo ausente no traba nada: su columna en el CSV
-queda vacia y el resto de la prueba sigue igual.
+Funciona con los tres nodos, con algunos, o con ninguno. Un
+nodo ausente no traba nada: su columna en el CSV queda vacia y
+el resto de la prueba sigue igual.
 
 
 ------------------------------------------------------------
  CABLEADO
 ------------------------------------------------------------
-Bus CAN, comun a todas las placas:
-  - Cada placa necesita su transceiver CAN (no alcanza con
-    conectar los pines entre si: el bus es diferencial).
-  - CAN_H con CAN_H, CAN_L con CAN_L.
-  - Una resistencia de 120 ohm en cada extremo del bus.
-  - Masa comun entre todas las placas.
+El detalle completo, con tablas pin por pin y el orden de
+armado, esta en ECU/ARQUITECTURA.md, seccion "Como conectar
+todo". Leerla entera antes de armar. Esto es el resumen.
 
-ECU, ESP32-S3:
-  GPIO 4  -> TX del transceiver
-  GPIO 5  -> RX del transceiver
-  GPIO 6  -> boton de Ready To Drive, el otro extremo a masa
-             (usa la resistencia interna, no hace falta agregar
-             ninguna)
+Cuatro placas, cada una con su modulo HW-184 (MCP2515):
 
-             El boton es OPCIONAL: la pagina web tiene el suyo
-             y hace exactamente lo mismo. Si no hay nada
-             conectado a este pin, no pasa nada: la resistencia
-             interna lo mantiene sin apretar.
+  ECU       ESP32-S3    SPI por conversor de nivel
+  Trasera   ESP32-C3    SPI por conversor de nivel, infrarrojo
+  Temp      NodeMCU     SPI, divisor 1k/2k en SO recomendado, DHT11
+  Delantera Nano        SPI directo, inductivo a 5 V
 
-Nodo, ESP32-C3, los dos:
-  GPIO 4  -> TX del transceiver
-  GPIO 5  -> RX del transceiver
+Bus CAN: CAN_H y CAN_L en fila por los cuatro modulos. Quitar
+el jumper J1 (terminador de 120 ohm) en los DOS DEL MEDIO;
+queda solo en las dos puntas.
 
-Nodo de temperatura, DHT11:
-  GPIO 3  -> DATA, con resistencia de 10 kohm a 3.3 V
-             (si el modulo ya la trae, no agregar otra)
+MASA COMUN entre todo. Sin eso nada anda.
 
-Nodo de velocidad de giro, modulo infrarrojo LM393:
-  GPIO 8  -> D0 del modulo
-  VCC     -> 3.3 V, NO 5 V. La salida del LM393 es colector
-             abierto con pull-up a su propia alimentacion: a
-             5 V entregaria 5 V y el ESP32-C3 no lo tolera.
-
-  Ademas del cableado hace falta algo que gire con una marca
-  que pase por delante del sensor: un disco de carton con una
-  lengüeta alcanza. Cada pasada es un pulso.
-
-  Ajustar el preset del modulo hasta que su led encienda con la
-  lengüeta delante y se apague sin ella. Si queda muy sensible,
-  dispara con cualquier cosa y las RPM salen infladas.
-
+Cristal del MCP2515: el codigo asume 8 MHz en las cuatro
+placas. Mirar la lata de cada modulo; si alguno dice 16.000,
+cambiar MCP2515_CRYSTAL en el can_mcp2515.cpp de esa placa.
 
 Los numeros de pin estan definidos en ECU.h y en SensorNode.h.
 Si el cableado real termina siendo otro, se cambian ahi y en
@@ -95,11 +74,14 @@ puerto serie de la maquina e intenta grabarle el firmware.
 ECU, desde Code/ECU:
     pio run -t upload
 
-Nodo de velocidad de giro, desde Code/SensorNode:
-    pio run -e rueda -t upload
+Los tres nodos, desde Code/SensorNode:
+    pio run -e rueda_c3 -t upload             ESP32-C3, infrarrojo
+    pio run -e temperatura_nodemcu -t upload  NodeMCU, DHT11
+    pio run -e rueda_nano -t upload           Nano, inductivo
 
-Nodo de temperatura, desde Code/SensorNode:
-    pio run -e temperatura -t upload
+Si la grabacion del Nano falla con "not in sync", tiene el
+bootloader viejo: en platformio.ini cambiar nanoatmega328new
+por nanoatmega328.
 
 
 Los entornos del nodo comparten todo el codigo salvo el archivo
@@ -124,7 +106,7 @@ y la otra.
    mirar que el sensor este dando numeros razonables: es la
    forma de descubrir un cable flojo sin gastar una ejecucion.
 
-4. Apretar "Arrancar ejecucion" en la pagina, o el boton fisico
+4. Apretar "Ready to move" en la pagina, o el boton fisico
    si hay uno conectado. El led pasa a verde pulsante y la
    barra de avance empieza a moverse.
 
@@ -145,7 +127,14 @@ y la otra.
 Sale con una columna por canal, tenga datos o no:
 
   tiempo_s, temperatura_C, humedad_pct, rpm_delantera_izq,
-  acelerador_pct, freno_bar
+  rpm_delantera_der, rpm_trasera_izq, rpm_trasera_der,
+  velocidad_kmh, acelerador_pct, freno_bar,
+  caidas_rueda_delantera, caidas_rueda_trasera, caidas_temperatura
+
+Las tres columnas caidas_* cuentan cuantas veces se callo cada
+nodo desde que se encendio la ECU. Traen el valor al arrancar la
+ejecucion y una fila nueva en cada corte, asi en el grafico se
+ve un escalon justo cuando paso.
 
 Cada fila es una muestra y solo lleva valor en la columna del
 canal que hablo en ese instante. Las demas quedan vacias.
@@ -154,11 +143,19 @@ Eso es a proposito: una celda vacia es un hueco en el grafico,
 que es lo correcto. Si se rellenara con cero, el grafico
 mostraria una medicion que nunca existio.
 
-Con los dos nodos actuales se llenan temperatura_C,
-humedad_pct y rpm_delantera_izq. Quedan vacios acelerador_pct
-y freno_bar, porque todavia no existe ningun nodo que los
+Con los tres nodos de la prueba se llenan temperatura_C,
+humedad_pct, rpm_delantera_izq, rpm_trasera_izq y
+velocidad_kmh. Quedan vacias las dos ruedas derechas,
+acelerador_pct y freno_bar, porque no hay ningun nodo que las
 alimente. Estan igual para comprobar que la ECU maneja bien el
 caso de varios canales definidos con solo algunos con datos.
+
+velocidad_kmh la calcula la ECU, no la mide nadie: promedia las
+ruedas que estan reportando y descarta la que se aparta mas de
+5 km/h de las demas. Con las dos ruedas de la prueba, si giran
+parecido se promedian; si una va mucho mas rapido que la otra,
+las dos quedan fuera y la velocidad se marca como no confiable.
+Es la forma de probar esa regla.
 
 Para graficar: el CSV se abre en Excel, en Python o en MoTeC
 i2. 
@@ -167,17 +164,147 @@ Para motec: https://app.notion.com/p/fsae-utn-frba-electronica/Motec-i2-Converso
 
 
 ------------------------------------------------------------
+ PRUEBA COMPLETA, PASO A PASO
+------------------------------------------------------------
+Lo que tiene que pasar en cada paso. Si algo no coincide, ir a
+"SI ALGO NO ANDA". Todo se mira en http://192.168.4.1 y, si la
+ECU esta en la PC, en su puerto serie a 115200.
+
+ 1. Arranque de la ECU sola (nodos apagados).
+    Led azul 2 s, luego verde. Serie: BOOT -> CONFIG -> CAR_READY.
+    Pagina: 0 nodos, 0 tramas, falla NONE. "Bus caido" puede subir
+    mientras esta sola; se queda quieto al enchufar un nodo.
+
+ 2. Enchufar los nodos de a uno.
+    Con cada uno, "Tramas CAN" sube mas rapido y "Nodos presentes"
+    suma 1. Nano: rpm_delantera_izq pasa de "sin datos" a 0.0.
+    C3: rpm_trasera_izq a 0.0 y "Ruedas midiendo" 2 de 4.
+    NodeMCU: temperatura_C y humedad_pct con valores razonables
+    (ambiente). Si un nodo se enchufa despues de los 2 s de
+    arranque igual aparece: la deteccion es continua.
+
+ 3. Sensores, uno por uno.
+    - Inductivo (Nano): acercar un tornillo o una llave a la cara
+      del sensor a menos de 4 mm, varias veces seguidas. El led del
+      sensor parpadea con cada pasada y rpm_delantera_izq sube
+      mientras se lo mueve (a mano, del orden de 60 a 200 RPM) y
+      vuelve a 0.0 al segundo de parar.
+    - Infrarrojo (C3): pasar la mano o un carton a unos 5 cm del
+      modulo, repetidas veces. El led del modulo parpadea y
+      rpm_trasera_izq sube. Si sube solo sin nada enfrente, bajar
+      la sensibilidad con el preset del modulo.
+    - DHT11 (NodeMCU): soplar o apoyar el dedo en el sensor:
+      temperatura_C sube un par de grados en 10 a 20 s y humedad_pct
+      salta. Es lento por diseno, una lectura por segundo.
+
+ 4. Velocidad calculada.
+    Mover las dos ruedas a ritmo parecido: velocidad_kmh toma el
+    promedio. Mover una sola: velocidad_kmh sigue esa rueda. Mover
+    una rapido y la otra lenta (mas de 5 km/h de diferencia entre
+    ellas): la velocidad queda "sin datos", porque ninguna es
+    confiable. Es la regla de descarte funcionando.
+
+ 5. Caida de un nodo (WARNING).
+    Desenchufar el USB del Nano (no el NodeMCU: presta los 5 V al
+    modulo de la ECU). A los 3 s: serie "nodo 0x200 dejo de emitir
+    (caida 1)", pagina WARNING (0x0002), ruedas 1 de 4,
+    caidas_rueda_delantera = 1. Enchufar: "comunicacion
+    restablecida", falla NONE, ruedas 2 de 4. El estado no cambio.
+
+ 6. Perdida de todas las ruedas (WARNING 0x0003).
+    Desenchufar Nano y C3 a la vez. En medio segundo la pagina pasa
+    a WARNING (0x0003), ruedas 0 de 4. El estado NO cambia: si habia
+    una ejecucion en curso, sigue grabando. Enchufar cualquiera de
+    los dos: falla NONE (o 0x0002 si el otro sigue afuera).
+
+ 7. Ejecucion y CSV.
+    Poner la duracion en el campo "Duracion" (90 s por defecto,
+    hasta 180) y "Ready to move" (o el boton fisico, pin 6 a
+    GND). Led verde pulsante, CAR_READY -> CAR_ON, "Muestras"
+    subiendo. Durante la ejecucion hacer los pasos 3, 5 y 6: la
+    grabacion tiene que seguir y terminar sola a su tiempo, con
+    CAR_ON -> CAR_READY. Bajar registro.csv y graficar: temperatura
+    y humedad casi planas, rpm con picos donde se movieron las
+    ruedas, velocidad con la misma forma, y las columnas caidas_*
+    con un escalon en el instante de cada desconexion. Si se corto
+    antes con "Detener", el CSV llega hasta ahi.
+
+    Apagar la ECU en medio de una ejecucion la pierde: las muestras
+    viven en RAM. Es una limitacion conocida hasta que haya SD.
+
+ 8. Wifi y OTA (opcional).
+    Con la ECU en CAR_ON la red sigue visible. Desde Code/ECU:
+      pio run -e ota -t upload
+    graba por wifi; la ECU reinicia y vuelve sola a CAR_READY.
+
+
+------------------------------------------------------------
  SI ALGO NO ANDA
 ------------------------------------------------------------
 El led queda en rojo apenas arranca
-    No se pudo inicializar el bus CAN. Revisar que los pines 4
-    y 5 sean los que van al transceiver.
+    No se pudo inicializar el bus CAN: el ESP32 no consigue
+    hablarle al MCP2515 por SPI. No es el bus H/L ni los otros
+    nodos, es el tramo ESP32 -> conversor -> HW-184. Lo que
+    fallo en el primer armado, en este orden:
+      - El pin 5V del YD-ESP32-S3 NO entrega tension de fabrica:
+        hay un puente de soldadura marcado IN-OUT al lado del
+        pin que viene abierto. Sin 5 V el modulo se "prende"
+        tenue por la linea CS y no responde. Soldar el puente,
+        o tomar los 5 V de otra placa (VU del NodeMCU) con las
+        masas unidas.
+      - Contactos del protoboard: el conversor de nivel y sus
+        cables no hacian contacto. Solucion que anduvo: sacar
+        el conversor del protoboard y poner los cables Dupont
+        directo a sus patas.
+      - Orden de patas del conversor: LV1 LV2 LV GND LV3 LV4
+        (y lo mismo en HV). LV3 y LV4 NO estan al lado de LV2.
+      - HV1/HV2 cruzados.
+    El modulo con luz roja solo dice que tiene 5 V, no que
+    responda.
 
 La pagina dice 0 nodos presentes y 0 tramas
     La ECU no recibe nada. Revisar masa comun entre placas, las
     dos resistencias de 120 ohm, y que CAN_H y CAN_L no esten
     cruzados. Tambien que los dos extremos esten a 500 kbps: si
     un nodo usa otra velocidad, ensucia el bus para todos.
+    En el primer armado fue un cable H/L flojo del lado de la
+    ECU: iba y venia al tocarlo. Los tornillos de la bornera
+    tienen que morder el cobre, no la funda.
+
+No se puede grabar el Nano ("not in sync")
+    Los Nano del equipo tienen el bootloader viejo. El entorno
+    rueda_nano ya usa board nanoatmega328; si un Nano nuevo
+    falla igual, cambiar a nanoatmega328new.
+
+El ESP32-C3 no muestra nada en el monitor serie
+    El Super Mini solo tiene el USB nativo. El entorno rueda_c3
+    ya lleva ARDUINO_USB_CDC_ON_BOOT=1 para que Serial salga por
+    ahi; sin eso el texto se va a los pines del UART.
+
+El monitor serie del ESP32-S3 se queda mudo al apretar RESET
+    Con el USB nativo, al reiniciar el puerto desaparece un
+    instante y el monitor de PlatformIO a veces no se
+    reengancha. Cerrarlo (Ctrl+C) y abrirlo de nuevo.
+
+Un nodo desaparece y la pagina dice WARNING (0x0002)
+    Es lo esperado: un nodo que estaba y lleva mas de 3 s sin
+    emitir se da por caido. Suma uno a su contador de caidas y
+    queda el aviso hasta que vuelva. La ECU no se detiene.
+    Los nodos que nunca estuvieron no cuentan: la ECU trabaja
+    con los que aparecieron en los 2 s de arranque.
+
+Se desconectan los DOS nodos de rueda y aparece WARNING (0x0003)
+    Es lo esperado: perder todas las ruedas a la vez tiene su
+    codigo propio porque el piloto se queda sin velocidad, y se
+    detecta en medio segundo. No es falla del auto: el estado no
+    cambia y la grabacion sigue. Cuando vuelve alguna rueda el
+    aviso se borra.
+
+La ECU esta en FAULT (cartel rojo, "FALLA - ECU" en la pestaña)
+    Solo pasa por una falla de seguridad (categoria B), que hoy
+    no existe en el banco. Se sale reiniciando la ECU, o sola si
+    la causa desaparece: vuelve a BOOT y termina en CAR_READY
+    esperando el boton.
 
 El contador "Bus caido" sube sin parar
     Es normal si la ECU esta encendida sola: en CAN toda trama

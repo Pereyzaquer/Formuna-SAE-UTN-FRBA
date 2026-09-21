@@ -11,10 +11,11 @@
  *
  *  Hardware:
  *  --------------------------------------------------------
- *  - MCU: ESP32 C3.
+ *  - MCU: NodeMCU (ESP8266) en la prueba de banco. Tambien
+ *    compila para Nano y ESP32-C3.
  *  - Sensores: DHT11.
  *      DATA -> DHT11_DATA_PIN, con resistencia de 10 kohm a VCC
- *      VCC  -> 3.3 V
+ *      VCC  -> 3.3 V (o 5 V en el Nano)
  *      GND  -> masa comun con la placa
  *
  *  Notas:

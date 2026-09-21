@@ -23,8 +23,11 @@
  *    CONFIG     -> CAR_READY   nodos presentes configurados
  *    CAR_READY  -> CAR_ON      secuencia RTD completa
  *    CAR_ON     -> CAR_READY   apagado pedido, o ejecucion terminada
- *    cualquiera -> FAULT       falla CRITICAL
- *    FAULT      -> sin salida por software
+ *    cualquiera -> FAULT       falla CRITICAL (categoria B)
+ *    FAULT      -> BOOT        la causa de la falla desaparecio
+ *
+ *  Perder nodos o todas las ruedas es WARNING: no cambia el
+ *  estado ni corta la grabacion. Ver updateWarnings().
  *
  *  Categoria A, informativo: si el nodo no responde se marca la
  *  flag, se saltea su configuracion, se registra WARNING y se
@@ -42,6 +45,7 @@
  *                     INCLUDES
  ************************************************************/
 #include "../include/ECU.h"
+#include "../include/can_ids.h"
 
 /************************************************************
  *               CONSTANTES DEL SISTEMA
@@ -57,6 +61,15 @@ static const uint32_t STATE_PERIOD_MILLISECONDS = 10;
  * el BMS.
  */
 static const uint32_t NODE_DISCOVERY_MILLISECONDS = 2000;
+
+/**
+ * Silencio que se le tolera a un nodo antes de darlo por perdido.
+ *
+ * 3 s por el nodo mas lento del banco, el de temperatura, que emite una
+ * vez por segundo: se le perdonan dos tramas seguidas. En el auto se
+ * ajusta al periodo de cada nodo.
+ */
+static const uint32_t NODE_SILENCE_TIMEOUT_MILLISECONDS = 3000;
 
 /** Tiempo que el boton tiene que quedar quieto para creerle. */
 static const uint32_t BUTTON_DEBOUNCE_MILLISECONDS = 50;
@@ -76,7 +89,8 @@ static const bool WIFI_STAYS_ON_IN_CAR_ON = true;
  * una tabla del equipo cuando se cierre el layout de la trama 0x080.
  */
 static const uint16_t ERROR_CODE_SAFETY_NODE_MISSING = 0x0001;
-static const uint16_t ERROR_CODE_INFORMATIVE_NODE_MISSING = 0x0002;
+static const uint16_t ERROR_CODE_NODE_LOST = 0x0002;
+static const uint16_t ERROR_CODE_ALL_WHEEL_SPEED_LOST = 0x0003;
 
 /************************************************************
  *                VARIABLES GLOBALES
@@ -96,7 +110,10 @@ static bool presentNodesAreConfigured(void);
 static bool readyToDriveSequenceIsComplete(void);
 static bool shutdownWasRequested(void);
 static bool readyToDriveButtonIsPressed(void);
-static void warnAboutMissingInformativeNodes(void);
+static bool allWheelSpeedSensorsLost(void);
+static void updateWarnings(void);
+static bool faultCauseHasCleared(void);
+static void recordDropCounts(void);
 static void enterState(EcuState nextState);
 static void processPendingEvents(void);
 
@@ -141,8 +158,16 @@ void taskState(void *argument) {
 
   uint32_t discoveryStartMilliseconds = millis();
 
+  /* Asi el monitor muestra los contadores en cero desde el arranque y
+     no "sin datos" hasta la primera caida. */
+  recordDropCounts();
+
   for (;;) {
     processPendingEvents();
+
+    /* Se chequea aca, fuera del switch, porque vale en cualquier
+       estado. */
+    updateWarnings();
 
     /* Se evalua antes del switch para que una falla CRITICAL saque al
        auto de cualquier estado sin repetir el chequeo en cada rama. */
@@ -160,7 +185,6 @@ void taskState(void *argument) {
           /* Se espera la ventana completa antes de decidir: los nodos
              no arrancan todos al mismo tiempo. */
           if (safetyNodesAreHealthy()) {
-            warnAboutMissingInformativeNodes();
             enterState(EcuState::CONFIG);
           } else {
             errorReport(ErrorLevel::CRITICAL, ERROR_CODE_SAFETY_NODE_MISSING);
@@ -192,7 +216,16 @@ void taskState(void *argument) {
         break;
 
       case EcuState::FAULT:
-        /* Sin salida por software: solo se sale reiniciando el micro. */
+        /* Se sale reiniciando el micro, o solo si la causa desaparece:
+           entonces vuelve a BOOT, repite el descubrimiento y termina en
+           CAR_READY esperando el boton. */
+        if (faultCauseHasCleared()) {
+          Serial.printf("[%lu ms] falla 0x%04X resuelta, se rearma\n",
+                        millis(), errorGetCode());
+          errorClear();
+          discoveryStartMilliseconds = millis();
+          enterState(EcuState::BOOT);
+        }
         break;
     }
 
@@ -235,6 +268,7 @@ static void enterState(EcuState nextState) {
          Pendiente para el auto: aca tambien va la habilitacion de
          torque en el inversor. */
       loggerStart();
+      recordDropCounts();
       break;
 
     case EcuState::CAR_READY:
@@ -370,23 +404,99 @@ static bool readyToDriveButtonIsPressed(void) {
 }
 
 /**
- * @brief Registra un WARNING si falta algun nodo informativo.
+ * @brief Indica si se perdieron todas las ruedas a la vez.
  *
- * Un nodo informativo caido no impide correr: solo queda asentado para
- * que se vea en la telemetria y en el box.
+ * Que falle una rueda no dice nada, porque las otras siguen dando
+ * velocidad. Que fallen todas si. Se exige que alguna rueda haya
+ * reportado alguna vez: "nunca hubo sensores" no es lo mismo que "los
+ * habia y se perdieron", y una ECU encendida sola no tiene que avisar.
+ *
+ * Pendiente para el auto: arrancar sin ninguna rueda (cable CAN cortado
+ * antes de encender) deberia ser falla; hoy safetyNodesAreHealthy() no
+ * lo exige para no romper la prueba de banco.
+ *
+ * @return bool  true si no queda ninguna rueda midiendo.
+ */
+static bool allWheelSpeedSensorsLost(void) {
+  return speedAnyWheelEverSeen() && (speedGetValidWheelCount() == 0);
+}
+
+/**
+ * @brief Mantiene el WARNING de comunicacion: nodos callados y ruedas.
+ *
+ * Un corte de comunicacion no es una falla del auto: no cambia de
+ * estado ni corta la grabacion. Queda el aviso en el monitor, suma uno
+ * al contador de caidas del nodo (que va al CSV) y se borra solo cuando
+ * todo vuelve. Solo cuentan los nodos que aparecieron alguna vez.
+ *
+ * Perder todas las ruedas a la vez tiene codigo propio, porque el
+ * piloto se queda sin velocidad, y se detecta en medio segundo; un nodo
+ * callado tarda tres.
  *
  * @return void
  */
-static void warnAboutMissingInformativeNodes(void) {
-  SensorFlags flags = sensorsGetFlags();
+static void updateWarnings(void) {
+  static uint16_t activeCode = 0;
 
-  bool someInformativeNodeIsMissing =
-      !flags.wheelSpeedFront || !flags.wheelSpeedRear || !flags.motorSpeed ||
-      !flags.steeringWheel || !flags.inertialUnit || !flags.tirePressure;
+  uint32_t justDropped = sensorsUpdateSilence(NODE_SILENCE_TIMEOUT_MILLISECONDS);
 
-  if (someInformativeNodeIsMissing) {
-    /* Pendiente: un codigo distinto por nodo, para poder identificar
-       cual falto sin ir a mirar el bus. */
-    errorReport(ErrorLevel::WARNING, ERROR_CODE_INFORMATIVE_NODE_MISSING);
+  if (justDropped != 0) {
+    Serial.printf("[%lu ms] nodo 0x%03lX dejo de emitir (caida %u)\n", millis(),
+                  (unsigned long)justDropped,
+                  sensorsGetDropCount(justDropped));
+    recordDropCounts();
   }
+
+  uint16_t wantedCode = 0;
+  if (allWheelSpeedSensorsLost()) {
+    wantedCode = ERROR_CODE_ALL_WHEEL_SPEED_LOST;
+  } else if (sensorsGetSilentNode() != 0) {
+    wantedCode = ERROR_CODE_NODE_LOST;
+  }
+
+  if (wantedCode != 0 && wantedCode != activeCode) {
+    if (wantedCode == ERROR_CODE_ALL_WHEEL_SPEED_LOST) {
+      Serial.printf("[%lu ms] sin ninguna rueda midiendo\n", millis());
+    }
+    errorReport(ErrorLevel::WARNING, wantedCode);
+  }
+  if (wantedCode == 0 && activeCode != 0) {
+    Serial.printf("[%lu ms] comunicacion restablecida\n", millis());
+    errorClearWarning();
+  }
+  activeCode = wantedCode;
+}
+
+/**
+ * @brief Indica si la causa de la falla actual ya desaparecio.
+ *
+ * Cada codigo de falla tiene su forma de verificarse. Una falla cuya
+ * causa no se puede comprobar queda enclavada hasta el reset.
+ *
+ * @return bool  true si se puede rearmar.
+ */
+static bool faultCauseHasCleared(void) {
+  switch (errorGetCode()) {
+    case ERROR_CODE_SAFETY_NODE_MISSING:
+      return safetyNodesAreHealthy();
+    default:
+      return false;
+  }
+}
+
+/**
+ * @brief Guarda en el registrador el contador de caidas de cada nodo.
+ *
+ * Se llama al arrancar una ejecucion y en cada caida, asi el CSV tiene
+ * el valor inicial y un escalon por cada corte.
+ *
+ * @return void
+ */
+static void recordDropCounts(void) {
+  loggerRecordValue(LogChannel::DROPS_WHEEL_FRONT,
+                    sensorsGetDropCount(CAN_ID_RPM_FRONT));
+  loggerRecordValue(LogChannel::DROPS_WHEEL_REAR,
+                    sensorsGetDropCount(CAN_ID_RPM_REAR));
+  loggerRecordValue(LogChannel::DROPS_TEMPERATURE,
+                    sensorsGetDropCount(CAN_ID_TEST_TEMPERATURE));
 }

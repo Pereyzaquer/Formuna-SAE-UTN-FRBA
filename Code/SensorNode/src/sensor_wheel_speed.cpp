@@ -6,35 +6,49 @@
  *
  *  Descripción:
  *  --------------------------------------------------------
- *  Sensor de velocidad de giro por deteccion de pulsos, con un
- *  modulo infrarrojo de obstaculos LM393. Implementa la
- *  interfaz de sensor que declara SensorNode.h.
+ *  Sensor de velocidad de giro por conteo de pulsos. Sirve para
+ *  cualquier sensor que baje a cero su salida cuando pasa algo
+ *  por delante. Implementa la interfaz de SensorNode.h.
  *
  *  Hardware:
  *  --------------------------------------------------------
- *  - MCU: ESP32 C3.
- *  - Sensores: modulo infrarrojo de obstaculos con LM393.
- *      D0   -> INFRARED_PULSE_PIN
- *      VCC  -> 3.3 V
- *      GND  -> masa comun con la placa
+ *  En la prueba de banco hay dos nodos con este mismo archivo:
+ *
+ *  - Arduino Nano + LJ12A3-4-Z/BX, inductivo, NPN normalmente
+ *    abierto. Detecta metal ferroso hasta unos 4 mm. Va como
+ *    rueda DELANTERA (CAN_ID_RPM_FRONT).
+ *      marron -> 5 V del Nano (el sensor anda con 5 V)
+ *      azul   -> GND
+ *      negro  -> D3, directo. La pull-up la pone el micro
+ *
+ *  - ESP32-C3 + modulo infrarrojo de obstaculos con LM393. Va
+ *    como rueda TRASERA (CAN_ID_RPM_REAR).
+ *      VCC -> 3.3 V del C3
+ *      GND -> GND
+ *      D0  -> GPIO 8, directo: el modulo ya tiene pull-up
  *
  *  Notas:
  *  --------------------------------------------------------
- *  ALIMENTAR EL MODULO CON 3.3 V, NO CON 5 V. La salida del
- *  LM393 es colector abierto con resistencia de pull-up a su
- *  propia alimentacion: a 5 V entregaria 5 V, que el ESP32-C3
- *  no tolera en sus entradas.
+ *  Los dos sensores son distintos por dentro pero iguales por
+ *  fuera: salida a colector abierto que se va a masa al
+ *  detectar. Por eso comparten codigo. El inductivo detecta
+ *  metal; el infrarrojo, cualquier cosa que refleje luz.
  *
- *  El modulo no mide distancia: su salida es un bit que cambia
- *  cuando algo se acerca mas que el umbral del preset. Aca se
- *  usa esa transicion como pulso, contando cada objeto que pasa
- *  por delante. Con un disco con lengüetas girando, eso es una
+ *  Que se cuenta: cada pasada por delante del sensor es un
+ *  pulso. Con un disco con una lengüeta girando, eso es una
  *  medicion de vueltas por minuto, igual que la rueda fonica
  *  del auto.
  *
- *  El preset del modulo hay que ajustarlo hasta que el led de
- *  la placa encienda con la lengüeta delante y se apague sin
- *  ella. Si queda muy sensible, dispara con cualquier cosa.
+ *  Este nodo tiene UN sensor, y la trama lleva dos ruedas. La
+ *  que no se mide se marca con RPM_NOT_MEASURED para que la ECU
+ *  la ignore: si se mandara cero, la ECU creeria que esa rueda
+ *  esta parada y la usaria en la velocidad del auto.
+ *
+ *  Que rueda es este nodo lo decide el entorno de platformio.ini
+ *  con WHEEL_CAN_IDENTIFIER.
+ *
+ *  Ajuste del infrarrojo: tiene un preset. Girarlo hasta que su
+ *  led encienda con la lengüeta delante y se apague sin ella.
  *
  ************************************************************/
 
@@ -63,9 +77,9 @@ static const uint32_t PULSES_PER_REVOLUTION = 1;
 /**
  * Tiempo minimo entre dos pulsos para creerles.
  *
- * La salida del comparador no cambia limpio: en el borde de la
- * deteccion oscila y produce varios flancos por una sola lengüeta. Todo
- * pulso que llegue antes de este tiempo se descarta por ser rebote.
+ * En el borde de la deteccion la salida puede oscilar y producir varios
+ * flancos por una sola lengüeta. Todo pulso que llegue antes de este
+ * tiempo se descarta por ser rebote.
  *
  * Dos milisegundos permiten hasta 30000 RPM con una marca por vuelta,
  * de sobra para girar un disco a mano.
@@ -107,25 +121,32 @@ static void IRAM_ATTR handlePulseInterrupt(void);
  * @return void
  */
 void sensorInitialize(void) {
-  pinMode(INFRARED_PULSE_PIN, INPUT);
+  /* Los dos sensores tienen salida a colector abierto: solo bajan la
+     linea a masa, no la suben. Alguien tiene que tenerla en alto el
+     resto del tiempo, y para eso alcanza la resistencia de pull-up
+     interna del micro. Asi no hace falta ninguna resistencia externa.
+     Si alguna vez la lectura sale con ruido, agregar 4.7 kohm entre el
+     pin y la alimentacion del micro, que es mas fuerte que la interna. */
+  pinMode(WHEEL_PULSE_PIN, INPUT_PULLUP);
 
-  /* El modulo pone la salida en bajo cuando detecta un obstaculo, asi
-     que el flanco que interesa es el de bajada. */
-  attachInterrupt(digitalPinToInterrupt(INFRARED_PULSE_PIN),
+  /* Los dos sensores llevan la salida a masa cuando detectan, asi que
+     el flanco que interesa es el de bajada. */
+  attachInterrupt(digitalPinToInterrupt(WHEEL_PULSE_PIN),
                   handlePulseInterrupt, FALLING);
 }
 
 /**
  * @brief Identificador CAN con el que este nodo publica sus datos.
  *
- * Usa el identificador de RPM de ruedas delanteras del auto, no uno de
- * banco: medir vueltas por minuto contando pulsos es exactamente lo que
- * va a hacer el sensor definitivo, asi que este codigo no se tira.
+ * Usa un identificador de RPM del auto, no uno de banco: medir vueltas
+ * por minuto contando pulsos es exactamente lo que va a hacer el sensor
+ * definitivo, asi que este codigo no se tira. Delantero o trasero lo
+ * decide el entorno de platformio.ini.
  *
  * @return uint32_t  Identificador de 11 bits.
  */
 uint32_t sensorGetCanIdentifier(void) {
-  return CAN_ID_RPM_FRONT;
+  return WHEEL_CAN_IDENTIFIER;
 }
 
 /**
@@ -145,8 +166,8 @@ uint32_t sensorGetPeriodMilliseconds(void) {
  *   byte 2-3  RPM rueda derecha,   uint16, little-endian, 1 RPM/bit
  *
  * Este nodo tiene un solo sensor, asi que llena la rueda izquierda y
- * manda cero en la derecha. Se respeta el layout completo igual, para
- * no tener que cambiarlo cuando se sume el segundo sensor.
+ * marca la derecha como no medida. Se respeta el layout completo igual,
+ * para no tener que cambiarlo cuando se sume el segundo sensor.
  *
  * @param[out]  data    Bytes de la trama.
  * @param[out]  length  Cantidad de bytes escritos.
@@ -178,7 +199,7 @@ bool sensorBuildFrame(uint8_t *data, uint8_t *length) {
   }
 
   writeInteger16LittleEndian(&data[0], (int16_t)(uint16_t)revolutionsPerMinute);
-  writeInteger16LittleEndian(&data[2], 0); /* Sin segundo sensor. */
+  writeInteger16LittleEndian(&data[2], (int16_t)RPM_NOT_MEASURED);
   *length = 4;
 
   return true;
@@ -201,7 +222,7 @@ static void IRAM_ATTR handlePulseInterrupt(void) {
   uint32_t now = micros();
   uint32_t interval = now - lastPulseMicroseconds;
 
-  /* Rebote del comparador: demasiado pronto para ser una marca nueva. */
+  /* Rebote: demasiado pronto para ser una marca nueva. */
   if (interval < MINIMUM_PULSE_INTERVAL_MICROSECONDS) {
     return;
   }

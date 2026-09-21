@@ -30,7 +30,6 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <freertos/queue.h>
-#include <driver/twai.h>
 
 /************************************************************
  *                  RED Y ACTUALIZACION
@@ -45,10 +44,23 @@
 #define RGB_LED_PIN        48  /**< Led RGB de debug incluido en la placa. */
 #define RGB_LED_COUNT      1
 
-/* Definidos para la prueba de banco. Pendiente confirmarlos contra el
-   esquematico de la BaseBoard antes de montar la ECU en el auto. */
+/* Hay dos formas de colgar la ECU del bus, y el entorno de platformio.ini
+   elige cual se compila. Solo se usa un juego de pines a la vez.
+
+   CAN nativo del ESP32 (can_twai.cpp), el definitivo para el auto: el
+   controlador esta adentro del chip y afuera va solo un transceiver de
+   3.3 V, tipo SN65HVD230.
+   Pendiente confirmar estos pines contra el esquematico de la BaseBoard. */
 #define CAN_TRANSMIT_PIN   4   /**< Al pin TX del transceiver CAN. */
 #define CAN_RECEIVE_PIN    5   /**< Al pin RX del transceiver CAN. */
+
+/* Modulo MCP2515 por SPI (can_mcp2515.cpp), para la prueba de banco: es
+   lo que hay a mano. El modulo es de 5 V y el ESP32 de 3.3 V, asi que
+   las cuatro lineas pasan por un conversor de nivel. Ver ARQUITECTURA.md. */
+#define CAN_SPI_CLOCK_PIN        12  /**< SCK  del MCP2515. */
+#define CAN_SPI_MASTER_OUT_PIN   11  /**< SI   del MCP2515. */
+#define CAN_SPI_MASTER_IN_PIN    13  /**< SO   del MCP2515. */
+#define CAN_SPI_CHIP_SELECT_PIN  10  /**< CS   del MCP2515. */
 
 /* Boton que simula la secuencia de Ready To Drive. Se lee con la
    resistencia de pull-up interna, asi que descansa en alto y se pone
@@ -113,7 +125,7 @@ struct SensorFlags {
   bool tirePressure;        /**< TPMS.                           */
 
   /* ---- Nodo de la prueba de banco ---- */
-  bool testTemperature;     /**< Nodo ESP32-C3 con DHT11.        */
+  bool testTemperature;     /**< Nodo NodeMCU con DHT11.         */
 };
 
 /**
@@ -127,12 +139,45 @@ struct SensorFlags {
  * COUNT tiene que quedar ultimo: vale como cantidad de canales.
  */
 enum class LogChannel : uint8_t {
-  TEMPERATURE_CELSIUS,     /**< Nodo DHT11.               */
-  HUMIDITY_PERCENT,        /**< Nodo DHT11.               */
-  WHEEL_RPM_FRONT_LEFT,    /**< Nodo de velocidad LM393.  */
+  TEMPERATURE_CELSIUS,     /**< Nodo DHT11.                    */
+  HUMIDITY_PERCENT,        /**< Nodo DHT11.                    */
+  WHEEL_RPM_FRONT_LEFT,    /**< Nodo de RPM delantero.         */
+  WHEEL_RPM_FRONT_RIGHT,   /**< Nodo de RPM delantero.         */
+  WHEEL_RPM_REAR_LEFT,     /**< Nodo de RPM trasero.           */
+  WHEEL_RPM_REAR_RIGHT,    /**< Nodo de RPM trasero.           */
+  VEHICLE_SPEED_KPH,       /**< Calculado por la ECU.          */
   ACCELERATOR_PERCENT,     /**< Sin nodo todavia, queda vacio. */
   BRAKE_PRESSURE_BAR,      /**< Sin nodo todavia, queda vacio. */
+  DROPS_WHEEL_FRONT,       /**< Veces que se callo el nodo delantero. */
+  DROPS_WHEEL_REAR,        /**< Veces que se callo el nodo trasero.   */
+  DROPS_TEMPERATURE,       /**< Veces que se callo el nodo DHT11.     */
   COUNT
+};
+
+/**
+ * @brief Las cuatro ruedas del vehiculo.
+ *
+ * COUNT tiene que quedar ultimo: vale como cantidad de ruedas.
+ */
+enum class WheelPosition : uint8_t {
+  FRONT_LEFT,
+  FRONT_RIGHT,
+  REAR_LEFT,
+  REAR_RIGHT,
+  COUNT
+};
+
+/**
+ * @brief Una trama CAN, independiente del hardware que la mueve.
+ *
+ * Existe para que el resto del programa no dependa de si el bus lo
+ * maneja el controlador interno del ESP32 o un MCP2515 externo: los dos
+ * backends traducen a y desde esta estructura.
+ */
+struct CanFrame {
+  uint32_t identifier; /**< Identificador de 11 bits, ver can_ids.h. */
+  uint8_t  length;     /**< Cantidad de bytes utiles, 0 a 8.          */
+  uint8_t  data[8];
 };
 
 /**
@@ -238,7 +283,55 @@ bool canSendFrame(uint32_t identifier, const uint8_t *data, uint8_t length);
  *
  * @return void
  */
-void canDispatchFrame(const twai_message_t *frame);
+void canDispatchFrame(const CanFrame *frame);
+
+/* --------- can_twai.cpp  o  can_mcp2515.cpp ------------ */
+/*
+ * Capa de hardware del bus. Hay dos implementaciones con exactamente
+ * estas cuatro funciones, y el entorno de platformio.ini compila una:
+ *
+ *   can_twai.cpp     controlador CAN interno del ESP32 + transceiver.
+ *                    Es el definitivo para el auto.
+ *   can_mcp2515.cpp  modulo MCP2515 externo por SPI. Para el banco,
+ *                    porque es lo que hay.
+ *
+ * Todo lo demas de can.cpp es comun a las dos.
+ */
+
+/**
+ * @brief Deja el controlador CAN andando a 500 kbps.
+ *
+ * @return bool  true si quedo listo para transmitir y recibir.
+ */
+bool canHardwareInitialize(void);
+
+/**
+ * @brief Entrega una trama al controlador para que la transmita.
+ *
+ * No espera a que salga al bus: si no hay lugar, la descarta.
+ *
+ * @param[in]  frame  Trama a transmitir.
+ *
+ * @return bool  true si el controlador la acepto.
+ */
+bool canHardwareSend(const CanFrame *frame);
+
+/**
+ * @brief Espera una trama entrante, como maximo el tiempo indicado.
+ *
+ * @param[out]  frame                Trama recibida.
+ * @param[in]   timeoutMilliseconds  Cuanto esperar si no hay nada.
+ *
+ * @return bool  true si llego una trama.
+ */
+bool canHardwareReceive(CanFrame *frame, uint32_t timeoutMilliseconds);
+
+/**
+ * @brief Revisa si el controlador se cayo del bus y lo reengancha.
+ *
+ * @return bool  true si en esta llamada se detecto una caida.
+ */
+bool canHardwareRecoverIfNeeded(void);
 
 /**
  * @brief Cuantas veces hubo que reenganchar el controlador al bus.
@@ -262,6 +355,9 @@ uint32_t canGetReceivedFrameCount(void);
 
 /* --------------------- sensors.cpp --------------------- */
 
+/** Cuantos identificadores ajenos al mapa se recuerdan como maximo. */
+#define UNKNOWN_IDENTIFIER_MAXIMUM 8
+
 /**
  * @brief Marca en las flags que nodo emitio una trama.
  *
@@ -284,6 +380,137 @@ SensorFlags sensorsGetFlags(void);
  * @return uint8_t  Cantidad de nodos presentes.
  */
 uint8_t sensorsCountPresentNodes(void);
+
+/**
+ * @brief Revisa que nodos se callaron y cuenta cada caida.
+ *
+ * Hay que llamarla periodicamente. Un nodo cuenta como callado si ya
+ * aparecio alguna vez y lleva mas del tiempo indicado sin emitir.
+ *
+ * @param[in]  silenceTimeoutMilliseconds  Cuanto silencio se tolera.
+ *
+ * @return uint32_t  Identificador CAN de un nodo que se acaba de callar
+ *                   en esta llamada, o 0 si ninguno cayo ahora.
+ */
+uint32_t sensorsUpdateSilence(uint32_t silenceTimeoutMilliseconds);
+
+/**
+ * @brief Devuelve el primer nodo que esta callado en este momento.
+ *
+ * @return uint32_t  Identificador CAN, o 0 si todos emiten.
+ */
+uint32_t sensorsGetSilentNode(void);
+
+/**
+ * @brief Cuantas veces se callo un nodo desde que arranco la ECU.
+ *
+ * @param[in]  identifier  Identificador CAN del nodo.
+ *
+ * @return uint16_t  Cantidad de caidas.
+ */
+uint16_t sensorsGetDropCount(uint32_t identifier);
+
+/**
+ * @brief Cantidad de nodos del mapa (can_ids.h) que la ECU vigila.
+ *
+ * @return uint8_t  Cantidad.
+ */
+uint8_t sensorsGetKnownNodeCount(void);
+
+/**
+ * @brief Identificador CAN del nodo conocido en la posicion dada.
+ *
+ * @param[in]  index  De 0 a sensorsGetKnownNodeCount() - 1.
+ *
+ * @return uint32_t  Identificador.
+ */
+uint32_t sensorsGetKnownNodeIdentifier(uint8_t index);
+
+/**
+ * @brief Indica si un nodo emitio alguna vez desde el encendido.
+ *
+ * @param[in]  identifier  Identificador CAN.
+ *
+ * @return bool  true si se lo vio al menos una vez.
+ */
+bool sensorsNodeWasEverSeen(uint32_t identifier);
+
+/**
+ * @brief Indica si un nodo esta callado en este momento.
+ *
+ * @param[in]  identifier  Identificador CAN.
+ *
+ * @return bool  true si se lo vio y ahora no emite.
+ */
+bool sensorsNodeIsSilent(uint32_t identifier);
+
+/**
+ * @brief Anota un identificador que no figura en el mapa can_ids.h.
+ *
+ * Sirve para que un nodo nuevo aparezca en la pagina y se lo pueda
+ * bautizar. Se recuerdan como maximo UNKNOWN_IDENTIFIER_MAXIMUM.
+ *
+ * @param[in]  identifier  Identificador CAN visto en el bus.
+ *
+ * @return void
+ */
+void sensorsNoteUnknownIdentifier(uint32_t identifier);
+
+/**
+ * @brief Cuantos identificadores desconocidos se vieron.
+ *
+ * @return uint8_t  Cantidad, hasta UNKNOWN_IDENTIFIER_MAXIMUM.
+ */
+uint8_t sensorsGetUnknownIdentifierCount(void);
+
+/**
+ * @brief Identificador desconocido en la posicion dada.
+ *
+ * @param[in]  index  De 0 a sensorsGetUnknownIdentifierCount() - 1.
+ *
+ * @return uint32_t  Identificador.
+ */
+uint32_t sensorsGetUnknownIdentifier(uint8_t index);
+
+/**
+ * @brief Cuantas tramas llegaron de un identificador desconocido.
+ *
+ * @param[in]  index  De 0 a sensorsGetUnknownIdentifierCount() - 1.
+ *
+ * @return uint32_t  Cantidad de tramas.
+ */
+uint32_t sensorsGetUnknownIdentifierFrameCount(uint8_t index);
+
+/* ---------------------- names.cpp ---------------------- */
+
+/** Largo maximo de un nombre de nodo, sin contar el terminador. */
+#define NAME_MAXIMUM_LENGTH 24
+
+/**
+ * @brief Abre el almacenamiento de nombres. Llamar una vez al arrancar.
+ *
+ * @return void
+ */
+void namesInitialize(void);
+
+/**
+ * @brief Nombre legible de un identificador CAN.
+ *
+ * @param[in]  identifier  Identificador CAN.
+ *
+ * @return const char*  Nombre guardado, el de fabrica, o "sin definir".
+ */
+const char *namesGet(uint32_t identifier);
+
+/**
+ * @brief Guarda el nombre de un identificador en la flash.
+ *
+ * @param[in]  identifier  Identificador CAN.
+ * @param[in]  name        Nombre nuevo; vacio vuelve al de fabrica.
+ *
+ * @return void
+ */
+void namesSet(uint32_t identifier, const char *name);
 
 /* ---------------------- logger.cpp --------------------- */
 
@@ -339,6 +566,22 @@ bool loggerGetCurrentValue(LogChannel channel, float *value);
 uint32_t loggerGetElapsedMilliseconds(void);
 
 /**
+ * @brief Fija cuanto va a durar la proxima ejecucion.
+ *
+ * @param[in]  seconds  Duracion en segundos; se recorta al tope interno.
+ *
+ * @return void
+ */
+void loggerSetDurationSeconds(uint32_t seconds);
+
+/**
+ * @brief Duracion vigente para una ejecucion.
+ *
+ * @return uint32_t  Segundos.
+ */
+uint32_t loggerGetDurationSeconds(void);
+
+/**
  * @brief Cantidad de muestras guardadas.
  *
  * @return uint32_t  Cantidad de muestras.
@@ -366,6 +609,60 @@ bool loggerGetSample(uint32_t index, uint32_t *timeMilliseconds,
  * @return const char*  Nombre con la unidad incluida.
  */
 const char *loggerGetChannelName(LogChannel channel);
+
+/* ---------------------- speed.cpp ---------------------- */
+
+/**
+ * @brief Informa las vueltas por minuto medidas en una rueda.
+ *
+ * La convierte a velocidad y la guarda con la hora en que llego, para
+ * poder distinguir despues un dato fresco de uno viejo.
+ *
+ * @param[in]  wheel                 Rueda que reporta.
+ * @param[in]  revolutionsPerMinute  Vueltas por minuto medidas.
+ *
+ * @return void
+ */
+void speedUpdateWheel(WheelPosition wheel, uint16_t revolutionsPerMinute);
+
+/**
+ * @brief Devuelve la velocidad medida por una rueda.
+ *
+ * @param[in]   wheel  Rueda a consultar.
+ * @param[out]  kph    Velocidad en kilometros por hora.
+ *
+ * @return bool  false si esa rueda no reporto hace demasiado tiempo.
+ */
+bool speedGetWheelKph(WheelPosition wheel, float *kph);
+
+/**
+ * @brief Cuantas ruedas tienen una medicion reciente.
+ *
+ * @return uint8_t  De 0 a 4.
+ */
+uint8_t speedGetValidWheelCount(void);
+
+/**
+ * @brief Indica si alguna rueda reporto alguna vez desde el arranque.
+ *
+ * Sirve para separar "nunca hubo sensores de rueda", que en el banco es
+ * normal, de "los habia y se perdieron", que en el auto es una falla.
+ *
+ * @return bool  true si alguna rueda hablo alguna vez.
+ */
+bool speedAnyWheelEverSeen(void);
+
+/**
+ * @brief Calcula la velocidad del vehiculo a partir de las ruedas.
+ *
+ * Promedia las ruedas que tienen medicion reciente y descarta las que
+ * se apartan demasiado del resto.
+ *
+ * @param[out]  kph  Velocidad en kilometros por hora.
+ *
+ * @return bool  false si no hay ninguna medicion confiable.
+ */
+bool speedGetVehicleKph(float *kph);
 
 /* -------------------- indicators.cpp ------------------- */
 
@@ -434,6 +731,25 @@ ErrorLevel errorGetLevel(void);
  * @return uint16_t  Codigo, o 0 si no hubo fallas.
  */
 uint16_t errorGetCode(void);
+
+/**
+ * @brief Borra una WARNING cuando su causa desaparecio.
+ *
+ * No toca una CRITICAL: esas solo se van con errorClear() o un reset.
+ *
+ * @return void
+ */
+void errorClearWarning(void);
+
+/**
+ * @brief Borra cualquier falla, incluida una CRITICAL latcheada.
+ *
+ * Solo la llama la maquina de estados cuando decide que una falla
+ * puede rearmarse sin reiniciar.
+ *
+ * @return void
+ */
+void errorClear(void);
 
 /**
  * @brief Devuelve el nombre imprimible de un nivel de falla.

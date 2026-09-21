@@ -97,6 +97,34 @@ uint16_t errorGetCode(void) {
 }
 
 /**
+ * @brief Borra una WARNING cuando su causa desaparecio.
+ *
+ * No toca una CRITICAL: esas solo se van con errorClear() o un reset.
+ *
+ * @return void
+ */
+void errorClearWarning(void) {
+  if (currentLevel == ErrorLevel::WARNING) {
+    currentLevel = ErrorLevel::NONE;
+    currentCode  = 0;
+  }
+}
+
+/**
+ * @brief Borra cualquier falla, incluida una CRITICAL latcheada.
+ *
+ * Solo la llama la maquina de estados cuando decide que una falla
+ * puede rearmarse sin reiniciar.
+ *
+ * @return void
+ */
+void errorClear(void) {
+  currentLevel = ErrorLevel::NONE;
+  currentCode  = 0;
+  latched      = false;
+}
+
+/**
  * @brief Devuelve el nombre imprimible de un nivel de falla.
  *
  * @param[in]  level  Nivel a nombrar.

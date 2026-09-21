@@ -36,19 +36,32 @@
  *               CONSTANTES DEL SISTEMA
  ************************************************************/
 
-/** Duracion de una ejecucion. Definida en 90 segundos para la prueba. */
-static const uint32_t RECORDING_DURATION_MILLISECONDS = 90000;
+/**
+ * Duracion de una ejecucion si nadie la cambia.
+ *
+ * 90 segundos, definidos para el banco; no salen de ningun reglamento.
+ * Se cambia desde la pagina web antes de arrancar, hasta el tope de
+ * abajo.
+ */
+static const uint32_t DEFAULT_DURATION_SECONDS = 90;
+
+/**
+ * Tope de duracion. Con 80 muestras por segundo, MAXIMUM_SAMPLE_COUNT
+ * alcanza para unos 250 s; se deja margen por si se suman nodos.
+ */
+static const uint32_t MAXIMUM_DURATION_SECONDS = 180;
 
 /**
  * Cantidad maxima de muestras que entran en memoria.
  *
- * Con los dos nodos emitiendo a la vez son 21 muestras por segundo
- * (una del DHT11 mas veinte del nodo de rueda), que en 90 segundos
- * dan unas 1900. Se reservan 4000 para tener margen si despues se sube
- * la frecuencia de algun nodo. A 12 bytes por muestra son 48 kB, que
- * entran comodos en la memoria interna del ESP32-S3.
+ * Con los tres nodos del banco son unas 80 muestras por segundo: 20 de
+ * cada rueda, una de temperatura y una de velocidad por cada trama de
+ * rueda. En 90 segundos son unas 7300; se reservan 20000 (unos cuatro
+ * minutos) para cuando se sumen nodos. A 12 bytes por muestra son
+ * 240 kB, que van a la PSRAM (8 MB en el ESP32-S3 N16R8) y no a la RAM
+ * interna, que la necesita el wifi.
  */
-static const uint32_t MAXIMUM_SAMPLE_COUNT = 4000;
+static const uint32_t MAXIMUM_SAMPLE_COUNT = 20000;
 
 /************************************************************
  *                       TIPOS
@@ -64,7 +77,11 @@ struct LogSample {
 /************************************************************
  *                VARIABLES GLOBALES
  ************************************************************/
-static LogSample samples[MAXIMUM_SAMPLE_COUNT];
+/* Se reserva en la PSRAM la primera vez que arranca una grabacion, y
+   queda reservado para siempre. */
+static LogSample *samples = nullptr;
+
+static uint32_t durationSeconds = DEFAULT_DURATION_SECONDS;
 static uint32_t  sampleCount = 0;
 static uint32_t  recordingStartMilliseconds = 0;
 static bool      recording = false;
@@ -81,9 +98,47 @@ static bool  currentValueIsValid[static_cast<uint8_t>(LogChannel::COUNT)] = {};
  * @return void
  */
 void loggerStart(void) {
+  if (samples == nullptr) {
+    samples = static_cast<LogSample *>(
+        ps_malloc(MAXIMUM_SAMPLE_COUNT * sizeof(LogSample)));
+  }
+  if (samples == nullptr) {
+    Serial.println("Error: no hay PSRAM para las muestras, no se graba");
+    return;
+  }
+
   sampleCount = 0;
   recordingStartMilliseconds = millis();
   recording = true;
+}
+
+/**
+ * @brief Fija cuanto va a durar la proxima ejecucion.
+ *
+ * No afecta a una grabacion en curso. Un valor fuera de rango se
+ * recorta al tope, y cero se ignora: siempre queda una duracion util.
+ *
+ * @param[in]  seconds  Duracion pedida, en segundos.
+ *
+ * @return void
+ */
+void loggerSetDurationSeconds(uint32_t seconds) {
+  if (seconds == 0) {
+    return;
+  }
+  if (seconds > MAXIMUM_DURATION_SECONDS) {
+    seconds = MAXIMUM_DURATION_SECONDS;
+  }
+  durationSeconds = seconds;
+}
+
+/**
+ * @brief Duracion vigente para una ejecucion.
+ *
+ * @return uint32_t  Segundos.
+ */
+uint32_t loggerGetDurationSeconds(void) {
+  return durationSeconds;
 }
 
 /**
@@ -107,7 +162,7 @@ bool loggerIsRecording(void) {
   if (!recording) {
     return false;
   }
-  if (loggerGetElapsedMilliseconds() >= RECORDING_DURATION_MILLISECONDS) {
+  if (loggerGetElapsedMilliseconds() >= durationSeconds * 1000UL) {
     return false;
   }
   if (sampleCount >= MAXIMUM_SAMPLE_COUNT) {
@@ -225,6 +280,13 @@ const char *loggerGetChannelName(LogChannel channel) {
     case LogChannel::ACCELERATOR_PERCENT:  return "acelerador_pct";
     case LogChannel::BRAKE_PRESSURE_BAR:   return "freno_bar";
     case LogChannel::WHEEL_RPM_FRONT_LEFT: return "rpm_delantera_izq";
+    case LogChannel::WHEEL_RPM_FRONT_RIGHT:return "rpm_delantera_der";
+    case LogChannel::WHEEL_RPM_REAR_LEFT:  return "rpm_trasera_izq";
+    case LogChannel::WHEEL_RPM_REAR_RIGHT: return "rpm_trasera_der";
+    case LogChannel::VEHICLE_SPEED_KPH:    return "velocidad_kmh";
+    case LogChannel::DROPS_WHEEL_FRONT:    return "caidas_rueda_delantera";
+    case LogChannel::DROPS_WHEEL_REAR:     return "caidas_rueda_trasera";
+    case LogChannel::DROPS_TEMPERATURE:    return "caidas_temperatura";
     case LogChannel::COUNT:                break;
   }
   return "desconocido";

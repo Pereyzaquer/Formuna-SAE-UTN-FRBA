@@ -1,18 +1,19 @@
 /************************************************************
  *  Proyecto : SensorNode
- *  Archivo  : can.cpp
+ *  Archivo  : can_twai.cpp
  *  Equipo   : UTN BA Motorsport Formula student team
  *  Fecha    : 2/9/2026
  *
  *  Descripción:
  *  --------------------------------------------------------
- *  Bus CAN del nodo sobre el periferico TWAI del ESP32.
- *  Solo transmite: este nodo no escucha a nadie.
+ *  Bus CAN del nodo sobre el controlador interno del ESP32,
+ *  que Espressif llama TWAI. Solo transmite: este nodo no
+ *  escucha a nadie.
  *
  *  Hardware:
  *  --------------------------------------------------------
  *  - MCU: ESP32 C3.
- *  - Sensores: ninguno propio.
+ *  - Transceiver de 3.3 V, tipo SN65HVD230.
  *
  *  Notas:
  *  --------------------------------------------------------
@@ -20,12 +21,16 @@
  *  usara otra, no solo no se entenderia: ensuciaria el bus para
  *  todos los demas.
  *
+ *  Se compila solo en los entornos *_c3 de platformio.ini. El
+ *  otro backend es can_mcp2515.cpp.
+ *
  ************************************************************/
 
 /************************************************************
  *                     INCLUDES
  ************************************************************/
 #include "../include/SensorNode.h"
+#include <driver/twai.h>
 
 /**
  * @brief Inicializa el periferico TWAI a 500 kbps en modo normal.
@@ -77,17 +82,4 @@ bool canSendFrame(uint32_t identifier, const uint8_t *data, uint8_t length) {
   /* Sin espera: si la cola esta llena, perder una medicion es mejor que
      frenar el bucle del nodo y atrasar todas las que vienen. */
   return (twai_transmit(&frame, 0) == ESP_OK);
-}
-
-/**
- * @brief Guarda un entero de 16 bits en dos bytes, little-endian.
- *
- * @param[out]  data   Puntero a los dos bytes de destino.
- * @param[in]   value  Valor a guardar.
- *
- * @return void
- */
-void writeInteger16LittleEndian(uint8_t *data, int16_t value) {
-  data[0] = static_cast<uint8_t>(value & 0xFF);
-  data[1] = static_cast<uint8_t>((value >> 8) & 0xFF);
 }
