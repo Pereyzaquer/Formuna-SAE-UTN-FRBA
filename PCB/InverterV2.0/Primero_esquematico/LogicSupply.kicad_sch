@@ -4357,6 +4357,18 @@
 		(uuid "4fb427f2-dcb0-4208-b5b2-a518b6da917b")
 	)
 	(rectangle
+		(start 80.01 113.03)
+		(end 123.19 138.43)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "50973d5d-49d6-4026-8a62-abb1237f3d8d")
+	)
+	(rectangle
 		(start 124.46 132.08)
 		(end 139.7 138.43)
 		(stroke
@@ -4367,6 +4379,18 @@
 			(type none)
 		)
 		(uuid "526da87e-474a-4253-b17e-c32224d5b4c4")
+	)
+	(rectangle
+		(start 80.01 132.08)
+		(end 95.25 138.43)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "814b1bd3-abb8-4351-8c20-90dc85c8815e")
 	)
 	(rectangle
 		(start 69.85 162.56)
@@ -4414,7 +4438,7 @@
 	)
 	(text "Para el caso de 5V este dato seria de 158k"
 		(exclude_from_sim no)
-		(at 50.8 144.78 0)
+		(at 37.084 146.05 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4518,7 +4542,7 @@
 	)
 	(text "Vout=5V\nVd = 0,4V (Esto hay q probarlo porque varia un poco este dato)\nNps = 3\nRset = 12k1\nVref = 1,21V\n"
 		(exclude_from_sim no)
-		(at 29.21 137.16 0)
+		(at 15.494 138.43 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4547,6 +4571,16 @@
 		)
 		(uuid "c8594d72-da32-459c-95fe-357ee138490c")
 	)
+	(text "Alimentacion\nanalogica"
+		(exclude_from_sim no)
+		(at 87.63 135.382 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cdd53a7b-c460-4595-ad7b-5b4da73e79c9")
+	)
 	(text "Recalcular en caso de usar otra fuente\n(En este caso se utilizaron fuente de 15V)\nVin(on) = 14V\nVin(off) = 12V"
 		(exclude_from_sim no)
 		(at 76.962 102.87 0)
@@ -4556,6 +4590,16 @@
 			)
 		)
 		(uuid "d68b3e75-eb02-40d0-b2b4-a1c1fae44d3d")
+	)
+	(text "Hay cosas de 3,3V muy separadas por lo cual agrego un LDO mas\n1 -> sensores de corriente\n2 -> todo el resto"
+		(exclude_from_sim no)
+		(at 119.634 140.462 0)
+		(effects
+			(font
+				(size 0.635 0.635)
+			)
+		)
+		(uuid "edde9424-1828-4490-8132-d6868be9f25b")
 	)
 	(text "(Esta es la version fixed )"
 		(exclude_from_sim no)
@@ -4660,6 +4704,12 @@
 		(uuid "423c6cac-73c5-4cb7-b4b6-94e7ef019f4d")
 	)
 	(junction
+		(at 90.17 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "446f7a11-0a09-4ceb-a480-762883e0e904")
+	)
+	(junction
 		(at 199.39 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4718,6 +4768,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9e764910-7703-4ebd-850d-30345dee297b")
+	)
+	(junction
+		(at 107.95 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b6964d3a-fe0f-42f1-8b56-471634100433")
 	)
 	(junction
 		(at 210.82 67.31)
@@ -4805,6 +4861,16 @@
 	)
 	(wire
 		(pts
+			(xy 82.55 121.92) (xy 90.17 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00029d38-25c3-4b8a-b4a3-1b3010974e5d")
+	)
+	(wire
+		(pts
 			(xy 77.47 78.74) (xy 77.47 72.39)
 		)
 		(stroke
@@ -4882,6 +4948,16 @@
 			(type default)
 		)
 		(uuid "18ecda5c-e718-40d6-8a44-c0720f3f27ce")
+	)
+	(wire
+		(pts
+			(xy 90.17 121.92) (xy 90.17 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ca17316-bd21-4256-91ec-951374ecbf82")
 	)
 	(wire
 		(pts
@@ -5085,6 +5161,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 121.92) (xy 107.95 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57407346-28a6-4f8d-b2c2-116af98aa495")
+	)
+	(wire
+		(pts
 			(xy 196.85 125.73) (xy 200.66 125.73)
 		)
 		(stroke
@@ -5222,6 +5308,16 @@
 			(type default)
 		)
 		(uuid "72f14dd6-29a6-4027-9b9a-a19f3d8734f2")
+	)
+	(wire
+		(pts
+			(xy 110.49 121.92) (xy 110.49 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73581ace-f1fb-4490-b452-db066691ef19")
 	)
 	(wire
 		(pts
@@ -5542,6 +5638,16 @@
 			(type default)
 		)
 		(uuid "ad6f246f-4bd5-49ae-8e37-5d152aa965c4")
+	)
+	(wire
+		(pts
+			(xy 110.49 121.92) (xy 107.95 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1d2d461-0a73-4674-9494-7f8453dafed1")
 	)
 	(wire
 		(pts
@@ -5981,7 +6087,7 @@
 		)
 	)
 	(image
-		(at 54.864 123.698)
+		(at 49.784 123.698)
 		(uuid "e7fee879-5e8a-494c-b0cf-13964f702bf6")
 		(data "iVBORw0KGgoAAAANSUhEUgAAAYoAAABuCAYAAAA53FQwAAAAAXNSR0IArs4c6QAAAARnQU1BAACx"
 			"jwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAB3xSURBVHhe7d15VBRX2gfgH9A0qzagoLgBijZG"
@@ -6163,6 +6269,16 @@
 		(uuid "48d28a1a-fb16-4e28-b716-c5b538426b99")
 	)
 	(label "5V_FB"
+		(at 82.55 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9bd0050e-55b7-41ae-9ecb-b14316aff210")
+	)
+	(label "5V_FB"
 		(at 262.89 54.61 180)
 		(effects
 			(font
@@ -6181,6 +6297,84 @@
 			(justify left bottom)
 		)
 		(uuid "e9c4c377-d2db-46cf-ac49-bdd8798a5f34")
+	)
+	(symbol
+		(lib_id "power:+3.3VP")
+		(at 110.49 120.65 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "01d1fdd9-8f3b-43f2-a8a6-ba849ed53071")
+		(property "Reference" "#PWR0344"
+			(at 114.3 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V_analog_2"
+			(at 106.172 115.062 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 110.49 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3VP\""
+			(at 110.49 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "365c58c8-376a-43a1-acec-c4f6aaa62d7e")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "#PWR0344")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Snapeda:TPS7A2050PDBVR")
@@ -7601,6 +7795,121 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
 					(reference "#PWR0199")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 107.95 125.73 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2886fc14-5311-450e-bc14-026ce1fac527")
+		(property "Reference" "C191"
+			(at 111.76 124.4599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1uF"
+			(at 111.76 126.9999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 106.9848 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 107.95 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" ""
+			(at 107.95 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description_1" ""
+			(at 107.95 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 107.95 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dd13a3e8-76eb-45c4-8fe2-5733503034eb")
+		)
+		(pin "2"
+			(uuid "634cd44e-6f16-4f5f-96c9-df53c98afd45")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "C191")
 					(unit 1)
 				)
 			)
@@ -9984,6 +10293,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 97.79 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "864c3d16-c7c8-47ad-b74b-8d92e2fa7b52")
+		(property "Reference" "#PWR0340"
+			(at 97.79 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 97.79 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 97.79 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 97.79 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 97.79 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "11cd1466-2028-4562-88c4-d8427e060aa9")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "#PWR0340")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 200.66 135.89 0)
 		(unit 1)
 		(body_style 1)
@@ -10133,6 +10520,117 @@
 			(project "Primero_esquematico"
 				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
 					(reference "#FLG015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Regulator_Linear:LP5907MFX-3.3")
+		(at 97.79 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "929c44ee-c239-4bd2-a33a-44012fc59e5e")
+		(property "Reference" "U45"
+			(at 97.79 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LP5907QMFX-3.3Q1"
+			(at 97.79 116.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SC-74A-5_1.55x2.9mm_P0.95mm"
+			(at 97.79 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lp5907-q1.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1782342759139&ref_url=https%253A%252F%252F2a949073472b-benevolent-lorelei.s3.ru1.storage.beget.cloud%252F"
+			(at 97.79 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "250-mA Ultra-Low-Noise Low-IQ LDO, 3.3V, SOT-23"
+			(at 97.79 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Compra" "https://www.digikey.com/es/products/detail/texas-instruments/LP5907QMFX-3-3Q1/5013206?s=N4IgTCBcDaIDIAUCsBOADAdgIoFkBiAGgLQDMAdCVgIwgC6AvkA"
+			(at 97.79 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 97.79 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "d0140b80-886d-4fca-9a22-6778d642ec8a")
+		)
+		(pin "4"
+			(uuid "454f3a88-a7b4-4fee-ad36-0e0cec87eb71")
+		)
+		(pin "2"
+			(uuid "7a92587f-c1b6-4425-9e08-c94690e03cae")
+		)
+		(pin "1"
+			(uuid "476286fb-ad32-4392-825f-f2edac8578d1")
+		)
+		(pin "3"
+			(uuid "44d9d9c6-d62d-48ba-8b29-1cd8b459f204")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "U45")
 					(unit 1)
 				)
 			)
@@ -11130,6 +11628,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 107.95 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b2606b13-d0c2-4334-8f84-afedbfd0c311")
+		(property "Reference" "#PWR0343"
+			(at 107.95 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 107.95 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 107.95 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1400057a-925f-4db1-af6b-caf6181c252b")
+		)
+		(instances
+			(project "Primero_esquematico"
+				(path "/d930f486-f6ac-489c-907e-47f2cb34cf04/0bcc01e0-1903-49c9-8a02-17640b3194e7/d69e10c3-78b1-4a5f-bd39-c4f4dfb65e7e"
+					(reference "#PWR0343")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 151.13 91.44 180)
 		(unit 1)
@@ -11266,8 +11842,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V_analog"
-			(at 152.4 116.586 0)
+		(property "Value" "+3.3V_analog_1"
+			(at 150.876 115.062 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
