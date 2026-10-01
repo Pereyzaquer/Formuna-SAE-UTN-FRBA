@@ -1,0 +1,20 @@
+(version 1)
+
+# Encapsulados de paso 0,65 mm (VSSOP-8 / SOP65): la separacion entre sus
+# propios pads viene dada por el fabricante del componente y es menor que el
+# clearance general de la placa. 0,1 mm entra en proceso estandar de JLCPCB.
+(rule "pads_paso_fino"
+	(constraint clearance (min 0.1mm))
+	(condition "A.Type == 'Pad' && B.Type == 'Pad' && A.insideCourtyard('U31') && B.insideCourtyard('U31')"))
+
+(rule "pads_paso_fino_U5"
+	(constraint clearance (min 0.1mm))
+	(condition "A.Type == 'Pad' && B.Type == 'Pad' && A.insideCourtyard('U5') && B.insideCourtyard('U5')"))
+
+(rule "pads_paso_fino_U8"
+	(constraint clearance (min 0.1mm))
+	(condition "A.Type == 'Pad' && B.Type == 'Pad' && A.insideCourtyard('U8') && B.insideCourtyard('U8')"))
+
+(rule "pads_paso_fino_U15"
+	(constraint clearance (min 0.1mm))
+	(condition "A.Type == 'Pad' && B.Type == 'Pad' && A.insideCourtyard('U15') && B.insideCourtyard('U15')"))
