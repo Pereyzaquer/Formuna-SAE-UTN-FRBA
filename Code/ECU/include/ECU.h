@@ -67,6 +67,17 @@
    en bajo al apretarlo: el otro extremo del boton va a masa. */
 #define READY_TO_DRIVE_BUTTON_PIN 6
 
+/* Pantalla TFT de 4" (MSP4020, controlador ST7796S). Va en un bus SPI
+   propio, separado del MCP2515, para que redibujar no le quite tiempo
+   al CAN. Es de 3.3 V: va directo, sin conversor. Los pines se le pasan
+   a la libreria TFT_eSPI desde platformio.ini; estos nombres son solo
+   para documentarlos en un mismo lugar con el resto. */
+#define DISPLAY_SPI_CLOCK_PIN       18  /**< SCK  de la pantalla. */
+#define DISPLAY_SPI_MASTER_OUT_PIN  17  /**< SDI  de la pantalla. */
+#define DISPLAY_CHIP_SELECT_PIN     15  /**< CS   de la pantalla. */
+#define DISPLAY_DATA_COMMAND_PIN    16  /**< DC/RS de la pantalla. */
+#define DISPLAY_RESET_PIN            7  /**< RESET de la pantalla. */
+
 /************************************************************
  *                       TIPOS
  ************************************************************/
@@ -151,6 +162,7 @@ enum class LogChannel : uint8_t {
   DROPS_WHEEL_FRONT,       /**< Veces que se callo el nodo delantero. */
   DROPS_WHEEL_REAR,        /**< Veces que se callo el nodo trasero.   */
   DROPS_TEMPERATURE,       /**< Veces que se callo el nodo DHT11.     */
+  BATTERY_PERCENT,         /**< Estado de carga que informa el BMS.   */
   COUNT
 };
 
@@ -266,6 +278,15 @@ void taskCan(void *argument);
 bool canInitialize(void);
 
 /**
+ * @brief Indica si el controlador CAN esta andando.
+ *
+ * Si no arranco al encender, taskCan lo reintenta cada segundo.
+ *
+ * @return bool  true si el bus se puede usar.
+ */
+bool canIsReady(void);
+
+/**
  * @brief Transmite una trama estandar por el bus.
  *
  * @param[in]  identifier  Identificador CAN de 11 bits, ver can_ids.h.
@@ -284,6 +305,73 @@ bool canSendFrame(uint32_t identifier, const uint8_t *data, uint8_t length);
  * @return void
  */
 void canDispatchFrame(const CanFrame *frame);
+
+/**
+ * @brief Velocidad del bus guardada, en kbps (125, 250, 500 o 1000).
+ *
+ * @return uint16_t  Velocidad que usa el controlador al arrancar.
+ */
+uint16_t canGetBitrateKilobits(void);
+
+/**
+ * @brief Guarda una velocidad de bus nueva. Se aplica al reiniciar.
+ *
+ * @param[in]  kilobits  125, 250, 500 o 1000; otro valor se ignora.
+ *
+ * @return bool  true si se guardo.
+ */
+bool canSetBitrateKilobits(uint16_t kilobits);
+
+/**
+ * @brief Elige de que trama y byte se lee el estado de carga del BMS.
+ *
+ * @param[in]  identifier       Identificador CAN de la trama.
+ * @param[in]  byteIndex        Byte que tiene el estado de carga, 0 a 7.
+ * @param[in]  percentPerCount  Por ciento que vale cada cuenta del byte.
+ *
+ * @return void
+ */
+void canSetBatteryLayout(uint32_t identifier, uint8_t byteIndex, float percentPerCount);
+
+/**
+ * @brief Identificador de la trama del estado de carga.
+ *
+ * @return uint32_t  Identificador vigente.
+ */
+uint32_t canGetBatteryIdentifier(void);
+
+/**
+ * @brief Byte de la trama que tiene el estado de carga.
+ *
+ * @return uint8_t  Indice, de 0 a 7.
+ */
+uint8_t canGetBatteryByte(void);
+
+/**
+ * @brief Por ciento que vale cada cuenta del byte de estado de carga.
+ *
+ * @return float  Escala vigente.
+ */
+float canGetBatteryPercentPerCount(void);
+
+/**
+ * @brief Estado de carga de la bateria, si el BMS esta informando.
+ *
+ * @param[out]  percent  Estado de carga, de 0 a 100.
+ *
+ * @return bool  false si nunca llego la trama o hace mas de 2 s que no llega.
+ */
+bool canGetBatteryPercent(float *percent);
+
+/**
+ * @brief Ultima trama de estado de carga tal como llego, para revisarla.
+ *
+ * @param[out]  frame                Copia de la trama.
+ * @param[out]  ageMilliseconds      Hace cuanto llego.
+ *
+ * @return bool  false si todavia no llego ninguna.
+ */
+bool canGetLastBatteryFrame(CanFrame *frame, uint32_t *ageMilliseconds);
 
 /* --------- can_twai.cpp  o  can_mcp2515.cpp ------------ */
 /*
@@ -496,11 +584,14 @@ void namesInitialize(void);
 /**
  * @brief Nombre legible de un identificador CAN.
  *
- * @param[in]  identifier  Identificador CAN.
+ * @param[in]   identifier  Identificador CAN.
+ * @param[out]  name        Donde se copia el nombre guardado, el de
+ *                          fabrica, o "sin definir".
+ * @param[in]   nameSize    Tamano de name; NAME_MAXIMUM_LENGTH + 1 alcanza.
  *
- * @return const char*  Nombre guardado, el de fabrica, o "sin definir".
+ * @return void
  */
-const char *namesGet(uint32_t identifier);
+void namesGet(uint32_t identifier, char *name, size_t nameSize);
 
 /**
  * @brief Guarda el nombre de un identificador en la flash.
@@ -698,6 +789,27 @@ void indicatorsUpdate(EcuState state);
 
 /* ---------------------- errors.cpp ---------------------- */
 
+/*
+ * Codigos de falla y aviso. Los usa la maquina de estados para
+ * reportarlos y la pantalla y la web para describirlos. Definidos para
+ * la prueba; pendiente unificarlos en una tabla del equipo.
+ */
+constexpr uint16_t ERROR_CODE_SAFETY_NODE_MISSING  = 0x0001; /**< Falta un nodo de seguridad.  */
+constexpr uint16_t ERROR_CODE_NODE_LOST            = 0x0002; /**< Un nodo dejo de emitir.      */
+constexpr uint16_t ERROR_CODE_ALL_WHEEL_SPEED_LOST = 0x0003; /**< Ninguna rueda mide.          */
+constexpr uint16_t ERROR_CODE_BATTERY_MISSING      = 0x0004; /**< El BMS no informa la carga.  */
+constexpr uint16_t ERROR_CODE_CAN_UNAVAILABLE      = 0x0005; /**< El controlador CAN no arranca. */
+
+/**
+ * @brief Descripcion corta de un codigo de falla, para pantalla y web.
+ *
+ * @param[in]  code  Codigo de falla.
+ *
+ * @return const char*  Texto en minusculas, sin acentos.
+ */
+const char *errorGetDescription(uint16_t code);
+
+
 /**
  * @brief Registra una falla y, si es CRITICAL, la deja latcheada.
  *
@@ -770,6 +882,75 @@ const char *errorGetLevelName(ErrorLevel level);
  * @return void
  */
 void taskWifi(void *argument);
+
+/* ---------------------- display.cpp --------------------- */
+
+/**
+ * @brief Task de la pantalla: muestra estado, avisos y mediciones.
+ *
+ * @param[in]  argument  No se usa. Lo exige la firma de FreeRTOS.
+ *
+ * @return void
+ */
+void taskDisplay(void *argument);
+
+/**
+ * @brief Elige que canal alimenta la barra de RPM y su fondo de escala.
+ *
+ * @param[in]  channel    Canal del registrador.
+ * @param[in]  fullScale  Valor que llena la barra; debe ser positivo.
+ *
+ * @return void
+ */
+void displaySetRevolutionsBar(LogChannel channel, float fullScale);
+
+/**
+ * @brief Fija la presion de freno que llena la barra de freno.
+ *
+ * @param[in]  fullScaleBar  Presion en bar; debe ser positiva.
+ *
+ * @return void
+ */
+void displaySetBrakeFullScale(float fullScaleBar);
+
+/**
+ * @brief Muestra en las barras los valores de los deslizables de la web.
+ *
+ * @param[in]  acceleratorPercent  Acelerador, de 0 a 100.
+ * @param[in]  brakeBar            Freno, en bar.
+ * @param[in]  revolutions         Valor para la barra de RPM.
+ *
+ * @return void
+ */
+void displaySetTestValues(float acceleratorPercent, float brakeBar, float revolutions);
+
+/**
+ * @brief Termina el modo prueba: las barras vuelven a los datos reales.
+ *
+ * @return void
+ */
+void displayStopTest(void);
+
+/**
+ * @brief Canal que alimenta la barra de RPM.
+ *
+ * @return LogChannel  Canal vigente.
+ */
+LogChannel displayGetRevolutionsChannel(void);
+
+/**
+ * @brief Valor que llena la barra de RPM.
+ *
+ * @return float  Fondo de escala vigente.
+ */
+float displayGetRevolutionsFullScale(void);
+
+/**
+ * @brief Presion de freno que llena la barra de freno.
+ *
+ * @return float  Fondo de escala vigente, en bar.
+ */
+float displayGetBrakeFullScale(void);
 
 /* --------------------- webmonitor.cpp ---------------------- */
 

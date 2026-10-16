@@ -77,21 +77,38 @@ static MCP2515  *controller = nullptr;
 static bool wasBusOff = false;
 
 /**
- * @brief Deja el controlador CAN andando a 500 kbps.
+ * @brief Traduce la velocidad guardada al valor que pide la libreria.
+ *
+ * @return CAN_SPEED  Velocidad del bus.
+ */
+static CAN_SPEED configuredBitrate(void) {
+  switch (canGetBitrateKilobits()) {
+    case 125:  return CAN_125KBPS;
+    case 250:  return CAN_250KBPS;
+    case 1000: return CAN_1000KBPS;
+    default:   return CAN_500KBPS;
+  }
+}
+
+/**
+ * @brief Deja el controlador CAN andando a la velocidad guardada.
  *
  * @return bool  true si quedo listo para transmitir y recibir.
  */
 bool canHardwareInitialize(void) {
-  spiBus = new SPIClass(FSPI);
-  spiBus->begin(CAN_SPI_CLOCK_PIN, CAN_SPI_MASTER_IN_PIN,
-                CAN_SPI_MASTER_OUT_PIN, CAN_SPI_CHIP_SELECT_PIN);
-
-  controller = new MCP2515(CAN_SPI_CHIP_SELECT_PIN, SPI_CLOCK_HZ, spiBus);
+  /* Se puede llamar mas de una vez si el modulo no respondio: el bus y
+     el controlador se crean solo la primera. */
+  if (spiBus == nullptr) {
+    spiBus = new SPIClass(FSPI);
+    spiBus->begin(CAN_SPI_CLOCK_PIN, CAN_SPI_MASTER_IN_PIN,
+                  CAN_SPI_MASTER_OUT_PIN, CAN_SPI_CHIP_SELECT_PIN);
+    controller = new MCP2515(CAN_SPI_CHIP_SELECT_PIN, SPI_CLOCK_HZ, spiBus);
+  }
 
   if (controller->reset() != MCP2515::ERROR_OK) {
     return false;
   }
-  if (controller->setBitrate(CAN_500KBPS, MCP2515_CRYSTAL) != MCP2515::ERROR_OK) {
+  if (controller->setBitrate(configuredBitrate(), MCP2515_CRYSTAL) != MCP2515::ERROR_OK) {
     return false;
   }
   return (controller->setNormalMode() == MCP2515::ERROR_OK);

@@ -232,10 +232,65 @@ ECU esta en la PC, en su puerto serie a 115200.
     Apagar la ECU en medio de una ejecucion la pierde: las muestras
     viven en RAM. Es una limitacion conocida hasta que haya SD.
 
- 8. Wifi y OTA (opcional).
+ 8. Pantalla.
+    Arriba, el estado sobre su color (el mismo del led; CAR_READY se
+    lee "READY TO DRIVE"). Debajo, la barra de RPM con su numero; en
+    el centro la velocidad (guiones si no hay dato confiable) y "REC"
+    mientras graba. A los costados, acelerador (verde) y freno (rojo),
+    vacias hasta que haya nodos de pedales. Abajo, la franja de
+    avisos: verde "SIN AVISOS", ambar con el codigo y el nodo
+    callado, roja si hay falla.
+    En la pagina, seccion "Pantalla": elegir que canal mueve la barra
+    de RPM y con que valor se llena, y la escala del freno. Con
+    "Aplicar" la pantalla cambia en el momento y queda guardado.
+    Prueba rapida: barra de RPM en rpm_delantera_izq llena en 300, y
+    pasar el alicate por el inductivo.
+    Sin sensores: en "Prueba de barras" marcar la casilla y mover los
+    tres deslizables; la pantalla los sigue en vivo. Al desmarcar, o
+    al cerrar la pagina (2 s), vuelve sola a los datos reales. Nada de
+    esto se graba en el CSV.
+
+ 9. Wifi y OTA (opcional).
     Con la ECU en CAR_ON la red sigue visible. Desde Code/ECU:
       pio run -e ota -t upload
     graba por wifi; la ECU reinicia y vuelve sola a CAR_READY.
+
+
+------------------------------------------------------------
+ PRUEBA CON EL ORION BMS 2
+------------------------------------------------------------
+Que se lleva: ECU (ESP32-S3 + conversor + HW-184 + pantalla) y
+el NodeMCU con su HW-184 y el DHT11. El NodeMCU hace falta
+aunque sea solo por los 5 V: el pin 5V del S3 no entrega
+tension, y el HW-184 de la ECU y el lado HV de su conversor se
+alimentan del VU del NodeMCU.
+
+Bus: CAN_H con CAN_H y CAN_L con CAN_L entre los dos HW-184 y
+el conector CAN del Orion (ver el manual de cableado del Orion
+para sus pines; su masa va a la masa comun). El bus necesita
+120 ohm en las dos puntas: el jumper J1 del HW-184 que quede en
+una punta, y en la otra la terminacion del lado del Orion. Con
+cables cortos suele andar con una sola, pero lo correcto son dos.
+
+En la pagina, tarjeta "Bateria (BMS)":
+  - "Ultima trama" muestra los bytes crudos de la trama elegida.
+    Si dice "sin recibir", la ECU no la ve: revisar la seccion
+    "Nodos" de la pagina, que lista todo identificador que
+    aparece en el bus con la cantidad de tramas.
+  - De fabrica la ECU lee la plantilla por defecto del Orion
+    BMS 2: ID 0x6B0, byte 4, 0.5 % por cuenta. Si el Orion esta
+    configurado distinto (Orion BMS Utility, CANBUS Settings),
+    se cambian ID, byte y escala y "Aplicar". Queda guardado.
+  - Si en "Nodos" no aparece nada del Orion, puede estar a otra
+    velocidad. Se cambia en "Velocidad del bus" y la ECU se
+    reinicia. Ojo: el NodeMCU esta grabado a 500 kbps; si se
+    cambia, hay que desconectarle el CAN_H/CAN_L (queda solo
+    como fuente de 5 V) para que no ensucie el bus.
+
+En la pantalla la bateria aparece abajo, a la izquierda: pila con
+el porcentaje, verde, ambar debajo de 30 % y roja debajo de 15 %.
+Si el BMS deja de mandar 2 s, queda vacia con "-- %". Tambien se
+graba en el CSV, en la columna bateria_pct.
 
 
 ------------------------------------------------------------

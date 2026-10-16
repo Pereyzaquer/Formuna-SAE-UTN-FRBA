@@ -37,12 +37,14 @@
 static const uint16_t STACK_SIZE_STATE = 4096;
 static const uint16_t STACK_SIZE_CAN   = 4096;
 static const uint16_t STACK_SIZE_WIFI  = 8192; /**< El servidor web necesita mas. */
+static const uint16_t STACK_SIZE_DISPLAY = 4096;
 
 /* El bus no puede perder tramas esperando a la maquina de estados, por
    eso la task de CAN tiene mas prioridad que la de estados. */
 static const uint8_t PRIORITY_CAN   = 4;
 static const uint8_t PRIORITY_STATE = 3;
 static const uint8_t PRIORITY_WIFI  = 1;
+static const uint8_t PRIORITY_DISPLAY = 1;
 
 static const uint8_t CORE_REALTIME = 1;
 static const uint8_t CORE_WIRELESS = 0;
@@ -71,13 +73,10 @@ void setup() {
   queueEvents = xQueueCreate(QUEUE_LENGTH_EVENTS, sizeof(EcuEvent));
   queueWifi   = xQueueCreate(QUEUE_LENGTH_WIFI, sizeof(WifiCommand));
 
-  /* Sin bus CAN la ECU esta ciega: no hay nada util que hacer, asi que
-     se queda en rojo fijo en lugar de arrancar una maquina de estados
-     que nunca va a recibir un dato. */
+  /* Si el bus no arranca, la ECU igual levanta todo: pantalla y web
+     muestran el aviso, y taskCan lo reintenta solo cada segundo. */
   if (!canInitialize()) {
-    Serial.println("Error: no se pudo inicializar el bus CAN");
-    indicatorsSetColor(64, 0, 0);
-    return;
+    Serial.println("Aviso: el bus CAN no arranco, se reintenta");
   }
 
   xTaskCreatePinnedToCore(taskState, "state", STACK_SIZE_STATE, nullptr,
@@ -86,6 +85,10 @@ void setup() {
                           PRIORITY_CAN, nullptr, CORE_REALTIME);
   xTaskCreatePinnedToCore(taskWifi, "wifi", STACK_SIZE_WIFI, nullptr,
                           PRIORITY_WIFI, nullptr, CORE_WIRELESS);
+  /* La pantalla va en el nucleo de la radio: es lo menos urgente que
+     hace la ECU y no tiene que competir con el CAN ni con los estados. */
+  xTaskCreatePinnedToCore(taskDisplay, "display", STACK_SIZE_DISPLAY, nullptr,
+                          PRIORITY_DISPLAY, nullptr, CORE_WIRELESS);
 }
 
 /************************************************************

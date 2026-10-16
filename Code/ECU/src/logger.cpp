@@ -287,6 +287,7 @@ const char *loggerGetChannelName(LogChannel channel) {
     case LogChannel::DROPS_WHEEL_FRONT:    return "caidas_rueda_delantera";
     case LogChannel::DROPS_WHEEL_REAR:     return "caidas_rueda_trasera";
     case LogChannel::DROPS_TEMPERATURE:    return "caidas_temperatura";
+    case LogChannel::BATTERY_PERCENT:      return "bateria_pct";
     case LogChannel::COUNT:                break;
   }
   return "desconocido";

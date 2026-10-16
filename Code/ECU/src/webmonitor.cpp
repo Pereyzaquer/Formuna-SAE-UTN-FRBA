@@ -17,6 +17,12 @@
  *    /api/detener   corta la ejecucion antes de tiempo
  *    /api/nodos     lista de nodos vistos, con su nombre
  *    /api/nombre    guarda el nombre de un nodo (id y nombre)
+ *    /api/pantalla  ajusta la pantalla: canal y maximo de la barra
+ *                   de RPM, y maximo de la barra de freno
+ *    /api/prueba    mueve las barras de la pantalla con valores de
+ *                   prueba (acelerador, freno, rpm); fin=1 termina
+ *    /api/bms       elige la trama del BMS: id, byte y escala
+ *    /api/can       guarda la velocidad del bus (kbps) y reinicia
  *
  *  Hardware:
  *  --------------------------------------------------------
@@ -83,6 +89,10 @@ static void handleReadyToDriveRequest(void);
 static void handleStopRequest(void);
 static void handleNodesRequest(void);
 static void handleNameRequest(void);
+static void handleDisplayRequest(void);
+static void handleTestRequest(void);
+static void handleBatteryRequest(void);
+static void handleBitrateRequest(void);
 static void appendNodeJson(String &json, uint32_t identifier, bool known,
                            uint32_t frameCount);
 static bool sendEventToStateMachine(EcuEventType type);
@@ -163,6 +173,13 @@ static const char PAGE[] PROGMEM = R"HTML(<!DOCTYPE html>
  .nodo:last-child{border-bottom:0}
  .nodo code{color:var(--tenue);font-size:.85rem}
  .nodo .etiqueta{font-size:.85rem;white-space:nowrap}
+ .ajustes{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+ .deslizables{display:grid;gap:.6rem;margin-top:.8rem}
+ .deslizables label{display:grid;grid-template-columns:6.5em 1fr 4em auto;gap:.6rem}
+ .deslizables b{text-align:right;font-variant-numeric:tabular-nums;color:var(--texto)}
+ input[type=range]{accent-color:var(--ok);padding:0}
+ select{font:inherit;background:var(--fondo);color:var(--texto);
+        border:1px solid var(--borde);border-radius:8px;padding:.45rem .6rem}
  @media (max-width:520px){
   #estado{font-size:1.2rem}
   .kpis{grid-template-columns:repeat(2,1fr)}
@@ -216,6 +233,41 @@ static const char PAGE[] PROGMEM = R"HTML(<!DOCTYPE html>
 </section>
 
 <section class="tarjeta">
+ <h2>Pantalla</h2>
+ <div id="pantalla" class="ajustes">
+  <label>Barra de RPM <select id="rpmCanal"></select></label>
+  <label>llena en <input id="rpmMaximo" type="number" min="1" step="any" style="width:6em"></label>
+  <label>Freno llena en <input id="frenoMaximo" type="number" min="1" step="any" style="width:5em"> bar</label>
+  <button class="secundario" onclick="guardarPantalla()">Aplicar</button>
+ </div>
+</section>
+
+<section class="tarjeta">
+ <h2>Bateria (BMS)</h2>
+ <div class="grabacion"><span>Carga <b id="bateria">--</b></span><span>Ultima trama <b id="bmsTrama">sin recibir</b></span></div>
+ <div class="ajustes" style="margin-top:.8rem">
+  <label>ID <input id="bmsId" style="width:5em" placeholder="0x6B0"></label>
+  <label>byte <input id="bmsByte" type="number" min="0" max="7" style="width:4em"></label>
+  <label>% por cuenta <input id="bmsEscala" type="number" step="any" min="0" style="width:5em"></label>
+  <button class="secundario" onclick="guardarBms()">Aplicar</button>
+ </div>
+ <div class="ajustes" style="margin-top:.8rem">
+  <label>Velocidad del bus <select id="kbps"><option>125</option><option>250</option><option>500</option><option>1000</option></select> kbps</label>
+  <button class="secundario" onclick="guardarKbps()">Guardar y reiniciar</button>
+ </div>
+</section>
+
+<section class="tarjeta">
+ <h2>Prueba de barras</h2>
+ <label><input id="probar" type="checkbox" onchange="cambiarPrueba()"> Mover la pantalla con los deslizables</label>
+ <div class="deslizables">
+  <label>Acelerador <input id="pruebaAcelerador" type="range" min="0" max="100" value="0" step="any" oninput="mandarPrueba()"><b id="valorAcelerador">0</b> %</label>
+  <label>Freno <input id="pruebaFreno" type="range" min="0" max="100" value="0" step="any" oninput="mandarPrueba()"><b id="valorFreno">0</b> bar</label>
+  <label>RPM <input id="pruebaRpm" type="range" min="0" max="1000" value="0" step="any" oninput="mandarPrueba()"><b id="valorRpm">0</b></label>
+ </div>
+</section>
+
+<section class="tarjeta">
  <h2>Nodos</h2>
  <div id="nodos-lista"></div>
 </section>
@@ -227,6 +279,7 @@ const NIVELES={NONE:"presente",WARNING:"aviso",CRITICAL:"ausente"};
 
 function dibujar(datos){
  document.body.classList.remove("sinconexion");
+ dibujarBms(datos.bms);
 
  const estado=document.getElementById("estado");
  estado.textContent=datos.estado;
@@ -234,8 +287,8 @@ function dibujar(datos){
 
  document.getElementById("uptime").textContent=(datos.uptime/1000).toFixed(0)+" s";
  const falla=document.getElementById("falla");
- falla.textContent=datos.falla.nivel+
-   (datos.falla.codigo?" (0x"+datos.falla.codigo.toString(16).padStart(4,"0")+")":"");
+ falla.textContent=datos.falla.codigo?datos.falla.texto:"sin avisos";
+ falla.title=datos.falla.nivel+" 0x"+datos.falla.codigo.toString(16).padStart(4,"0");
  falla.className=NIVELES[datos.falla.nivel]||"";
  document.getElementById("tramas").textContent=datos.tramas;
  document.getElementById("nodos").textContent=datos.nodos;
@@ -313,6 +366,86 @@ function consultarNodos(){
  }).catch(()=>{});
 }
 
+// Los ajustes de la pantalla se cargan una sola vez, al abrir la pagina:
+// si se refrescaran solos le pisarian el valor a quien esta escribiendo.
+// La tarjeta del BMS: valores en vivo en cada consulta; los campos de
+// configuracion se cargan una sola vez, junto con los de la pantalla.
+function dibujarBms(bms){
+ document.getElementById("bateria").textContent=
+   bms.bateria===null?"--":bms.bateria.toFixed(1)+" %";
+ document.getElementById("bmsTrama").textContent=bms.bytes===null?"sin recibir":
+   "0x"+bms.id.toString(16).toUpperCase()+"  ["+bms.bytes+"]  hace "+bms.edad+" ms";
+}
+
+function guardarBms(){
+ const v=id=>encodeURIComponent(document.getElementById(id).value);
+ fetch("/api/bms?id="+v("bmsId")+"&byte="+v("bmsByte")+"&escala="+v("bmsEscala"),
+       {method:"POST"});
+}
+
+function guardarKbps(){
+ if(!confirm("Todos los nodos del bus tienen que usar la misma velocidad. Guardar y reiniciar la ECU?")) return;
+ fetch("/api/can?kbps="+document.getElementById("kbps").value,{method:"POST"});
+}
+
+function cargarPantalla(datos){
+ document.getElementById("bmsId").value="0x"+datos.bms.id.toString(16).toUpperCase();
+ document.getElementById("bmsByte").value=datos.bms.byte;
+ document.getElementById("bmsEscala").value=datos.bms.escala;
+ document.getElementById("kbps").value=datos.kbps;
+ document.getElementById("pruebaFreno").max=datos.pantalla.freno;
+ document.getElementById("pruebaRpm").max=datos.pantalla.maximo;
+ const canal=document.getElementById("rpmCanal");
+ canal.innerHTML=datos.canales.map((c,i)=>'<option value="'+i+'">'+c.nombre+'</option>').join("");
+ canal.value=datos.pantalla.canal;
+ document.getElementById("rpmMaximo").value=datos.pantalla.maximo;
+ document.getElementById("frenoMaximo").value=datos.pantalla.freno;
+}
+
+function guardarPantalla(){
+ const v=id=>encodeURIComponent(document.getElementById(id).value);
+ // Los deslizables de prueba usan las mismas escalas que la pantalla.
+ document.getElementById("pruebaFreno").max=document.getElementById("frenoMaximo").value;
+ document.getElementById("pruebaRpm").max=document.getElementById("rpmMaximo").value;
+ fetch("/api/pantalla?canal="+v("rpmCanal")+"&maximo="+v("rpmMaximo")+
+       "&freno="+v("frenoMaximo"),{method:"POST"});
+}
+
+// Prueba de barras. Al mover un deslizable se manda enseguida, pero sin
+// apilar pedidos: si hay uno en viaje, se espera y se manda el ultimo
+// valor. Ademas, mientras la casilla este marcada se reenvia cada medio
+// segundo, porque la ECU suelta la prueba si deja de recibir.
+let pruebaEnViaje=false, pruebaPendiente=false, pruebaLatido=null;
+
+function valoresPrueba(){
+ const v=id=>document.getElementById(id).value;
+ document.getElementById("valorAcelerador").textContent=Math.round(v("pruebaAcelerador"));
+ document.getElementById("valorFreno").textContent=Math.round(v("pruebaFreno"));
+ document.getElementById("valorRpm").textContent=Math.round(v("pruebaRpm"));
+ return "acelerador="+v("pruebaAcelerador")+"&freno="+v("pruebaFreno")+"&rpm="+v("pruebaRpm");
+}
+
+function mandarPrueba(){
+ const parametros=valoresPrueba();
+ if(!document.getElementById("probar").checked) return;
+ if(pruebaEnViaje){pruebaPendiente=true;return;}
+ pruebaEnViaje=true;
+ fetch("/api/prueba?"+parametros,{method:"POST"}).finally(()=>{
+  pruebaEnViaje=false;
+  if(pruebaPendiente){pruebaPendiente=false;mandarPrueba();}
+ });
+}
+
+function cambiarPrueba(){
+ clearInterval(pruebaLatido);
+ if(document.getElementById("probar").checked){
+  mandarPrueba();
+  pruebaLatido=setInterval(mandarPrueba,500);
+ }else{
+  fetch("/api/prueba?fin=1",{method:"POST"});
+ }
+}
+
 function guardarNombre(id){
  const campo=document.querySelector('input[data-id="'+id+'"]');
  fetch("/api/nombre?id="+id+"&nombre="+encodeURIComponent(campo.value),
@@ -338,6 +471,7 @@ function consultar(){
  fetch("/api/estado").then(respuesta=>respuesta.json()).then(dibujar)
   .catch(()=>document.body.classList.add("sinconexion"));
 }
+fetch("/api/estado").then(r=>r.json()).then(cargarPantalla).catch(()=>{});
 consultar(); setInterval(consultar,500);
 consultarNodos();
 setInterval(consultarNodos,5000);
@@ -367,6 +501,10 @@ void webMonitorStart(void) {
   server.on("/api/detener", HTTP_POST, handleStopRequest);
   server.on("/api/nodos", handleNodesRequest);
   server.on("/api/nombre", HTTP_POST, handleNameRequest);
+  server.on("/api/pantalla", HTTP_POST, handleDisplayRequest);
+  server.on("/api/prueba", HTTP_POST, handleTestRequest);
+  server.on("/api/bms", HTTP_POST, handleBatteryRequest);
+  server.on("/api/can", HTTP_POST, handleBitrateRequest);
 
   server.begin();
 
@@ -435,7 +573,8 @@ static void handleStateRequest(void) {
   json += "\"estado\":\"" + String(stateGetName(stateGet())) + "\",";
   json += "\"uptime\":" + String(millis()) + ",";
   json += "\"falla\":{\"nivel\":\"" + String(errorGetLevelName(errorGetLevel())) +
-          "\",\"codigo\":" + String(errorGetCode()) + "},";
+          "\",\"codigo\":" + String(errorGetCode()) +
+          ",\"texto\":\"" + String(errorGetDescription(errorGetCode())) + "\"},";
   json += "\"tramas\":" + String(canGetReceivedFrameCount()) + ",";
   json += "\"recuperaciones\":" + String(canGetBusRecoveryCount()) + ",";
   json += "\"ruedas\":" + String(speedGetValidWheelCount()) + ",";
@@ -446,6 +585,30 @@ static void handleStateRequest(void) {
   json += "\"duracion\":" + String(loggerGetDurationSeconds()) + ",";
   json += "\"control\":" +
           String(WEB_CONTROL_ENABLED_FOR_BENCH_TEST ? "true" : "false") + ",";
+  /* Estado y configuracion del BMS. Los bytes crudos de la ultima trama
+     van como texto para poder revisar el layout desde la pagina. */
+  float batteryPercent = 0.0f;
+  CanFrame batteryFrame;
+  uint32_t batteryAge = 0;
+  json += "\"kbps\":" + String(canGetBitrateKilobits()) + ",";
+  json += "\"bms\":{\"id\":" + String(canGetBatteryIdentifier()) +
+          ",\"byte\":" + String(canGetBatteryByte()) +
+          ",\"escala\":" + String(canGetBatteryPercentPerCount(), 3) + ",\"bateria\":";
+  json += canGetBatteryPercent(&batteryPercent) ? String(batteryPercent, 1) : String("null");
+  json += ",\"bytes\":";
+  if (canGetLastBatteryFrame(&batteryFrame, &batteryAge)) {
+    char bytes[3 * 8 + 1] = "";
+    for (uint8_t index = 0; index < batteryFrame.length && index < 8; index++) {
+      snprintf(bytes + 3 * index, 4, index ? " %02X" : "%02X", batteryFrame.data[index]);
+    }
+    json += "\"" + String(bytes) + "\",\"edad\":" + String(batteryAge) + "},";
+  } else {
+    json += "null,\"edad\":0},";
+  }
+  json += "\"pantalla\":{\"canal\":" +
+          String(static_cast<uint8_t>(displayGetRevolutionsChannel())) +
+          ",\"maximo\":" + String(displayGetRevolutionsFullScale(), 0) +
+          ",\"freno\":" + String(displayGetBrakeFullScale(), 0) + "},";
   json += "\"canales\":[";
 
   for (uint8_t index = 0; index < static_cast<uint8_t>(LogChannel::COUNT);
@@ -480,7 +643,9 @@ static void handleStateRequest(void) {
 static void appendNodeJson(String &json, uint32_t identifier, bool known,
                            uint32_t frameCount) {
   /* Un nombre con comillas romperia el JSON: se las reemplaza. */
-  String name = namesGet(identifier);
+  char nameBuffer[NAME_MAXIMUM_LENGTH + 1];
+  namesGet(identifier, nameBuffer, sizeof(nameBuffer));
+  String name = nameBuffer;
   name.replace("\\", "/");
   name.replace("\"", "'");
 
@@ -532,6 +697,74 @@ static void handleNameRequest(void) {
   namesSet(identifier, server.arg("nombre").c_str());
 
   server.send(200, "application/json", "{\"guardado\":true}");
+}
+
+/**
+ * @brief Ajusta la pantalla. Parametros: canal, maximo y freno.
+ *
+ * Cada parametro es opcional; el que no viene, no se toca. El cambio se
+ * ve en la pantalla en la vuelta siguiente.
+ *
+ * @return void
+ */
+static void handleDisplayRequest(void) {
+  if (server.hasArg("canal") && server.hasArg("maximo")) {
+    displaySetRevolutionsBar(static_cast<LogChannel>(server.arg("canal").toInt()),
+                             server.arg("maximo").toFloat());
+  }
+  if (server.hasArg("freno")) {
+    displaySetBrakeFullScale(server.arg("freno").toFloat());
+  }
+  server.send(200, "application/json", "{\"guardado\":true}");
+}
+
+/**
+ * @brief Mueve las barras de la pantalla con valores de prueba.
+ *
+ * Parametros: acelerador (%), freno (bar) y rpm; o fin=1 para volver a
+ * los datos reales. Los valores solo se muestran, no se graban.
+ *
+ * @return void
+ */
+static void handleTestRequest(void) {
+  if (server.hasArg("fin")) {
+    displayStopTest();
+  } else {
+    displaySetTestValues(server.arg("acelerador").toFloat(),
+                         server.arg("freno").toFloat(),
+                         server.arg("rpm").toFloat());
+  }
+  server.send(200, "application/json", "{\"ok\":true}");
+}
+
+/**
+ * @brief Elige la trama del BMS. Parametros: id (acepta 0x...), byte, escala.
+ *
+ * @return void
+ */
+static void handleBatteryRequest(void) {
+  uint32_t identifier = strtoul(server.arg("id").c_str(), nullptr, 0);
+  canSetBatteryLayout(identifier, server.arg("byte").toInt(),
+                      server.arg("escala").toFloat());
+  server.send(200, "application/json", "{\"guardado\":true}");
+}
+
+/**
+ * @brief Guarda la velocidad del bus y reinicia la ECU para aplicarla.
+ *
+ * El controlador toma la velocidad al arrancar, por eso hace falta el
+ * reinicio. Se responde primero para que la pagina no quede esperando.
+ *
+ * @return void
+ */
+static void handleBitrateRequest(void) {
+  if (!canSetBitrateKilobits(server.arg("kbps").toInt())) {
+    server.send(400, "application/json", "{\"error\":\"velocidad invalida\"}");
+    return;
+  }
+  server.send(200, "application/json", "{\"reiniciando\":true}");
+  delay(300);
+  ESP.restart();
 }
 
 /**

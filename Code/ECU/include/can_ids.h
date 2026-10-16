@@ -136,12 +136,30 @@ constexpr uint32_t CAN_ID_STEERING = 0x280;
 constexpr uint32_t CAN_ID_DRIVER = 0x300;
 
 /**
- * @brief BMS / bateria. 10 Hz.
+ * @brief BMS / bateria.
+ *
+ * El BMS es un Orion BMS 2, que no usa este mapa: emite las tramas que
+ * se le configuran en su programa (Orion BMS Utility, "CANBUS Settings").
+ * Por eso la trama de la que se lee el estado de carga no esta fija aca
+ * sino que se ajusta desde la pagina web (ver can.cpp); este valor
+ * queda como lugar reservado para cuando el layout del auto se cierre.
  *
  * Pendiente: minimo tension de pack, corriente, temperatura maxima de
- * celda y estado del AIR. Depende del BMS que se elija.
+ * celda y estado del AIR.
  */
 constexpr uint32_t CAN_ID_BMS = 0x380;
+
+/**
+ * @brief Trama del Orion BMS 2 con el estado de carga, valores de fabrica.
+ *
+ * Son los de la plantilla por defecto del Orion BMS 2: identificador
+ * 0x6B0, estado de carga en el byte 4, medio por ciento por cuenta. Si
+ * el BMS fue configurado distinto, se cambian desde la pagina web sin
+ * recompilar; la pagina muestra los bytes crudos para confirmarlo.
+ */
+constexpr uint32_t BMS_DEFAULT_CHARGE_IDENTIFIER = 0x6B0;
+constexpr uint8_t  BMS_DEFAULT_CHARGE_BYTE       = 4;
+constexpr float    BMS_DEFAULT_CHARGE_PERCENT_PER_COUNT = 0.5f;
 
 /**
  * @brief IMU: acelerometro y giroscopo. 50 Hz.

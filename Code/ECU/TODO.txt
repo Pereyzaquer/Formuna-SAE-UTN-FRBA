@@ -98,6 +98,25 @@ De FAULT se sale reiniciando el micro, o solo si la causa se fue.
     CAR_READY esperando el boton. Las fallas cuya causa no se
     puede comprobar siguen enclavadas.
 
+Sin bateria informando no se pasa a CAR_READY.
+    El auto queda en CONFIG con el aviso "sin bateria" (0x0004)
+    hasta la primera trama del BMS. Perderla despues es solo
+    aviso. Para el banco sin BMS: BATTERY_REQUIRED_FOR_READY en
+    false (state.cpp).
+
+Si el controlador CAN no arranca, la ECU arranca igual.
+    Pantalla y web muestran "sin comunicacion CAN" (0x0005) y
+    taskCan reintenta cada segundo.
+
+La trama del BMS y la velocidad del bus se configuran desde la web.
+    El Orion BMS 2 emite las tramas que se le programan, asi que
+    identificador, byte y escala del estado de carga no estan
+    fijos en can_ids.h: arrancan con la plantilla por defecto del
+    Orion (0x6B0, byte 4, 0.5 %) y se ajustan desde la pagina.
+    La velocidad del bus tambien (125/250/500/1000 kbps), con
+    reinicio. Pendiente: fijar ambos cuando se cierre la
+    configuracion del Orion del auto.
+
 Duracion de la ejecucion: 90 s por defecto, configurable en la web.
     Los 90 s no salen de ningun reglamento. El campo "Duracion"
     de la pagina viaja con la orden de arranque; tope 180 s

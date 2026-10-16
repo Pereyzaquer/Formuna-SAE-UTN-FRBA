@@ -255,6 +255,24 @@ SPI, las cuatro lineas por el conversor:
 Opcional: GPIO 6 a un boton de arranque, el otro extremo a GND. La
 pagina web tiene el suyo.
 
+Pantalla TFT de 4" (MSP4020, ST7796S). Es de 3.3 V: va directo al S3,
+sin conversor, y en un SPI propio, separado del MCP2515.
+
+| MSP4020 | ESP32-S3 |
+| --- | --- |
+| VCC | 3V3 |
+| GND | GND |
+| CS | GPIO 15 |
+| RESET | GPIO 7 |
+| DC/RS | GPIO 16 |
+| SDI (MOSI) | GPIO 17 |
+| SCK | GPIO 18 |
+| LED | 3V3 (luz de fondo siempre encendida) |
+| SDO (MISO) | sin conectar |
+
+No usar GPIO 35, 36 ni 37 para nada: en el ESP32-S3 N16R8 los ocupa la
+PSRAM.
+
 ### Orden de armado
 
 1. Masa comun entre todo.
@@ -284,7 +302,7 @@ stateDiagram-v2
 
     BOOT --> CONFIG : nodos de seguridad OK, tras 2 s de escucha
     BOOT --> FAULT : falla de nodo de seguridad
-    CONFIG --> CAR_READY : nodos presentes configurados
+    CONFIG --> CAR_READY : nodos configurados y bateria informando
     CAR_READY --> CAR_ON : secuencia RTD completa
     CAR_ON --> CAR_READY : duracion cumplida, o apagado pedido
 
@@ -294,7 +312,7 @@ stateDiagram-v2
     FAULT --> BOOT : la causa de la falla desaparecio
 
     note left of CAR_ON
-        Perder nodos o ruedas es WARNING:
+        Perder nodos, ruedas o bateria es WARNING:
         no cambia el estado ni corta la grabacion.
     end note
 
@@ -310,6 +328,13 @@ CAR_READY verde fijo, CAR_ON verde pulsante, FAULT rojo.
 
 CONFIG dura unos 10 ms mientras no exista el mensaje de configuracion
 de nodos, asi que en el led practicamente no se ve.
+
+**Arranque sin bateria o sin CAN.** La ECU arranca siempre: si el
+controlador CAN no responde (por ejemplo, el modulo sin 5 V), pantalla
+y web muestran "sin comunicacion CAN" y el bus se reintenta solo cada
+segundo. De CONFIG no se pasa a CAR_READY hasta que el BMS informe la
+carga ("sin bateria" mientras tanto). Para el banco sin BMS, poner
+BATTERY_REQUIRED_FOR_READY en false en state.cpp.
 
 **Que pasa si un nodo se pierde.** Un corte de comunicacion no es una
 falla del auto: no cambia el estado ni corta una grabacion en curso.
@@ -342,8 +367,8 @@ escalon por cada corte, para que en el grafico se vea cuando paso.
 
 ## 4. Como esta dividido el codigo de la ECU
 
-Tres tasks. El nucleo 1 corre lo que tiene que ser predecible, y el 0
-queda para la radio, que es donde el stack de WiFi ya corre lo suyo.
+Cuatro tasks. El nucleo 1 corre lo que tiene que ser predecible, y el
+0 queda para la radio y la pantalla, lo que puede esperar.
 
 Las tasks no comparten variables sueltas: se hablan por colas.
 
@@ -357,6 +382,7 @@ flowchart LR
 
     subgraph nucleo0["Nucleo 0 - radio"]
         taskWifi["taskWifi - prioridad 1<br/>wifi.cpp"]
+        taskDisplay["taskDisplay - prioridad 1<br/>display.cpp"]
     end
 
     taskState -- "queueWifi<br/>encender / apagar" --> taskWifi
@@ -379,6 +405,8 @@ llaman.
 | `errors.cpp` | Registra y latchea las fallas | las tres tasks |
 | `indicators.cpp` | Led RGB de debug | taskState |
 | `webmonitor.cpp` | Pagina, JSON y CSV | taskWifi |
+| `display.cpp` | Pantalla del piloto: estado, velocidad, RPM, pedales y avisos (solo lee, no decide) | taskDisplay, webmonitor (ajustes) |
+| `names.cpp` | Nombre editable de cada nodo, guardado en flash | taskWifi, taskDisplay |
 
 El bus CAN tiene mas prioridad que la maquina de estados a proposito:
 no puede perder tramas esperando a que los estados terminen su vuelta.

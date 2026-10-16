@@ -36,6 +36,7 @@
  ************************************************************/
 #include "../include/ECU.h"
 #include "../include/can_ids.h"
+#include <Preferences.h>
 
 /************************************************************
  *               CONSTANTES DEL SISTEMA
@@ -46,6 +47,22 @@ static const uint32_t HEARTBEAT_PERIOD_MILLISECONDS = 10; /**< 100 Hz. */
 /** Cada cuanto se revisa si el controlador se cayo del bus. */
 static const uint32_t BUS_CHECK_PERIOD_MILLISECONDS = 200;
 
+/** Si el controlador no arranco, cada cuanto se vuelve a intentar. */
+static const uint32_t INITIALIZE_RETRY_PERIOD_MILLISECONDS = 1000;
+
+/** 500 kbps es lo que usan los nodos del banco y el Orion de fabrica. */
+static const uint16_t DEFAULT_BITRATE_KILOBITS = 500;
+
+/** Si el BMS no manda durante este tiempo, la bateria se da por desconocida. */
+static const uint32_t BATTERY_TIMEOUT_MILLISECONDS = 2000;
+
+/**
+ * El Orion puede mandar su trama decenas de veces por segundo. Al
+ * registrador va como mucho una cada 100 ms: la carga no cambia mas
+ * rapido y asi no se llena la memoria de muestras.
+ */
+static const uint32_t BATTERY_RECORD_PERIOD_MILLISECONDS = 100;
+
 /************************************************************
  *                VARIABLES GLOBALES
  ************************************************************/
@@ -53,12 +70,31 @@ static const uint32_t BUS_CHECK_PERIOD_MILLISECONDS = 200;
 static volatile uint32_t receivedFrameCount = 0;
 static volatile uint32_t busRecoveryCount = 0;
 
+/* Configuracion del bus y del BMS, guardada en la flash. La escribe la
+   task de wifi desde la pagina y la leen taskCan y la pantalla. */
+static Preferences settings;
+static bool settingsLoaded = false;
+
+/* Lo escribe taskCan (o setup) y lo leen todos: un bool suelto. */
+static volatile bool controllerReady = false;
+static volatile uint16_t bitrateKilobits = DEFAULT_BITRATE_KILOBITS;
+static volatile uint32_t batteryIdentifier = BMS_DEFAULT_CHARGE_IDENTIFIER;
+static volatile uint8_t  batteryByte = BMS_DEFAULT_CHARGE_BYTE;
+static volatile float    batteryPercentPerCount = BMS_DEFAULT_CHARGE_PERCENT_PER_COUNT;
+
+/* Ultima trama del BMS y el valor que se saco de ella. */
+static CanFrame          lastBatteryFrame = {};
+static volatile float    batteryPercent = 0.0f;
+static volatile uint32_t batteryLastMilliseconds = 0;
+
 /************************************************************
  *             PROTOTIPOS DE FUNCIONES LOCALES
  ************************************************************/
 static void handleTestTemperatureFrame(const CanFrame *frame);
 static void handleWheelSpeedFrontFrame(const CanFrame *frame);
 static void handleWheelSpeedRearFrame(const CanFrame *frame);
+static void handleBatteryFrame(const CanFrame *frame);
+static void loadSettings(void);
 static void sendHeartbeatFrame(void);
 static void recordVehicleSpeed(void);
 static uint16_t readUnsignedInteger16LittleEndian(const uint8_t *data);
@@ -70,7 +106,18 @@ static int16_t readSignedInteger16LittleEndian(const uint8_t *data);
  * @return bool  true si el controlador quedo andando.
  */
 bool canInitialize(void) {
-  return canHardwareInitialize();
+  loadSettings();
+  controllerReady = canHardwareInitialize();
+  return controllerReady;
+}
+
+/**
+ * @brief Indica si el controlador CAN esta andando.
+ *
+ * @return bool  true si el bus se puede usar.
+ */
+bool canIsReady(void) {
+  return controllerReady;
 }
 
 /**
@@ -83,7 +130,7 @@ bool canInitialize(void) {
  * @return bool  true si el controlador acepto la trama.
  */
 bool canSendFrame(uint32_t identifier, const uint8_t *data, uint8_t length) {
-  if (length > 8) {
+  if (!controllerReady || length > 8) {
     return false;
   }
 
@@ -128,10 +175,129 @@ void canDispatchFrame(const CanFrame *frame) {
       break;
 
     default:
-      /* Nodo conocido sin handler todavia, o identificador ajeno al
-         mapa. En los dos casos ya quedo registrada su presencia. */
+      /* El BMS no tiene identificador fijo: se compara contra el que
+         este configurado. Cualquier otro es un nodo conocido sin
+         handler todavia o un identificador ajeno al mapa; en los dos
+         casos ya quedo registrada su presencia. */
+      if (frame->identifier == batteryIdentifier) {
+        handleBatteryFrame(frame);
+      }
       break;
   }
+}
+
+/**
+ * @brief Velocidad del bus guardada, en kbps.
+ *
+ * @return uint16_t  Velocidad que usa el controlador al arrancar.
+ */
+uint16_t canGetBitrateKilobits(void) {
+  return bitrateKilobits;
+}
+
+/**
+ * @brief Guarda una velocidad de bus nueva. Se aplica al reiniciar.
+ *
+ * Todos los nodos del bus tienen que usar la misma: si uno queda
+ * distinto, no solo no se entiende, sino que ensucia el bus para todos.
+ *
+ * @param[in]  kilobits  125, 250, 500 o 1000; otro valor se ignora.
+ *
+ * @return bool  true si se guardo.
+ */
+bool canSetBitrateKilobits(uint16_t kilobits) {
+  if (kilobits != 125 && kilobits != 250 && kilobits != 500 && kilobits != 1000) {
+    return false;
+  }
+  settings.putUShort("kbps", kilobits);
+  return true;
+}
+
+/**
+ * @brief Elige de que trama y byte se lee el estado de carga del BMS.
+ *
+ * @param[in]  identifier       Identificador CAN de la trama.
+ * @param[in]  byteIndex        Byte que tiene el estado de carga, 0 a 7.
+ * @param[in]  percentPerCount  Por ciento que vale cada cuenta del byte.
+ *
+ * @return void
+ */
+void canSetBatteryLayout(uint32_t identifier, uint8_t byteIndex, float percentPerCount) {
+  if (identifier > 0x7FF || byteIndex > 7 || percentPerCount <= 0.0f) {
+    return;
+  }
+  batteryIdentifier      = identifier;
+  batteryByte            = byteIndex;
+  batteryPercentPerCount = percentPerCount;
+  batteryLastMilliseconds = 0;
+
+  settings.putUInt("bms_id", identifier);
+  settings.putUChar("bms_byte", byteIndex);
+  settings.putFloat("bms_escala", percentPerCount);
+}
+
+/**
+ * @brief Identificador de la trama del estado de carga.
+ *
+ * @return uint32_t  Identificador vigente.
+ */
+uint32_t canGetBatteryIdentifier(void) {
+  return batteryIdentifier;
+}
+
+/**
+ * @brief Byte de la trama que tiene el estado de carga.
+ *
+ * @return uint8_t  Indice, de 0 a 7.
+ */
+uint8_t canGetBatteryByte(void) {
+  return batteryByte;
+}
+
+/**
+ * @brief Por ciento que vale cada cuenta del byte de estado de carga.
+ *
+ * @return float  Escala vigente.
+ */
+float canGetBatteryPercentPerCount(void) {
+  return batteryPercentPerCount;
+}
+
+/**
+ * @brief Estado de carga de la bateria, si el BMS esta informando.
+ *
+ * Un valor viejo no se muestra: si el BMS dejo de mandar, la bateria
+ * pasa a desconocida en vez de quedar congelada en el ultimo numero.
+ *
+ * @param[out]  percent  Estado de carga, de 0 a 100.
+ *
+ * @return bool  false si nunca llego la trama o hace mas de 2 s que no llega.
+ */
+bool canGetBatteryPercent(float *percent) {
+  uint32_t last = batteryLastMilliseconds;
+  if (last == 0 || millis() - last > BATTERY_TIMEOUT_MILLISECONDS) {
+    return false;
+  }
+  *percent = batteryPercent;
+  return true;
+}
+
+/**
+ * @brief Ultima trama de estado de carga tal como llego, para revisarla.
+ *
+ * @param[out]  frame            Copia de la trama.
+ * @param[out]  ageMilliseconds  Hace cuanto llego.
+ *
+ * @return bool  false si todavia no llego ninguna.
+ */
+bool canGetLastBatteryFrame(CanFrame *frame, uint32_t *ageMilliseconds) {
+  uint32_t last = batteryLastMilliseconds;
+  if (last == 0) {
+    return false;
+  }
+  *frame = lastBatteryFrame;
+  *ageMilliseconds = millis() - last;
+  return true;
 }
 
 /**
@@ -167,8 +333,23 @@ void taskCan(void *argument) {
 
   uint32_t lastHeartbeatMilliseconds = 0;
   uint32_t lastBusCheckMilliseconds = 0;
+  uint32_t lastInitializeMilliseconds = millis();
 
   for (;;) {
+    /* Si el controlador no arranco (por ejemplo, el modulo sin
+       alimentacion), la ECU sigue andando y se reintenta cada tanto.
+       Apenas responde, el bus se usa como si hubiera arrancado bien. */
+    if (!controllerReady) {
+      if (millis() - lastInitializeMilliseconds >= INITIALIZE_RETRY_PERIOD_MILLISECONDS) {
+        lastInitializeMilliseconds = millis();
+        if (canInitialize()) {
+          Serial.printf("[%lu ms] bus CAN inicializado\n", millis());
+        }
+      }
+      vTaskDelay(pdMS_TO_TICKS(RECEIVE_TIMEOUT_MILLISECONDS));
+      continue;
+    }
+
     CanFrame frame;
     if (canHardwareReceive(&frame, RECEIVE_TIMEOUT_MILLISECONDS)) {
       canDispatchFrame(&frame);
@@ -199,6 +380,51 @@ void taskCan(void *argument) {
 /************************************************************
  *                  FUNCIONES LOCALES
  ************************************************************/
+
+/**
+ * @brief Carga de la flash la velocidad del bus y la trama del BMS.
+ *
+ * @return void
+ */
+static void loadSettings(void) {
+  if (settingsLoaded) {
+    return;
+  }
+  settingsLoaded = true;
+  settings.begin("can", false);
+  bitrateKilobits        = settings.getUShort("kbps", DEFAULT_BITRATE_KILOBITS);
+  batteryIdentifier      = settings.getUInt("bms_id", BMS_DEFAULT_CHARGE_IDENTIFIER);
+  batteryByte            = settings.getUChar("bms_byte", BMS_DEFAULT_CHARGE_BYTE);
+  if (settings.isKey("bms_escala")) {
+    batteryPercentPerCount = settings.getFloat("bms_escala");
+  }
+}
+
+/**
+ * @brief Trama del BMS: saca el estado de carga del byte configurado.
+ *
+ * @param[in]  frame  Trama recibida.
+ *
+ * @return void
+ */
+static void handleBatteryFrame(const CanFrame *frame) {
+  static uint32_t lastRecordMilliseconds = 0;
+
+  lastBatteryFrame = *frame;
+  batteryLastMilliseconds = millis();
+
+  if (batteryByte >= frame->length) {
+    return;
+  }
+
+  float percent = frame->data[batteryByte] * batteryPercentPerCount;
+  batteryPercent = percent;
+
+  if (millis() - lastRecordMilliseconds >= BATTERY_RECORD_PERIOD_MILLISECONDS) {
+    lastRecordMilliseconds = millis();
+    loggerRecordValue(LogChannel::BATTERY_PERCENT, percent);
+  }
+}
 
 /**
  * @brief Emite el estado de la ECU y el heartbeat a 100 Hz.

@@ -68,10 +68,6 @@ static const uint8_t DEFAULT_NAME_COUNT =
  ************************************************************/
 static Preferences preferences;
 
-/* Buffer de salida de namesGet(): el nombre se copia aca y se devuelve
-   un puntero. Lo lee una sola task (la web) asi que no hay carrera. */
-static char nameBuffer[NAME_MAXIMUM_LENGTH + 1];
-
 /************************************************************
  *                  FUNCIONES LOCALES
  ************************************************************/
@@ -107,27 +103,33 @@ void namesInitialize(void) {
  * @brief Nombre legible de un identificador CAN.
  *
  * Primero el guardado por el usuario; si no hay, el de fabrica; si
- * tampoco, "sin definir".
+ * tampoco, "sin definir". Se copia en el buffer del que llama porque la
+ * usan dos tasks a la vez (la web y la pantalla).
  *
- * @param[in]  identifier  Identificador CAN.
+ * @param[in]   identifier  Identificador CAN.
+ * @param[out]  name        Donde se copia el nombre.
+ * @param[in]   nameSize    Tamano de name.
  *
- * @return const char*  Nombre. Valido hasta la proxima llamada.
+ * @return void
  */
-const char *namesGet(uint32_t identifier) {
+void namesGet(uint32_t identifier, char *name, size_t nameSize) {
   char key[12];
   buildKey(identifier, key);
 
-  size_t length = preferences.getString(key, nameBuffer, sizeof(nameBuffer));
-  if (length > 0 && nameBuffer[0] != '\0') {
-    return nameBuffer;
+  size_t length = preferences.getString(key, name, nameSize);
+  if (length > 0 && name[0] != '\0') {
+    return;
   }
 
   for (uint8_t index = 0; index < DEFAULT_NAME_COUNT; index++) {
     if (DEFAULT_NAMES[index].identifier == identifier) {
-      return DEFAULT_NAMES[index].name;
+      strncpy(name, DEFAULT_NAMES[index].name, nameSize - 1);
+      name[nameSize - 1] = '\0';
+      return;
     }
   }
-  return "sin definir";
+  strncpy(name, "sin definir", nameSize - 1);
+  name[nameSize - 1] = '\0';
 }
 
 /**

@@ -35,7 +35,21 @@
 #include <driver/twai.h>
 
 /**
- * @brief Deja el controlador CAN andando a 500 kbps.
+ * @brief Tiempos del bus para la velocidad guardada.
+ *
+ * @return twai_timing_config_t  Configuracion de tiempos.
+ */
+static twai_timing_config_t configuredTiming(void) {
+  switch (canGetBitrateKilobits()) {
+    case 125:  return TWAI_TIMING_CONFIG_125KBITS();
+    case 250:  return TWAI_TIMING_CONFIG_250KBITS();
+    case 1000: return TWAI_TIMING_CONFIG_1MBITS();
+    default:   return TWAI_TIMING_CONFIG_500KBITS();
+  }
+}
+
+/**
+ * @brief Deja el controlador CAN andando a la velocidad guardada.
  *
  * Se acepta todo el trafico del bus porque la ECU necesita ver a todos
  * los nodos para saber cuales estan presentes, incluso los que todavia
@@ -47,12 +61,18 @@ bool canHardwareInitialize(void) {
   twai_general_config_t generalConfiguration = TWAI_GENERAL_CONFIG_DEFAULT(
       (gpio_num_t)CAN_TRANSMIT_PIN, (gpio_num_t)CAN_RECEIVE_PIN,
       TWAI_MODE_NORMAL);
-  twai_timing_config_t timingConfiguration = TWAI_TIMING_CONFIG_500KBITS();
+  twai_timing_config_t timingConfiguration = configuredTiming();
   twai_filter_config_t filterConfiguration = TWAI_FILTER_CONFIG_ACCEPT_ALL();
 
-  if (twai_driver_install(&generalConfiguration, &timingConfiguration,
-                          &filterConfiguration) != ESP_OK) {
-    return false;
+  /* Se puede llamar mas de una vez si no arranco: el driver se instala
+     solo la primera. */
+  static bool driverInstalled = false;
+  if (!driverInstalled) {
+    if (twai_driver_install(&generalConfiguration, &timingConfiguration,
+                            &filterConfiguration) != ESP_OK) {
+      return false;
+    }
+    driverInstalled = true;
   }
 
   return (twai_start() == ESP_OK);

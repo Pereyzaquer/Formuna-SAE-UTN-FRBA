@@ -84,13 +84,12 @@ static const uint32_t BUTTON_DEBOUNCE_MILLISECONDS = 50;
  */
 static const bool WIFI_STAYS_ON_IN_CAR_ON = true;
 
-/*
- * Codigos de falla. Definidos para la prueba; pendiente unificarlos en
- * una tabla del equipo cuando se cierre el layout de la trama 0x080.
+/**
+ * Sin bateria informando no se pasa a CAR_READY: el auto se queda en
+ * CONFIG con el aviso "sin bateria" hasta que el BMS mande su primera
+ * trama. Para probar en el banco sin BMS, poner en false.
  */
-static const uint16_t ERROR_CODE_SAFETY_NODE_MISSING = 0x0001;
-static const uint16_t ERROR_CODE_NODE_LOST = 0x0002;
-static const uint16_t ERROR_CODE_ALL_WHEEL_SPEED_LOST = 0x0003;
+static const bool BATTERY_REQUIRED_FOR_READY = true;
 
 /************************************************************
  *                VARIABLES GLOBALES
@@ -112,6 +111,7 @@ static bool shutdownWasRequested(void);
 static bool readyToDriveButtonIsPressed(void);
 static bool allWheelSpeedSensorsLost(void);
 static void updateWarnings(void);
+static bool batteryAllowsReady(void);
 static bool faultCauseHasCleared(void);
 static void recordDropCounts(void);
 static void enterState(EcuState nextState);
@@ -194,7 +194,7 @@ void taskState(void *argument) {
         break;
 
       case EcuState::CONFIG:
-        if (presentNodesAreConfigured()) {
+        if (presentNodesAreConfigured() && batteryAllowsReady()) {
           enterState(EcuState::CAR_READY);
         }
         break;
@@ -447,17 +447,23 @@ static void updateWarnings(void) {
     recordDropCounts();
   }
 
+  /* Si hay mas de un problema a la vez se muestra el mas grave, en este
+     orden: sin bus no se ve nada; sin ruedas el piloto no sabe la
+     velocidad; sin bateria no se sabe la carga; un nodo suelto es lo
+     menos grave. */
   uint16_t wantedCode = 0;
-  if (allWheelSpeedSensorsLost()) {
+  if (!canIsReady()) {
+    wantedCode = ERROR_CODE_CAN_UNAVAILABLE;
+  } else if (allWheelSpeedSensorsLost()) {
     wantedCode = ERROR_CODE_ALL_WHEEL_SPEED_LOST;
+  } else if (!batteryAllowsReady()) {
+    wantedCode = ERROR_CODE_BATTERY_MISSING;
   } else if (sensorsGetSilentNode() != 0) {
     wantedCode = ERROR_CODE_NODE_LOST;
   }
 
   if (wantedCode != 0 && wantedCode != activeCode) {
-    if (wantedCode == ERROR_CODE_ALL_WHEEL_SPEED_LOST) {
-      Serial.printf("[%lu ms] sin ninguna rueda midiendo\n", millis());
-    }
+    Serial.printf("[%lu ms] aviso: %s\n", millis(), errorGetDescription(wantedCode));
     errorReport(ErrorLevel::WARNING, wantedCode);
   }
   if (wantedCode == 0 && activeCode != 0) {
@@ -465,6 +471,17 @@ static void updateWarnings(void) {
     errorClearWarning();
   }
   activeCode = wantedCode;
+}
+
+/**
+ * @brief Indica si la bateria permite pasar a CAR_READY.
+ *
+ * @return bool  true si el BMS esta informando la carga, o si la prueba
+ *               no exige bateria.
+ */
+static bool batteryAllowsReady(void) {
+  float percent = 0.0f;
+  return !BATTERY_REQUIRED_FOR_READY || canGetBatteryPercent(&percent);
 }
 
 /**

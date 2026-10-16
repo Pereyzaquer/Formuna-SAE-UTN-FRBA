@@ -125,6 +125,25 @@ void errorClear(void) {
 }
 
 /**
+ * @brief Descripcion corta de un codigo de falla, para pantalla y web.
+ *
+ * @param[in]  code  Codigo de falla.
+ *
+ * @return const char*  Texto en minusculas, sin acentos.
+ */
+const char *errorGetDescription(uint16_t code) {
+  switch (code) {
+    case 0:                               return "sin avisos";
+    case ERROR_CODE_SAFETY_NODE_MISSING:  return "falta nodo de seguridad";
+    case ERROR_CODE_NODE_LOST:            return "nodo callado";
+    case ERROR_CODE_ALL_WHEEL_SPEED_LOST: return "sin ninguna rueda";
+    case ERROR_CODE_BATTERY_MISSING:      return "sin bateria";
+    case ERROR_CODE_CAN_UNAVAILABLE:      return "sin comunicacion CAN";
+  }
+  return "codigo desconocido";
+}
+
+/**
  * @brief Devuelve el nombre imprimible de un nivel de falla.
  *
  * @param[in]  level  Nivel a nombrar.
