@@ -273,6 +273,20 @@ sin conversor, y en un SPI propio, separado del MCP2515.
 No usar GPIO 35, 36 ni 37 para nada: en el ESP32-S3 N16R8 los ocupa la
 PSRAM.
 
+Pedales y shutdown circuit (pedals.cpp). Los sensores son de 5 V, con
+salida de 0.5 a 4.5 V: cada uno entra por un divisor (10 k del sensor al
+pin, 15 k del pin a GND), porque el S3 no tolera mas de 3.3 V.
+
+| Senal | ESP32-S3 | Como |
+| --- | --- | --- |
+| APPS 1 | GPIO 1 | por el divisor |
+| APPS 2 | GPIO 2 | por el divisor |
+| Freno | GPIO 8 | por el divisor |
+| Shutdown circuit | GPIO 14 | contacto de un rele a GND; los 12 V solo mueven el rele |
+
+Los tres analogicos van al ADC1: el ADC2 no se puede usar con el wifi
+encendido.
+
 ### Orden de armado
 
 1. Masa comun entre todo.
@@ -329,12 +343,20 @@ CAR_READY verde fijo, CAR_ON verde pulsante, FAULT rojo.
 CONFIG dura unos 10 ms mientras no exista el mensaje de configuracion
 de nodos, asi que en el led practicamente no se ve.
 
+**Fallas de seguridad.** Shutdown abierto, APPS fuera de banda o con
+las dos senales en desacuerdo (mas de 10 % durante mas de 100 ms) y
+sensor de freno fuera de banda llevan a FAULT. La franja de la pantalla
+parpadea en rojo con la causa. De FAULT se sale solo cuando la causa
+desaparece. Freno pisado con acelerador por encima de 25 % es un aviso
+que dura hasta que el acelerador baja de 5 %. Cada chequeo se puede
+apagar desde la web para probar por partes.
+
 **Arranque sin bateria o sin CAN.** La ECU arranca siempre: si el
 controlador CAN no responde (por ejemplo, el modulo sin 5 V), pantalla
 y web muestran "sin comunicacion CAN" y el bus se reintenta solo cada
 segundo. De CONFIG no se pasa a CAR_READY hasta que el BMS informe la
 carga ("sin bateria" mientras tanto). Para el banco sin BMS, poner
-BATTERY_REQUIRED_FOR_READY en false en state.cpp.
+la casilla "Exigir bateria para READY" de la web.
 
 **Que pasa si un nodo se pierde.** Un corte de comunicacion no es una
 falla del auto: no cambia el estado ni corta una grabacion en curso.
@@ -405,6 +427,7 @@ llaman.
 | `errors.cpp` | Registra y latchea las fallas | las tres tasks |
 | `indicators.cpp` | Led RGB de debug | taskState |
 | `webmonitor.cpp` | Pagina, JSON y CSV | taskWifi |
+| `pedals.cpp` | APPS, freno y shutdown: lectura, calibracion y fallas | taskState, webmonitor |
 | `display.cpp` | Pantalla del piloto: estado, velocidad, RPM, pedales y avisos (solo lee, no decide) | taskDisplay, webmonitor (ajustes) |
 | `names.cpp` | Nombre editable de cada nodo, guardado en flash | taskWifi, taskDisplay |
 

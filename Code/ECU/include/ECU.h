@@ -78,6 +78,14 @@
 #define DISPLAY_DATA_COMMAND_PIN    16  /**< DC/RS de la pantalla. */
 #define DISPLAY_RESET_PIN            7  /**< RESET de la pantalla. */
 
+/* Pedales y shutdown circuit (pedals.cpp). Los tres analogicos van al
+   ADC1 (el ADC2 no anda con el wifi encendido). Sensores de 5 V: cada
+   uno entra por un divisor de 10 k en serie y 15 k a masa. */
+#define ACCELERATOR_1_PIN     1   /**< APPS, primer potenciometro.        */
+#define ACCELERATOR_2_PIN     2   /**< APPS, segundo potenciometro.       */
+#define BRAKE_PIN             8   /**< Sensor de freno.                   */
+#define SHUTDOWN_CIRCUIT_PIN  14  /**< Contacto del rele del shutdown a GND. */
+
 /************************************************************
  *                       TIPOS
  ************************************************************/
@@ -157,12 +165,14 @@ enum class LogChannel : uint8_t {
   WHEEL_RPM_REAR_LEFT,     /**< Nodo de RPM trasero.           */
   WHEEL_RPM_REAR_RIGHT,    /**< Nodo de RPM trasero.           */
   VEHICLE_SPEED_KPH,       /**< Calculado por la ECU.          */
-  ACCELERATOR_PERCENT,     /**< Sin nodo todavia, queda vacio. */
-  BRAKE_PRESSURE_BAR,      /**< Sin nodo todavia, queda vacio. */
+  ACCELERATOR_PERCENT,     /**< APPS, promedio de los dos sensores. */
+  BRAKE_PERCENT,           /**< Freno, entre reposo y a fondo.      */
   DROPS_WHEEL_FRONT,       /**< Veces que se callo el nodo delantero. */
   DROPS_WHEEL_REAR,        /**< Veces que se callo el nodo trasero.   */
   DROPS_TEMPERATURE,       /**< Veces que se callo el nodo DHT11.     */
   BATTERY_PERCENT,         /**< Estado de carga que informa el BMS.   */
+  ACCELERATOR_1_PERCENT,   /**< APPS, primer potenciometro.         */
+  ACCELERATOR_2_PERCENT,   /**< APPS, segundo potenciometro.        */
   COUNT
 };
 
@@ -230,6 +240,29 @@ extern QueueHandle_t queueWifi;   /**< Comandos hacia taskWifi. */
  ************************************************************/
 
 /* ---------------------- state.cpp ---------------------- */
+
+/** Chequeos que se pueden apagar desde la web, para probar por partes. */
+struct StateChecks {
+  bool batteryRequired;   /**< Sin bateria informando no hay CAR_READY. */
+  bool shutdownCircuit;   /**< Shutdown abierto es falla.              */
+  bool pedals;            /**< APPS y freno se vigilan.                */
+};
+
+/**
+ * @brief Chequeos vigentes.
+ *
+ * @return StateChecks  Copia.
+ */
+StateChecks stateGetChecks(void);
+
+/**
+ * @brief Cambia los chequeos y los guarda en la flash.
+ *
+ * @param[in]  checks  Chequeos nuevos.
+ *
+ * @return void
+ */
+void stateSetChecks(StateChecks checks);
 
 /**
  * @brief Task de la maquina de estados del vehiculo.
@@ -569,6 +602,109 @@ uint32_t sensorsGetUnknownIdentifier(uint8_t index);
  */
 uint32_t sensorsGetUnknownIdentifierFrameCount(uint8_t index);
 
+/* ---------------------- pedals.cpp --------------------- */
+
+/** Los tres sensores analogicos, en el orden en que los guarda pedals.cpp. */
+enum PedalSensorIndex : uint8_t {
+  ACCELERATOR_1,
+  ACCELERATOR_2,
+  BRAKE,
+  PEDAL_SENSOR_COUNT
+};
+
+/** Estado de un sensor, para mostrarlo en la web. */
+struct PedalSensorStatus {
+  const char *name;
+  float       volts;      /**< Tension del sensor, ya sin el divisor. */
+  float       percent;
+  float       restVolts;  /**< Calibracion: tension en reposo.  */
+  float       fullVolts;  /**< Calibracion: tension a fondo.    */
+  bool        inRange;    /**< false si esta cortado o en corto. */
+};
+
+/**
+ * @brief Prepara las entradas y carga la calibracion guardada.
+ *
+ * @return void
+ */
+void pedalsInitialize(void);
+
+/**
+ * @brief Lee todo y aplica las reglas. La llama taskState en cada vuelta.
+ *
+ * @return void
+ */
+void pedalsUpdate(void);
+
+/**
+ * @brief Fija el punto de reposo o el de a fondo con la tension actual.
+ *
+ * @param[in]  sensor  Cual de los tres sensores.
+ * @param[in]  full    true para "a fondo", false para "reposo".
+ *
+ * @return void
+ */
+void pedalsCalibrate(PedalSensorIndex sensor, bool full);
+
+/**
+ * @brief Datos de un sensor para mostrar en la web.
+ *
+ * @param[in]   sensor  Cual de los tres sensores.
+ * @param[out]  status  Copia de su estado.
+ *
+ * @return void
+ */
+void pedalsGetSensorStatus(PedalSensorIndex sensor, PedalSensorStatus *status);
+
+/**
+ * @brief Acelerador, promedio de los dos potenciometros.
+ *
+ * @return float  De 0 a 100.
+ */
+float pedalsGetAcceleratorPercent(void);
+
+/**
+ * @brief Diferencia entre las dos señales del APPS.
+ *
+ * @return float  En puntos de por ciento.
+ */
+float pedalsGetAcceleratorDifferencePercent(void);
+
+/**
+ * @brief Freno, mapeado de 0 a 100 entre reposo y a fondo.
+ *
+ * @return float  De 0 a 100.
+ */
+float pedalsGetBrakePercent(void);
+
+/**
+ * @brief Falla del APPS: fuera de banda, o señales en desacuerdo.
+ *
+ * @return bool  true si hay que cortar.
+ */
+bool pedalsAcceleratorFault(void);
+
+/**
+ * @brief Falla del sensor de freno: fuera de su banda valida.
+ *
+ * @return bool  true si el sensor esta cortado o en corto.
+ */
+bool pedalsBrakeFault(void);
+
+/**
+ * @brief Freno y acelerador a la vez.
+ *
+ * @return bool  true mientras dure el corte.
+ */
+bool pedalsBrakeAndAcceleratorConflict(void);
+
+/**
+ * @brief Estado del shutdown circuit.
+ *
+ * @return bool  true si esta abierto (sin los 12 V).
+ */
+bool pedalsShutdownCircuitOpen(void);
+
 /* ---------------------- names.cpp ---------------------- */
 
 /** Largo maximo de un nombre de nodo, sin contar el terminador. */
@@ -799,6 +935,10 @@ constexpr uint16_t ERROR_CODE_NODE_LOST            = 0x0002; /**< Un nodo dejo d
 constexpr uint16_t ERROR_CODE_ALL_WHEEL_SPEED_LOST = 0x0003; /**< Ninguna rueda mide.          */
 constexpr uint16_t ERROR_CODE_BATTERY_MISSING      = 0x0004; /**< El BMS no informa la carga.  */
 constexpr uint16_t ERROR_CODE_CAN_UNAVAILABLE      = 0x0005; /**< El controlador CAN no arranca. */
+constexpr uint16_t ERROR_CODE_ACCELERATOR_FAULT    = 0x0006; /**< APPS fuera de banda o en desacuerdo. */
+constexpr uint16_t ERROR_CODE_SHUTDOWN_OPEN        = 0x0007; /**< Shutdown circuit abierto.    */
+constexpr uint16_t ERROR_CODE_BRAKE_FAULT          = 0x0008; /**< Sensor de freno fuera de banda. */
+constexpr uint16_t ERROR_CODE_BRAKE_AND_ACCELERATOR = 0x0009; /**< Freno y acelerador a la vez. */
 
 /**
  * @brief Descripcion corta de un codigo de falla, para pantalla y web.

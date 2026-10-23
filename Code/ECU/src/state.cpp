@@ -46,6 +46,7 @@
  ************************************************************/
 #include "../include/ECU.h"
 #include "../include/can_ids.h"
+#include <Preferences.h>
 
 /************************************************************
  *               CONSTANTES DEL SISTEMA
@@ -84,12 +85,17 @@ static const uint32_t BUTTON_DEBOUNCE_MILLISECONDS = 50;
  */
 static const bool WIFI_STAYS_ON_IN_CAR_ON = true;
 
-/**
- * Sin bateria informando no se pasa a CAR_READY: el auto se queda en
- * CONFIG con el aviso "sin bateria" hasta que el BMS mande su primera
- * trama. Para probar en el banco sin BMS, poner en false.
+/*
+ * Chequeos activables desde la web, guardados en la flash. De fabrica
+ * van todos encendidos; se apagan para probar por partes (por ejemplo,
+ * el banco sin BMS o sin shutdown cableado).
+ *   batteryRequired: sin bateria informando no se pasa a CAR_READY; el
+ *                    auto queda en CONFIG con el aviso "sin bateria".
+ *   shutdownCircuit: shutdown abierto es falla.
+ *   pedals:          APPS y freno fuera de banda o en desacuerdo son falla.
  */
-static const bool BATTERY_REQUIRED_FOR_READY = true;
+static Preferences settings;
+static StateChecks checks = {true, true, true};
 
 /************************************************************
  *                VARIABLES GLOBALES
@@ -111,6 +117,8 @@ static bool shutdownWasRequested(void);
 static bool readyToDriveButtonIsPressed(void);
 static bool allWheelSpeedSensorsLost(void);
 static void updateWarnings(void);
+static void updateFaults(void);
+static void loadChecks(void);
 static bool batteryAllowsReady(void);
 static bool faultCauseHasCleared(void);
 static void recordDropCounts(void);
@@ -162,11 +170,15 @@ void taskState(void *argument) {
      no "sin datos" hasta la primera caida. */
   recordDropCounts();
 
+  loadChecks();
+
   for (;;) {
     processPendingEvents();
+    pedalsUpdate();
 
     /* Se chequea aca, fuera del switch, porque vale en cualquier
        estado. */
+    updateFaults();
     updateWarnings();
 
     /* Se evalua antes del switch para que una falla CRITICAL saque al
@@ -452,7 +464,11 @@ static void updateWarnings(void) {
      velocidad; sin bateria no se sabe la carga; un nodo suelto es lo
      menos grave. */
   uint16_t wantedCode = 0;
-  if (!canIsReady()) {
+  if (checks.pedals && pedalsBrakeAndAcceleratorConflict()) {
+    /* Va primero: es la que el piloto tiene que resolver ya, soltando
+       el acelerador. */
+    wantedCode = ERROR_CODE_BRAKE_AND_ACCELERATOR;
+  } else if (!canIsReady()) {
     wantedCode = ERROR_CODE_CAN_UNAVAILABLE;
   } else if (allWheelSpeedSensorsLost()) {
     wantedCode = ERROR_CODE_ALL_WHEEL_SPEED_LOST;
@@ -467,7 +483,7 @@ static void updateWarnings(void) {
     errorReport(ErrorLevel::WARNING, wantedCode);
   }
   if (wantedCode == 0 && activeCode != 0) {
-    Serial.printf("[%lu ms] comunicacion restablecida\n", millis());
+    Serial.printf("[%lu ms] avisos resueltos\n", millis());
     errorClearWarning();
   }
   activeCode = wantedCode;
@@ -481,7 +497,7 @@ static void updateWarnings(void) {
  */
 static bool batteryAllowsReady(void) {
   float percent = 0.0f;
-  return !BATTERY_REQUIRED_FOR_READY || canGetBatteryPercent(&percent);
+  return !checks.batteryRequired || canGetBatteryPercent(&percent);
 }
 
 /**
@@ -496,9 +512,86 @@ static bool faultCauseHasCleared(void) {
   switch (errorGetCode()) {
     case ERROR_CODE_SAFETY_NODE_MISSING:
       return safetyNodesAreHealthy();
+    case ERROR_CODE_SHUTDOWN_OPEN:
+      return !checks.shutdownCircuit || !pedalsShutdownCircuitOpen();
+    case ERROR_CODE_ACCELERATOR_FAULT:
+      return !checks.pedals || !pedalsAcceleratorFault();
+    case ERROR_CODE_BRAKE_FAULT:
+      return !checks.pedals || !pedalsBrakeFault();
     default:
       return false;
   }
+}
+
+/**
+ * @brief Reporta las fallas de seguridad: shutdown, APPS y freno.
+ *
+ * Cada una se reporta una sola vez, al aparecer, y lleva al auto a
+ * FAULT. De ahi sale sola cuando la causa desaparece (ver
+ * faultCauseHasCleared): vuelve a BOOT y termina esperando el boton.
+ *
+ * @return void
+ */
+static void updateFaults(void) {
+  static bool shutdownWasOpen = false;
+  static bool acceleratorWasFaulty = false;
+  static bool brakeWasFaulty = false;
+
+  bool shutdownOpen     = checks.shutdownCircuit && pedalsShutdownCircuitOpen();
+  bool acceleratorFault = checks.pedals && pedalsAcceleratorFault();
+  bool brakeFault       = checks.pedals && pedalsBrakeFault();
+
+  if (shutdownOpen && !shutdownWasOpen) {
+    Serial.printf("[%lu ms] falla: shutdown abierto\n", millis());
+    errorReport(ErrorLevel::CRITICAL, ERROR_CODE_SHUTDOWN_OPEN);
+  }
+  if (acceleratorFault && !acceleratorWasFaulty) {
+    Serial.printf("[%lu ms] falla: APPS\n", millis());
+    errorReport(ErrorLevel::CRITICAL, ERROR_CODE_ACCELERATOR_FAULT);
+  }
+  if (brakeFault && !brakeWasFaulty) {
+    Serial.printf("[%lu ms] falla: sensor de freno\n", millis());
+    errorReport(ErrorLevel::CRITICAL, ERROR_CODE_BRAKE_FAULT);
+  }
+
+  shutdownWasOpen      = shutdownOpen;
+  acceleratorWasFaulty = acceleratorFault;
+  brakeWasFaulty       = brakeFault;
+}
+
+/**
+ * @brief Carga de la flash los chequeos activables.
+ *
+ * @return void
+ */
+static void loadChecks(void) {
+  settings.begin("chequeos", false);
+  checks.batteryRequired = settings.getBool("bateria", true);
+  checks.shutdownCircuit = settings.getBool("shutdown", true);
+  checks.pedals          = settings.getBool("pedales", true);
+}
+
+/**
+ * @brief Chequeos vigentes.
+ *
+ * @return StateChecks  Copia.
+ */
+StateChecks stateGetChecks(void) {
+  return checks;
+}
+
+/**
+ * @brief Cambia los chequeos y los guarda en la flash.
+ *
+ * @param[in]  newChecks  Chequeos nuevos.
+ *
+ * @return void
+ */
+void stateSetChecks(StateChecks newChecks) {
+  checks = newChecks;
+  settings.putBool("bateria", newChecks.batteryRequired);
+  settings.putBool("shutdown", newChecks.shutdownCircuit);
+  settings.putBool("pedales", newChecks.pedals);
 }
 
 /**

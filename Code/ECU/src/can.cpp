@@ -82,8 +82,12 @@ static volatile uint32_t batteryIdentifier = BMS_DEFAULT_CHARGE_IDENTIFIER;
 static volatile uint8_t  batteryByte = BMS_DEFAULT_CHARGE_BYTE;
 static volatile float    batteryPercentPerCount = BMS_DEFAULT_CHARGE_PERCENT_PER_COUNT;
 
-/* Ultima trama del BMS y el valor que se saco de ella. */
+/* Ultima trama del BMS tal como llego, y el valor que se saco de ella.
+   Van con tiempos separados: una trama puede llegar sin traer el byte
+   configurado (por ejemplo, si es mas corta), y en ese caso se muestra
+   igual en la web pero no cuenta como bateria informando. */
 static CanFrame          lastBatteryFrame = {};
+static volatile uint32_t lastBatteryFrameMilliseconds = 0;
 static volatile float    batteryPercent = 0.0f;
 static volatile uint32_t batteryLastMilliseconds = 0;
 
@@ -230,6 +234,7 @@ void canSetBatteryLayout(uint32_t identifier, uint8_t byteIndex, float percentPe
   batteryByte            = byteIndex;
   batteryPercentPerCount = percentPerCount;
   batteryLastMilliseconds = 0;
+  lastBatteryFrameMilliseconds = 0;
 
   settings.putUInt("bms_id", identifier);
   settings.putUChar("bms_byte", byteIndex);
@@ -291,7 +296,7 @@ bool canGetBatteryPercent(float *percent) {
  * @return bool  false si todavia no llego ninguna.
  */
 bool canGetLastBatteryFrame(CanFrame *frame, uint32_t *ageMilliseconds) {
-  uint32_t last = batteryLastMilliseconds;
+  uint32_t last = lastBatteryFrameMilliseconds;
   if (last == 0) {
     return false;
   }
@@ -411,14 +416,17 @@ static void handleBatteryFrame(const CanFrame *frame) {
   static uint32_t lastRecordMilliseconds = 0;
 
   lastBatteryFrame = *frame;
-  batteryLastMilliseconds = millis();
+  lastBatteryFrameMilliseconds = millis();
 
+  /* Si la trama es mas corta que el byte configurado, no trae la carga:
+     la bateria sigue sin informar y no se muestra un valor viejo. */
   if (batteryByte >= frame->length) {
     return;
   }
 
   float percent = frame->data[batteryByte] * batteryPercentPerCount;
   batteryPercent = percent;
+  batteryLastMilliseconds = millis();
 
   if (millis() - lastRecordMilliseconds >= BATTERY_RECORD_PERIOD_MILLISECONDS) {
     lastRecordMilliseconds = millis();

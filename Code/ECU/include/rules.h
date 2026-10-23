@@ -78,3 +78,13 @@ constexpr float RULE_APPS_REARM_PCT = 5.0f;
  *       presion de linea medida en el auto. Medir en banco antes de fijarlo.
  */
 constexpr float RULE_BSE_ACTUATED_BAR = 0.0f;
+
+/**
+ * @brief Recorrido del sensor de freno a partir del cual se lo da por pisado.
+ *
+ * Mientras no haya sensor de presion calibrado, el freno se lee como
+ * por ciento entre reposo y a fondo. Umbral propio, no del reglamento:
+ * lo definí en 10 % para la prueba en frio; queda pendiente reemplazarlo
+ * por RULE_BSE_ACTUATED_BAR cuando haya sensor de presion.
+ */
+constexpr float RULE_BRAKE_PRESSED_PCT = 10.0f;

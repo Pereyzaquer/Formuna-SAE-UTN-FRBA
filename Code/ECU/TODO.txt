@@ -101,8 +101,17 @@ De FAULT se sale reiniciando el micro, o solo si la causa se fue.
 Sin bateria informando no se pasa a CAR_READY.
     El auto queda en CONFIG con el aviso "sin bateria" (0x0004)
     hasta la primera trama del BMS. Perderla despues es solo
-    aviso. Para el banco sin BMS: BATTERY_REQUIRED_FOR_READY en
-    false (state.cpp).
+    aviso. Para el banco sin BMS se apaga desde la web.
+
+APPS, freno y shutdown se leen directo en la ECU (pedals.cpp).
+    Sensores de 5 V con salida 0.5 a 4.5 V, por divisor 10 k / 15 k.
+    Shutdown por contacto de rele a GND. Calibracion desde la web.
+    Fallas: shutdown abierto (0x0007), APPS (0x0006), freno
+    (0x0008); freno y acelerador a la vez es aviso (0x0009).
+    Pendiente: validar umbrales de rules.h contra el reglamento,
+    la banda valida 0.3 a 4.7 V con los sensores del auto, y el
+    umbral de freno pisado (10 %) cuando haya sensor de presion.
+    Pendiente: el corte de torque real, cuando haya inversor.
 
 Si el controlador CAN no arranca, la ECU arranca igual.
     Pantalla y web muestran "sin comunicacion CAN" (0x0005) y

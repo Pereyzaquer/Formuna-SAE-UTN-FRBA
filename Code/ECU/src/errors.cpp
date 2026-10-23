@@ -139,6 +139,10 @@ const char *errorGetDescription(uint16_t code) {
     case ERROR_CODE_ALL_WHEEL_SPEED_LOST: return "sin ninguna rueda";
     case ERROR_CODE_BATTERY_MISSING:      return "sin bateria";
     case ERROR_CODE_CAN_UNAVAILABLE:      return "sin comunicacion CAN";
+    case ERROR_CODE_ACCELERATOR_FAULT:    return "falla APPS";
+    case ERROR_CODE_SHUTDOWN_OPEN:        return "shutdown abierto";
+    case ERROR_CODE_BRAKE_FAULT:          return "falla sensor de freno";
+    case ERROR_CODE_BRAKE_AND_ACCELERATOR: return "freno y acelerador a la vez";
   }
   return "codigo desconocido";
 }

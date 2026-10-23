@@ -278,7 +278,7 @@ const char *loggerGetChannelName(LogChannel channel) {
     case LogChannel::TEMPERATURE_CELSIUS:  return "temperatura_C";
     case LogChannel::HUMIDITY_PERCENT:     return "humedad_pct";
     case LogChannel::ACCELERATOR_PERCENT:  return "acelerador_pct";
-    case LogChannel::BRAKE_PRESSURE_BAR:   return "freno_bar";
+    case LogChannel::BRAKE_PERCENT:        return "freno_pct";
     case LogChannel::WHEEL_RPM_FRONT_LEFT: return "rpm_delantera_izq";
     case LogChannel::WHEEL_RPM_FRONT_RIGHT:return "rpm_delantera_der";
     case LogChannel::WHEEL_RPM_REAR_LEFT:  return "rpm_trasera_izq";
@@ -288,6 +288,8 @@ const char *loggerGetChannelName(LogChannel channel) {
     case LogChannel::DROPS_WHEEL_REAR:     return "caidas_rueda_trasera";
     case LogChannel::DROPS_TEMPERATURE:    return "caidas_temperatura";
     case LogChannel::BATTERY_PERCENT:      return "bateria_pct";
+    case LogChannel::ACCELERATOR_1_PERCENT: return "apps1_pct";
+    case LogChannel::ACCELERATOR_2_PERCENT: return "apps2_pct";
     case LogChannel::COUNT:                break;
   }
   return "desconocido";

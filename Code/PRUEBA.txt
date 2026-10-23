@@ -257,6 +257,54 @@ ECU esta en la PC, en su puerto serie a 115200.
 
 
 ------------------------------------------------------------
+ PRUEBA EN FRIO: PEDALES Y SHUTDOWN
+------------------------------------------------------------
+Cableado, en el S3:
+
+  APPS 1   GPIO 1    sensor -> 10 k -> pin, y pin -> 15 k -> GND
+  APPS 2   GPIO 2    igual
+  Freno    GPIO 8    igual
+  Shutdown GPIO 14   contacto del rele entre el pin y GND
+
+Los sensores son de 5 V (salida 0.5 a 4.5 V): el divisor es
+obligatorio, el S3 no tolera mas de 3.3 V en un pin. Con 10 k y
+15 k, 4.5 V llegan como 2.7 V. Para simularlos alcanza con un
+potenciometro por sensor entre 5 V y GND, el cursor al divisor.
+
+El shutdown no entra con 12 V al S3: los 12 V mueven un rele y
+su contacto une GPIO 14 con GND. Contacto cerrado = circuito con
+tension = OK. Sin rele, un cable de GPIO 14 a GND hace de
+"cerrado" y sacarlo hace de "abierto".
+
+En la pagina, tarjeta "Pedales y shutdown":
+  1. Cada sensor muestra su tension y su por ciento. Con el pedal
+     suelto, "Reposo"; pisado a fondo, "A fondo". Queda guardado.
+     De fabrica va 0.5 V = 0 % y 4.5 V = 100 %.
+  2. Las casillas apagan chequeos para probar por partes: exigir
+     bateria para READY (el Orion todavia no manda el SOC),
+     vigilar shutdown, vigilar APPS y freno.
+
+Que tiene que pasar, con todo encendido y calibrado:
+  - Sacar el cable del shutdown: FAULT, franja roja parpadeando
+    "SHUTDOWN ABIERTO". Volverlo a poner: vuelve solo a BOOT y
+    termina en READY TO DRIVE (o CONFIG si falta bateria).
+  - Mover un solo potenciometro del APPS, que las dos señales
+    difieran mas de 10 % durante mas de 100 ms: FAULT "FALLA APPS".
+  - Desconectar el cursor de un sensor (queda cerca de 0 V):
+    FAULT, "FALLA APPS" o "FALLA SENSOR DE FRENO".
+  - Freno pisado (mas de 10 %) y acelerador por encima de 25 %:
+    aviso "FRENO Y ACELERADOR A LA VEZ". Se va recien cuando el
+    acelerador baja de 5 %, aunque se suelte el freno.
+  - Las barras de la pantalla siguen a los pedales en vivo, y el
+    CSV trae acelerador_pct, apps1_pct, apps2_pct y freno_pct.
+
+Los umbrales (10 %, 100 ms, 25 %, 5 %) estan en rules.h, pendientes
+de validar contra el reglamento. La banda valida de los sensores
+(0.3 a 4.7 V) y el umbral de freno pisado (10 %) los defini para
+la prueba.
+
+
+------------------------------------------------------------
  PRUEBA CON EL ORION BMS 2
 ------------------------------------------------------------
 Que se lleva: ECU (ESP32-S3 + conversor + HW-184 + pantalla) y

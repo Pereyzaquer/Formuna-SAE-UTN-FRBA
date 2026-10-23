@@ -23,6 +23,8 @@
  *                   prueba (acelerador, freno, rpm); fin=1 termina
  *    /api/bms       elige la trama del BMS: id, byte y escala
  *    /api/can       guarda la velocidad del bus (kbps) y reinicia
+ *    /api/calibrar  fija reposo o a fondo de un pedal (sensor, punto)
+ *    /api/chequeos  activa o apaga bateria, shutdown y pedales
  *
  *  Hardware:
  *  --------------------------------------------------------
@@ -93,6 +95,8 @@ static void handleDisplayRequest(void);
 static void handleTestRequest(void);
 static void handleBatteryRequest(void);
 static void handleBitrateRequest(void);
+static void handleCalibrationRequest(void);
+static void handleChecksRequest(void);
 static void appendNodeJson(String &json, uint32_t identifier, bool known,
                            uint32_t frameCount);
 static bool sendEventToStateMachine(EcuEventType type);
@@ -174,6 +178,8 @@ static const char PAGE[] PROGMEM = R"HTML(<!DOCTYPE html>
  .nodo code{color:var(--tenue);font-size:.85rem}
  .nodo .etiqueta{font-size:.85rem;white-space:nowrap}
  .ajustes{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+ .nota-chica{color:var(--tenue);font-size:.85rem;margin:.6rem 0 0}
+ .pedal{display:flex;gap:.5rem;align-items:center;justify-content:flex-end;flex-wrap:wrap}
  .deslizables{display:grid;gap:.6rem;margin-top:.8rem}
  .deslizables label{display:grid;grid-template-columns:6.5em 1fr 4em auto;gap:.6rem}
  .deslizables b{text-align:right;font-variant-numeric:tabular-nums;color:var(--texto)}
@@ -243,6 +249,22 @@ static const char PAGE[] PROGMEM = R"HTML(<!DOCTYPE html>
 </section>
 
 <section class="tarjeta">
+ <h2>Pedales y shutdown</h2>
+ <div class="grabacion">
+  <span>Shutdown <b id="sdc">--</b></span>
+  <span>Acelerador <b id="acelerador">--</b></span>
+  <span>Diferencia APPS <b id="diferencia">--</b></span>
+ </div>
+ <div id="pedales" class="lista" style="margin-top:.6rem"></div>
+ <p class="nota-chica">Calibrar: con el pedal suelto, "Reposo"; pisado a fondo, "A fondo". Se guarda en la ECU.</p>
+ <div class="ajustes" style="margin-top:.8rem">
+  <label><input type="checkbox" id="chkBateria" onchange="guardarChequeos()"> Exigir bateria para READY</label>
+  <label><input type="checkbox" id="chkShutdown" onchange="guardarChequeos()"> Vigilar shutdown</label>
+  <label><input type="checkbox" id="chkPedales" onchange="guardarChequeos()"> Vigilar APPS y freno</label>
+ </div>
+</section>
+
+<section class="tarjeta">
  <h2>Bateria (BMS)</h2>
  <div class="grabacion"><span>Carga <b id="bateria">--</b></span><span>Ultima trama <b id="bmsTrama">sin recibir</b></span></div>
  <div class="ajustes" style="margin-top:.8rem">
@@ -279,6 +301,7 @@ const NIVELES={NONE:"presente",WARNING:"aviso",CRITICAL:"ausente"};
 
 function dibujar(datos){
  document.body.classList.remove("sinconexion");
+ dibujarPedales(datos.pedales);
  dibujarBms(datos.bms);
 
  const estado=document.getElementById("estado");
@@ -388,7 +411,36 @@ function guardarKbps(){
  fetch("/api/can?kbps="+document.getElementById("kbps").value,{method:"POST"});
 }
 
+// Pedales: lectura en vivo en cada consulta. Cada fila muestra tension,
+// por ciento y calibracion, con los dos botones para calibrar.
+function dibujarPedales(p){
+ const sdc=document.getElementById("sdc");
+ sdc.textContent=p.sdc?"abierto":"cerrado";
+ sdc.className=p.sdc?"ausente":"presente";
+ document.getElementById("acelerador").textContent=p.acelerador.toFixed(0)+" %";
+ document.getElementById("diferencia").textContent=p.diferencia.toFixed(1)+" %";
+ document.getElementById("pedales").innerHTML=p.sensores.map((s,i)=>
+  '<span>'+s.nombre+' <small style="color:var(--tenue)">('+s.reposo.toFixed(2)+' a '+
+  s.fondo.toFixed(2)+' V)</small></span><span class="pedal"><b class="'+(s.ok?"presente":"ausente")+'">'+
+  s.v.toFixed(2)+' V &middot; '+s.pct.toFixed(0)+' %</b>'+
+  '<button class="secundario" onclick="calibrar('+i+',0)">Reposo</button>'+
+  '<button class="secundario" onclick="calibrar('+i+',1)">A fondo</button></span>').join("");
+}
+
+function calibrar(sensor,fondo){
+ fetch("/api/calibrar?sensor="+sensor+"&punto="+(fondo?"fondo":"reposo"),{method:"POST"});
+}
+
+function guardarChequeos(){
+ const c=id=>document.getElementById(id).checked?1:0;
+ fetch("/api/chequeos?bateria="+c("chkBateria")+"&shutdown="+c("chkShutdown")+
+       "&pedales="+c("chkPedales"),{method:"POST"});
+}
+
 function cargarPantalla(datos){
+ document.getElementById("chkBateria").checked=datos.chequeos.bateria;
+ document.getElementById("chkShutdown").checked=datos.chequeos.shutdown;
+ document.getElementById("chkPedales").checked=datos.chequeos.pedales;
  document.getElementById("bmsId").value="0x"+datos.bms.id.toString(16).toUpperCase();
  document.getElementById("bmsByte").value=datos.bms.byte;
  document.getElementById("bmsEscala").value=datos.bms.escala;
@@ -505,6 +557,8 @@ void webMonitorStart(void) {
   server.on("/api/prueba", HTTP_POST, handleTestRequest);
   server.on("/api/bms", HTTP_POST, handleBatteryRequest);
   server.on("/api/can", HTTP_POST, handleBitrateRequest);
+  server.on("/api/calibrar", HTTP_POST, handleCalibrationRequest);
+  server.on("/api/chequeos", HTTP_POST, handleChecksRequest);
 
   server.begin();
 
@@ -590,6 +644,26 @@ static void handleStateRequest(void) {
   float batteryPercent = 0.0f;
   CanFrame batteryFrame;
   uint32_t batteryAge = 0;
+  /* Pedales, shutdown y chequeos activos. */
+  json += "\"pedales\":{\"sdc\":" + String(pedalsShutdownCircuitOpen() ? "true" : "false") +
+          ",\"acelerador\":" + String(pedalsGetAcceleratorPercent(), 1) +
+          ",\"diferencia\":" + String(pedalsGetAcceleratorDifferencePercent(), 1) +
+          ",\"sensores\":[";
+  for (uint8_t index = 0; index < PEDAL_SENSOR_COUNT; index++) {
+    PedalSensorStatus status;
+    pedalsGetSensorStatus(static_cast<PedalSensorIndex>(index), &status);
+    if (index > 0) {
+      json += ",";
+    }
+    json += "{\"nombre\":\"" + String(status.name) + "\",\"v\":" + String(status.volts, 2) +
+            ",\"pct\":" + String(status.percent, 1) + ",\"reposo\":" + String(status.restVolts, 2) +
+            ",\"fondo\":" + String(status.fullVolts, 2) +
+            ",\"ok\":" + String(status.inRange ? "true" : "false") + "}";
+  }
+  StateChecks checks = stateGetChecks();
+  json += "]},\"chequeos\":{\"bateria\":" + String(checks.batteryRequired ? "true" : "false") +
+          ",\"shutdown\":" + String(checks.shutdownCircuit ? "true" : "false") +
+          ",\"pedales\":" + String(checks.pedals ? "true" : "false") + "},";
   json += "\"kbps\":" + String(canGetBitrateKilobits()) + ",";
   json += "\"bms\":{\"id\":" + String(canGetBatteryIdentifier()) +
           ",\"byte\":" + String(canGetBatteryByte()) +
@@ -765,6 +839,37 @@ static void handleBitrateRequest(void) {
   server.send(200, "application/json", "{\"reiniciando\":true}");
   delay(300);
   ESP.restart();
+}
+
+/**
+ * @brief Calibra un pedal con la tension actual. Parametros: sensor
+ *        (0 APPS 1, 1 APPS 2, 2 freno) y punto (reposo o fondo).
+ *
+ * @return void
+ */
+static void handleCalibrationRequest(void) {
+  long sensor = server.arg("sensor").toInt();
+  if (sensor < 0 || sensor >= PEDAL_SENSOR_COUNT) {
+    server.send(400, "application/json", "{\"error\":\"sensor invalido\"}");
+    return;
+  }
+  pedalsCalibrate(static_cast<PedalSensorIndex>(sensor), server.arg("punto") == "fondo");
+  server.send(200, "application/json", "{\"guardado\":true}");
+}
+
+/**
+ * @brief Activa o apaga los chequeos. Parametros: bateria, shutdown y
+ *        pedales, cada uno 1 o 0.
+ *
+ * @return void
+ */
+static void handleChecksRequest(void) {
+  StateChecks checks;
+  checks.batteryRequired = server.arg("bateria") == "1";
+  checks.shutdownCircuit = server.arg("shutdown") == "1";
+  checks.pedals          = server.arg("pedales") == "1";
+  stateSetChecks(checks);
+  server.send(200, "application/json", "{\"guardado\":true}");
 }
 
 /**

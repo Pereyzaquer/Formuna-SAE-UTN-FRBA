@@ -66,6 +66,9 @@ static const uint32_t REFRESH_PERIOD_MILLISECONDS = 20;
 /** Los textos cambian menos y se leen de reojo: 5 veces por segundo. */
 static const uint32_t TEXT_REFRESH_PERIOD_MILLISECONDS = 200;
 
+/** Media vuelta del parpadeo de la franja cuando hay una falla. */
+static const uint32_t BLINK_HALF_PERIOD_MILLISECONDS = 500;
+
 /** Sin noticias de la pagina durante este tiempo, termina el modo prueba. */
 static const uint32_t TEST_TIMEOUT_MILLISECONDS = 2000;
 
@@ -512,11 +515,12 @@ static void drawRecording(void) {
  * Si el aviso es por un nodo callado, dice cual.
  *
  * @param[in]  level  Nivel de falla vigente.
- * @param[in]  code   Codigo de falla vigente.
+ * @param[in]  code      Codigo de falla vigente.
+ * @param[in]  blinkOff  true en la mitad apagada del parpadeo de una falla.
  *
  * @return void
  */
-static void drawWarnings(ErrorLevel level, uint16_t code) {
+static void drawWarnings(ErrorLevel level, uint16_t code, bool blinkOff) {
   uint16_t color = COLOR_GOOD;
   char text[64];
 
@@ -540,8 +544,16 @@ static void drawWarnings(ErrorLevel level, uint16_t code) {
     }
   }
 
+  /* Una falla parpadea: en la mitad apagada del ciclo la franja queda en
+     fondo y el texto en rojo, asi no se pierde de vista lo que dice. */
+  uint16_t textColor = TFT_BLACK;
+  if (blinkOff) {
+    textColor = color;
+    color = COLOR_BACKGROUND;
+  }
+
   screen.fillRect(0, FOOTER_TOP, SCREEN_WIDTH, FOOTER_HEIGHT, color);
-  screen.setTextColor(TFT_BLACK, color);
+  screen.setTextColor(textColor, color);
   screen.setTextDatum(MC_DATUM);
   screen.drawString(text, SCREEN_WIDTH / 2, FOOTER_TOP + FOOTER_HEIGHT / 2, 4);
 }
@@ -668,6 +680,7 @@ void taskDisplay(void *argument) {
   ErrorLevel lastLevel = ErrorLevel::NONE;
   uint16_t   lastCode = 0;
   uint32_t   lastSilentNode = 0;
+  bool       lastBlinkOff = false;
   uint32_t   lastTextMilliseconds = 0;
 
   int16_t acceleratorHeight = 0;
@@ -696,7 +709,7 @@ void taskDisplay(void *argument) {
       acceleratorValid = brakeValid = revolutionsValid = true;
     } else {
       acceleratorValid = loggerGetCurrentValue(LogChannel::ACCELERATOR_PERCENT, &accelerator);
-      brakeValid       = loggerGetCurrentValue(LogChannel::BRAKE_PRESSURE_BAR, &brake);
+      brakeValid       = loggerGetCurrentValue(LogChannel::BRAKE_PERCENT, &brake);
       revolutionsValid = loggerGetCurrentValue(revolutionsChannel, &revolutions);
     }
 
@@ -721,11 +734,15 @@ void taskDisplay(void *argument) {
         drawHeader(state);
         lastState = state;
       }
-      if (firstPass || level != lastLevel || code != lastCode || silentNode != lastSilentNode) {
-        drawWarnings(level, code);
+      /* Con una falla la franja alterna cada medio segundo. */
+      bool blinkOff = (level == ErrorLevel::CRITICAL) && ((millis() / BLINK_HALF_PERIOD_MILLISECONDS) % 2);
+      if (firstPass || level != lastLevel || code != lastCode || silentNode != lastSilentNode ||
+          blinkOff != lastBlinkOff) {
+        drawWarnings(level, code, blinkOff);
         lastLevel = level;
         lastCode = code;
         lastSilentNode = silentNode;
+        lastBlinkOff = blinkOff;
       }
 
       drawSpeed();

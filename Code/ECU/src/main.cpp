@@ -69,6 +69,7 @@ void setup() {
 
   indicatorsInitialize();
   namesInitialize();
+  pedalsInitialize();
 
   queueEvents = xQueueCreate(QUEUE_LENGTH_EVENTS, sizeof(EcuEvent));
   queueWifi   = xQueueCreate(QUEUE_LENGTH_WIFI, sizeof(WifiCommand));
