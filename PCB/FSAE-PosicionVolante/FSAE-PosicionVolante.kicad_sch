@@ -4321,22 +4321,16 @@
 		(uuid "07fc2c6b-5a5a-4aad-a7a6-8da6d05a4aab")
 	)
 	(junction
-		(at 83.82 96.52)
+		(at 218.44 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1e22a3c0-ad52-4b90-af5d-c8536e44dd00")
+		(uuid "760d686e-dedd-41ce-a5f1-29a41874bfe7")
 	)
 	(junction
 		(at 63.5 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "50727185-398c-4faf-8ebe-8f65b504ee13")
-	)
-	(junction
-		(at 218.44 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "760d686e-dedd-41ce-a5f1-29a41874bfe7")
+		(uuid "8db5946c-d1da-4af0-9974-141791caa343")
 	)
 	(junction
 		(at 76.2 134.62)
@@ -4680,7 +4674,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 96.52) (xy 83.82 96.52)
+			(xy 63.5 96.52) (xy 80.01 96.52)
 		)
 		(stroke
 			(width 0)
@@ -4977,16 +4971,6 @@
 			(type default)
 		)
 		(uuid "a47073bc-3cad-4f98-a785-9f2749761cea")
-	)
-	(wire
-		(pts
-			(xy 83.82 96.52) (xy 90.17 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a8c00465-729e-4a2d-9579-cf8bef0d07ae")
 	)
 	(wire
 		(pts
@@ -5439,7 +5423,7 @@
 		(uuid "7df3cd51-90e0-4748-a102-0c2266c947d5")
 	)
 	(label "VBAT_PROT"
-		(at 90.17 96.52 0)
+		(at 80.01 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6665,90 +6649,6 @@
 		)
 	)
 	(symbol
-		(lib_id "FSAE_Kicad_Symbols.pretty:SMDJ13A")
-		(at 63.5 99.06 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4a8e16af-bff9-41e2-9ffc-99868e95522f")
-		(property "Reference" "CR2"
-			(at 67.31 102.8699 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SMDJ13A"
-			(at 67.31 105.4099 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "FSAE_Kicad_Footprints:SMDJSeries_LTF"
-			(at 63.5 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "SMDJ13A"
-			(at 63.5 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 63.5 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "979eeaa9-fc7d-44da-a603-d7569ae7943b")
-		)
-		(pin "2"
-			(uuid "909f41d1-839d-4398-b0c2-43328ac66605")
-		)
-		(instances
-			(project "FSAE-PosicionVolante"
-				(path "/07304338-9c9f-40c3-b170-b258cdff274e"
-					(reference "CR2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 228.6 120.65 270)
 		(unit 1)
@@ -6978,6 +6878,90 @@
 			(project "FSAE-PosicionVolante"
 				(path "/07304338-9c9f-40c3-b170-b258cdff274e"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FSAE_Kicad_Symbols.pretty:SMDJ13A")
+		(at 63.5 109.22 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77db702f-7dc9-4497-b758-39f9ede368b8")
+		(property "Reference" "CR2"
+			(at 67.31 102.8699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SMDJ13A"
+			(at 67.31 105.4099 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "FSAE_Kicad_Footprints:SMDJSeries_LTF"
+			(at 63.5 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "SMDJ13A"
+			(at 63.5 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "78300faa-bbc7-4246-8248-2ffb4eefc167")
+		)
+		(pin "2"
+			(uuid "73963c8a-022b-48b5-b07e-f4ca830b3e2f")
+		)
+		(instances
+			(project "FSAE-PosicionVolante"
+				(path "/07304338-9c9f-40c3-b170-b258cdff274e"
+					(reference "CR2")
 					(unit 1)
 				)
 			)
@@ -7273,7 +7257,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R_HandSolder"
+		(property "Footprint" "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder"
 			(at 35.2552 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -7627,88 +7611,6 @@
 			(project "FSAE-PosicionVolante"
 				(path "/07304338-9c9f-40c3-b170-b258cdff274e"
 					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 83.82 100.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a373faba-a513-4ddf-a1dc-8df3fb8c3edf")
-		(property "Reference" "C1"
-			(at 87.63 98.1709 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10uF"
-			(at 87.63 100.7109 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 84.7852 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 83.82 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Polarized capacitor"
-			(at 83.82 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8a034d27-8982-45ff-9767-d722e6c1ab6a")
-		)
-		(pin "2"
-			(uuid "ea407571-7f19-4f4b-99da-e71d8cb25958")
-		)
-		(instances
-			(project "FSAE-PosicionVolante"
-				(path "/07304338-9c9f-40c3-b170-b258cdff274e"
-					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -8103,84 +8005,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 83.82 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ee4521a4-0227-4e48-974c-aa90cb51498c")
-		(property "Reference" "#PWR012"
-			(at 83.82 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 83.82 109.22 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 83.82 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 83.82 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 83.82 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "75d8276f-4fba-4f8c-9fd4-30f6f24a1feb")
-		)
-		(instances
-			(project "FSAE-PosicionVolante"
-				(path "/07304338-9c9f-40c3-b170-b258cdff274e"
-					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 170.18 132.08 0)
 		(unit 1)
 		(body_style 1)
@@ -8290,7 +8114,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 77.1652 143.51 0)
 			(hide yes)
 			(show_name no)
